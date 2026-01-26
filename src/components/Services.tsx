@@ -2,23 +2,23 @@ const Services = () => {
   const services = [
     {
       number: "01",
-      title: "RESIDENTIAL",
-      description: "Crafting homes that reflect individual lifestyles while maintaining architectural integrity"
+      title: "SOLAR PV SYSTEMS",
+      description: "Premium German-engineered photovoltaic systems designed for Southern Alberta's unique climate. Maximized ROI with transparent, calculable returns."
     },
     {
       number: "02", 
-      title: "COMMERCIAL",
-      description: "Designing functional spaces that enhance business environments and user experiences"
+      title: "BATTERY STORAGE",
+      description: "Advanced energy storage solutions that capture surplus solar production. German technology ensures reliability and optimal self-consumption rates."
     },
     {
       number: "03",
-      title: "RENOVATION",
-      description: "Transforming existing structures with contemporary sensibilities and sustainable practices"
+      title: "HEAT PUMPS",
+      description: "Efficient heat pump systems that integrate seamlessly with your solar installation. Utilize energy surplus for heating and cooling your home."
     },
     {
       number: "04",
-      title: "CONSULTATION",
-      description: "Providing expert guidance on design direction, planning, and architectural solutions"
+      title: "SYSTEM INTEGRATION",
+      description: "Holistic energy ecosystem design connecting PV, storage, and heat pumps. The Nullpunkt approach: where production meets consumption perfectly."
     }
   ];
 
@@ -27,9 +27,11 @@ const Services = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20">
-            <h2 className="text-minimal text-muted-foreground mb-4">SERVICES</h2>
+            <h2 className="text-minimal text-muted-foreground mb-4">OUR SERVICES</h2>
             <h3 className="text-4xl md:text-6xl font-light text-architectural">
-              What We Do
+              German Engineering
+              <br />
+              <span className="text-muted-foreground">Calgary Precision</span>
             </h3>
           </div>
           
