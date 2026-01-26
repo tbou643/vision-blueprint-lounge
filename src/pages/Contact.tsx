@@ -11,38 +11,66 @@ const Contact = () => {
               <div>
                 <h1 className="text-minimal text-muted-foreground mb-4">GET IN TOUCH</h1>
                 <h2 className="text-4xl md:text-6xl font-light text-architectural mb-12">
-                  Let's Create Something
+                  Ready to Reach
                   <br />
-                  Extraordinary
+                  Point Zero?
                 </h2>
                 
                 <div className="space-y-8">
                   <div>
                     <h3 className="text-minimal text-muted-foreground mb-2">EMAIL</h3>
-                    <a href="mailto:hello@archstudio.com" className="text-xl hover:text-muted-foreground transition-colors duration-300">
-                      hello@archstudio.com
+                    <a href="mailto:info@nullpunkt.energy" className="text-xl hover:text-muted-foreground transition-colors duration-300">
+                      info@nullpunkt.energy
                     </a>
                   </div>
                   
                   <div>
                     <h3 className="text-minimal text-muted-foreground mb-2">PHONE</h3>
-                    <a href="tel:+1234567890" className="text-xl hover:text-muted-foreground transition-colors duration-300">
-                      +1 (234) 567-8900
+                    <a href="tel:+14035551234" className="text-xl hover:text-muted-foreground transition-colors duration-300">
+                      +1 (403) 555-1234
                     </a>
                   </div>
                   
                   <div>
-                    <h3 className="text-minimal text-muted-foreground mb-2">STUDIO</h3>
+                    <h3 className="text-minimal text-muted-foreground mb-2">OFFICE</h3>
                     <address className="text-xl not-italic">
-                      123 Design Avenue
+                      Nullpunkt Energy Inc.
                       <br />
-                      New York, NY 10001
+                      Calgary, Alberta
+                      <br />
+                      Canada
                     </address>
                   </div>
                 </div>
               </div>
               
               <div className="space-y-8">
+                <div>
+                  <h3 className="text-minimal text-muted-foreground mb-6">FREE CONSULTATION</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                    Every project starts with a free, no-obligation consultation. We'll analyze your 
+                    energy consumption, roof potential, and calculate your exact ROI with German precision.
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="text-muted-foreground flex items-center">
+                      <span className="w-1.5 h-1.5 bg-foreground rounded-full mr-3" />
+                      Detailed Energy Analysis
+                    </li>
+                    <li className="text-muted-foreground flex items-center">
+                      <span className="w-1.5 h-1.5 bg-foreground rounded-full mr-3" />
+                      Custom System Design
+                    </li>
+                    <li className="text-muted-foreground flex items-center">
+                      <span className="w-1.5 h-1.5 bg-foreground rounded-full mr-3" />
+                      Transparent ROI Calculation
+                    </li>
+                    <li className="text-muted-foreground flex items-center">
+                      <span className="w-1.5 h-1.5 bg-foreground rounded-full mr-3" />
+                      No Hidden Costs
+                    </li>
+                  </ul>
+                </div>
+                
                 <div>
                   <h3 className="text-minimal text-muted-foreground mb-6">FOLLOW US</h3>
                   <div className="space-y-4">
@@ -53,16 +81,15 @@ const Contact = () => {
                       LinkedIn
                     </a>
                     <a href="#" className="block text-xl hover:text-muted-foreground transition-colors duration-300">
-                      Behance
+                      Facebook
                     </a>
                   </div>
                 </div>
                 
                 <div className="pt-12 border-t border-border">
-                  <p className="text-muted-foreground">
-                    We approach each project with curiosity, rigor, and a commitment to excellence. 
-                    Our process begins with listening, understanding your vision, and translating 
-                    it into spaces that exceed expectations.
+                  <p className="text-sm text-muted-foreground italic">
+                    Proudly serving Calgary and Southern Alberta with premium German-engineered 
+                    solar and heat pump solutions.
                   </p>
                 </div>
               </div>

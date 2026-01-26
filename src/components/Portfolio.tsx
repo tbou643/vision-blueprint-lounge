@@ -1,26 +1,26 @@
-import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
+import projectSolar1 from "@/assets/project-solar-1.jpg";
+import projectSolar2 from "@/assets/project-solar-2.jpg";
+import projectHeatpump from "@/assets/project-heatpump.jpg";
 
 const Portfolio = () => {
   const projects = [
     {
-      image: project1,
-      title: "MINIMAL RESIDENCE",
-      location: "NEW YORK, 2024",
-      description: "A contemporary home focusing on light, space, and material honesty"
+      image: projectSolar1,
+      title: "RESIDENTIAL SOLAR SYSTEM",
+      location: "CALGARY, 2024",
+      description: "12kW premium solar installation with integrated battery storage. Achieving 85% energy self-sufficiency for a family of four."
     },
     {
-      image: project2,
-      title: "CORPORATE HEADQUARTERS",
-      location: "LONDON, 2023",
-      description: "Modern office space emphasizing collaboration and natural elements"
+      image: projectSolar2,
+      title: "COMMERCIAL INSTALLATION",
+      location: "SOUTHERN ALBERTA, 2024",
+      description: "Large-scale 150kW commercial solar array with advanced monitoring. ROI achieved within 6 years through optimal system design."
     },
     {
-      image: project3,
-      title: "CULTURAL CENTER",
-      location: "TOKYO, 2023",
-      description: "Public architecture that bridges tradition with contemporary design"
+      image: projectHeatpump,
+      title: "INTEGRATED HEAT PUMP SYSTEM",
+      location: "CALGARY, 2024",
+      description: "Complete home energy solution combining solar PV with an efficient heat pump system. True Nullpunkt: production equals consumption."
     }
   ];
 
@@ -29,9 +29,9 @@ const Portfolio = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20">
-            <h2 className="text-minimal text-muted-foreground mb-4">SELECTED WORK</h2>
+            <h2 className="text-minimal text-muted-foreground mb-4">OUR PROJECTS</h2>
             <h3 className="text-4xl md:text-6xl font-light text-architectural">
-              Our Projects
+              Recent Installations
             </h3>
           </div>
           

@@ -1,69 +1,69 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
-import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
+import projectSolar1 from "@/assets/project-solar-1.jpg";
+import projectSolar2 from "@/assets/project-solar-2.jpg";
+import projectHeatpump from "@/assets/project-heatpump.jpg";
 
 const Work = () => {
   const [activeCategory, setActiveCategory] = useState("ALL");
   const projects = [
     {
-      image: project1,
-      title: "MINIMAL RESIDENCE",
-      location: "NEW YORK, 2024",
+      image: projectSolar1,
+      title: "RESIDENTIAL SOLAR SYSTEM",
+      location: "CALGARY NW, 2024",
       category: "RESIDENTIAL",
-      description: "A contemporary home focusing on light, space, and material honesty. The design emphasizes clean lines and natural materials.",
-      area: "450 SQM",
-      year: "2024"
+      description: "12kW premium solar installation with integrated battery storage. This family of four now achieves 85% energy self-sufficiency, significantly reducing their utility costs.",
+      specs: "12 kW System",
+      roi: "6.2 Year ROI"
     },
     {
-      image: project2,
-      title: "CORPORATE HEADQUARTERS",
-      location: "LONDON, 2023",
+      image: projectSolar2,
+      title: "COMMERCIAL INSTALLATION",
+      location: "SOUTHERN ALBERTA, 2024",
       category: "COMMERCIAL",
-      description: "Modern office space emphasizing collaboration and natural elements. Features flexible workspaces and sustainable design principles.",
-      area: "1200 SQM",
-      year: "2023"
+      description: "Large-scale 150kW commercial solar array with advanced monitoring and load management. German engineering ensured optimal ROI.",
+      specs: "150 kW System",
+      roi: "5.8 Year ROI"
     },
     {
-      image: project3,
-      title: "CULTURAL CENTER",
-      location: "TOKYO, 2023",
-      category: "CULTURAL",
-      description: "Public architecture that bridges tradition with contemporary design. A space for community gathering and cultural exchange.",
-      area: "800 SQM",
-      year: "2023"
+      image: projectHeatpump,
+      title: "INTEGRATED HEAT PUMP",
+      location: "CALGARY SW, 2024",
+      category: "HEAT PUMP",
+      description: "Complete home energy solution combining solar PV with an efficient air-source heat pump. True Nullpunkt: production meets consumption.",
+      specs: "10 kW + Heat Pump",
+      roi: "Zero Gas Bills"
     },
     {
-      image: project1,
-      title: "URBAN LOFT",
-      location: "BERLIN, 2024",
+      image: projectSolar1,
+      title: "SUBURBAN RESIDENCE",
+      location: "AIRDRIE, 2024",
       category: "RESIDENTIAL",
-      description: "Industrial heritage meets contemporary living. Raw materials balanced with refined details.",
-      area: "180 SQM",
-      year: "2024"
+      description: "8kW residential installation optimized for Alberta's climate. Premium German panels with 25-year performance warranty.",
+      specs: "8 kW System",
+      roi: "7.1 Year ROI"
     },
     {
-      image: project2,
-      title: "GALLERY SPACE",
-      location: "PARIS, 2022",
-      category: "CULTURAL",
-      description: "Minimalist gallery designed to showcase art without distraction. Pure white spaces with carefully controlled lighting.",
-      area: "600 SQM",
-      year: "2022"
+      image: projectSolar2,
+      title: "WAREHOUSE COMPLEX",
+      location: "CALGARY SE, 2023",
+      category: "COMMERCIAL",
+      description: "200kW installation across multiple warehouse rooftops. Comprehensive monitoring system with real-time performance tracking.",
+      specs: "200 kW System",
+      roi: "5.2 Year ROI"
     },
     {
-      image: project3,
-      title: "BOUTIQUE HOTEL",
-      location: "MILAN, 2023",
-      category: "HOSPITALITY",
-      description: "Luxury hospitality redefined through architectural restraint. Every detail carefully considered for guest experience.",
-      area: "2400 SQM",
-      year: "2023"
+      image: projectHeatpump,
+      title: "NET-ZERO HOME",
+      location: "OKOTOKS, 2024",
+      category: "HEAT PUMP",
+      description: "Complete net-zero conversion with ground-source heat pump and 15kW solar array. The ultimate Nullpunkt achievement.",
+      specs: "15 kW + GSHP",
+      roi: "Net-Zero"
     }
   ];
 
-  const categories = ["ALL", "RESIDENTIAL", "COMMERCIAL", "CULTURAL", "HOSPITALITY"];
+  const categories = ["ALL", "RESIDENTIAL", "COMMERCIAL", "HEAT PUMP"];
 
   const filteredProjects = activeCategory === "ALL" 
     ? projects 
@@ -79,11 +79,11 @@ const Work = () => {
           <div className="max-w-7xl mx-auto">
             <div className="mb-12">
               <h1 className="text-6xl md:text-8xl font-light text-architectural mb-8">
-                OUR WORK
+                OUR PROJECTS
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl">
-                A curated selection of our architectural projects, each telling a unique story 
-                through thoughtful design and meticulous attention to detail.
+                A selection of our solar and heat pump installations across Southern Alberta. 
+                Each project demonstrates our commitment to German precision and transparent ROI.
               </p>
             </div>
           </div>
@@ -157,12 +157,12 @@ const Work = () => {
                     
                     <div className="flex gap-8 pt-4 border-t border-border">
                       <div>
-                        <p className="text-minimal text-muted-foreground mb-1">AREA</p>
-                        <p className="text-foreground">{project.area}</p>
+                        <p className="text-minimal text-muted-foreground mb-1">SYSTEM</p>
+                        <p className="text-foreground">{project.specs}</p>
                       </div>
                       <div>
-                        <p className="text-minimal text-muted-foreground mb-1">YEAR</p>
-                        <p className="text-foreground">{project.year}</p>
+                        <p className="text-minimal text-muted-foreground mb-1">ROI</p>
+                        <p className="text-foreground">{project.roi}</p>
                       </div>
                     </div>
                   </div>
@@ -178,18 +178,18 @@ const Work = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-6xl font-light text-architectural mb-8">
-              Ready to Start
+              Ready to Reach
               <br />
-              Your Project?
+              Point Zero?
             </h2>
             <p className="text-xl text-muted-foreground mb-12">
-              Let's discuss how we can bring your architectural vision to life
+              Let's calculate your ROI and design the perfect energy system for your home or business.
             </p>
             <a 
-              href="#contact" 
+              href="/contact" 
               className="inline-block text-minimal text-foreground hover:text-muted-foreground transition-colors duration-300 relative group"
             >
-              GET IN TOUCH
+              GET A FREE QUOTE
               <span className="absolute bottom-0 left-0 w-full h-px bg-foreground group-hover:bg-muted-foreground transition-colors duration-300"></span>
             </a>
           </div>
