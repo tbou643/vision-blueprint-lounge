@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Contact = () => {
   return (
     <section id="contact" className="py-32 bg-background">
@@ -64,6 +66,9 @@ const Contact = () => {
                 </p>
                 <p className="text-sm text-muted-foreground italic">
                   Serving Calgary and Southern Alberta with premium solar and heat pump solutions.
+                </p>
+                <p className="text-xs text-muted-foreground/30 mt-8">
+                  © {new Date().getFullYear()} Nullpunkt Energy Inc. · <Link to="/admin" className="hover:text-muted-foreground transition-colors">Site</Link>
                 </p>
               </div>
             </div>
