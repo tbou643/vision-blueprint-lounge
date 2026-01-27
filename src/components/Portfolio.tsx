@@ -8,68 +8,96 @@ import projectHeatpumpFallback from "@/assets/project-heatpump.jpg";
 
 interface Project {
   id: string;
-  fallback: string;
+  image_id: string;
   title: string;
   location: string;
   description: string;
+  is_featured: boolean;
 }
 
-const Portfolio = () => {
-  const [images, setImages] = useState<Record<string, string>>({});
+const fallbackImages: Record<string, string> = {
+  "project-solar-1": projectSolar1Fallback,
+  "project-solar-2": projectSolar2Fallback,
+  "project-heatpump": projectHeatpumpFallback,
+};
 
-  const projects: Project[] = [
-    {
-      id: "project-solar-1",
-      fallback: projectSolar1Fallback,
-      title: "RESIDENTIAL SOLAR SYSTEM",
-      location: "CALGARY, 2024",
-      description: "12kW premium solar installation with integrated battery storage. Achieving 85% energy self-sufficiency for a family of four."
-    },
-    {
-      id: "project-solar-2",
-      fallback: projectSolar2Fallback,
-      title: "COMMERCIAL INSTALLATION",
-      location: "SOUTHERN ALBERTA, 2024",
-      description: "Large-scale 150kW commercial solar array with advanced monitoring. ROI achieved within 6 years through optimal system design."
-    },
-    {
-      id: "project-heatpump",
-      fallback: projectHeatpumpFallback,
-      title: "INTEGRATED HEAT PUMP SYSTEM",
-      location: "CALGARY, 2024",
-      description: "Complete home energy solution combining solar PV with an efficient heat pump system. True Nullpunkt: production equals consumption."
-    }
-  ];
+const Portfolio = () => {
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [storageImages, setStorageImages] = useState<Record<string, string>>({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const loadStorageImages = async () => {
-      const loadedImages: Record<string, string> = {};
+    loadProjects();
+  }, []);
 
-      for (const project of projects) {
+  const loadProjects = async () => {
+    // Load featured projects from database
+    const { data, error } = await supabase
+      .from("projects")
+      .select("*")
+      .eq("is_featured", true)
+      .order("sort_order", { ascending: true });
+
+    if (error) {
+      console.error("Error loading projects:", error);
+      setLoading(false);
+      return;
+    }
+
+    setProjects(data || []);
+
+    // Load storage images for these projects
+    if (data) {
+      const imageIds = [...new Set(data.map((p) => p.image_id))];
+      await loadStorageImages(imageIds);
+    }
+
+    setLoading(false);
+  };
+
+  const loadStorageImages = async (imageIds: string[]) => {
+    const loadedImages: Record<string, string> = {};
+
+    for (const id of imageIds) {
+      // Try different extensions
+      for (const ext of ["jpg", "png", "webp"]) {
         const { data } = supabase.storage
           .from("project-images")
-          .getPublicUrl(`${project.id}.jpg`);
+          .getPublicUrl(`${id}.${ext}`);
 
-        // Check if image actually exists
         try {
           const response = await fetch(data.publicUrl, { method: "HEAD" });
           if (response.ok) {
-            loadedImages[project.id] = data.publicUrl;
+            loadedImages[id] = data.publicUrl;
+            break;
           }
         } catch {
-          // Image doesn't exist, will use fallback
+          // Continue to next extension
         }
       }
+    }
 
-      setImages(loadedImages);
-    };
-
-    loadStorageImages();
-  }, []);
-
-  const getImageUrl = (project: Project) => {
-    return images[project.id] || project.fallback;
+    setStorageImages(loadedImages);
   };
+
+  const getImageUrl = (imageId: string) => {
+    return storageImages[imageId] || fallbackImages[imageId] || projectSolar1Fallback;
+  };
+
+  if (loading) {
+    return (
+      <section id="work" className="py-32 bg-muted">
+        <div className="container mx-auto px-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="animate-pulse space-y-8">
+              <div className="h-8 bg-muted-foreground/20 rounded w-1/4"></div>
+              <div className="h-[50vh] bg-muted-foreground/20 rounded"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="work" className="py-32 bg-muted">
@@ -83,11 +111,11 @@ const Portfolio = () => {
           </div>
           
           <div className="space-y-32">
-            {projects.map((project, index) => (
-              <div key={index} className="group">
+            {projects.map((project) => (
+              <div key={project.id} className="group">
                 <div className="relative overflow-hidden">
                   <img 
-                    src={getImageUrl(project)} 
+                    src={getImageUrl(project.image_id)} 
                     alt={project.title}
                     className="w-full h-[70vh] object-cover transition-transform duration-700 group-hover:scale-105"
                   />
