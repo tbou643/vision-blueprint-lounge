@@ -1,28 +1,75 @@
-import projectSolar1 from "@/assets/project-solar-1.jpg";
-import projectSolar2 from "@/assets/project-solar-2.jpg";
-import projectHeatpump from "@/assets/project-heatpump.jpg";
+import { useState, useEffect } from "react";
+import { supabase } from "@/integrations/supabase/client";
+
+// Fallback images
+import projectSolar1Fallback from "@/assets/project-solar-1.jpg";
+import projectSolar2Fallback from "@/assets/project-solar-2.jpg";
+import projectHeatpumpFallback from "@/assets/project-heatpump.jpg";
+
+interface Project {
+  id: string;
+  fallback: string;
+  title: string;
+  location: string;
+  description: string;
+}
 
 const Portfolio = () => {
-  const projects = [
+  const [images, setImages] = useState<Record<string, string>>({});
+
+  const projects: Project[] = [
     {
-      image: projectSolar1,
+      id: "project-solar-1",
+      fallback: projectSolar1Fallback,
       title: "RESIDENTIAL SOLAR SYSTEM",
       location: "CALGARY, 2024",
       description: "12kW premium solar installation with integrated battery storage. Achieving 85% energy self-sufficiency for a family of four."
     },
     {
-      image: projectSolar2,
+      id: "project-solar-2",
+      fallback: projectSolar2Fallback,
       title: "COMMERCIAL INSTALLATION",
       location: "SOUTHERN ALBERTA, 2024",
       description: "Large-scale 150kW commercial solar array with advanced monitoring. ROI achieved within 6 years through optimal system design."
     },
     {
-      image: projectHeatpump,
+      id: "project-heatpump",
+      fallback: projectHeatpumpFallback,
       title: "INTEGRATED HEAT PUMP SYSTEM",
       location: "CALGARY, 2024",
       description: "Complete home energy solution combining solar PV with an efficient heat pump system. True Nullpunkt: production equals consumption."
     }
   ];
+
+  useEffect(() => {
+    const loadStorageImages = async () => {
+      const loadedImages: Record<string, string> = {};
+
+      for (const project of projects) {
+        const { data } = supabase.storage
+          .from("project-images")
+          .getPublicUrl(`${project.id}.jpg`);
+
+        // Check if image actually exists
+        try {
+          const response = await fetch(data.publicUrl, { method: "HEAD" });
+          if (response.ok) {
+            loadedImages[project.id] = data.publicUrl;
+          }
+        } catch {
+          // Image doesn't exist, will use fallback
+        }
+      }
+
+      setImages(loadedImages);
+    };
+
+    loadStorageImages();
+  }, []);
+
+  const getImageUrl = (project: Project) => {
+    return images[project.id] || project.fallback;
+  };
 
   return (
     <section id="work" className="py-32 bg-muted">
@@ -40,7 +87,7 @@ const Portfolio = () => {
               <div key={index} className="group">
                 <div className="relative overflow-hidden">
                   <img 
-                    src={project.image} 
+                    src={getImageUrl(project)} 
                     alt={project.title}
                     className="w-full h-[70vh] object-cover transition-transform duration-700 group-hover:scale-105"
                   />
