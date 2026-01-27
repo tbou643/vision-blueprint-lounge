@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import logoNullpunkt from "@/assets/logo-nullpunkt.png";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,8 +9,8 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/" className="text-minimal text-foreground font-medium tracking-wider">
-          NULLPUNKT ENERGY
+        <a href="/" className="flex items-center">
+          <img src={logoNullpunkt} alt="Nullpunkt Energy Inc." className="h-8 md:h-10" />
         </a>
         
         <div className="hidden md:flex items-center space-x-12">
