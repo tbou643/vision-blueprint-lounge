@@ -1,14 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
-import projectSolar1 from "@/assets/project-solar-1.jpg";
-import projectSolar2 from "@/assets/project-solar-2.jpg";
-import projectHeatpump from "@/assets/project-heatpump.jpg";
+import { supabase } from "@/integrations/supabase/client";
+
+// Fallback images
+import projectSolar1Fallback from "@/assets/project-solar-1.jpg";
+import projectSolar2Fallback from "@/assets/project-solar-2.jpg";
+import projectHeatpumpFallback from "@/assets/project-heatpump.jpg";
+
+interface Project {
+  imageId: string;
+  fallback: string;
+  title: string;
+  location: string;
+  category: string;
+  description: string;
+  specs: string;
+  roi: string;
+}
 
 const Work = () => {
   const [activeCategory, setActiveCategory] = useState("ALL");
-  const projects = [
+  const [storageImages, setStorageImages] = useState<Record<string, string>>({});
+
+  const projects: Project[] = [
     {
-      image: projectSolar1,
+      imageId: "project-solar-1",
+      fallback: projectSolar1Fallback,
       title: "RESIDENTIAL SOLAR SYSTEM",
       location: "CALGARY NW, 2024",
       category: "RESIDENTIAL",
@@ -17,7 +34,8 @@ const Work = () => {
       roi: "6.2 Year ROI"
     },
     {
-      image: projectSolar2,
+      imageId: "project-solar-2",
+      fallback: projectSolar2Fallback,
       title: "COMMERCIAL INSTALLATION",
       location: "SOUTHERN ALBERTA, 2024",
       category: "COMMERCIAL",
@@ -26,7 +44,8 @@ const Work = () => {
       roi: "5.8 Year ROI"
     },
     {
-      image: projectHeatpump,
+      imageId: "project-heatpump",
+      fallback: projectHeatpumpFallback,
       title: "INTEGRATED HEAT PUMP",
       location: "CALGARY SW, 2024",
       category: "HEAT PUMP",
@@ -35,7 +54,8 @@ const Work = () => {
       roi: "Zero Gas Bills"
     },
     {
-      image: projectSolar1,
+      imageId: "project-solar-1",
+      fallback: projectSolar1Fallback,
       title: "SUBURBAN RESIDENCE",
       location: "AIRDRIE, 2024",
       category: "RESIDENTIAL",
@@ -44,7 +64,8 @@ const Work = () => {
       roi: "7.1 Year ROI"
     },
     {
-      image: projectSolar2,
+      imageId: "project-solar-2",
+      fallback: projectSolar2Fallback,
       title: "WAREHOUSE COMPLEX",
       location: "CALGARY SE, 2023",
       category: "COMMERCIAL",
@@ -53,7 +74,8 @@ const Work = () => {
       roi: "5.2 Year ROI"
     },
     {
-      image: projectHeatpump,
+      imageId: "project-heatpump",
+      fallback: projectHeatpumpFallback,
       title: "NET-ZERO HOME",
       location: "OKOTOKS, 2024",
       category: "HEAT PUMP",
@@ -62,6 +84,36 @@ const Work = () => {
       roi: "Net-Zero"
     }
   ];
+
+  useEffect(() => {
+    const loadStorageImages = async () => {
+      const imageIds = ["project-solar-1", "project-solar-2", "project-heatpump"];
+      const loadedImages: Record<string, string> = {};
+
+      for (const id of imageIds) {
+        const { data } = supabase.storage
+          .from("project-images")
+          .getPublicUrl(`${id}.jpg`);
+
+        try {
+          const response = await fetch(data.publicUrl, { method: "HEAD" });
+          if (response.ok) {
+            loadedImages[id] = data.publicUrl;
+          }
+        } catch {
+          // Image doesn't exist in storage
+        }
+      }
+
+      setStorageImages(loadedImages);
+    };
+
+    loadStorageImages();
+  }, []);
+
+  const getImageUrl = (project: Project) => {
+    return storageImages[project.imageId] || project.fallback;
+  };
 
   const categories = ["ALL", "RESIDENTIAL", "COMMERCIAL", "HEAT PUMP"];
 
@@ -127,7 +179,7 @@ const Work = () => {
                 <div key={index} className="group cursor-pointer">
                   <div className="relative overflow-hidden mb-8">
                     <img 
-                      src={project.image} 
+                      src={getImageUrl(project)} 
                       alt={project.title}
                       className="w-full h-[60vh] object-cover transition-transform duration-700 group-hover:scale-105"
                     />
