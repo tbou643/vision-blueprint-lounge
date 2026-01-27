@@ -1,4 +1,5 @@
 import heroImage from "@/assets/hero-header.png";
+import logoWhite from "@/assets/logo-white.png";
 
 const Hero = () => {
   return (
@@ -14,14 +15,12 @@ const Hero = () => {
       
       {/* Content */}
       <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
-        <p className="text-lg md:text-xl text-white/80 font-light tracking-widest mb-6 reveal">
-          GERMAN PRECISION — ZERO EMISSIONS
-        </p>
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-light text-white text-architectural mb-8 reveal">
-          NULLPUNKT
-          <br />
-          <span className="text-4xl md:text-5xl lg:text-6xl">ENERGY</span>
-        </h1>
+        {/* Logo */}
+        <img 
+          src={logoWhite} 
+          alt="Nullpunkt Solar Energy Inc. - German Precision - Zero Emissions" 
+          className="w-full max-w-2xl lg:max-w-4xl mx-auto mb-10 reveal"
+        />
         <p className="text-xl md:text-2xl text-white/80 font-light tracking-wide max-w-3xl mx-auto reveal-delayed">
           Premium solar systems and heat pumps built to German standards. 
           Your trusted partner for sustainable energy in Southern Alberta.
