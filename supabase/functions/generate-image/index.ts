@@ -11,6 +11,14 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // Lightweight health check (no AI call / no credits)
+  if (req.method === "GET") {
+    return new Response(
+      JSON.stringify({ ok: true, message: "generate-image online" }),
+      { headers: { ...corsHeaders, "Content-Type": "application/json" } },
+    );
+  }
+
   try {
     const { prompt, aspectRatio } = await req.json();
     

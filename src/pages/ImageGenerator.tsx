@@ -35,12 +35,55 @@ const ImageGenerator = () => {
     }
   ]);
 
+  const functionUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/generate-image`;
+  const anonKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+
+  const pingFunction = async () => {
+    try {
+      const resp = await fetch(functionUrl, {
+        method: "GET",
+        headers: {
+          // Provide keys explicitly for maximum compatibility across environments
+          Authorization: `Bearer ${anonKey}`,
+          apikey: anonKey,
+        },
+      });
+
+      // Consume body (avoids resource leak warnings)
+      const text = await resp.text();
+      console.log("Ping response:", resp.status, text);
+
+      if (!resp.ok) {
+        throw new Error(`Ping failed (${resp.status})`);
+      }
+      return true;
+    } catch (e) {
+      console.error("Ping failed:", e);
+      toast({
+        title: "Keine Verbindung zur Backend-Funktion",
+        description:
+          "Der Browser kann die Funktion nicht erreichen (Netzwerk/CORS/Blocker). Bitte AdBlock/Privacy-Extensions testweise deaktivieren und neu laden.",
+        variant: "destructive",
+      });
+      return false;
+    }
+  };
+
   const generateImage = async (index: number) => {
     console.log("Starting image generation for index:", index);
     
     setImages(prev => prev.map((img, i) => 
       i === index ? { ...img, loading: true } : img
     ));
+
+    // First: verify we can reach the function without triggering any AI call/credits
+    const ok = await pingFunction();
+    if (!ok) {
+      setImages(prev => prev.map((img, i) =>
+        i === index ? { ...img, loading: false } : img
+      ));
+      return;
+    }
 
     toast({
       title: "Generiere Bild...",
@@ -116,9 +159,14 @@ const ImageGenerator = () => {
               <p className="text-xl text-muted-foreground mb-8">
                 Generiere photorealistische Projektbilder mit AI
               </p>
-              <Button onClick={generateAllImages} size="lg">
-                Alle Bilder generieren
-              </Button>
+              <div className="flex flex-wrap gap-3">
+                <Button onClick={generateAllImages} size="lg">
+                  Alle Bilder generieren
+                </Button>
+                <Button onClick={pingFunction} size="lg" variant="outline">
+                  Verbindung testen
+                </Button>
+              </div>
             </div>
 
             <div className="grid gap-12">
