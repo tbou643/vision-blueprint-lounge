@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -7,13 +7,19 @@ import { useToast } from "@/hooks/use-toast";
 import { Upload, Check, Lock, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
+// Fallback images (same as used on the site)
+import projectSolar1Fallback from "@/assets/project-solar-1.jpg";
+import projectSolar2Fallback from "@/assets/project-solar-2.jpg";
+import projectHeatpumpFallback from "@/assets/project-heatpump.jpg";
+
 const ADMIN_PASSWORD = "admin123!";
 
 interface ProjectImage {
   id: string;
   name: string;
   description: string;
-  currentUrl: string | null;
+  fallback: string;
+  storageUrl: string | null;
 }
 
 const Admin = () => {
@@ -27,20 +33,23 @@ const Admin = () => {
     {
       id: "project-solar-1",
       name: "Solar Projekt 1",
-      description: "Residentielles Solarpanel-Projekt",
-      currentUrl: null,
+      description: "Residentielles Solarpanel-Projekt (Startseite + Work-Seite)",
+      fallback: projectSolar1Fallback,
+      storageUrl: null,
     },
     {
       id: "project-solar-2",
       name: "Solar Projekt 2", 
-      description: "Kommerzielles Solarpanel-Projekt",
-      currentUrl: null,
+      description: "Kommerzielles Solarpanel-Projekt (Startseite + Work-Seite)",
+      fallback: projectSolar2Fallback,
+      storageUrl: null,
     },
     {
       id: "project-heatpump",
       name: "Wärmepumpe",
-      description: "Wärmepumpen-Installation",
-      currentUrl: null,
+      description: "Wärmepumpen-Installation (Startseite + Work-Seite)",
+      fallback: projectHeatpumpFallback,
+      storageUrl: null,
     },
   ]);
 
@@ -49,11 +58,17 @@ const Admin = () => {
     if (password === ADMIN_PASSWORD) {
       setIsAuthenticated(true);
       toast({ title: "Erfolgreich angemeldet" });
-      loadExistingImages();
     } else {
       toast({ title: "Falsches Passwort", variant: "destructive" });
     }
   };
+
+  // Load storage images when authenticated
+  useEffect(() => {
+    if (isAuthenticated) {
+      loadExistingImages();
+    }
+  }, [isAuthenticated]);
 
   const loadExistingImages = async () => {
     const updatedImages = await Promise.all(
@@ -62,16 +77,16 @@ const Admin = () => {
           .from("project-images")
           .getPublicUrl(`${img.id}.jpg`);
 
-        // Check if image exists by trying to fetch it
+        // Check if image exists in storage
         try {
           const response = await fetch(data.publicUrl, { method: "HEAD" });
           if (response.ok) {
-            return { ...img, currentUrl: data.publicUrl };
+            return { ...img, storageUrl: data.publicUrl + "?t=" + Date.now() };
           }
         } catch {
-          // Image doesn't exist
+          // Image doesn't exist in storage
         }
-        return img;
+        return { ...img, storageUrl: null };
       })
     );
     setImages(updatedImages);
@@ -94,18 +109,18 @@ const Admin = () => {
 
       if (error) throw error;
 
-      // Get the public URL
+      // Get the public URL with cache buster
       const { data } = supabase.storage
         .from("project-images")
         .getPublicUrl(`${imageId}.jpg`);
 
       setImages((prev) =>
         prev.map((img) =>
-          img.id === imageId ? { ...img, currentUrl: data.publicUrl + "?t=" + Date.now() } : img
+          img.id === imageId ? { ...img, storageUrl: data.publicUrl + "?t=" + Date.now() } : img
         )
       );
 
-      toast({ title: "Bild hochgeladen!", description: `${imageId} wurde aktualisiert.` });
+      toast({ title: "Bild hochgeladen!", description: `${imageId} wurde aktualisiert. Lade die Seite neu um die Änderungen zu sehen.` });
     } catch (error) {
       console.error("Upload error:", error);
       toast({
@@ -120,6 +135,11 @@ const Admin = () => {
 
   const triggerFileInput = (imageId: string) => {
     fileInputRefs.current[imageId]?.click();
+  };
+
+  // Get display image: storage URL if exists, otherwise fallback
+  const getDisplayImage = (image: ProjectImage) => {
+    return image.storageUrl || image.fallback;
   };
 
   if (!isAuthenticated) {
@@ -169,19 +189,13 @@ const Admin = () => {
             <Card key={image.id}>
               <CardContent className="p-6">
                 <div className="flex flex-col md:flex-row gap-6">
-                  {/* Preview */}
+                  {/* Preview - Always shows current image (storage or fallback) */}
                   <div className="w-full md:w-64 h-40 bg-muted rounded-lg overflow-hidden flex-shrink-0">
-                    {image.currentUrl ? (
-                      <img
-                        src={image.currentUrl}
-                        alt={image.name}
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                        Kein Bild
-                      </div>
-                    )}
+                    <img
+                      src={getDisplayImage(image)}
+                      alt={image.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
 
                   {/* Info & Actions */}
@@ -190,6 +204,12 @@ const Admin = () => {
                       <h3 className="text-lg font-medium">{image.name}</h3>
                       <p className="text-sm text-muted-foreground mb-2">{image.description}</p>
                       <p className="text-xs text-muted-foreground font-mono">{image.id}.jpg</p>
+                      {image.storageUrl && (
+                        <p className="text-xs text-primary mt-1">✓ Eigenes Bild hochgeladen</p>
+                      )}
+                      {!image.storageUrl && (
+                        <p className="text-xs text-muted-foreground mt-1">Zeigt Fallback-Bild</p>
+                      )}
                     </div>
 
                     <div className="flex items-center gap-3 mt-4">
@@ -212,14 +232,14 @@ const Admin = () => {
                         ) : (
                           <>
                             <Upload className="w-4 h-4 mr-2" />
-                            {image.currentUrl ? "Ersetzen" : "Hochladen"}
+                            {image.storageUrl ? "Ersetzen" : "Hochladen"}
                           </>
                         )}
                       </Button>
-                      {image.currentUrl && (
-                        <span className="text-sm text-green-600 flex items-center">
+                      {image.storageUrl && (
+                        <span className="text-sm flex items-center text-primary">
                           <Check className="w-4 h-4 mr-1" />
-                          Vorhanden
+                          Eigenes Bild
                         </span>
                       )}
                     </div>
@@ -232,8 +252,8 @@ const Admin = () => {
 
         <div className="mt-8 p-4 bg-muted rounded-lg">
           <p className="text-sm text-muted-foreground">
-            <strong>Hinweis:</strong> Hochgeladene Bilder werden automatisch in der Portfolio-Sektion angezeigt, 
-            sobald du die Seite aktualisierst.
+            <strong>Hinweis:</strong> Die Bilder werden auf der Startseite (Portfolio-Sektion) und auf der Work-Seite angezeigt. 
+            Nach dem Hochladen einfach die Seite neu laden, um die Änderungen zu sehen.
           </p>
         </div>
       </div>
