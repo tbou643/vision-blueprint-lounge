@@ -17,28 +17,10 @@ const Hero = () => {
         <p className="text-lg md:text-xl text-white/80 font-light tracking-widest mb-6 reveal">
           GERMAN PRECISION — ZERO EMISSIONS
         </p>
-        
-        {/* Crosshair Symbol */}
-        <div className="flex items-center justify-center mb-6 reveal">
-          <svg 
-            viewBox="0 0 80 80" 
-            className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 text-white"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            {/* Outer circle */}
-            <circle cx="40" cy="40" r="30" />
-            {/* Crosshair lines */}
-            <line x1="40" y1="5" x2="40" y2="75" />
-            <line x1="5" y1="40" x2="75" y2="40" />
-          </svg>
-        </div>
-        
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-light text-white text-architectural mb-8 reveal">
           NULLPUNKT
           <br />
-          <span className="text-4xl md:text-5xl lg:text-6xl">ENERGY INC.</span>
+          <span className="text-4xl md:text-5xl lg:text-6xl">ENERGY</span>
         </h1>
         <p className="text-xl md:text-2xl text-white/80 font-light tracking-wide max-w-3xl mx-auto reveal-delayed">
           Premium solar systems and heat pumps built to German standards. 
