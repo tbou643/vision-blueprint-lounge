@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2, Download } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 interface GeneratedImage {
   name: string;
@@ -12,6 +13,7 @@ interface GeneratedImage {
 }
 
 const ImageGenerator = () => {
+  const { toast } = useToast();
   const [images, setImages] = useState<GeneratedImage[]>([
     {
       name: "project-solar-1",
@@ -34,11 +36,20 @@ const ImageGenerator = () => {
   ]);
 
   const generateImage = async (index: number) => {
+    console.log("Starting image generation for index:", index);
+    
     setImages(prev => prev.map((img, i) => 
       i === index ? { ...img, loading: true } : img
     ));
 
+    toast({
+      title: "Generiere Bild...",
+      description: `${images[index].name} wird mit Nano Banana erstellt.`,
+    });
+
     try {
+      console.log("Calling edge function with prompt:", images[index].prompt);
+      
       const { data, error } = await supabase.functions.invoke('generate-image', {
         body: { 
           prompt: images[index].prompt,
@@ -46,16 +57,33 @@ const ImageGenerator = () => {
         }
       });
 
+      console.log("Edge function response:", { data, error });
+
       if (error) throw error;
+
+      if (!data?.imageUrl) {
+        throw new Error("Kein Bild in der Antwort erhalten");
+      }
 
       setImages(prev => prev.map((img, i) => 
         i === index ? { ...img, imageUrl: data.imageUrl, loading: false } : img
       ));
+
+      toast({
+        title: "Bild generiert!",
+        description: `${images[index].name} wurde erfolgreich erstellt.`,
+      });
     } catch (error) {
       console.error("Error generating image:", error);
       setImages(prev => prev.map((img, i) => 
         i === index ? { ...img, loading: false } : img
       ));
+      
+      toast({
+        title: "Fehler",
+        description: error instanceof Error ? error.message : "Bild konnte nicht generiert werden.",
+        variant: "destructive",
+      });
     }
   };
 
