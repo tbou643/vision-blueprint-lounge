@@ -62,9 +62,9 @@ const Portfolio = () => {
               </div>
               <div className="space-y-4">
                 {[
-                  "Full yield simulation against 20 years of Calgary weather data",
+                  "Full yield simulation against long-term Calgary irradiance data (NRCan)",
                   "10 kWp PV + 10 kWh storage + HEMS reference systems from CAD $26,000",
-                  "Solar Club™ retailer modelling — up to ~35 ¢/kWh export credit",
+                  "Solar Club retailer modelling — up to ~35 ¢/kWh export credit (UTILITYnet program)",
                   "CEIP option: 0% PACE financing repaid through property tax",
                   "Fixed-price proposal — not a back-of-envelope quote",
                 ].map((line) => (
