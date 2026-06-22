@@ -9,16 +9,18 @@ const About = () => {
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-architectural mb-8">
                 A new name in Calgary.
                 <br />
-                <span className="text-muted-foreground">Twenty years of practice.</span>
+                <span className="text-muted-foreground">A decade of practice.</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                <span className="text-foreground font-medium">NullPunkt Solar Inc.</span> is the Canadian
-                spin-off of a European solar engineering company that's been designing and installing
-                integrated PV and heat pump systems since the early 2000s.
+                <span className="text-foreground font-medium">NullPunkt Solar Inc.</span> is the
+                wholly-owned Canadian subsidiary of <span className="text-foreground font-medium">SMB
+                Solartechnik GmbH</span> — a profitable German solar company with annual revenue
+                exceeding EUR 700,000 and hundreds of completed integrated installations.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We brought the engineering, the supplier relationships and the playbook to Calgary —
-                so the first home we install here isn't really the first one we've installed at all.
+                We're bringing the engineering, the supplier network and the playbook to Alberta —
+                so the first integrated system we commission in Calgary builds on years of refined
+                practice in the world's most demanding solar market.
               </p>
             </div>
 
@@ -28,15 +30,15 @@ const About = () => {
                 {[
                   {
                     title: "Zero guesswork",
-                    body: "Every proposal includes the full simulation, the bill of materials and the payback math — before you sign.",
+                    body: "Every proposal includes the full yield simulation, the bill of materials and the payback math — before you sign.",
                   },
                   {
                     title: "Zero handoffs",
-                    body: "One team designs the PV, sizes the battery, picks the heat pump and commissions the lot. No subcontractor chains.",
+                    body: "One team designs the PV, sizes the battery, configures the HEMS and commissions the lot. No subcontractor chains.",
                   },
                   {
                     title: "Zero surprises",
-                    body: "Fixed-price quotes, performance-guaranteed hardware, and a service contract that's still good twenty winters from now.",
+                    body: "Fixed-price quotes, climate-engineered hardware and warranties measured in decades — backed by a parent company built to last.",
                   },
                 ].map((row) => (
                   <div key={row.title} className="flex gap-6 p-6 rounded-xl border border-border bg-background/40">
@@ -54,10 +56,10 @@ const About = () => {
           {/* Stat strip */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border mt-20 rounded-xl overflow-hidden">
             {[
-              ["European heritage", "Since 2005"],
-              ["Engineers on staff", "PV + HVAC"],
-              ["Founding Calgary year", "2026"],
-              ["Service radius", "Southern AB"],
+              ["Parent company", "SMB Solartechnik"],
+              ["Integrated installs", "Hundreds, DE"],
+              ["Calgary launch", "Summer 2026"],
+              ["Calgary sunshine", "2,396 hrs/yr"],
             ].map(([k, v]) => (
               <div key={k} className="bg-card p-8">
                 <p className="text-minimal text-muted-foreground mb-2">{k}</p>
