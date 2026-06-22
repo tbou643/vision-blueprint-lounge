@@ -64,22 +64,25 @@ const About = () => {
                 <img
                   src={founderImage.url}
                   alt="Tim Brunkel, Founder & CEO of NullPunkt Solar Inc."
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover opacity-70 saturate-75 transition-opacity duration-500 hover:opacity-95"
                   loading="lazy"
                 />
+                <div className="absolute inset-0 bg-gradient-to-tr from-background/60 via-background/10 to-transparent pointer-events-none" />
               </div>
             </div>
             <div className="lg:col-span-7">
               <p className="text-minimal text-lime mb-4">Meet the founder</p>
               <h3 className="text-3xl md:text-4xl font-light text-architectural mb-6">
-                Tim Brunkel — the person behind every Calgary install.
+                Tim Brunkel — recognised PV authority in Germany, now building in Calgary.
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Tim founded SMB Solartechnik in Germany in 2024 and scaled it past EUR 700,000 in annual
-                revenue, personally overseeing several hundred integrated PV installations across
-                residential, commercial and agricultural sites. Before solar he spent 13+ years
-                leading IT innovation and product programs — most recently as Head of IT Innovation
-                Solution Design at ZF Friedrichshafen AG.
+                Tim founded SMB Solartechnik in Germany in 2024 and scaled the parent company past
+                <span className="text-foreground font-medium"> CAD $1,000,000 in annual sales</span>,
+                personally overseeing several hundred integrated PV installations across residential,
+                commercial and agricultural sites. Within Germany's hyper-competitive solar market he's
+                regarded as a go-to authority on fully integrated PV + battery + HEMS design. Before
+                solar he spent 13+ years leading IT innovation and product programs — most recently as
+                Head of IT Innovation Solution Design at ZF Friedrichshafen AG.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 He's relocating to Calgary as principal directing mind of NullPunkt Solar Inc., with
