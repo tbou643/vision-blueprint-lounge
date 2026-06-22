@@ -7,10 +7,14 @@ interface Baseline {
   recommendedKwp: number;
   annualProduction: number;
   annualSavings: number;
+  annualSavingsStandard: number;
+  annualSavingsSolarClub: number;
+  useSolarClub: boolean;
   totalCost: number;
   payback: number;
   co2Tonnes: number;
   annualConsumption: number;
+  ceip: { annualPayment: number; netYear1: number; years: number };
 }
 
 interface Analysis {
@@ -29,6 +33,8 @@ const SolarCalculator = () => {
   const [roofSize, setRoofSize] = useState(80);
   const [hasEV, setHasEV] = useState(false);
   const [hasBattery, setHasBattery] = useState(true);
+  const [useSolarClub, setUseSolarClub] = useState(true);
+  const [useCEIP, setUseCEIP] = useState(false);
   const [postalCode, setPostalCode] = useState("");
 
   const [loading, setLoading] = useState(false);
@@ -40,7 +46,7 @@ const SolarCalculator = () => {
     setAnalysis(null);
     try {
       const { data, error } = await supabase.functions.invoke("solar-analysis", {
-        body: { monthlyBill, propertyType, roofOrientation, roofSize, hasEV, hasBattery, postalCode },
+        body: { monthlyBill, propertyType, roofOrientation, roofSize, hasEV, hasBattery, postalCode, useSolarClub, useCEIP },
       });
       if (error) throw error;
       setBaseline(data.baseline);
@@ -132,7 +138,8 @@ const SolarCalculator = () => {
             />
           </div>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="space-y-3 pt-2 border-t border-border">
+            <p className={label}>System options</p>
             <label className="flex items-center gap-2 text-sm cursor-pointer">
               <input type="checkbox" checked={hasBattery} onChange={(e) => setHasBattery(e.target.checked)} className="accent-lime" />
               Include battery storage
@@ -140,6 +147,38 @@ const SolarCalculator = () => {
             <label className="flex items-center gap-2 text-sm cursor-pointer">
               <input type="checkbox" checked={hasEV} onChange={(e) => setHasEV(e.target.checked)} className="accent-lime" />
               EV in household
+            </label>
+          </div>
+
+          <div className="space-y-3 pt-2 border-t border-border">
+            <p className={label}>Programs to model</p>
+            <label className="flex items-start gap-2 text-sm cursor-pointer">
+              <input
+                type="checkbox"
+                checked={useSolarClub}
+                onChange={(e) => setUseSolarClub(e.target.checked)}
+                className="accent-lime mt-1"
+              />
+              <span>
+                <span className="text-foreground">Solar Club™ retailer rate</span>
+                <span className="block text-xs text-muted-foreground">
+                  UTILITYnet program — ~35 ¢/kWh export, ~8.4 ¢/kWh consumption
+                </span>
+              </span>
+            </label>
+            <label className="flex items-start gap-2 text-sm cursor-pointer">
+              <input
+                type="checkbox"
+                checked={useCEIP}
+                onChange={(e) => setUseCEIP(e.target.checked)}
+                className="accent-lime mt-1"
+              />
+              <span>
+                <span className="text-foreground">CEIP (0% PACE financing)</span>
+                <span className="block text-xs text-muted-foreground">
+                  $0 upfront, 20-year property-tax repayment in participating municipalities
+                </span>
+              </span>
             </label>
           </div>
 
@@ -159,8 +198,8 @@ const SolarCalculator = () => {
             <div className="text-5xl mb-4 opacity-30">☀</div>
             <h4 className="text-xl font-light mb-2">Your results will appear here</h4>
             <p className="text-muted-foreground text-sm max-w-md mx-auto">
-              We use Calgary's actual irradiance (1,292 kWh/kWp), Alberta's all-in rate, and Micro-Generation export
-              credits — then layer AI commentary on top.
+              We model Calgary's real irradiance (1,292 kWh/kWp), both standard and Solar Club retailer scenarios,
+              and optional CEIP financing — then layer expert AI commentary on top.
             </p>
           </div>
         )}
@@ -188,11 +227,73 @@ const SolarCalculator = () => {
               <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                 <Stat label="System size" value={`${baseline.recommendedKwp} kWp`} />
                 <Stat label="Annual production" value={`${baseline.annualProduction.toLocaleString()} kWh`} />
-                <Stat label="Annual savings" value={`$${baseline.annualSavings.toLocaleString()}`} accent />
+                <Stat
+                  label={baseline.useSolarClub ? "Annual savings (Solar Club)" : "Annual savings"}
+                  value={`$${baseline.annualSavings.toLocaleString()}`}
+                  accent
+                />
                 <Stat label="Turn-key cost" value={`$${baseline.totalCost.toLocaleString()}`} />
                 <Stat label="Simple payback" value={`${baseline.payback} yrs`} />
                 <Stat label="CO₂ avoided" value={`${baseline.co2Tonnes} t/yr`} />
               </div>
+
+              {/* Retailer comparison */}
+              <div className="mt-8 pt-6 border-t border-border">
+                <p className="text-minimal text-muted-foreground mb-4">Retailer scenario comparison</p>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  <div
+                    className={`p-4 rounded-lg border ${
+                      !baseline.useSolarClub ? "border-lime/60 bg-lime/5" : "border-border"
+                    }`}
+                  >
+                    <p className="text-xs text-muted-foreground mb-1">Standard retailer</p>
+                    <p className="text-xl font-light">${baseline.annualSavingsStandard.toLocaleString()}/yr</p>
+                    <p className="text-[11px] text-muted-foreground mt-1">~16.5 ¢ consume · ~8.5 ¢ export</p>
+                  </div>
+                  <div
+                    className={`p-4 rounded-lg border ${
+                      baseline.useSolarClub ? "border-lime/60 bg-lime/5" : "border-border"
+                    }`}
+                  >
+                    <p className="text-xs text-lime mb-1">Solar Club™ retailer</p>
+                    <p className="text-xl font-light">${baseline.annualSavingsSolarClub.toLocaleString()}/yr</p>
+                    <p className="text-[11px] text-muted-foreground mt-1">~8.4 ¢ consume · ~35 ¢ export</p>
+                  </div>
+                </div>
+                <p className="text-[11px] text-muted-foreground/70 mt-3">
+                  Solar Club rates verified May 2026 (UTILITYnet). Best fit depends on self-consumption ratio — we
+                  recommend the higher-savings scenario by default.
+                </p>
+              </div>
+
+              {/* CEIP financing */}
+              {useCEIP && (
+                <div className="mt-6 p-5 rounded-lg border border-lime/30 bg-lime/5">
+                  <p className="text-minimal text-lime mb-2">With CEIP 0% PACE financing</p>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <p className="text-xs text-muted-foreground">Upfront cost</p>
+                      <p className="text-xl font-light">$0</p>
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground">Net year-1 cash flow</p>
+                      <p
+                        className={`text-xl font-light ${
+                          baseline.ceip.netYear1 >= 0 ? "text-lime" : "text-foreground"
+                        }`}
+                      >
+                        {baseline.ceip.netYear1 >= 0 ? "+" : ""}
+                        ${baseline.ceip.netYear1.toLocaleString()}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-muted-foreground mt-3">
+                    ${baseline.ceip.annualPayment.toLocaleString()}/yr instalment over {baseline.ceip.years} years,
+                    added to your property-tax bill in participating municipalities. Available to qualifying
+                    Calgary / Edmonton / Lethbridge / Banff and 20+ other Alberta municipalities.
+                  </p>
+                </div>
+              )}
             </div>
 
             {analysis && (
@@ -251,7 +352,7 @@ const SolarCalculator = () => {
             <div className="card-raised p-8">
               <p className="text-minimal text-lime mb-3">Lock in your founding slot</p>
               <h4 className="text-xl font-light mb-5">
-                Only ~25 founding Calgary installations for Summer 2026.
+                We are taking on only ~25 founding Calgary installations for Summer 2026.
               </h4>
               <WaitlistForm
                 source="calculator"
