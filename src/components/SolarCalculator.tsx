@@ -202,7 +202,7 @@ const SolarCalculator = () => {
             <h4 className="text-xl font-light mb-2">Your results will appear here</h4>
             <p className="text-muted-foreground text-sm max-w-md mx-auto">
               We model Calgary's real irradiance (1,292 kWh/kWp), both standard and Solar Club retailer scenarios,
-              and optional CEIP financing — then layer expert AI commentary on top.
+              and optional CEIP financing — then layer expert engineering commentary on top.
             </p>
           </div>
         )}
