@@ -80,8 +80,10 @@ const About = () => {
                 <img
                   src={founderImage.url}
                   alt="Tim Brunkel — Founder & CEO of NullPunkt Solar Inc."
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover opacity-75 saturate-75 transition-opacity duration-500 hover:opacity-95"
                 />
+                <div className="absolute inset-0 bg-gradient-to-tr from-background/70 via-background/15 to-transparent pointer-events-none" />
+                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background/80 to-transparent pointer-events-none" />
               </div>
               <p className="text-xs text-muted-foreground mt-3">
                 Tim Brunkel on a commissioned SMB Solartechnik commercial rooftop, Germany.
@@ -93,15 +95,19 @@ const About = () => {
               <h2 className="text-4xl md:text-5xl font-light text-architectural mb-6">
                 Tim Brunkel.
                 <br />
-                <span className="text-muted-foreground">Builder. Engineer. Calgary-bound.</span>
+                <span className="text-muted-foreground">Recognised PV authority. Calgary-bound.</span>
               </h2>
 
               <div className="space-y-5 text-muted-foreground leading-relaxed">
                 <p>
                   Hi — I'm Tim. I founded <span className="text-foreground">SMB Solartechnik GmbH</span>{" "}
-                  in 2024, grew it past EUR 700,000 in annual revenue in Germany's competitive solar
-                  market, and personally oversaw several hundred integrated photovoltaic
-                  installations across residential, commercial and agricultural projects.
+                  in 2024 and grew it past{" "}
+                  <span className="text-foreground font-medium">CAD $1,000,000 in annual sales</span>{" "}
+                  in Germany's hyper-competitive solar market, personally overseeing several hundred
+                  integrated photovoltaic installations across residential, commercial and
+                  agricultural projects. Within the German integrated-PV scene I'm regarded as one of
+                  the go-to authorities on combined PV + battery + HEMS design — it's exactly that
+                  playbook I'm bringing to Calgary.
                 </p>
                 <p>
                   Before solar, I spent 13+ years in senior technology roles — most recently as
