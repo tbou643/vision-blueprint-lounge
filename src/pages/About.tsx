@@ -55,9 +55,9 @@ const About = () => {
               </h2>
               <div className="space-y-5 text-muted-foreground leading-relaxed">
                 <p>
-                  Most installers sell what their supplier pushes. We design around your
-                  bills, your roof, and your appetite for grid independence — and only then
-                  pick the modules, the inverter, the battery and the heat pump.
+                  Most installers sell what their supplier pushes. We design around your bills,
+                  your roof and your appetite for grid independence — then pick the modules, the
+                  inverter, the battery and the energy-management controller.
                 </p>
                 <p>
                   Engineering, procurement, installation and commissioning all sit under
