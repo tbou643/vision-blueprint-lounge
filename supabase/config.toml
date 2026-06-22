@@ -2,3 +2,5 @@ project_id = "hesgpwjpxarceynzjgpc"
 
 [functions.generate-image]
 verify_jwt = false
+[functions.process-email-queue]
+verify_jwt = true
