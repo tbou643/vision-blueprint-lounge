@@ -74,31 +74,39 @@ const About = () => {
       {/* Founder section */}
       <section className="py-28">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-5">
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-border bg-card">
+          <div className="max-w-4xl mx-auto">
+            {/* Subtle inline portrait */}
+            <div className="flex items-center gap-5 mb-10">
+              <div
+                className="relative w-20 h-20 rounded-full overflow-hidden border border-border bg-card shrink-0"
+                style={{
+                  WebkitMaskImage:
+                    "radial-gradient(circle at center, black 55%, transparent 100%)",
+                  maskImage:
+                    "radial-gradient(circle at center, black 55%, transparent 100%)",
+                }}
+              >
                 <img
                   src={founderImage.url}
                   alt="Tim Brunkel — Founder & CEO of NullPunkt Solar Inc."
-                  className="w-full h-full object-cover opacity-75 saturate-75 transition-opacity duration-500 hover:opacity-95"
+                  className="w-full h-full object-cover opacity-80 saturate-75"
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-tr from-background/70 via-background/15 to-transparent pointer-events-none" />
-                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background/80 to-transparent pointer-events-none" />
               </div>
-              <p className="text-xs text-muted-foreground mt-3">
-                Tim Brunkel on a commissioned SMB Solartechnik commercial rooftop, Germany.
-              </p>
+              <div>
+                <p className="text-minimal text-lime">Meet the founder</p>
+                <p className="text-sm text-muted-foreground mt-1">Tim Brunkel · NullPunkt Solar Inc.</p>
+              </div>
             </div>
 
-            <div className="lg:col-span-7">
-              <p className="text-minimal text-lime mb-4">Meet the founder</p>
-              <h2 className="text-4xl md:text-5xl font-light text-architectural mb-6">
-                Tim Brunkel.
-                <br />
-                <span className="text-muted-foreground">Recognised PV authority. Calgary-bound.</span>
-              </h2>
+            <h2 className="text-4xl md:text-5xl font-light text-architectural mb-8">
+              Tim Brunkel.
+              <br />
+              <span className="text-muted-foreground">Recognised PV authority. Calgary-bound.</span>
+            </h2>
 
-              <div className="space-y-5 text-muted-foreground leading-relaxed">
+            <div className="grid lg:grid-cols-12 gap-12 items-start">
+              <div className="lg:col-span-8 space-y-5 text-muted-foreground leading-relaxed">
                 <p>
                   Hi — I'm Tim. I founded <span className="text-foreground">SMB Solartechnik GmbH</span>{" "}
                   in 2024 and grew it past{" "}
@@ -132,17 +140,38 @@ const About = () => {
                 </p>
               </div>
 
-              <div className="grid grid-cols-3 gap-px bg-border rounded-xl overflow-hidden mt-10">
-                {[
-                  ["13+ yrs", "tech / product leadership"],
-                  ["100s", "PV installs overseen"],
-                  ["C2", "English (CELPIP 11)"],
-                ].map(([n, l]) => (
-                  <div key={l} className="bg-card p-5 text-center">
-                    <p className="text-2xl font-semibold text-lime">{n}</p>
-                    <p className="text-[11px] tracking-wider uppercase text-muted-foreground mt-1">{l}</p>
-                  </div>
-                ))}
+              {/* Tall, masked portrait blending into bg */}
+              <div className="lg:col-span-4">
+                <div
+                  className="relative aspect-[3/4] w-full"
+                  style={{
+                    WebkitMaskImage:
+                      "linear-gradient(to bottom, black 0%, black 55%, transparent 100%), linear-gradient(to right, transparent 0%, black 25%, black 100%)",
+                    WebkitMaskComposite: "source-in",
+                    maskImage:
+                      "linear-gradient(to bottom, black 0%, black 55%, transparent 100%), linear-gradient(to right, transparent 0%, black 25%, black 100%)",
+                    maskComposite: "intersect",
+                  }}
+                >
+                  <img
+                    src={founderImage.url}
+                    alt=""
+                    aria-hidden
+                    className="w-full h-full object-cover opacity-60 saturate-50"
+                  />
+                </div>
+                <div className="grid grid-cols-3 gap-px bg-border rounded-xl overflow-hidden mt-6">
+                  {[
+                    ["13+ yrs", "tech / product"],
+                    ["100s", "PV installs"],
+                    ["C2", "English"],
+                  ].map(([n, l]) => (
+                    <div key={l} className="bg-card p-4 text-center">
+                      <p className="text-lg font-semibold text-lime">{n}</p>
+                      <p className="text-[10px] tracking-wider uppercase text-muted-foreground mt-1">{l}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
