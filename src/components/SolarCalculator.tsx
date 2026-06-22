@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import WaitlistForm from "./WaitlistForm";
@@ -207,21 +207,7 @@ const SolarCalculator = () => {
           </div>
         )}
 
-        {loading && (
-          <div className="card-raised p-10">
-            <div className="animate-pulse space-y-4">
-              <div className="h-4 bg-muted rounded w-1/3" />
-              <div className="h-10 bg-muted rounded w-2/3" />
-              <div className="h-3 bg-muted rounded w-full" />
-              <div className="h-3 bg-muted rounded w-5/6" />
-              <div className="grid grid-cols-3 gap-3 pt-4">
-                <div className="h-20 bg-muted rounded" />
-                <div className="h-20 bg-muted rounded" />
-                <div className="h-20 bg-muted rounded" />
-              </div>
-            </div>
-          </div>
-        )}
+        {loading && <CalculatingState />}
 
         {baseline && !loading && (
           <>
@@ -400,5 +386,75 @@ const Stat = ({ label, value, accent }: { label: string; value: string; accent?:
     <p className={`text-2xl font-light ${accent ? "text-lime" : ""}`}>{value}</p>
   </div>
 );
+
+const calcSteps = [
+  "Pulling Calgary irradiance data (1,292 kWh/kWp)…",
+  "Sizing your array against roof + bill…",
+  "Modelling standard vs. Solar Club™ retailer rates…",
+  "Layering CEIP financing & federal incentives…",
+  "Stress-testing payback for hail, snow & chinooks…",
+  "Finalising engineering review…",
+];
+
+const CalculatingState = () => {
+  const [step, setStep] = useState(0);
+  const [pct, setPct] = useState(4);
+
+  useEffect(() => {
+    const stepTimer = setInterval(() => {
+      setStep((s) => (s + 1) % calcSteps.length);
+    }, 1600);
+    const pctTimer = setInterval(() => {
+      setPct((p) => (p >= 95 ? 95 : p + Math.max(1, Math.round((96 - p) / 12))));
+    }, 350);
+    return () => {
+      clearInterval(stepTimer);
+      clearInterval(pctTimer);
+    };
+  }, []);
+
+  return (
+    <div className="card-raised p-10">
+      <div className="flex flex-col items-center text-center">
+        {/* Hourglass */}
+        <div className="relative mb-6">
+          <div
+            className="text-6xl origin-center"
+            style={{ animation: "npFlip 2.4s ease-in-out infinite" }}
+            aria-hidden
+          >
+            ⏳
+          </div>
+          <span className="sr-only">Calculating…</span>
+        </div>
+
+        <p className="text-minimal text-lime mb-2">Crunching the numbers</p>
+        <h4 className="text-2xl font-light mb-2">Almost there — your roof is next.</h4>
+        <p className="text-sm text-muted-foreground mb-6 max-w-md min-h-[2.5rem]">
+          {calcSteps[step]}
+        </p>
+
+        {/* Progress bar */}
+        <div className="w-full max-w-md h-1.5 rounded-full bg-muted overflow-hidden mb-2">
+          <div
+            className="h-full bg-lime transition-all duration-300 ease-out"
+            style={{ width: `${pct}%` }}
+          />
+        </div>
+        <p className="text-[11px] text-muted-foreground/70">
+          Typically 8–15 seconds · German engineering doesn't rush.
+        </p>
+      </div>
+
+      <style>{`
+        @keyframes npFlip {
+          0%, 40%   { transform: rotate(0deg); }
+          50%, 90%  { transform: rotate(180deg); }
+          100%      { transform: rotate(360deg); }
+        }
+      `}</style>
+    </div>
+  );
+};
 
 export default SolarCalculator;
