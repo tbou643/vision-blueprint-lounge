@@ -23,20 +23,16 @@ const Contact = () => {
               <div className="space-y-6">
                 <div>
                   <p className="text-minimal text-muted-foreground mb-1">Email</p>
-                  <a href="mailto:info@nullpunkt.energy" className="text-xl hover:text-lime transition-colors">
-                    info@nullpunkt.energy
-                  </a>
-                </div>
-                <div>
-                  <p className="text-minimal text-muted-foreground mb-1">Phone</p>
-                  <a href="tel:+14035551234" className="text-xl hover:text-lime transition-colors">
-                    +1 (403) 555-1234
+                  <a href="mailto:hello@nullpunkt.ca" className="text-xl hover:text-lime transition-colors">
+                    hello@nullpunkt.ca
                   </a>
                 </div>
                 <div>
                   <p className="text-minimal text-muted-foreground mb-1">Office</p>
                   <address className="text-xl not-italic leading-relaxed">
                     NullPunkt Solar Inc.
+                    <br />
+                    #2005 – 10th Avenue SW
                     <br />
                     Calgary, Alberta — Canada
                   </address>
