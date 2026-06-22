@@ -1,3 +1,5 @@
+import founderImage from "@/assets/tim-brunkel.asset.json";
+
 const About = () => {
   return (
     <section id="about" className="relative py-32 bg-card">
@@ -18,9 +20,11 @@ const About = () => {
                 completed integrated installations.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We're bringing the engineering, the supplier network and the playbook to Alberta —
-                so the first integrated system we commission in Calgary builds on years of refined
-                practice in the world's most demanding solar market.
+                We bring the engineering playbook, the supplier network and the partner standards to
+                Alberta — and we only work with fully licensed, high-qualification trades on the
+                ground. Every installation is delivered together with a <span className="text-foreground">Red Seal
+                Master Electrician</span> partner so the first system we commission in Calgary is held to
+                the same standard as our 600th in Germany.
               </p>
             </div>
 
@@ -50,6 +54,39 @@ const About = () => {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+
+          {/* Founder snapshot */}
+          <div className="mt-24 grid lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-5">
+              <div className="relative aspect-square rounded-2xl overflow-hidden border border-border bg-background">
+                <img
+                  src={founderImage.url}
+                  alt="Tim Brunkel, Founder & CEO of NullPunkt Solar Inc."
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div className="lg:col-span-7">
+              <p className="text-minimal text-lime mb-4">Meet the founder</p>
+              <h3 className="text-3xl md:text-4xl font-light text-architectural mb-6">
+                Tim Brunkel — the person behind every Calgary install.
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Tim founded SMB Solartechnik in Germany in 2024 and scaled it past EUR 700,000 in annual
+                revenue, personally overseeing several hundred integrated PV installations across
+                residential, commercial and agricultural sites. Before solar he spent 13+ years
+                leading IT innovation and product programs — most recently as Head of IT Innovation
+                Solution Design at ZF Friedrichshafen AG.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                He's relocating to Calgary as principal directing mind of NullPunkt Solar Inc., with
+                CAD $298,000 of committed capital and a hand on every early Alberta project. If you
+                book a site visit in our first year, the engineer at your kitchen table is the
+                founder.
+              </p>
             </div>
           </div>
 

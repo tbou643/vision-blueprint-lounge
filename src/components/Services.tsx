@@ -43,6 +43,13 @@ const Services = () => {
             </h2>
           </div>
 
+          <p className="text-sm text-muted-foreground max-w-2xl mt-10">
+            Every installation is delivered with a Red Seal Master Electrician partner and engineered
+            to the same standards our parent company has refined over hundreds of German installations.
+            We only work with fully licensed, high-qualification trades — no subcontractor chains.
+          </p>
+
+
           <div className="grid md:grid-cols-2 gap-px bg-border rounded-2xl overflow-hidden">
             {services.map((s) => (
               <div
