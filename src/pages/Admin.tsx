@@ -45,7 +45,7 @@ const Admin = () => {
   const [images, setImages] = useState<ProjectImage[]>([]);
   const [editingProject, setEditingProject] = useState<Project | null>(null);
 
-  const categories = ["RESIDENTIAL", "COMMERCIAL", "HEAT PUMP"];
+  const categories = ["RESIDENTIAL", "COMMERCIAL", "AGRICULTURAL", "DEVELOPER"];
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
