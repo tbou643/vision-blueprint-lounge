@@ -11,31 +11,37 @@ const calgaryFacts = [
 
 const incentives = [
   {
-    name: "Canada Greener Homes Loan",
-    amount: "Up to $40,000",
-    detail: "Interest-free, 10-year loan for solar PV + battery systems on primary residences. Federally administered.",
-  },
-  {
     name: "Alberta Micro-Generation Regulation",
     amount: "Net billing",
-    detail: "Export surplus production to the grid; your retailer credits you monthly at the energy rate. No size cap below 5 MW.",
+    detail:
+      "Small micro-generators under 150 kW are credited monthly at their retail energy rate for surplus exported to the grid. Systems from 150 kW to 5 MW are settled hourly. Administered by the Alberta Utilities Commission.",
+  },
+  {
+    name: "Clean Technology Investment Tax Credit",
+    amount: "30% refundable",
+    detail:
+      "Federal refundable tax credit on the capital cost of new solar PV and battery storage for commercial, agricultural, and developer-scale projects in Canada. Available through Dec 31, 2034 (CRA / NRCan).",
   },
   {
     name: "Clean Energy Improvement Program (CEIP)",
     amount: "0% PACE financing",
-    detail: "Property-assessed clean energy financing available in participating Alberta municipalities — repaid via property tax.",
+    detail:
+      "Property-assessed clean energy financing for residential and commercial owners in 26+ participating Alberta municipalities. Repaid through the property tax bill; transfers with the property if sold (Alberta Municipalities).",
   },
   {
-    name: "Federal Investment Tax Credit (Commercial)",
-    amount: "30% refundable",
-    detail: "Clean Technology ITC for commercial, agricultural, and developer-scale PV + storage projects.",
-  },
-  {
-    name: "Agri-PV Demonstration Grants",
+    name: "Agrivoltaics & cold-climate research funding",
     amount: "Project-based",
-    detail: "Federal and provincial co-funding for dual-use agricultural solar installations.",
+    detail:
+      "Federal NRCan and Alberta-administered programs (RDAR, ERA) co-fund agri-PV and cold-climate solar demonstrations. We help eligible farms and developers structure applications.",
+  },
+  {
+    name: "Canada Greener Homes Loan",
+    amount: "Closed Oct 2025",
+    detail:
+      "The $40,000 interest-free federal loan closed to new applications on October 2, 2025. Existing approved loans are unaffected. We're tracking what replaces it federally and will flag any new residential program the moment it opens.",
   },
 ];
+
 
 const climateChallenges = [
   {
