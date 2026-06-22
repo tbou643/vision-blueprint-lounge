@@ -82,9 +82,8 @@ const Work = () => {
 
       <section className="pb-32">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-px bg-border rounded-2xl overflow-hidden">
             {[
-              ["Parent company revenue", "EUR 700K+"],
               ["Integrated installs (DE)", "Hundreds"],
               ["Founding AB slots", "25 homes"],
             ].map(([k, v]) => (

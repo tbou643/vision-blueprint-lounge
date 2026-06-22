@@ -14,8 +14,8 @@ const About = () => {
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 <span className="text-foreground font-medium">NullPunkt Solar Inc.</span> is the
                 wholly-owned Canadian subsidiary of <span className="text-foreground font-medium">SMB
-                Solartechnik GmbH</span> — a profitable German solar company with annual revenue
-                exceeding EUR 700,000 and hundreds of completed integrated installations.
+                Solartechnik GmbH</span> — an established German solar company with hundreds of
+                completed integrated installations.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 We're bringing the engineering, the supplier network and the playbook to Alberta —
