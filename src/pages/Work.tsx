@@ -52,7 +52,7 @@ const Work = () => {
             <p className="text-xl text-muted-foreground max-w-3xl mb-10">
               We're new to Alberta — not new to the work. NullPunkt Solar is the Canadian subsidiary
               of SMB Solartechnik GmbH, a profitable German solar company with hundreds of completed
-              integrated installations. Be one of our first 25 Alberta projects.
+              integrated installations. Join our founding cohort of Alberta projects.
             </p>
             <Link to="/contact" className="btn-lime">Join the founding waitlist →</Link>
           </div>
