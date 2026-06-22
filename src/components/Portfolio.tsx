@@ -4,7 +4,7 @@ const milestones = [
   {
     label: "Now (Q2 2026)",
     title: "Founding waitlist open",
-    body: "Founder on the ground in Calgary, incorporation active, first 25 Calgary homes receive priority engineering slots and founding-customer pricing.",
+    body: "Founder on the ground in Calgary, incorporation active, a limited founding cohort of Calgary homeowners receives priority engineering slots and founding-customer pricing.",
   },
   {
     label: "Q3 2026",
