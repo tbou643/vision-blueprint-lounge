@@ -82,11 +82,13 @@ ENGINEERING BASELINE (already computed, use these exact numbers):
 - Simple payback: ${payback} years
 - CO₂ avoided: ${co2Tonnes} tonnes/year
 
-CALGARY CONTEXT TO WEAVE IN (only what's relevant):
+CALGARY CONTEXT TO WEAVE IN (only what's relevant — these are verified as of 2026):
 - Calgary gets ~333 sunny days/year — one of Canada's best solar resources (1,292 kWh/kWp).
 - Alberta deregulated market: variable rates 6–25 ¢/kWh, distribution & transmission add ~10 ¢/kWh.
-- Alberta Micro-Generation Regulation lets homeowners export surplus and net-bill monthly.
-- Canada Greener Homes Loan: up to $40,000 interest-free for solar + battery.
+- Alberta Micro-Generation Regulation: <150 kW systems net-billed monthly at retail energy rate; 150 kW–5 MW settled hourly.
+- Clean Technology ITC: 30% refundable federal credit for commercial / agricultural / developer projects (through Dec 31, 2034).
+- Clean Energy Improvement Program (CEIP): 0% PACE financing for residential & commercial in 26+ Alberta municipalities, repaid via property tax.
+- DO NOT mention the Canada Greener Homes Loan — it closed to new applications on October 2, 2025.
 - Winter snow shedding matters: 30°+ tilt and frameless panels recommended.
 - Hail rating: IEC 61215 Class 3+ panels essential (Calgary hailstorms).
 
