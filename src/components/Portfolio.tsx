@@ -2,24 +2,24 @@ import { Link } from "react-router-dom";
 
 const milestones = [
   {
-    label: "Now",
+    label: "Now (Q2 2026)",
     title: "Founding waitlist open",
-    body: "First 25 Calgary homes receive priority engineering slots and founding-customer pricing.",
+    body: "Founder on the ground in Calgary, incorporation active, first 25 Calgary homes receive priority engineering slots and founding-customer pricing.",
   },
   {
-    label: "Spring 2026",
-    title: "Calgary HQ commissioned",
-    body: "Local crew assembled, warehouse stocked, supplier logistics from SMB Solartechnik transferred.",
+    label: "Q3 2026",
+    title: "Calgary HQ stand-up (in progress)",
+    body: "Office lease finalised, local electrical partner contracts signed, supplier logistics with SMB Solartechnik mirrored to Canadian distributors, permitting playbook live.",
   },
   {
-    label: "Summer 2026",
+    label: "Summer / Fall 2026",
     title: "First Alberta installations",
-    body: "Residential integrated systems go live across Calgary metro — fully monitored from day one.",
+    body: "Residential integrated systems planned to go live across Calgary metro — fully monitored from day one.",
   },
   {
     label: "2027 →",
     title: "Commercial & developer rollout",
-    body: "B2B partnerships activated in Red Deer, Lethbridge corridor and new-construction subdivisions.",
+    body: "B2B partnerships targeted in Red Deer, Lethbridge corridor and new-construction subdivisions.",
   },
 ];
 
