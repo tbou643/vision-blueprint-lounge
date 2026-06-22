@@ -11,7 +11,7 @@ const calgaryFacts = [
 
 const incentives = [
   {
-    name: "Solar Club™ (UTILITYnet retailer program)",
+    name: "Solar Club (UTILITYnet retailer program)",
     amount: "~35 ¢/kWh export",
     detail:
       "An Alberta-only retailer rate structure offered through UTILITYnet that pays roughly 35 ¢/kWh for exported solar and charges around 8.4 ¢/kWh for consumption (verified May 2026 — rates set monthly). It dramatically improves payback for systems that export a meaningful share of production. Not always the best fit — when self-consumption is very high (e.g. big battery + heat pump), a standard retailer can win. We model both in your proposal.",
