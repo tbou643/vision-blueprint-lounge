@@ -1,61 +1,69 @@
 const About = () => {
   return (
-    <section id="about" className="py-32 bg-muted/20">
+    <section id="about" className="relative py-32 bg-card">
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-20 items-center">
-            <div>
-              <h2 className="text-minimal text-muted-foreground mb-4">WHY NULLPUNKT</h2>
-              <h3 className="text-4xl md:text-6xl font-light text-architectural mb-12">
-                The Point Zero Promise
-              </h3>
-              
-              <div className="space-y-8">
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  "Nullpunkt" is German for Point Zero — the coordinate origin (0,0) on a technical 
-                  blueprint. It represents the perfect intersection of Solar Power and Heat Pump Efficiency.
-                </p>
-                
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  As a spin-off from our successful parent company in Southern Germany, we bring 
-                  decades of experience from Europe's most advanced renewable energy market directly 
-                  to Calgary. Our German craftsmen ensure every installation meets the highest standards.
-                </p>
+          <div className="grid lg:grid-cols-12 gap-16 items-start">
+            <div className="lg:col-span-5">
+              <p className="text-minimal text-lime mb-4">Why NullPunkt</p>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-architectural mb-8">
+                A new name in Calgary.
+                <br />
+                <span className="text-muted-foreground">Twenty years of practice.</span>
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                <span className="text-foreground font-medium">NullPunkt Solar Inc.</span> is the Canadian
+                spin-off of a European solar engineering company that's been designing and installing
+                integrated PV and heat pump systems since the early 2000s.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                We brought the engineering, the supplier relationships and the playbook to Calgary —
+                so the first home we install here isn't really the first one we've installed at all.
+              </p>
+            </div>
+
+            <div className="lg:col-span-7 lg:pl-12">
+              <p className="text-minimal text-muted-foreground mb-8">The Point Zero promise</p>
+              <div className="space-y-6">
+                {[
+                  {
+                    title: "Zero guesswork",
+                    body: "Every proposal includes the full simulation, the bill of materials and the payback math — before you sign.",
+                  },
+                  {
+                    title: "Zero handoffs",
+                    body: "One team designs the PV, sizes the battery, picks the heat pump and commissions the lot. No subcontractor chains.",
+                  },
+                  {
+                    title: "Zero surprises",
+                    body: "Fixed-price quotes, performance-guaranteed hardware, and a service contract that's still good twenty winters from now.",
+                  },
+                ].map((row) => (
+                  <div key={row.title} className="flex gap-6 p-6 rounded-xl border border-border bg-background/40">
+                    <div className="mt-2 w-2 h-2 rounded-full bg-lime shadow-lime flex-shrink-0" />
+                    <div>
+                      <h4 className="text-lg font-semibold mb-2">{row.title}</h4>
+                      <p className="text-muted-foreground leading-relaxed">{row.body}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-            
-            <div className="space-y-12">
-              <div>
-                <h4 className="text-minimal text-muted-foreground mb-6">THE THREE ZEROS</h4>
-                <div className="space-y-6">
-                  <div className="border-l-2 border-architectural pl-6">
-                    <h5 className="text-lg font-medium mb-2">Zero Emissions</h5>
-                    <p className="text-muted-foreground">Complete decarbonization of your home energy ecosystem</p>
-                  </div>
-                  <div className="border-l-2 border-architectural pl-6">
-                    <h5 className="text-lg font-medium mb-2">Zero Reliance</h5>
-                    <p className="text-muted-foreground">Independence from the grid and volatile energy prices</p>
-                  </div>
-                  <div className="border-l-2 border-architectural pl-6">
-                    <h5 className="text-lg font-medium mb-2">Zero Worry</h5>
-                    <p className="text-muted-foreground">German engineering reliability and transparent ROI calculations</p>
-                  </div>
-                </div>
+          </div>
+
+          {/* Stat strip */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border mt-20 rounded-xl overflow-hidden">
+            {[
+              ["European heritage", "Since 2005"],
+              ["Engineers on staff", "PV + HVAC"],
+              ["Founding Calgary year", "2026"],
+              ["Service radius", "Southern AB"],
+            ].map(([k, v]) => (
+              <div key={k} className="bg-card p-8">
+                <p className="text-minimal text-muted-foreground mb-2">{k}</p>
+                <p className="text-2xl font-semibold">{v}</p>
               </div>
-              
-              <div className="pt-8 border-t border-border">
-                <div className="grid grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="text-minimal text-muted-foreground mb-2">GERMAN HERITAGE</h4>
-                    <p className="text-xl">Since 2008</p>
-                  </div>
-                  <div>
-                    <h4 className="text-minimal text-muted-foreground mb-2">INSTALLATIONS</h4>
-                    <p className="text-xl">500+ Systems</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

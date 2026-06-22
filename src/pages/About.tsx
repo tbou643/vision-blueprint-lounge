@@ -1,107 +1,104 @@
 import Navigation from "@/components/Navigation";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Navigation />
-      <section className="pt-32 pb-32 bg-background">
+
+      <section className="pt-40 pb-24 relative">
+        <div className="absolute inset-x-0 top-0 h-[60vh] glow-radial pointer-events-none" />
+        <div className="container mx-auto px-6 relative">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-minimal text-lime mb-6">About NullPunkt</p>
+            <h1 className="text-5xl md:text-7xl font-light text-architectural mb-10">
+              A Calgary office, with two decades of solar already behind it.
+            </h1>
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
+              <span className="text-foreground font-medium">"NullPunkt"</span> is the point of
+              origin on a technical drawing — coordinate zero, where every measurement starts.
+              That's where we want your home's energy balance to sit: production matching
+              consumption, exactly.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-card border-y border-border">
         <div className="container mx-auto px-6">
-          <div className="max-w-7xl mx-auto">
-            {/* Hero Section */}
-            <div className="mb-24">
-              <h1 className="text-minimal text-muted-foreground mb-4">ABOUT NULLPUNKT</h1>
-              <h2 className="text-4xl md:text-6xl font-light text-architectural mb-12">
-                German Precision
-                <br />
-                <span className="text-muted-foreground">Zero Emissions</span>
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16">
+            <div>
+              <p className="text-minimal text-lime mb-4">Our origin</p>
+              <h2 className="text-3xl md:text-4xl font-light text-architectural mb-6">
+                Spin-off, not start-up.
               </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
-                "Nullpunkt" is German for Point Zero — the coordinate origin (0,0) on a technical 
-                blueprint. It represents the perfect intersection of Solar Power and Heat Pump 
-                Efficiency. We combine these technologies with German precision to drive your 
-                emissions and costs to exactly that mark: Point Zero.
-              </p>
-            </div>
-
-            {/* Origin Story */}
-            <div className="grid md:grid-cols-2 gap-20 mb-24">
-              <div>
-                <h3 className="text-minimal text-muted-foreground mb-6">OUR ORIGIN</h3>
-                <div className="space-y-6">
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    Nullpunkt Energy Inc. is a spin-off from our successful parent company in 
-                    Southern Germany, where we have been leading the renewable energy market since 2008.
-                  </p>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    Germany has the world's most mature and innovative solar market. We bring that 
-                    expertise, those products, and that uncompromising quality directly to Calgary 
-                    and Southern Alberta.
-                  </p>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    Our team includes German-trained craftsmen who ensure every installation meets 
-                    the highest European standards. We don't just sell systems — we engineer 
-                    complete energy solutions.
-                  </p>
-                </div>
-              </div>
-              
-              <div>
-                <h3 className="text-minimal text-muted-foreground mb-6">THE TECHNOLOGICAL SYNERGY</h3>
-                <div className="space-y-6">
-                  <div className="border-l-2 border-architectural pl-6">
-                    <h4 className="text-lg font-medium mb-2">The X-Axis: Production</h4>
-                    <p className="text-muted-foreground">Solar PV generates clean electricity from Alberta's abundant sunshine.</p>
-                  </div>
-                  <div className="border-l-2 border-architectural pl-6">
-                    <h4 className="text-lg font-medium mb-2">The Y-Axis: Efficiency</h4>
-                    <p className="text-muted-foreground">Heat Pumps utilize that electricity with maximum thermodynamic efficiency.</p>
-                  </div>
-                  <div className="border-l-2 border-architectural pl-6">
-                    <h4 className="text-lg font-medium mb-2">The Intersection (0,0)</h4>
-                    <p className="text-muted-foreground">Where these technologies meet perfectly, you reach the Nullpunkt — production equals consumption.</p>
-                  </div>
-                </div>
+              <div className="space-y-5 text-muted-foreground leading-relaxed">
+                <p>
+                  NullPunkt Solar Inc. is the Canadian arm of a European solar engineering
+                  company that has been designing integrated PV, storage and heat pump
+                  systems for over twenty years.
+                </p>
+                <p>
+                  We didn't show up in Calgary to learn the trade. We came because the
+                  Alberta grid, the housing stock and the sun hours finally make the
+                  numbers work — and because we wanted to build something here from day one
+                  with the playbook already written.
+                </p>
               </div>
             </div>
 
-            {/* The Three Zeros */}
-            <div className="mb-24">
-              <h3 className="text-minimal text-muted-foreground mb-6">THE POINT ZERO PROMISE</h3>
-              <div className="grid md:grid-cols-3 gap-12">
-                <div className="text-center p-8 border border-border">
-                  <h4 className="text-2xl font-light text-architectural mb-4">Zero Emissions</h4>
-                  <p className="text-muted-foreground">Complete decarbonization of your home's energy ecosystem.</p>
-                </div>
-                <div className="text-center p-8 border border-border">
-                  <h4 className="text-2xl font-light text-architectural mb-4">Zero Reliance</h4>
-                  <p className="text-muted-foreground">Independence from the grid and volatile gas prices.</p>
-                </div>
-                <div className="text-center p-8 border border-border">
-                  <h4 className="text-2xl font-light text-architectural mb-4">Zero Worry</h4>
-                  <p className="text-muted-foreground">German engineering reliability and transparent calculations.</p>
-                </div>
+            <div>
+              <p className="text-minimal text-lime mb-4">How we work</p>
+              <h2 className="text-3xl md:text-4xl font-light text-architectural mb-6">
+                One team. Whole system.
+              </h2>
+              <div className="space-y-5 text-muted-foreground leading-relaxed">
+                <p>
+                  Most installers sell what their supplier pushes. We design around your
+                  bills, your roof, and your appetite for grid independence — and only then
+                  pick the modules, the inverter, the battery and the heat pump.
+                </p>
+                <p>
+                  Engineering, procurement, installation and commissioning all sit under
+                  one roof. The person who designed your system is on site when it gets
+                  switched on.
+                </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-border">
-              <div>
-                <h4 className="text-minimal text-muted-foreground mb-2">GERMAN HERITAGE</h4>
-                <p className="text-3xl font-light">Since 2008</p>
-              </div>
-              <div>
-                <h4 className="text-minimal text-muted-foreground mb-2">INSTALLATIONS</h4>
-                <p className="text-3xl font-light">500+</p>
-              </div>
-              <div>
-                <h4 className="text-minimal text-muted-foreground mb-2">MW INSTALLED</h4>
-                <p className="text-3xl font-light">15+</p>
-              </div>
-              <div>
-                <h4 className="text-minimal text-muted-foreground mb-2">WARRANTY CLAIMS</h4>
-                <p className="text-3xl font-light">&lt; 0.5%</p>
-              </div>
+      <section className="py-24">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-minimal text-lime mb-6">The Point Zero promise</p>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                ["Zero guesswork", "Full simulation, bill of materials and payback math before you sign anything."],
+                ["Zero handoffs", "Same crew from first site visit to commissioning. No subcontractor chains."],
+                ["Zero surprises", "Fixed-price quotes, hardware-backed warranties, and a service contract built to last."],
+              ].map(([t, b]) => (
+                <div key={t} className="card-raised p-8">
+                  <h3 className="text-2xl font-semibold mb-3">{t}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{b}</p>
+                </div>
+              ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-card border-t border-border">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-light text-architectural mb-6">
+              Want to be one of our first Calgary installs?
+            </h2>
+            <p className="text-muted-foreground mb-10">
+              Founding customers get priority engineering slots and a direct line to the team.
+            </p>
+            <Link to="/contact" className="btn-lime">Book a free consultation →</Link>
           </div>
         </div>
       </section>
