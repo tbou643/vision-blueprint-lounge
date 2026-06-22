@@ -479,9 +479,17 @@ const CalculatingState = () => {
 
       <style>{`
         @keyframes npFlip {
-          0%, 40%   { transform: rotate(0deg); }
-          50%, 90%  { transform: rotate(180deg); }
+          0%, 35%   { transform: rotate(0deg); }
+          50%, 85%  { transform: rotate(180deg); }
           100%      { transform: rotate(360deg); }
+        }
+        @keyframes npSandTop {
+          0%, 35%   { transform: scaleY(1); transform-origin: 50% 5px; opacity: 0.55; }
+          50%, 100% { transform: scaleY(0.05); transform-origin: 50% 5px; opacity: 0.15; }
+        }
+        @keyframes npSandBot {
+          0%, 35%   { transform: scaleY(0.05); transform-origin: 50% 55px; opacity: 0.15; }
+          50%, 100% { transform: scaleY(1); transform-origin: 50% 55px; opacity: 0.55; }
         }
       `}</style>
     </div>
