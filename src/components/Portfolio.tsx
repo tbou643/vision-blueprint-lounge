@@ -53,7 +53,7 @@ const Portfolio = () => {
             <div className="grid md:grid-cols-2 gap-10 items-start">
               <div>
                 <h3 className="text-3xl md:text-4xl font-light text-architectural mb-4">
-                  Be one of the first 25 integrated systems in Alberta.
+                  Be part of our founding cohort of integrated systems in Alberta.
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Founding customers receive priority engineering, fixed-price proposals locked in
