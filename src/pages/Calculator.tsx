@@ -6,7 +6,7 @@ const calgaryFacts = [
   { stat: "333", unit: "sunny days / year", note: "More than Miami. Calgary is one of Canada's top solar cities." },
   { stat: "1,292", unit: "kWh / kWp / year", note: "Specific yield — beats Berlin (~1,050) and most of Europe." },
   { stat: "+8%", unit: "winter cold bonus", note: "Cold panels are efficient panels. Alberta winters help." },
-  { stat: "590 g", unit: "CO₂ / kWh grid", note: "Alberta has Canada's dirtiest grid — every kWh you produce matters." },
+  { stat: "~450 g", unit: "CO₂ / kWh grid", note: "Alberta's grid carbon intensity (AESO, 2024 after the last coal unit converted to natural gas) — every solar kWh still meaningfully cleaner than the grid mix." },
 ];
 
 const incentives = [
