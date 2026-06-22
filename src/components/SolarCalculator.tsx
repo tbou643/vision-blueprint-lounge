@@ -207,21 +207,7 @@ const SolarCalculator = () => {
           </div>
         )}
 
-        {loading && (
-          <div className="card-raised p-10">
-            <div className="animate-pulse space-y-4">
-              <div className="h-4 bg-muted rounded w-1/3" />
-              <div className="h-10 bg-muted rounded w-2/3" />
-              <div className="h-3 bg-muted rounded w-full" />
-              <div className="h-3 bg-muted rounded w-5/6" />
-              <div className="grid grid-cols-3 gap-3 pt-4">
-                <div className="h-20 bg-muted rounded" />
-                <div className="h-20 bg-muted rounded" />
-                <div className="h-20 bg-muted rounded" />
-              </div>
-            </div>
-          </div>
-        )}
+        {loading && <CalculatingState />}
 
         {baseline && !loading && (
           <>
