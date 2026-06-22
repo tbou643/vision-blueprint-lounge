@@ -13,7 +13,7 @@ const About = () => {
           <div className="max-w-5xl mx-auto">
             <p className="text-minimal text-lime mb-6">About NullPunkt</p>
             <h1 className="text-5xl md:text-7xl font-light text-architectural mb-10">
-              A Calgary office, with two decades of solar already behind it.
+              A new Calgary company, with a proven German playbook already running.
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
               <span className="text-foreground font-medium">"NullPunkt"</span> is the point of
