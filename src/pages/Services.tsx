@@ -140,7 +140,7 @@ const Services = () => {
     { feature: "Engineering before quoting", us: "Always — stamped PV*SOL yield study", them: "Rarely — rule-of-thumb sizing" },
     { feature: "Battery integrated from day one", us: "Standard on every residential build", them: "Bolted on later, often incompatible" },
     { feature: "Workmanship warranty", us: "5 years, transferable", them: "1–2 years typical" },
-    { feature: "Crews", us: "In-house W-2 employees", them: "Subcontracted day labour" },
+    { feature: "Crews", us: "Vetted Alberta master-electrician partners, NullPunkt project lead on site", them: "Anonymous subcontracted day labour" },
     { feature: "HEMS / monitoring", us: "Open-source, free for life", them: "Proprietary, often paid subscription" },
     { feature: "After-sales response", us: "Same-day diagnosis · ≤72h on-site", them: "Multi-week ticket queues" },
   ];
