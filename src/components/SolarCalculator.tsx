@@ -5,11 +5,14 @@ import WaitlistForm from "./WaitlistForm";
 
 interface Baseline {
   recommendedKwp: number;
+  batteryKwh: number;
   annualProduction: number;
   annualSavings: number;
   annualSavingsStandard: number;
   annualSavingsSolarClub: number;
   useSolarClub: boolean;
+  pvCost: number;
+  batteryCost: number;
   totalCost: number;
   payback: number;
   co2Tonnes: number;
@@ -225,16 +228,40 @@ const SolarCalculator = () => {
             <div className="card-raised p-8">
               <p className="text-minimal text-lime mb-3">Engineering baseline</p>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                <Stat label="System size" value={`${baseline.recommendedKwp} kWp`} />
+                <Stat
+                  label="System size"
+                  value={`${baseline.recommendedKwp} kWp${baseline.batteryKwh ? ` + ${baseline.batteryKwh} kWh` : ""}`}
+                />
                 <Stat label="Annual production" value={`${baseline.annualProduction.toLocaleString()} kWh`} />
                 <Stat
                   label={baseline.useSolarClub ? "Annual savings (Solar Club)" : "Annual savings"}
                   value={`$${baseline.annualSavings.toLocaleString()}`}
                   accent
                 />
-                <Stat label="Turn-key cost" value={`$${baseline.totalCost.toLocaleString()}`} />
+                <Stat label="Total turn-key invest" value={`$${baseline.totalCost.toLocaleString()}`} />
                 <Stat label="Simple payback" value={`${baseline.payback} yrs`} />
                 <Stat label="CO₂ avoided" value={`${baseline.co2Tonnes} t/yr`} />
+              </div>
+
+              {/* Cost breakdown */}
+              <div className="mt-6 pt-6 border-t border-border">
+                <p className="text-minimal text-muted-foreground mb-3">Turn-key invest breakdown</p>
+                <div className="grid sm:grid-cols-2 gap-3 text-sm">
+                  <div className="flex justify-between p-3 rounded-lg bg-background/40 border border-border">
+                    <span className="text-muted-foreground">PV system (incl. install + HEMS)</span>
+                    <span>${baseline.pvCost.toLocaleString()}</span>
+                  </div>
+                  {baseline.batteryKwh > 0 && (
+                    <div className="flex justify-between p-3 rounded-lg bg-background/40 border border-border">
+                      <span className="text-muted-foreground">{baseline.batteryKwh} kWh LFP battery</span>
+                      <span>${baseline.batteryCost.toLocaleString()}</span>
+                    </div>
+                  )}
+                </div>
+                <p className="text-[11px] text-muted-foreground/70 mt-3">
+                  All-in turn-key price — hardware, install labour, permits, ENMAX/EPCOR interconnection,
+                  HEMS commissioning, 5-year workmanship warranty. No hidden fees.
+                </p>
               </div>
 
               {/* Retailer comparison */}
