@@ -1,0 +1,321 @@
+# NullPunkt Solar Inc. — nullpunkt.ca
+
+German Precision · Zero Emissions.
+Calgary office of a European solar engineering company — bringing a decade of integrated German solar engineering to Alberta homes, businesses and farms.
+
+---
+
+## Company Master Data
+
+- Legal name: NullPunkt Solar Inc.
+- Parent company: SMB Solartechnik GmbH (Germany)
+- Founder & CEO: Tim Brunkel
+- Office address: #2005 – 10th Avenue SW, Calgary, Alberta, Canada
+- Email: hello@nullpunkt.ca
+- Phone: not yet published
+- Website: https://nullpunkt.ca
+- Service area: Calgary and Southern Alberta (expanding to Red Deer, Lethbridge corridor and developer subdivisions from 2027; selective expansion into British Columbia and Saskatchewan from 2028–2031)
+- Launch: Summer 2026 (founding customer program live now)
+
+---
+
+## Navigation
+
+Services · Calculator · Roadmap · About · Contact · Free Consultation
+
+---
+
+## Hero (Home)
+
+Eyebrow: Launching Summer 2026 · Calgary, Alberta
+
+Headline: Integrated solar, engineered to a single point.
+
+Subhead: A Canadian subsidiary of SMB Solartechnik GmbH — bringing a decade of integrated European solar engineering to Alberta homes, businesses and farms.
+
+CTAs:
+- Join the founding waitlist →
+- See our system
+
+---
+
+## Services (Home overview)
+
+Eyebrow: What we build
+Headline: Four service lines. One integrated system.
+
+Note: Every installation is delivered with a Red Seal Master Electrician partner and engineered to the same standards our parent company has refined over hundreds of German installations. We only work with fully licensed, high-qualification trades — no subcontractor chains.
+
+01 · Residential Integrated Systems (B2C)
+8–15 kWp PV, 10–15 kWh battery storage, intelligent HEMS, plus heat-pump and EV-charger readiness — engineered as one coordinated system for Alberta homes.
+
+02 · Commercial & Agricultural (B2B)
+20–200 kWp PV with optional storage and energy management for businesses, farms and small commercial properties. Demand-charge optimisation and Agri-PV included.
+
+03 · Developer Partnerships (B2B)
+Turnkey pre-integrated solar built into new-construction subdivisions — a premium sales feature for builders, fully coordinated with the construction schedule.
+
+04 · Service, Monitoring & Maintenance (Recurring)
+Lifetime cloud-based monitoring dashboard, optional annual maintenance packages and premium-component warranty management for every installed system.
+
+---
+
+## Services Page (Detail)
+
+Eyebrow: What we build
+Headline: Four service lines. One integrated system.
+Intro: NullPunkt Solar engineers PV, battery storage and intelligent energy management as a single coordinated installation — not four products bolted together later.
+
+### 01 · Residential Integrated Systems — B2C · Calgary metro
+Fully integrated solar energy systems for owner-occupied homes. Engineered as one ecosystem rather than a stack of separately installed devices — increasing self-consumption from 25–40% (PV-only) to 70–85%.
+- 8–15 kWp Tier-1 PV with Hail Class HW5 modules
+- 10–15 kWh LFP battery storage (UL 9540)
+- Intelligent HEMS — OpenEMS-based, no vendor lock-in
+- Heat-pump and EV-charger readiness pre-wired
+Reference pricing: CAD $26,000 – $48,000
+
+### 02 · Commercial & Agricultural — B2B · Businesses & farms
+Larger-scale solar with optional storage and energy management for commercial buildings, farms and small-industrial sites. Demand-charge optimisation, peak shaving and Agri-PV configurations.
+- 20–200 kWp PV with NA-certified inverters
+- Optional battery storage for peak shaving
+- Demand-charge and time-of-use optimisation
+- Agri-PV configurations for farms
+Reference pricing: CAD $65,000 – $220,000+
+
+### 03 · Developer Partnerships — B2B · New construction
+Volume turnkey installations for new-construction subdivisions, integrated directly into the homebuilding process. Premium integrated solar becomes a marketable feature for the builder.
+- 8–10 kWp pre-integrated unit per home
+- Volume pricing coordinated with build schedule
+- Marketing collateral for builder sales teams
+- Single point of contact for the entire subdivision
+Reference pricing: CAD $22,000 – $28,000 per unit
+
+### 04 · Service, Monitoring & Maintenance — Recurring · Lifetime
+Recurring revenue programs that keep every installed system performing for decades. Real-time monitoring, scheduled inspections and premium-component warranty management.
+- Lifetime cloud-based monitoring dashboard
+- Optional annual maintenance subscription
+- 40-year module warranty management (premium tier)
+- 5-year NullPunkt Solar workmanship guarantee
+Reference pricing: Included + optional packages
+
+Closing CTA: Let's run the numbers for your address. Free consultation. Full yield simulation. Fixed-price proposal you can compare to anything else on the table. → Join the founding waitlist
+
+---
+
+## About (Home section)
+
+Eyebrow: Why NullPunkt
+Headline: A new name in Calgary. A decade of practice.
+
+NullPunkt Solar Inc. is the wholly-owned Canadian subsidiary of SMB Solartechnik GmbH — an established German solar company with hundreds of completed integrated installations.
+
+We bring the engineering playbook, the supplier network and the partner standards to Alberta — and we only work with fully licensed, high-qualification trades on the ground. Every installation is delivered together with a Red Seal Master Electrician partner so the first system we commission in Calgary is held to the same standard as our 600th in Germany.
+
+### The Point Zero promise
+- Zero guesswork — Every proposal includes the full yield simulation, the bill of materials and the payback math — before you sign.
+- Zero handoffs — One team designs the PV, sizes the battery, configures the HEMS and commissions the lot. No subcontractor chains.
+- Zero surprises — Fixed-price quotes, climate-engineered hardware and warranties measured in decades — backed by a parent company built to last.
+
+### Meet the founder — Tim Brunkel
+The person behind every Calgary install.
+
+Tim founded SMB Solartechnik in Germany in 2024 and scaled it past EUR 700,000 in annual revenue, personally overseeing several hundred integrated PV installations across residential, commercial and agricultural sites. Before solar he spent 13+ years leading IT innovation and product programs — most recently as Head of IT Innovation Solution Design at ZF Friedrichshafen AG.
+
+He's relocating to Calgary as principal directing mind of NullPunkt Solar Inc., with CAD $298,000 of committed capital and a hand on every early Alberta project. If you book a site visit in our first year, the engineer at your kitchen table is the founder.
+
+### Stat strip
+- Parent company: SMB Solartechnik
+- Integrated installs: Hundreds, DE
+- Calgary launch: Summer 2026
+- Calgary sunshine: 2,396 hrs/yr
+
+---
+
+## About Page (Detail)
+
+Eyebrow: About NullPunkt
+Headline: A Calgary office, with two decades of solar already behind it.
+Intro: "NullPunkt" is the point of origin on a technical drawing — coordinate zero, where every measurement starts. That's where we want your home's energy balance to sit: production matching consumption, exactly.
+
+### Our origin — Spin-off, not start-up.
+NullPunkt Solar Inc. is the wholly-owned Canadian subsidiary of SMB Solartechnik GmbH — an established German solar company with hundreds of completed integrated installations.
+
+We didn't show up in Calgary to learn the trade. We came because the Alberta grid, the housing stock and the sun hours finally make the numbers work — and because we wanted to build here from day one with the engineering playbook already written.
+
+### How we work — One team. Whole system.
+Most installers sell what their supplier pushes. We design around your bills, your roof and your appetite for grid independence — then pick the modules, the inverter, the battery and the energy-management controller.
+
+Engineering, procurement, installation and commissioning all sit under one roof. The person who designed your system is on site when it gets switched on.
+
+### Meet the founder — Tim Brunkel, Founder & CEO
+
+Hi — I'm Tim. I founded SMB Solartechnik GmbH in 2024, grew it past EUR 700,000 in annual revenue in Germany's competitive solar market, and personally oversaw several hundred integrated photovoltaic installations across residential, commercial and agricultural projects.
+
+Before solar, I spent 13+ years in senior technology roles — most recently as Head of IT Innovation Solution Design at ZF Friedrichshafen AG, leading cross-functional teams turning emerging technology into enterprise solutions. That product- and program-management background is exactly what fully integrated solar needs: PV + battery + heat pump + EV + intelligent energy management (HEMS / OpenEMS) is a software-meets-hardware problem, not a panel-on-a-roof problem.
+
+I'm relocating from southern Germany to Calgary as principal directing mind and sole Director of NullPunkt Solar Inc., committing CAD $298,000 of capital (verified by Sparkasse Salem-Heiligenberg) to the Canadian launch. I lived and worked in Canada once before — 18 months of Work & Travel back in 2008–09 — and I've wanted to come back ever since. Now I get to build something here that actually matters for Alberta's energy future.
+
+If you join the founding waitlist in our first year, the engineer at your kitchen table will be me.
+
+Founder stats:
+- 13+ yrs · tech / product leadership
+- 100s · PV installs overseen
+- C2 · English (CELPIP 11)
+
+### Partners on the ground — We only work with fully licensed, high-qualification trades.
+
+Lead electrical partner — Jochen Volland, German-Canadian Red Seal Master Electrician
+15+ years of Alberta electrical experience and the Interprovincial Red Seal endorsement. Every NullPunkt residential and commercial install in the Calgary region is delivered with Jochen's team — so we have full Code-compliant electrical capacity from day one and the German engineering mindset on both sides of the project.
+
+Standards we hold ourselves to:
+- Canadian Electrical Code + Alberta-licensed master electricians on every project.
+- Tier-1 modules with IEC 61215 Class 3+ hail rating, UL 9540 storage.
+- The same engineering, commissioning and documentation discipline used on 600+ German installations.
+- 5-year NullPunkt workmanship warranty stacked on top of manufacturer warranties.
+
+### The Point Zero promise
+- Zero guesswork — Full simulation, bill of materials and payback math before you sign anything.
+- Zero handoffs — Same crew from first site visit to commissioning. No subcontractor chains.
+- Zero surprises — Fixed-price quotes, hardware-backed warranties, and a service contract built to last.
+
+Closing CTA: Want to be one of our first Calgary installs? Founding customers get priority engineering slots and a direct line to me and the team. → Book a free consultation
+
+---
+
+## Roadmap / Launch (Portfolio section + Work page)
+
+Eyebrow: Launch roadmap
+Headline: NullPunkt Solar, coming to Calgary.
+Intro: We're a new operation in Alberta — but not a new company. Our German parent has been installing integrated systems for years. Get on the list while founding slots are open.
+
+### Founding customer program · Summer 2026
+Be one of the first 25 integrated systems in Alberta.
+
+Founding customers receive priority engineering, fixed-price proposals locked in before commissioning, and a direct line to the team that designed the system.
+
+- Full yield simulation against 20 years of Calgary weather data
+- 10 kWp PV + 10 kWh storage + HEMS reference systems from CAD $26,000
+- Solar Club™ retailer modelling — up to ~35 ¢/kWh export credit
+- CEIP option: 0% PACE financing repaid through property tax
+- Fixed-price proposal — not a back-of-envelope quote
+
+CTA: Join the waitlist
+
+### Milestones (Home)
+- Now — Founding waitlist open. First 25 Calgary homes receive priority engineering slots and founding-customer pricing.
+- Spring 2026 — Calgary HQ commissioned. Local crew assembled, warehouse stocked, supplier logistics from SMB Solartechnik transferred.
+- Summer 2026 — First Alberta installations. Residential integrated systems go live across Calgary metro — fully monitored from day one.
+- 2027 → — Commercial & developer rollout. B2B partnerships activated in Red Deer, Lethbridge corridor and new-construction subdivisions.
+
+### Roadmap page
+
+Eyebrow: Pre-launch · Founding customer program
+Headline: Coming to Calgary, Summer 2026.
+Intro: We're new to Alberta — not new to the work. NullPunkt Solar is the Canadian subsidiary of SMB Solartechnik GmbH, a profitable German solar company with hundreds of completed integrated installations. Be one of our first 25 Alberta projects.
+CTA: Join the founding waitlist →
+
+Launch roadmap:
+- Q2 2026 — Pre-launch & permitting. Alberta incorporation, micro-generation paperwork, supplier logistics from SMB Solartechnik transferred to Calgary.
+- Summer 2026 — First Calgary installations. Founding-customer residential systems commissioned across Calgary metro — fully monitored from day one.
+- Late 2026 — First commercial & agri builds. 20–200 kWp commercial and agricultural installations come online across southern Alberta.
+- 2027 — Regional expansion. Red Deer, Lethbridge corridor; developer subdivision rollouts begin.
+- 2028 – 2031 — Western Canada. Selective expansion into British Columbia and Saskatchewan; target of 600+ integrated systems by year five.
+
+Stats:
+- Integrated installs by parent (Germany): Hundreds
+- Founding Calgary slots · Summer 2026: 25 homes
+
+Closing CTA: Be one of our first Alberta installs. Founding customers receive priority engineering slots, locked-in fixed pricing, and a direct line to the team designing your system. → Join the waitlist
+
+---
+
+## Calculator Page
+
+Eyebrow: Calgary · Alberta · Canada
+Headline: How much sun is your roof wasting?
+Intro: Calgary gets more solar than Berlin, Frankfurt, or Munich. Run the same engineering math our German parent company has used on hundreds of European installations — calibrated for Alberta's grid, weather, and tariffs.
+
+### Calgary at a glance
+- 333 sunny days / year — More than Miami. Calgary is one of Canada's top solar cities.
+- 1,292 kWh / kWp / year — Specific yield — beats Berlin (~1,050) and most of Europe.
+- +8% winter cold bonus — Cold panels are efficient panels. Alberta winters help.
+- 590 g CO₂ / kWh grid — Alberta has Canada's dirtiest grid — every kWh you produce matters.
+
+### The calculator — Engineering math, not marketing fluff.
+Built on Calgary's real irradiance data, Alberta's all-in retail rate, and the Micro-Generation export credit — grounded on the same numbers our engineers use.
+
+Inputs include monthly power bill, roof orientation, optional Solar Club™ retailer scenario and CEIP (0% PACE financing) toggle. The tool returns a recommended system size, PV + battery cost breakdown, side-by-side retailer comparison (Standard ~16.5 ¢/kWh consume, ~8.5 ¢/kWh export vs. Solar Club™ ~8.4 ¢/kWh consume, ~35 ¢/kWh export), annual savings, simple payback and a year-one cash-flow view when CEIP is enabled.
+
+Disclaimer: Engineering baseline computed locally · Not a binding quote.
+
+### Money on the table — Alberta & federal incentives, as of 2026
+We don't sell the rebate — we engineer the system. But every NullPunkt proposal includes a stacked incentive breakdown so you see your real, after-rebate cost.
+
+- Solar Club™ (UTILITYnet retailer program) — ~35 ¢/kWh export
+  An Alberta-only retailer rate structure offered through UTILITYnet that pays roughly 35 ¢/kWh for exported solar and charges around 8.4 ¢/kWh for consumption (verified May 2026 — rates set monthly). It dramatically improves payback for systems that export a meaningful share of production. Not always the best fit — when self-consumption is very high (e.g. big battery + heat pump), a standard retailer can win. We model both in your proposal.
+- Clean Energy Improvement Program (CEIP) — 0% PACE financing
+  $0-upfront property-assessed clean energy financing for residential and commercial owners in 26+ participating Alberta municipalities (Calgary, Edmonton, Lethbridge, Banff and more). Repaid through the property tax bill over up to 20 years; obligation transfers with the property if sold (Alberta Municipalities).
+- Clean Technology Investment Tax Credit — 30% refundable
+  Federal refundable tax credit on the capital cost of new solar PV and battery storage for commercial, agricultural, and developer-scale projects in Canada. Available through Dec 31, 2034 (CRA / NRCan).
+- Alberta Micro-Generation Regulation — Net billing
+  Small micro-generators under 150 kW are credited monthly at their retail energy rate for surplus exported to the grid. Systems from 150 kW to 5 MW are settled hourly. Administered by the Alberta Utilities Commission.
+- Agrivoltaics & cold-climate research funding — Project-based
+  Federal NRCan and Alberta-administered programs (RDAR, ERA) co-fund agri-PV and cold-climate solar demonstrations. We help eligible farms and developers structure applications.
+- Canada Greener Homes Loan — Closed Oct 2025
+  The $40,000 interest-free federal loan closed to new applications on October 2, 2025. Existing approved loans are unaffected. We're tracking what replaces it federally and will flag any new residential program the moment it opens.
+
+### Built for Alberta weather — Calgary breaks ordinary solar systems. Ours are over-engineered for it.
+
+- Hail — Calgary sits in Canada's hail capital. We spec only IEC 61215 Class 3+ panels — the same panels rated for German alpine installations — and back them with our own workmanship warranty.
+- Snow load & shedding — Alberta Building Code ground snow loads near Calgary reach 1.0 kPa. We design at 30°+ tilts with frameless or low-edge frames so snow sheds within hours of sunrise rather than sitting for weeks.
+- Chinooks & thermal cycling — −25 °C to +15 °C in 12 hours is normal. We use UV-stabilised cabling, glass-glass modules where applicable, and torque-checked mounting — every joint engineered for ~80 K thermal swings.
+- Deregulated electricity market — Alberta's energy-only market means rates swing 6–25 ¢/kWh. A correctly sized battery shifts your consumption to avoid peaks — turning volatility from a risk into a savings lever.
+
+### FAQ — The questions Calgary homeowners actually ask.
+
+Q: Is solar actually worth it in Calgary?
+A: Yes — and the numbers are better than most Canadians assume. Calgary's solar yield (1,292 kWh/kWp) is on par with Northern Spain. Combined with Alberta's high all-in residential rate (~16.5 ¢/kWh), simple paybacks of 8–11 years are realistic for a properly engineered system.
+
+Q: What size system do I need?
+A: For an average Calgary single-family home (~8,500 kWh/year), 7–10 kWp covers most consumption. Add a battery if you want to ride through peak pricing or outages. Our calculator above gives you a properly-sized starting point in under a minute.
+
+Q: How do hail and snow affect my system?
+A: Our modules are hail-rated to 35 mm at 27 m/s (IEC 61215 Class 3). We mount at 30°+ tilts so snow sheds rapidly. In 20 years, our parent company has never replaced a panel due to weather in Germany, Switzerland, or Austria.
+
+Q: Can I go fully off-grid in Alberta?
+A: Possible for acreages and farms, but rarely cost-optimal. The Micro-Generation Regulation makes a grid-tied + battery system more economical for nearly every site. We'll model both scenarios honestly during your site visit.
+
+Q: How long does installation take?
+A: For a typical residential system: 1 day on the roof, 1 day for electrical + HEMS commissioning. Permitting and ENMAX/EPCOR interconnection adds 4–8 weeks depending on the utility's queue.
+
+Q: Why German engineering for Alberta?
+A: Germany installs over 1 GW of residential solar every month — they've already solved the integration problems (battery + EV + heat pump + grid) Canada is just starting to face. We bring that playbook to Calgary, with local crews and Canadian warranty coverage.
+
+Closing CTA: Ready to talk to a real engineer? Founding slots for Summer 2026 are limited. Reserve yours — we'll prioritise your site visit when we open Calgary installations. → Join the founding waitlist
+
+---
+
+## Contact
+
+Eyebrow: Get in touch
+Headline: Ready to reach Point Zero?
+Intro: Free, no-obligation consultation. We measure your roof, model your consumption, and give you a fixed-price proposal you can actually compare.
+
+- Email: hello@nullpunkt.ca
+- Office: NullPunkt Solar Inc., #2005 – 10th Avenue SW, Calgary, Alberta — Canada
+
+CTA: Try the solar calculator →
+
+### Founding Calgary slots · Summer 2026 — Join the waitlist
+We're prioritising the first ~25 Calgary installations. Add your details and we'll reach out personally as we open slots in your area.
+
+Waitlist form fields: name, email, optional phone, optional postal code, optional message. Submitting adds you to our priority list and notifies the team at hello@nullpunkt.ca.
+
+Tagline: Calgary office of a European solar engineering company. 20+ years installing.
+
+---
+
+## Footer
+
+© NullPunkt Solar Inc. — All rights reserved.
+Site admin (internal).

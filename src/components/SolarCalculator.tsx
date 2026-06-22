@@ -55,7 +55,7 @@ const SolarCalculator = () => {
       setBaseline(data.baseline);
       setAnalysis(data.analysis ?? null);
       if (!data.analysis && data.error) {
-        toast({ title: "AI unavailable", description: data.error, variant: "destructive" });
+        toast({ title: "Analysis unavailable", description: data.error, variant: "destructive" });
       }
     } catch (err) {
       toast({ title: "Calculation failed", description: (err as Error).message, variant: "destructive" });
@@ -186,10 +186,10 @@ const SolarCalculator = () => {
           </div>
 
           <button onClick={run} disabled={loading} className="btn-lime w-full justify-center">
-            {loading ? "Analysing with AI…" : "Run AI-powered analysis →"}
+            {loading ? "Calculating…" : "Run analysis →"}
           </button>
           <p className="text-[11px] text-muted-foreground/70">
-            Engineering baseline computed locally · AI commentary by Gemini 2.5 Pro · Not a binding quote.
+            Engineering baseline computed locally · Not a binding quote.
           </p>
         </div>
       </div>
@@ -202,7 +202,7 @@ const SolarCalculator = () => {
             <h4 className="text-xl font-light mb-2">Your results will appear here</h4>
             <p className="text-muted-foreground text-sm max-w-md mx-auto">
               We model Calgary's real irradiance (1,292 kWh/kWp), both standard and Solar Club retailer scenarios,
-              and optional CEIP financing — then layer expert AI commentary on top.
+              and optional CEIP financing — then layer expert engineering commentary on top.
             </p>
           </div>
         )}
@@ -327,7 +327,7 @@ const SolarCalculator = () => {
               <div className="card-raised p-8 border-lime/20">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-lime animate-pulse" />
-                  <p className="text-minimal text-lime">AI engineering review · Gemini 2.5 Pro</p>
+                  <p className="text-minimal text-lime">Engineering review</p>
                 </div>
                 <h4 className="text-2xl font-light mb-4">{analysis.headline}</h4>
                 <p className="text-muted-foreground leading-relaxed mb-6">{analysis.summary}</p>
