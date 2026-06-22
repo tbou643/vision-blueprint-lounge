@@ -84,8 +84,8 @@ const Work = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-px bg-border rounded-2xl overflow-hidden">
             {[
-              ["Integrated installs (DE)", "Hundreds"],
-              ["Founding AB slots", "25 homes"],
+              ["Integrated installs by parent (Germany)", "Hundreds"],
+              ["Founding Calgary slots · Summer 2026", "25 homes"],
             ].map(([k, v]) => (
               <div key={k} className="bg-card p-10 text-center">
                 <p className="text-minimal text-muted-foreground mb-3">{k}</p>

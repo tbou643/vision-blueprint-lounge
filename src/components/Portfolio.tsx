@@ -64,7 +64,8 @@ const Portfolio = () => {
                 {[
                   "Full yield simulation against 20 years of Calgary weather data",
                   "10 kWp PV + 10 kWh storage + HEMS reference systems from CAD $26,000",
-                  "Greener Homes Loan: interest-free financing up to CAD $40,000",
+                  "Solar Club™ retailer modelling — up to ~35 ¢/kWh export credit",
+                  "CEIP option: 0% PACE financing repaid through property tax",
                   "Fixed-price proposal — not a back-of-envelope quote",
                 ].map((line) => (
                   <div key={line} className="flex gap-3 text-muted-foreground">

@@ -11,10 +11,16 @@ const calgaryFacts = [
 
 const incentives = [
   {
-    name: "Alberta Micro-Generation Regulation",
-    amount: "Net billing",
+    name: "Solar Club™ (UTILITYnet retailer program)",
+    amount: "~35 ¢/kWh export",
     detail:
-      "Small micro-generators under 150 kW are credited monthly at their retail energy rate for surplus exported to the grid. Systems from 150 kW to 5 MW are settled hourly. Administered by the Alberta Utilities Commission.",
+      "An Alberta-only retailer rate structure offered through UTILITYnet that pays roughly 35 ¢/kWh for exported solar and charges around 8.4 ¢/kWh for consumption (verified May 2026 — rates set monthly). It dramatically improves payback for systems that export a meaningful share of production. Not always the best fit — when self-consumption is very high (e.g. big battery + heat pump), a standard retailer can win. We model both in your proposal.",
+  },
+  {
+    name: "Clean Energy Improvement Program (CEIP)",
+    amount: "0% PACE financing",
+    detail:
+      "$0-upfront property-assessed clean energy financing for residential and commercial owners in 26+ participating Alberta municipalities (Calgary, Edmonton, Lethbridge, Banff and more). Repaid through the property tax bill over up to 20 years; obligation transfers with the property if sold (Alberta Municipalities).",
   },
   {
     name: "Clean Technology Investment Tax Credit",
@@ -23,10 +29,10 @@ const incentives = [
       "Federal refundable tax credit on the capital cost of new solar PV and battery storage for commercial, agricultural, and developer-scale projects in Canada. Available through Dec 31, 2034 (CRA / NRCan).",
   },
   {
-    name: "Clean Energy Improvement Program (CEIP)",
-    amount: "0% PACE financing",
+    name: "Alberta Micro-Generation Regulation",
+    amount: "Net billing",
     detail:
-      "Property-assessed clean energy financing for residential and commercial owners in 26+ participating Alberta municipalities. Repaid through the property tax bill; transfers with the property if sold (Alberta Municipalities).",
+      "Small micro-generators under 150 kW are credited monthly at their retail energy rate for surplus exported to the grid. Systems from 150 kW to 5 MW are settled hourly. Administered by the Alberta Utilities Commission.",
   },
   {
     name: "Agrivoltaics & cold-climate research funding",
