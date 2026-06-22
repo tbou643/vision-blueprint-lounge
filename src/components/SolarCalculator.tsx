@@ -186,10 +186,10 @@ const SolarCalculator = () => {
           </div>
 
           <button onClick={run} disabled={loading} className="btn-lime w-full justify-center">
-            {loading ? "Analysing with AI…" : "Run AI-powered analysis →"}
+            {loading ? "Calculating…" : "Run analysis →"}
           </button>
           <p className="text-[11px] text-muted-foreground/70">
-            Engineering baseline computed locally · AI commentary by Gemini 2.5 Pro · Not a binding quote.
+            Engineering baseline computed locally · Not a binding quote.
           </p>
         </div>
       </div>
