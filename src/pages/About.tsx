@@ -192,22 +192,24 @@ const About = () => {
               <div className="card-raised p-8">
                 <p className="text-minimal text-lime mb-3">Lead electrical partner</p>
                 <h3 className="text-2xl font-light mb-3">
-                  Jochen Volland — German-Canadian Red Seal Master Electrician
+                  German-Canadian master electrician partnership
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  15+ years of Alberta electrical experience and the Interprovincial Red Seal
-                  endorsement. Every NullPunkt residential and commercial install in the Calgary
-                  region is delivered with Jochen's team — so we have full Code-compliant
-                  electrical capacity from day one and the German engineering mindset on both
-                  sides of the project.
+                  Our planned default electrical partner for Calgary installations is a
+                  German-Canadian, Alberta-licensed master electrician with long-standing local
+                  experience and an Interprovincial trade endorsement. Working with vetted partner
+                  crews — rather than anonymous day labour — means every NullPunkt residential and
+                  commercial install runs to Canadian Electrical Code with German engineering
+                  discipline on both sides of the project. Partner details are confirmed in the
+                  proposal for each site.
                 </p>
               </div>
               <div className="card-raised p-8">
                 <p className="text-minimal text-lime mb-3">Standards we hold ourselves to</p>
                 <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex gap-3"><span className="text-lime">→</span> Canadian Electrical Code + Alberta-licensed master electricians on every project.</li>
+                  <li className="flex gap-3"><span className="text-lime">→</span> Canadian Electrical Code + Alberta-licensed master electrician partner on every project.</li>
                   <li className="flex gap-3"><span className="text-lime">→</span> Tier-1 modules with IEC 61215 Class 3+ hail rating, UL 9540 storage.</li>
-                  <li className="flex gap-3"><span className="text-lime">→</span> The same engineering, commissioning and documentation discipline used on 600+ German installations.</li>
+                  <li className="flex gap-3"><span className="text-lime">→</span> The same engineering, commissioning and documentation discipline our parent has applied across several hundred German installations.</li>
                   <li className="flex gap-3"><span className="text-lime">→</span> 5-year NullPunkt workmanship warranty stacked on top of manufacturer warranties.</li>
                 </ul>
               </div>
