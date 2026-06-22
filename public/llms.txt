@@ -195,7 +195,7 @@ Founding customers receive priority engineering, fixed-price proposals locked in
 
 - Full yield simulation against 20 years of Calgary weather data
 - 10 kWp PV + 10 kWh storage + HEMS reference systems from CAD $26,000
-- Solar Club™ retailer modelling — up to ~35 ¢/kWh export credit
+- Solar Club retailer modelling — up to ~35 ¢/kWh export credit
 - CEIP option: 0% PACE financing repaid through property tax
 - Fixed-price proposal — not a back-of-envelope quote
 
@@ -244,14 +244,14 @@ Intro: Calgary gets more solar than Berlin, Frankfurt, or Munich. Run the same e
 ### The calculator — Engineering math, not marketing fluff.
 Built on Calgary's real irradiance data, Alberta's all-in retail rate, and the Micro-Generation export credit — grounded on the same numbers our engineers use.
 
-Inputs include monthly power bill, roof orientation, optional Solar Club™ retailer scenario and CEIP (0% PACE financing) toggle. The tool returns a recommended system size, PV + battery cost breakdown, side-by-side retailer comparison (Standard ~16.5 ¢/kWh consume, ~8.5 ¢/kWh export vs. Solar Club™ ~8.4 ¢/kWh consume, ~35 ¢/kWh export), annual savings, simple payback and a year-one cash-flow view when CEIP is enabled.
+Inputs include monthly power bill, roof orientation, optional Solar Club retailer scenario and CEIP (0% PACE financing) toggle. The tool returns a recommended system size, PV + battery cost breakdown, side-by-side retailer comparison (Standard ~16.5 ¢/kWh consume, ~8.5 ¢/kWh export vs. Solar Club ~8.4 ¢/kWh consume, ~35 ¢/kWh export), annual savings, simple payback and a year-one cash-flow view when CEIP is enabled.
 
 Disclaimer: Engineering baseline computed locally · Not a binding quote.
 
 ### Money on the table — Alberta & federal incentives, as of 2026
 We don't sell the rebate — we engineer the system. But every NullPunkt proposal includes a stacked incentive breakdown so you see your real, after-rebate cost.
 
-- Solar Club™ (UTILITYnet retailer program) — ~35 ¢/kWh export
+- Solar Club (UTILITYnet retailer program) — ~35 ¢/kWh export
   An Alberta-only retailer rate structure offered through UTILITYnet that pays roughly 35 ¢/kWh for exported solar and charges around 8.4 ¢/kWh for consumption (verified May 2026 — rates set monthly). It dramatically improves payback for systems that export a meaningful share of production. Not always the best fit — when self-consumption is very high (e.g. big battery + heat pump), a standard retailer can win. We model both in your proposal.
 - Clean Energy Improvement Program (CEIP) — 0% PACE financing
   $0-upfront property-assessed clean energy financing for residential and commercial owners in 26+ participating Alberta municipalities (Calgary, Edmonton, Lethbridge, Banff and more). Repaid through the property tax bill over up to 20 years; obligation transfers with the property if sold (Alberta Municipalities).
