@@ -88,7 +88,7 @@ const Services = () => {
       step: "04",
       title: "Installation",
       duration: "1–2 days on site",
-      body: "Day 1: roof and racking. Day 2: electrical, battery, HEMS commissioning. Crew is in-house — never subbed out.",
+      body: "Day 1: roof and racking. Day 2: electrical, battery, HEMS commissioning. Work is delivered by our vetted Alberta master-electrician partners with a NullPunkt project lead on site every day.",
     },
     {
       step: "05",
