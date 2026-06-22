@@ -146,7 +146,7 @@ const CalculatorPage = () => {
             </h2>
             <p className="text-muted-foreground leading-relaxed">
               Built on Calgary's real irradiance data, Alberta's all-in retail rate, and the Micro-Generation export
-              credit. AI commentary by Google Gemini 2.5 Pro — grounded on the same numbers our engineers use.
+              credit — grounded on the same numbers our engineers use.
             </p>
           </div>
           <SolarCalculator />
