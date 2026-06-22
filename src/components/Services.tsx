@@ -44,9 +44,10 @@ const Services = () => {
           </div>
 
           <p className="text-sm text-muted-foreground max-w-2xl mt-10">
-            Every installation is delivered with a Red Seal Master Electrician partner and engineered
-            to the same standards our parent company has refined over hundreds of German installations.
-            We only work with fully licensed, high-qualification trades — no subcontractor chains.
+            Every installation is delivered with an Alberta-licensed master electrician partner and
+            engineered to the same standards our parent company has refined across several hundred
+            German installations. We only work with fully licensed, high-qualification trades —
+            no anonymous subcontractor chains.
           </p>
 
 
