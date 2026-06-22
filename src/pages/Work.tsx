@@ -52,7 +52,7 @@ const Work = () => {
             <p className="text-xl text-muted-foreground max-w-3xl mb-10">
               We're new to Alberta — not new to the work. NullPunkt Solar is the Canadian subsidiary
               of SMB Solartechnik GmbH, a profitable German solar company with hundreds of completed
-              integrated installations. Be one of our first 25 Alberta projects.
+              integrated installations. Join our founding cohort of Alberta projects.
             </p>
             <Link to="/contact" className="btn-lime">Join the founding waitlist →</Link>
           </div>
@@ -85,7 +85,7 @@ const Work = () => {
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-px bg-border rounded-2xl overflow-hidden">
             {[
               ["Integrated installs by parent (Germany)", "Hundreds"],
-              ["Founding Calgary slots · Summer 2026", "25 homes"],
+              ["Founding Calgary cohort · Summer 2026", "Limited"],
             ].map(([k, v]) => (
               <div key={k} className="bg-card p-10 text-center">
                 <p className="text-minimal text-muted-foreground mb-3">{k}</p>
