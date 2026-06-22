@@ -54,7 +54,7 @@ const Contact = () => {
               <ul className="space-y-5">
                 {[
                   "Satellite roof analysis with shading model",
-                  "PV + battery + heat pump sizing for your bills",
+                  "PV + battery + HEMS sizing matched to your bills",
                   "Full bill of materials and warranty terms",
                   "Fixed-price proposal — no upsells, no surprises",
                   "Honest payback math for Alberta's grid rates",
