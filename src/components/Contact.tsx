@@ -41,27 +41,19 @@ const Contact = () => {
               </div>
 
               <div className="mt-10">
-                <Link to="/contact" className="btn-lime">Book a free site visit →</Link>
+                <Link to="/calculator" className="btn-ghost">Try the solar calculator →</Link>
               </div>
             </div>
 
-            {/* Right: what's included */}
+            {/* Right: waitlist form */}
             <div className="card-raised p-10">
-              <p className="text-minimal text-muted-foreground mb-6">What you get in the first call</p>
-              <ul className="space-y-5">
-                {[
-                  "Satellite roof analysis with shading model",
-                  "PV + battery + HEMS sizing matched to your bills",
-                  "Full bill of materials and warranty terms",
-                  "Fixed-price proposal — no upsells, no surprises",
-                  "Honest payback math for Alberta's grid rates",
-                ].map((line) => (
-                  <li key={line} className="flex items-start gap-4">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-lime shadow-lime flex-shrink-0" />
-                    <span className="text-muted-foreground leading-relaxed">{line}</span>
-                  </li>
-                ))}
-              </ul>
+              <p className="text-minimal text-lime mb-3">Founding Calgary slots · Summer 2026</p>
+              <h3 className="text-2xl font-light mb-3">Join the waitlist.</h3>
+              <p className="text-sm text-muted-foreground mb-8">
+                We're prioritising the first ~25 Calgary installations. Add your details and we'll reach out personally
+                as we open slots in your area.
+              </p>
+              <WaitlistForm source="contact-page" />
 
               <div className="mt-10 pt-8 border-t border-border flex items-center justify-between gap-6">
                 <Logo variant="light" showTagline className="h-12 w-auto" />
@@ -71,6 +63,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
+
 
           {/* Footer line */}
           <div className="mt-20 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
