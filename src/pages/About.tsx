@@ -128,11 +128,11 @@ const About = () => {
                 </p>
                 <p>
                   I'm relocating from southern Germany to Calgary as principal directing mind and
-                  sole Director of NullPunkt Solar Inc., committing CAD $298,000 of capital
-                  (verified by Sparkasse Salem-Heiligenberg) to the Canadian launch. I lived and
-                  worked in Canada once before — 18 months of Work & Travel back in 2008–09 — and
-                  I've wanted to come back ever since. Now I get to build something here that
-                  actually matters for Alberta's energy future.
+                  sole Director of NullPunkt Solar Inc., with CAD $298,000 of committed capital
+                  (bank-verified) backing the Canadian launch. I lived and worked in Canada once
+                  before — 18 months of Work & Travel back in 2008–09 — and I've wanted to come
+                  back ever since. Now I get to build something here that actually matters for
+                  Alberta's energy future.
                 </p>
                 <p className="text-foreground">
                   If you join the founding waitlist in our first year, the engineer at your
