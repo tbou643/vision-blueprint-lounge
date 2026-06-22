@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import { Link } from "react-router-dom";
+import founderImage from "@/assets/tim-brunkel.asset.json";
 
 const About = () => {
   return (
@@ -70,6 +71,116 @@ const About = () => {
         </div>
       </section>
 
+      {/* Founder section */}
+      <section className="py-28">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-5">
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-border bg-card">
+                <img
+                  src={founderImage.url}
+                  alt="Tim Brunkel — Founder & CEO of NullPunkt Solar Inc."
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <p className="text-xs text-muted-foreground mt-3">
+                Tim Brunkel on a commissioned SMB Solartechnik commercial rooftop, Germany.
+              </p>
+            </div>
+
+            <div className="lg:col-span-7">
+              <p className="text-minimal text-lime mb-4">Meet the founder</p>
+              <h2 className="text-4xl md:text-5xl font-light text-architectural mb-6">
+                Tim Brunkel.
+                <br />
+                <span className="text-muted-foreground">Builder. Engineer. Calgary-bound.</span>
+              </h2>
+
+              <div className="space-y-5 text-muted-foreground leading-relaxed">
+                <p>
+                  Hi — I'm Tim. I founded <span className="text-foreground">SMB Solartechnik GmbH</span>{" "}
+                  in 2024, grew it past EUR 700,000 in annual revenue in Germany's competitive solar
+                  market, and personally oversaw several hundred integrated photovoltaic
+                  installations across residential, commercial and agricultural projects.
+                </p>
+                <p>
+                  Before solar, I spent 13+ years in senior technology roles — most recently as
+                  Head of IT Innovation Solution Design at <span className="text-foreground">ZF
+                  Friedrichshafen AG</span>, leading cross-functional teams turning emerging
+                  technology into enterprise solutions. That product- and program-management
+                  background is exactly what fully integrated solar needs: PV + battery + heat
+                  pump + EV + intelligent energy management (HEMS / OpenEMS) is a software-meets-
+                  hardware problem, not a panel-on-a-roof problem.
+                </p>
+                <p>
+                  I'm relocating from southern Germany to Calgary as principal directing mind and
+                  sole Director of NullPunkt Solar Inc., committing CAD $298,000 of capital
+                  (verified by Sparkasse Salem-Heiligenberg) to the Canadian launch. I lived and
+                  worked in Canada once before — 18 months of Work & Travel back in 2008–09 — and
+                  I've wanted to come back ever since. Now I get to build something here that
+                  actually matters for Alberta's energy future.
+                </p>
+                <p className="text-foreground">
+                  If you join the founding waitlist in our first year, the engineer at your
+                  kitchen table will be me.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-3 gap-px bg-border rounded-xl overflow-hidden mt-10">
+                {[
+                  ["13+ yrs", "tech / product leadership"],
+                  ["100s", "PV installs overseen"],
+                  ["C2", "English (CELPIP 11)"],
+                ].map(([n, l]) => (
+                  <div key={l} className="bg-card p-5 text-center">
+                    <p className="text-2xl font-semibold text-lime">{n}</p>
+                    <p className="text-[11px] tracking-wider uppercase text-muted-foreground mt-1">{l}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partners & quality */}
+      <section className="py-24 bg-card border-y border-border">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-minimal text-lime mb-4">Partners on the ground</p>
+            <h2 className="text-3xl md:text-4xl font-light text-architectural mb-10">
+              We only work with fully licensed,
+              <br />
+              <span className="text-muted-foreground">high-qualification trades.</span>
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="card-raised p-8">
+                <p className="text-minimal text-lime mb-3">Lead electrical partner</p>
+                <h3 className="text-2xl font-light mb-3">
+                  Jochen Volland — German-Canadian Red Seal Master Electrician
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  15+ years of Alberta electrical experience and the Interprovincial Red Seal
+                  endorsement. Every NullPunkt residential and commercial install in the Calgary
+                  region is delivered with Jochen's team — so we have full Code-compliant
+                  electrical capacity from day one and the German engineering mindset on both
+                  sides of the project.
+                </p>
+              </div>
+              <div className="card-raised p-8">
+                <p className="text-minimal text-lime mb-3">Standards we hold ourselves to</p>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex gap-3"><span className="text-lime">→</span> Canadian Electrical Code + Alberta-licensed master electricians on every project.</li>
+                  <li className="flex gap-3"><span className="text-lime">→</span> Tier-1 modules with IEC 61215 Class 3+ hail rating, UL 9540 storage.</li>
+                  <li className="flex gap-3"><span className="text-lime">→</span> The same engineering, commissioning and documentation discipline used on 600+ German installations.</li>
+                  <li className="flex gap-3"><span className="text-lime">→</span> 5-year NullPunkt workmanship warranty stacked on top of manufacturer warranties.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-24">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
@@ -97,7 +208,7 @@ const About = () => {
               Want to be one of our first Calgary installs?
             </h2>
             <p className="text-muted-foreground mb-10">
-              Founding customers get priority engineering slots and a direct line to the team.
+              Founding customers get priority engineering slots and a direct line to me and the team.
             </p>
             <Link to="/contact" className="btn-lime">Book a free consultation →</Link>
           </div>
