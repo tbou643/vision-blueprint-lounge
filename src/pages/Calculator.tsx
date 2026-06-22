@@ -83,7 +83,7 @@ const faqs = [
   },
   {
     q: "How do hail and snow affect my system?",
-    a: "Our modules are hail-rated to 35 mm at 27 m/s (IEC 61215 Class 3). We mount at 30°+ tilts so snow sheds rapidly. In 20 years, our parent company has never replaced a panel due to weather in Germany, Switzerland, or Austria.",
+    a: "Our modules are hail-rated to 35 mm at 27 m/s (IEC 61215 Class 3). We mount at 30°+ tilts so snow sheds rapidly. Our German parent company has not had to replace a panel due to weather on its installations to date — and we engineer the Alberta systems to the same spec.",
   },
   {
     q: "Can I go fully off-grid in Alberta?",
