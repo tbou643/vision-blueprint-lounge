@@ -57,8 +57,8 @@ const Contact = () => {
 
               <div className="mt-10 pt-8 border-t border-border flex items-center justify-between gap-6">
                 <Logo variant="light" showTagline className="h-12 w-auto" />
-                <p className="text-xs text-muted-foreground/70 text-right max-w-[12rem]">
-                  Calgary office of a European solar engineering company. 20+ years installing.
+                <p className="text-xs text-muted-foreground/70 text-right max-w-[14rem]">
+                  A new Calgary company, backed by a German parent installing integrated systems since 2024.
                 </p>
               </div>
             </div>
@@ -66,9 +66,8 @@ const Contact = () => {
 
 
           {/* Footer line */}
-          <div className="mt-20 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+          <div className="mt-20 pt-8 border-t border-border text-xs text-muted-foreground text-center">
             <p>© {new Date().getFullYear()} NullPunkt Solar Inc. — All rights reserved.</p>
-            <Link to="/admin" className="hover:text-foreground transition-colors">Site admin</Link>
           </div>
         </div>
       </div>
