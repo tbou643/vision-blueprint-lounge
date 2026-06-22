@@ -1,124 +1,93 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
 
-import projectSolar1Fallback from "@/assets/project-solar-1.jpg";
-import projectSolar2Fallback from "@/assets/project-solar-2.jpg";
-import projectHeatpumpFallback from "@/assets/project-heatpump.jpg";
-
-interface Project {
-  id: string;
-  image_id: string;
-  title: string;
-  location: string;
-  description: string;
-  is_featured: boolean;
-}
-
-const fallbackImages: Record<string, string> = {
-  "project-solar-1": projectSolar1Fallback,
-  "project-solar-2": projectSolar2Fallback,
-  "project-heatpump": projectHeatpumpFallback,
-};
+const milestones = [
+  {
+    label: "Now",
+    title: "Founding waitlist open",
+    body: "First 25 Calgary homes receive priority engineering slots and founding-customer pricing.",
+  },
+  {
+    label: "Spring 2026",
+    title: "Calgary HQ commissioned",
+    body: "Local crew assembled, warehouse stocked, supplier logistics from SMB Solartechnik transferred.",
+  },
+  {
+    label: "Summer 2026",
+    title: "First Alberta installations",
+    body: "Residential integrated systems go live across Calgary metro — fully monitored from day one.",
+  },
+  {
+    label: "2027 →",
+    title: "Commercial & developer rollout",
+    body: "B2B partnerships activated in Red Deer, Lethbridge corridor and new-construction subdivisions.",
+  },
+];
 
 const Portfolio = () => {
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [storageImages, setStorageImages] = useState<Record<string, string>>({});
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    (async () => {
-      const { data } = await supabase
-        .from("projects")
-        .select("*")
-        .eq("is_featured", true)
-        .order("sort_order", { ascending: true });
-
-      const list = data || [];
-      setProjects(list);
-
-      const ids = [...new Set(list.map((p) => p.image_id))];
-      const loaded: Record<string, string> = {};
-      for (const id of ids) {
-        for (const ext of ["jpg", "png", "webp"]) {
-          const { data: pub } = supabase.storage.from("project-images").getPublicUrl(`${id}.${ext}`);
-          try {
-            const r = await fetch(pub.publicUrl, { method: "HEAD" });
-            if (r.ok) {
-              loaded[id] = pub.publicUrl;
-              break;
-            }
-          } catch {}
-        }
-      }
-      setStorageImages(loaded);
-      setLoading(false);
-    })();
-  }, []);
-
-  const imgUrl = (id: string) => storageImages[id] || fallbackImages[id] || projectSolar1Fallback;
-
   return (
-    <section id="work" className="relative py-32 bg-background">
+    <section id="launch" className="relative py-32 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
             <div>
-              <p className="text-minimal text-lime mb-4">Reference work</p>
+              <p className="text-minimal text-lime mb-4">Launch roadmap</p>
               <h2 className="text-4xl md:text-6xl font-light text-architectural">
-                Built portfolio,
+                NullPunkt Solar,
                 <br />
-                <span className="text-muted-foreground">new market.</span>
+                <span className="text-muted-foreground">coming to Calgary.</span>
               </h2>
             </div>
             <p className="text-muted-foreground max-w-md leading-relaxed">
-              The systems below are from our European parent. Our Calgary book is opening
-              now — founding customers receive priority engineering slots in 2026.
+              We're a new operation in Alberta — but not a new company. Our German parent has been
+              installing integrated systems for years. Get on the list while founding slots are open.
             </p>
           </div>
 
-          {loading ? (
-            <div className="h-[60vh] bg-card animate-pulse rounded-2xl" />
-          ) : projects.length === 0 ? (
-            <div className="card-raised p-16 text-center">
-              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-lime/40 bg-lime/10 mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-lime animate-pulse" />
-                <span className="text-[11px] tracking-[0.2em] uppercase text-lime font-medium">
-                  Opening Calgary book — 2026
-                </span>
+          <div className="card-raised p-10 md:p-14 mb-12">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-lime/40 bg-lime/10 mb-8">
+              <span className="w-1.5 h-1.5 rounded-full bg-lime animate-pulse" />
+              <span className="text-[11px] tracking-[0.2em] uppercase text-lime font-medium">
+                Founding customer program · Summer 2026
+              </span>
+            </div>
+            <div className="grid md:grid-cols-2 gap-10 items-start">
+              <div>
+                <h3 className="text-3xl md:text-4xl font-light text-architectural mb-4">
+                  Be one of the first 25 integrated systems in Alberta.
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Founding customers receive priority engineering, fixed-price proposals locked in
+                  before commissioning, and a direct line to the team that designed the system.
+                </p>
               </div>
-              <h3 className="text-3xl md:text-4xl font-light text-architectural mb-4">
-                Our first Alberta installations are being scheduled.
-              </h3>
-              <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-                Reference projects from our European parent are available on request. Reach
-                out for a site walkthrough and a fixed-price proposal.
-              </p>
-              <Link to="/contact" className="btn-lime">Book a site visit</Link>
-            </div>
-          ) : (
-            <div className="grid md:grid-cols-2 gap-8">
-              {projects.map((p) => (
-                <article key={p.id} className="group card-raised overflow-hidden">
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
-                      src={imgUrl(p.image_id)}
-                      alt={p.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-8">
-                      <p className="text-minimal text-lime mb-2">{p.location}</p>
-                      <h3 className="text-2xl font-semibold">{p.title}</h3>
-                    </div>
+              <div className="space-y-4">
+                {[
+                  "Full yield simulation against 20 years of Calgary weather data",
+                  "10 kWp PV + 10 kWh storage + HEMS reference systems from CAD $26,000",
+                  "Greener Homes Loan: interest-free financing up to CAD $40,000",
+                  "Fixed-price proposal — not a back-of-envelope quote",
+                ].map((line) => (
+                  <div key={line} className="flex gap-3 text-muted-foreground">
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-lime flex-shrink-0" />
+                    <p>{line}</p>
                   </div>
-                  <div className="p-8 border-t border-border">
-                    <p className="text-muted-foreground leading-relaxed">{p.description}</p>
-                  </div>
-                </article>
-              ))}
+                ))}
+                <div className="pt-4">
+                  <Link to="/contact" className="btn-lime">Join the waitlist</Link>
+                </div>
+              </div>
             </div>
-          )}
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden">
+            {milestones.map((m) => (
+              <div key={m.label} className="bg-card p-8">
+                <p className="text-minimal text-lime mb-3">{m.label}</p>
+                <h4 className="text-lg font-semibold mb-3">{m.title}</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">{m.body}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -34,15 +34,16 @@ const About = () => {
               </h2>
               <div className="space-y-5 text-muted-foreground leading-relaxed">
                 <p>
-                  NullPunkt Solar Inc. is the Canadian arm of a European solar engineering
-                  company that has been designing integrated PV, storage and heat pump
-                  systems for over twenty years.
+                  NullPunkt Solar Inc. is the wholly-owned Canadian subsidiary of
+                  <span className="text-foreground"> SMB Solartechnik GmbH</span> — a profitable
+                  German solar company with annual revenue exceeding EUR 700,000 and hundreds of
+                  completed integrated installations.
                 </p>
                 <p>
-                  We didn't show up in Calgary to learn the trade. We came because the
-                  Alberta grid, the housing stock and the sun hours finally make the
-                  numbers work — and because we wanted to build something here from day one
-                  with the playbook already written.
+                  We didn't show up in Calgary to learn the trade. We came because the Alberta
+                  grid, the housing stock and the sun hours finally make the numbers work — and
+                  because we wanted to build here from day one with the engineering playbook
+                  already written.
                 </p>
               </div>
             </div>
@@ -54,9 +55,9 @@ const About = () => {
               </h2>
               <div className="space-y-5 text-muted-foreground leading-relaxed">
                 <p>
-                  Most installers sell what their supplier pushes. We design around your
-                  bills, your roof, and your appetite for grid independence — and only then
-                  pick the modules, the inverter, the battery and the heat pump.
+                  Most installers sell what their supplier pushes. We design around your bills,
+                  your roof and your appetite for grid independence — then pick the modules, the
+                  inverter, the battery and the energy-management controller.
                 </p>
                 <p>
                   Engineering, procurement, installation and commissioning all sit under

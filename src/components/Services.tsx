@@ -2,27 +2,31 @@ const Services = () => {
   const services = [
     {
       number: "01",
-      title: "Solar PV Systems",
+      title: "Residential Integrated Systems",
+      tag: "B2C",
       description:
-        "High-yield rooftop and ground-mount PV designed for Alberta's long winters and high-irradiance summers. Tier-1 modules, 25-year performance warranty.",
+        "8–15 kWp PV, 10–15 kWh battery storage, intelligent HEMS, plus heat-pump and EV-charger readiness — engineered as one coordinated system for Alberta homes.",
     },
     {
       number: "02",
-      title: "Battery Storage",
+      title: "Commercial & Agricultural",
+      tag: "B2B",
       description:
-        "Modern lithium storage that captures your midday surplus and powers your evenings — with grid backup when the wind picks up on the foothills.",
+        "20–200 kWp PV with optional storage and energy management for businesses, farms and small commercial properties. Demand-charge optimisation and Agri-PV included.",
     },
     {
       number: "03",
-      title: "Heat Pumps",
+      title: "Developer Partnerships",
+      tag: "B2B",
       description:
-        "Cold-climate air-source and ground-source heat pumps that pair with your PV. One system for heating, cooling and hot water — minus the gas bill.",
+        "Turnkey pre-integrated solar built into new-construction subdivisions — a premium sales feature for builders, fully coordinated with the construction schedule.",
     },
     {
       number: "04",
-      title: "Integrated Design",
+      title: "Service, Monitoring & Maintenance",
+      tag: "Recurring",
       description:
-        "We don't sell boxes. We engineer one coordinated system where production meets consumption — monitored, optimised, and built to last.",
+        "Lifetime cloud-based monitoring dashboard, optional annual maintenance packages and premium-component warranty management for every installed system.",
     },
   ];
 
@@ -33,9 +37,9 @@ const Services = () => {
           <div className="mb-20 max-w-3xl">
             <p className="text-minimal text-lime mb-4">What we build</p>
             <h2 className="text-4xl md:text-6xl font-light text-architectural">
-              One system.
+              Four service lines.
               <br />
-              <span className="text-muted-foreground">Four moving parts.</span>
+              <span className="text-muted-foreground">One integrated system.</span>
             </h2>
           </div>
 
@@ -48,9 +52,14 @@ const Services = () => {
                 <div className="flex items-start gap-6">
                   <span className="text-lime text-sm font-mono font-semibold pt-1">{s.number}</span>
                   <div>
-                    <h3 className="text-2xl font-semibold mb-4 group-hover:text-lime transition-colors duration-500">
-                      {s.title}
-                    </h3>
+                    <div className="flex items-center gap-3 mb-4">
+                      <h3 className="text-2xl font-semibold group-hover:text-lime transition-colors duration-500">
+                        {s.title}
+                      </h3>
+                      <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground border border-border px-2 py-0.5 rounded-full">
+                        {s.tag}
+                      </span>
+                    </div>
                     <p className="text-muted-foreground leading-relaxed">{s.description}</p>
                   </div>
                 </div>

@@ -5,51 +5,59 @@ const Services = () => {
   const services = [
     {
       number: "01",
-      title: "Solar PV Systems",
+      title: "Residential Integrated Systems",
+      tag: "B2C · Calgary metro",
       description:
-        "Tier-1 rooftop and ground-mount photovoltaic systems sized for Alberta's irradiance profile. We model your real consumption against twenty years of local weather data before we quote a single module.",
+        "Fully integrated solar energy systems for owner-occupied homes. Engineered as one ecosystem rather than a stack of separately installed devices — increasing self-consumption from 25–40% (PV-only) to 70–85%.",
       features: [
-        "Tier-1 modules with 25-year performance warranty",
-        "Snow-load and chinook-wind engineered mounting",
-        "Pre-build yield simulation, not back-of-envelope math",
-        "Grid interconnection paperwork handled end-to-end",
+        "8–15 kWp Tier-1 PV with Hail Class HW5 modules",
+        "10–15 kWh LFP battery storage (UL 9540)",
+        "Intelligent HEMS — OpenEMS-based, no vendor lock-in",
+        "Heat-pump and EV-charger readiness pre-wired",
       ],
+      price: "CAD $26,000 – $48,000",
     },
     {
       number: "02",
-      title: "Battery Storage",
+      title: "Commercial & Agricultural",
+      tag: "B2B · Businesses & farms",
       description:
-        "Lithium storage sized to your actual evening load — so the midday surplus that would normally feed back at minimal credit powers your house at retail rates instead.",
+        "Larger-scale solar with optional storage and energy management for commercial buildings, farms and small-industrial sites. Demand-charge optimisation, peak shaving and Agri-PV configurations.",
       features: [
-        "LFP chemistry — safer, longer cycle life",
-        "Grid backup for the next outage",
-        "Modular capacity, expandable later",
-        "10-year warranty as standard",
+        "20–200 kWp PV with NA-certified inverters",
+        "Optional battery storage for peak shaving",
+        "Demand-charge and time-of-use optimisation",
+        "Agri-PV configurations for farms",
       ],
+      price: "CAD $65,000 – $220,000+",
     },
     {
       number: "03",
-      title: "Heat Pump Systems",
+      title: "Developer Partnerships",
+      tag: "B2B · New construction",
       description:
-        "Cold-climate air-source and ground-source heat pumps that pair directly with your PV. One unit replaces your furnace, AC and most of your hot water — and runs on the electrons from your own roof.",
+        "Volume turnkey installations for new-construction subdivisions, integrated directly into the homebuilding process. Premium integrated solar becomes a marketable feature for the builder.",
       features: [
-        "Rated for Calgary winters down to -25°C",
-        "COP up to 5.0 on shoulder seasons",
-        "Direct integration with PV + battery",
-        "Whisper-quiet outdoor unit",
+        "8–10 kWp pre-integrated unit per home",
+        "Volume pricing coordinated with build schedule",
+        "Marketing collateral for builder sales teams",
+        "Single point of contact for the entire subdivision",
       ],
+      price: "CAD $22,000 – $28,000 per unit",
     },
     {
       number: "04",
-      title: "Integrated System Design",
+      title: "Service, Monitoring & Maintenance",
+      tag: "Recurring · Lifetime",
       description:
-        "The four boxes above are useless if they don't talk to each other. We design one coordinated system that prioritises self-consumption, predicts your bills, and monitors itself in real time.",
+        "Recurring revenue programs that keep every installed system performing for decades. Real-time monitoring, scheduled inspections and premium-component warranty management.",
       features: [
-        "Energy management with load prioritisation",
-        "Live monitoring dashboard",
-        "Heat pump runs on PV surplus automatically",
-        "Future-ready for EV charging",
+        "Lifetime cloud-based monitoring dashboard",
+        "Optional annual maintenance subscription",
+        "40-year module warranty management (premium tier)",
+        "5-year NullPunkt Solar workmanship guarantee",
       ],
+      price: "Included + optional packages",
     },
   ];
 
@@ -63,13 +71,13 @@ const Services = () => {
           <div className="max-w-5xl mx-auto">
             <p className="text-minimal text-lime mb-6">What we build</p>
             <h1 className="text-5xl md:text-7xl font-light text-architectural mb-8">
-              Four pieces.
+              Four service lines.
               <br />
-              <span className="text-muted-foreground">One coordinated system.</span>
+              <span className="text-muted-foreground">One integrated system.</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl">
-              We engineer PV, storage and heat pumps as a single installation — not four
-              separate ones bolted together later.
+            <p className="text-xl text-muted-foreground max-w-3xl">
+              NullPunkt Solar engineers PV, battery storage and intelligent energy management as a
+              single coordinated installation — not four products bolted together later.
             </p>
           </div>
         </div>
@@ -82,7 +90,8 @@ const Services = () => {
               <div key={s.number} className="bg-background p-10 md:p-14 grid md:grid-cols-12 gap-8">
                 <div className="md:col-span-4">
                   <p className="text-lime text-sm font-mono font-semibold mb-3">{s.number}</p>
-                  <h2 className="text-3xl md:text-4xl font-light text-architectural">{s.title}</h2>
+                  <h2 className="text-3xl md:text-4xl font-light text-architectural mb-3">{s.title}</h2>
+                  <p className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">{s.tag}</p>
                 </div>
                 <div className="md:col-span-8 space-y-6">
                   <p className="text-lg text-muted-foreground leading-relaxed">{s.description}</p>
@@ -94,6 +103,10 @@ const Services = () => {
                       </li>
                     ))}
                   </ul>
+                  <div className="pt-4 border-t border-border flex items-center justify-between">
+                    <p className="text-minimal text-muted-foreground">Reference pricing</p>
+                    <p className="text-lime font-semibold">{s.price}</p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -107,9 +120,10 @@ const Services = () => {
             Let's run the numbers for your address.
           </h2>
           <p className="text-muted-foreground mb-10 max-w-xl mx-auto">
-            Free consultation. Full simulation. Fixed-price proposal you can compare to anything else on the table.
+            Free consultation. Full yield simulation. Fixed-price proposal you can compare to
+            anything else on the table.
           </p>
-          <Link to="/contact" className="btn-lime">Get your free quote →</Link>
+          <Link to="/contact" className="btn-lime">Join the founding waitlist →</Link>
         </div>
       </section>
     </div>
