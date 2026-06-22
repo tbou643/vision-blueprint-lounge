@@ -163,7 +163,7 @@ const SolarCalculator = () => {
                 className="accent-lime mt-1"
               />
               <span>
-                <span className="text-foreground">Solar Club™ retailer rate</span>
+                <span className="text-foreground">Solar Club retailer rate</span>
                 <span className="block text-xs text-muted-foreground">
                   UTILITYnet program — ~35 ¢/kWh export, ~8.4 ¢/kWh consumption
                 </span>
@@ -268,7 +268,7 @@ const SolarCalculator = () => {
                       baseline.useSolarClub ? "border-lime/60 bg-lime/5" : "border-border"
                     }`}
                   >
-                    <p className="text-xs text-lime mb-1">Solar Club™ retailer</p>
+                    <p className="text-xs text-lime mb-1">Solar Club retailer</p>
                     <p className="text-xl font-light">${baseline.annualSavingsSolarClub.toLocaleString()}/yr</p>
                     <p className="text-[11px] text-muted-foreground mt-1">~8.4 ¢ consume · ~35 ¢ export</p>
                   </div>
@@ -390,7 +390,7 @@ const Stat = ({ label, value, accent }: { label: string; value: string; accent?:
 const calcSteps = [
   "Pulling Calgary irradiance data (1,292 kWh/kWp)…",
   "Sizing your array against roof + bill…",
-  "Modelling standard vs. Solar Club™ retailer rates…",
+  "Modelling standard vs. Solar Club retailer rates…",
   "Layering CEIP financing & federal incentives…",
   "Stress-testing payback for hail, snow & chinooks…",
   "Finalising engineering review…",

@@ -25,7 +25,7 @@ const milestones = [
   {
     label: "2028 – 2031",
     title: "Western Canada",
-    body: "Selective expansion into British Columbia and Saskatchewan; target of 600+ integrated systems by year five.",
+    body: "Selective expansion targeted into British Columbia and Saskatchewan, building toward a meaningful installed base of integrated systems by year five.",
   },
 ];
 

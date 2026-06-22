@@ -11,20 +11,22 @@ const About = () => {
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-architectural mb-8">
                 A new name in Calgary.
                 <br />
-                <span className="text-muted-foreground">A decade of practice.</span>
+                <span className="text-muted-foreground">A proven engineering playbook.</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 <span className="text-foreground font-medium">NullPunkt Solar Inc.</span> is the
                 wholly-owned Canadian subsidiary of <span className="text-foreground font-medium">SMB
-                Solartechnik GmbH</span> — an established German solar company with hundreds of
-                completed integrated installations.
+                Solartechnik GmbH</span> — a German solar company installing integrated PV,
+                battery and HEMS systems since 2024, with several hundred residential, commercial
+                and agricultural installations completed.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 We bring the engineering playbook, the supplier network and the partner standards to
                 Alberta — and we only work with fully licensed, high-qualification trades on the
-                ground. Every installation is delivered together with a <span className="text-foreground">Red Seal
-                Master Electrician</span> partner so the first system we commission in Calgary is held to
-                the same standard as our 600th in Germany.
+                ground. Every installation is delivered together with an
+                <span className="text-foreground"> Alberta-licensed master electrician partner</span>,
+                so the first system we commission in Calgary is held to the same standard our parent
+                applies to every install in Germany.
               </p>
             </div>
 

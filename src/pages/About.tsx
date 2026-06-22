@@ -13,7 +13,7 @@ const About = () => {
           <div className="max-w-5xl mx-auto">
             <p className="text-minimal text-lime mb-6">About NullPunkt</p>
             <h1 className="text-5xl md:text-7xl font-light text-architectural mb-10">
-              A Calgary office, with two decades of solar already behind it.
+              A new Calgary company, with a proven German playbook already running.
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
               <span className="text-foreground font-medium">"NullPunkt"</span> is the point of
@@ -128,11 +128,11 @@ const About = () => {
                 </p>
                 <p>
                   I'm relocating from southern Germany to Calgary as principal directing mind and
-                  sole Director of NullPunkt Solar Inc., committing CAD $298,000 of capital
-                  (verified by Sparkasse Salem-Heiligenberg) to the Canadian launch. I lived and
-                  worked in Canada once before — 18 months of Work & Travel back in 2008–09 — and
-                  I've wanted to come back ever since. Now I get to build something here that
-                  actually matters for Alberta's energy future.
+                  sole Director of NullPunkt Solar Inc., with CAD $298,000 of committed capital
+                  (bank-verified) backing the Canadian launch. I lived and worked in Canada once
+                  before — 18 months of Work & Travel back in 2008–09 — and I've wanted to come
+                  back ever since. Now I get to build something here that actually matters for
+                  Alberta's energy future.
                 </p>
                 <p className="text-foreground">
                   If you join the founding waitlist in our first year, the engineer at your
@@ -192,22 +192,24 @@ const About = () => {
               <div className="card-raised p-8">
                 <p className="text-minimal text-lime mb-3">Lead electrical partner</p>
                 <h3 className="text-2xl font-light mb-3">
-                  Jochen Volland — German-Canadian Red Seal Master Electrician
+                  German-Canadian master electrician partnership
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  15+ years of Alberta electrical experience and the Interprovincial Red Seal
-                  endorsement. Every NullPunkt residential and commercial install in the Calgary
-                  region is delivered with Jochen's team — so we have full Code-compliant
-                  electrical capacity from day one and the German engineering mindset on both
-                  sides of the project.
+                  Our planned default electrical partner for Calgary installations is a
+                  German-Canadian, Alberta-licensed master electrician with long-standing local
+                  experience and an Interprovincial trade endorsement. Working with vetted partner
+                  crews — rather than anonymous day labour — means every NullPunkt residential and
+                  commercial install runs to Canadian Electrical Code with German engineering
+                  discipline on both sides of the project. Partner details are confirmed in the
+                  proposal for each site.
                 </p>
               </div>
               <div className="card-raised p-8">
                 <p className="text-minimal text-lime mb-3">Standards we hold ourselves to</p>
                 <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex gap-3"><span className="text-lime">→</span> Canadian Electrical Code + Alberta-licensed master electricians on every project.</li>
+                  <li className="flex gap-3"><span className="text-lime">→</span> Canadian Electrical Code + Alberta-licensed master electrician partner on every project.</li>
                   <li className="flex gap-3"><span className="text-lime">→</span> Tier-1 modules with IEC 61215 Class 3+ hail rating, UL 9540 storage.</li>
-                  <li className="flex gap-3"><span className="text-lime">→</span> The same engineering, commissioning and documentation discipline used on 600+ German installations.</li>
+                  <li className="flex gap-3"><span className="text-lime">→</span> The same engineering, commissioning and documentation discipline our parent has applied across several hundred German installations.</li>
                   <li className="flex gap-3"><span className="text-lime">→</span> 5-year NullPunkt workmanship warranty stacked on top of manufacturer warranties.</li>
                 </ul>
               </div>

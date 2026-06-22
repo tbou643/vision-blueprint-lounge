@@ -38,8 +38,8 @@ const Hero = () => {
         </h1>
 
         <p className="reveal-delayed-2 text-lg md:text-xl text-white/75 font-light max-w-2xl mx-auto mb-12 leading-relaxed">
-          A Canadian subsidiary of SMB Solartechnik GmbH — bringing a decade of integrated
-          European solar engineering to Alberta homes, businesses and farms.
+          A new Calgary company, backed by SMB Solartechnik GmbH — a German parent
+          installing integrated PV, battery and HEMS systems since 2024.
         </p>
 
         {/* CTAs */}
