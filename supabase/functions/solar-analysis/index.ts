@@ -59,24 +59,35 @@ Deno.serve(async (req) => {
     const useSolarClub = body.useSolarClub ?? solarClubSavings > standardSavings;
     const annualSavings = useSolarClub ? solarClubSavings : standardSavings;
 
-    const systemCostPerKwp = body.hasBattery ? 3200 : 2400; // CAD installed
-    const totalCost = Math.round(recommendedKwp * systemCostPerKwp);
+    // ── NullPunkt turn-key pricing (CAD, all-in: hardware + install + permits + HEMS) ──
+    // We're competitive on the low end of the Alberta market thanks to direct-from-EU supplier
+    // pricing through SMB Solartechnik and lean overhead in year 1.
+    const pvCostPerKwp = 2100;   // ~CAD $2.10/Wp turn-key — low end of Alberta range
+    const batteryCostPerKwh = 800; // CAD per kWh installed (LFP)
+    const defaultBatteryKwh = body.hasBattery
+      ? Math.min(20, Math.max(5, Math.round(recommendedKwp * 0.75)))
+      : 0;
+    const pvCost = Math.round(recommendedKwp * pvCostPerKwp);
+    const batteryCost = Math.round(defaultBatteryKwh * batteryCostPerKwh);
+    const totalCost = pvCost + batteryCost;
     const payback = Math.round((totalCost / annualSavings) * 10) / 10;
     const co2Tonnes = Math.round(annualProduction * 0.00059 * 10) / 10;
 
     // CEIP (PACE) financing scenario — 0% upfront, ~20yr term, ~5.5% blended cost
-    // Cash-flow positive when annual savings exceed annual instalment
     const ceipYears = 20;
-    const ceipAnnualPayment = Math.round((totalCost / ceipYears) * 1.08); // small admin / rate buffer
+    const ceipAnnualPayment = Math.round((totalCost / ceipYears) * 1.08);
     const ceipNetYear1 = annualSavings - ceipAnnualPayment;
 
     const baseline = {
       recommendedKwp,
+      batteryKwh: defaultBatteryKwh,
       annualProduction,
       annualSavings,
       annualSavingsStandard: standardSavings,
       annualSavingsSolarClub: solarClubSavings,
       useSolarClub,
+      pvCost,
+      batteryCost,
       totalCost,
       payback,
       co2Tonnes,
@@ -100,15 +111,21 @@ INPUTS:
 - Postal code: ${body.postalCode ?? "n/a"}
 
 ENGINEERING BASELINE (already computed, use these exact numbers):
-- Recommended system size: ${recommendedKwp} kWp
+- Recommended system size: ${recommendedKwp} kWp PV ${defaultBatteryKwh > 0 ? `+ ${defaultBatteryKwh} kWh LFP battery` : "(no battery)"}
 - Estimated annual production: ${annualProduction} kWh
 - Savings with default retailer: $${standardSavings}/yr
 - Savings if enrolled in Solar Club retailer: $${solarClubSavings}/yr
 - Recommended retailer: ${useSolarClub ? "Solar Club" : "Standard"}
-- Turn-key installed cost: $${totalCost} CAD
-- Simple payback (using best retailer): ${payback} years
+- PV turn-key cost: $${pvCost} CAD (~$${pvCostPerKwp}/kWp incl. install, permits, commissioning, HEMS)
+- Battery turn-key cost: $${batteryCost} CAD${defaultBatteryKwh > 0 ? ` (~$${batteryCostPerKwh}/kWh installed)` : ""}
+- Total turn-key invest: $${totalCost} CAD
+- Simple payback: ${payback} years
 - CEIP financing: $${ceipAnnualPayment}/yr over ${ceipYears} years, net year-1 cash flow: $${ceipNetYear1}
 - CO₂ avoided: ${co2Tonnes} tonnes/year
+
+PRICING NOTE: NullPunkt prices at the low end of the Alberta market because we import direct
+through our German parent and run lean overhead in year 1. Don't undersell — but be confident
+that our turn-key pricing is competitive.
 
 CALGARY CONTEXT TO WEAVE IN (only what's relevant — verified as of 2026):
 - Calgary gets ~333 sunny days/year — one of Canada's best solar resources (1,292 kWh/kWp).
