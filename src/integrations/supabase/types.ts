@@ -59,6 +59,42 @@ export type Database = {
         }
         Relationships: []
       }
+      waitlist_signups: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          monthly_bill: number | null
+          name: string
+          notes: string | null
+          postal_code: string | null
+          property_type: string | null
+          source: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          monthly_bill?: number | null
+          name: string
+          notes?: string | null
+          postal_code?: string | null
+          property_type?: string | null
+          source?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          monthly_bill?: number | null
+          name?: string
+          notes?: string | null
+          postal_code?: string | null
+          property_type?: string | null
+          source?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
