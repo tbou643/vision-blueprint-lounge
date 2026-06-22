@@ -4,7 +4,8 @@ import Logo from "./Logo";
 
 const links = [
   { href: "/services", label: "Services" },
-  { href: "/work", label: "Projects" },
+  { href: "/calculator", label: "Calculator" },
+  { href: "/work", label: "Roadmap" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
