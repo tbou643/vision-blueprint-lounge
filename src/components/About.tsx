@@ -58,39 +58,42 @@ const About = () => {
           </div>
 
           {/* Founder snapshot */}
-          <div className="mt-24 grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-5">
-              <div className="relative aspect-square rounded-2xl overflow-hidden border border-border bg-background">
+          <div className="mt-24 max-w-4xl">
+            <div className="flex items-center gap-5 mb-8">
+              <div
+                className="relative w-16 h-16 rounded-full overflow-hidden border border-border bg-card shrink-0"
+                style={{
+                  WebkitMaskImage: "radial-gradient(circle at center, black 55%, transparent 100%)",
+                  maskImage: "radial-gradient(circle at center, black 55%, transparent 100%)",
+                }}
+              >
                 <img
                   src={founderImage.url}
                   alt="Tim Brunkel, Founder & CEO of NullPunkt Solar Inc."
-                  className="w-full h-full object-cover opacity-70 saturate-75 transition-opacity duration-500 hover:opacity-95"
+                  className="w-full h-full object-cover opacity-80 saturate-75"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-tr from-background/60 via-background/10 to-transparent pointer-events-none" />
               </div>
+              <p className="text-minimal text-lime">Meet the founder</p>
             </div>
-            <div className="lg:col-span-7">
-              <p className="text-minimal text-lime mb-4">Meet the founder</p>
-              <h3 className="text-3xl md:text-4xl font-light text-architectural mb-6">
-                Tim Brunkel — recognised PV authority in Germany, now building in Calgary.
-              </h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Tim founded SMB Solartechnik in Germany in 2024 and scaled the parent company past
-                <span className="text-foreground font-medium"> CAD $1,000,000 in annual sales</span>,
-                personally overseeing several hundred integrated PV installations across residential,
-                commercial and agricultural sites. Within Germany's hyper-competitive solar market he's
-                regarded as a go-to authority on fully integrated PV + battery + HEMS design. Before
-                solar he spent 13+ years leading IT innovation and product programs — most recently as
-                Head of IT Innovation Solution Design at ZF Friedrichshafen AG.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                He's relocating to Calgary as principal directing mind of NullPunkt Solar Inc., with
-                CAD $298,000 of committed capital and a hand on every early Alberta project. If you
-                book a site visit in our first year, the engineer at your kitchen table is the
-                founder.
-              </p>
-            </div>
+            <h3 className="text-3xl md:text-4xl font-light text-architectural mb-6">
+              Tim Brunkel — recognised PV authority in Germany, now building in Calgary.
+            </h3>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Tim founded SMB Solartechnik in Germany in 2024 and scaled the parent company past{" "}
+              <span className="text-foreground font-medium">CAD $1,000,000 in annual sales</span>,
+              personally overseeing several hundred integrated PV installations across residential,
+              commercial and agricultural sites. Within Germany's hyper-competitive solar market he's
+              regarded as a go-to authority on fully integrated PV + battery + HEMS design. Before
+              solar he spent 13+ years leading IT innovation and product programs — most recently as
+              Head of IT Innovation Solution Design at ZF Friedrichshafen AG.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              He's relocating to Calgary as principal directing mind of NullPunkt Solar Inc., with
+              CAD $298,000 of committed capital and a hand on every early Alberta project. If you
+              book a site visit in our first year, the engineer at your kitchen table is the
+              founder.
+            </p>
           </div>
 
           {/* Stat strip */}
