@@ -55,7 +55,7 @@ const SolarCalculator = () => {
       setBaseline(data.baseline);
       setAnalysis(data.analysis ?? null);
       if (!data.analysis && data.error) {
-        toast({ title: "AI unavailable", description: data.error, variant: "destructive" });
+        toast({ title: "Analysis unavailable", description: data.error, variant: "destructive" });
       }
     } catch (err) {
       toast({ title: "Calculation failed", description: (err as Error).message, variant: "destructive" });
