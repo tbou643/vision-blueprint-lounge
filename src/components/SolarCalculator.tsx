@@ -416,15 +416,46 @@ const CalculatingState = () => {
   return (
     <div className="card-raised p-10">
       <div className="flex flex-col items-center text-center">
-        {/* Hourglass */}
-        <div className="relative mb-6">
-          <div
-            className="text-6xl origin-center"
-            style={{ animation: "npFlip 2.4s ease-in-out infinite" }}
+        {/* Hourglass — minimal, brand colours */}
+        <div className="relative mb-7">
+          <svg
+            width="44"
+            height="60"
+            viewBox="0 0 44 60"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.25"
+            className="text-lime origin-center"
+            style={{ animation: "npFlip 2.8s cubic-bezier(0.65, 0, 0.35, 1) infinite" }}
             aria-hidden
           >
-            ⏳
-          </div>
+            {/* Frame */}
+            <line x1="6" y1="2" x2="38" y2="2" strokeLinecap="round" />
+            <line x1="6" y1="58" x2="38" y2="58" strokeLinecap="round" />
+            <path d="M9 2 C 9 16, 22 24, 22 30 C 22 36, 9 44, 9 58" strokeLinecap="round" />
+            <path d="M35 2 C 35 16, 22 24, 22 30 C 22 36, 35 44, 35 58" strokeLinecap="round" />
+            {/* Sand — top draining */}
+            <path
+              d="M12 5 L32 5 C 32 14, 24 20, 22 24 C 20 20, 12 14, 12 5 Z"
+              fill="currentColor"
+              opacity="0.55"
+              style={{ animation: "npSandTop 2.8s cubic-bezier(0.65, 0, 0.35, 1) infinite" }}
+            />
+            {/* Sand — bottom filling */}
+            <path
+              d="M22 36 C 24 40, 32 46, 32 55 L12 55 C 12 46, 20 40, 22 36 Z"
+              fill="currentColor"
+              opacity="0.55"
+              style={{ animation: "npSandBot 2.8s cubic-bezier(0.65, 0, 0.35, 1) infinite" }}
+            />
+            {/* Falling stream */}
+            <line
+              x1="22" y1="26" x2="22" y2="36"
+              strokeWidth="1"
+              strokeDasharray="1 2"
+              opacity="0.7"
+            />
+          </svg>
           <span className="sr-only">Calculating…</span>
         </div>
 
