@@ -327,7 +327,7 @@ const SolarCalculator = () => {
               <div className="card-raised p-8 border-lime/20">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-lime animate-pulse" />
-                  <p className="text-minimal text-lime">AI engineering review · Gemini 2.5 Pro</p>
+                  <p className="text-minimal text-lime">Engineering review</p>
                 </div>
                 <h4 className="text-2xl font-light mb-4">{analysis.headline}</h4>
                 <p className="text-muted-foreground leading-relaxed mb-6">{analysis.summary}</p>
