@@ -1,11 +1,17 @@
 import Navigation from "@/components/Navigation";
 import SiteFooter from "@/components/SiteFooter";
+import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import founderImage from "@/assets/tim-brunkel.asset.json";
 
 const About = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="About NullPunkt Solar — German engineering, Calgary subsidiary"
+        description="NullPunkt Solar Inc. is the Canadian subsidiary of SMB Solartechnik GmbH. Meet the team behind Calgary's German-engineered integrated solar systems."
+        path="/about"
+      />
       <Navigation />
 
       <section className="pt-40 pb-24 relative">

@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import SiteFooter from "@/components/SiteFooter";
+import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 
 const milestones = [
