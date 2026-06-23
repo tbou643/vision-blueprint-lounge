@@ -177,7 +177,7 @@ const About = () => {
                 <p>
                   Hi — I'm Tim. I founded <span className="text-foreground">SMB Solartechnik GmbH</span>{" "}
                   in 2024 and grew it past{" "}
-                  <span className="text-foreground font-medium">CAD $1,000,000 in annual sales</span>{" "}
+                  <span className="text-foreground font-medium">CAD 1.2M in annual sales</span>{" "}
                   in Germany's hyper-competitive solar market, personally overseeing several hundred
                   integrated photovoltaic installations across residential, commercial and
                   agricultural projects. Within the German integrated-PV scene I'm regarded as one of
@@ -185,17 +185,16 @@ const About = () => {
                   playbook I'm bringing to Calgary.
                 </p>
                 <p>
-                  Before solar, I spent 13+ years in senior technology roles — most recently as
-                  Head of IT Innovation Solution Design at <span className="text-foreground">ZF
-                  Friedrichshafen AG</span>, leading cross-functional teams turning emerging
-                  technology into enterprise solutions. That product- and program-management
-                  background is exactly what fully integrated solar needs: PV + battery + heat
-                  pump + EV + intelligent energy management (HEMS / OpenEMS) is a software-meets-
-                  hardware problem, not a panel-on-a-roof problem.
+                  Before solar, I spent 13+ years in senior technology roles at a major German
+                  industrial group, leading cross-functional teams turning emerging technology into
+                  enterprise solutions. That product- and program-management background is exactly
+                  what fully integrated solar needs: PV + battery + heat pump + EV + intelligent
+                  energy management (HEMS / OpenEMS) is a software-meets-hardware problem, not a
+                  panel-on-a-roof problem.
                 </p>
                 <p>
                   I'm relocating from southern Germany to Calgary as principal directing mind and
-                  sole Director of NullPunkt Solar Inc., with CAD $298,000 of committed capital
+                  sole Director of NullPunkt Solar Inc., with significant committed capital
                   (bank-verified) backing the Canadian launch. I lived and worked in Canada once
                   before — 18 months of Work & Travel back in 2008–09 — and I've wanted to come
                   back ever since. Now I get to build something here that actually matters for
