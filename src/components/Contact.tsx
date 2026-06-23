@@ -63,12 +63,6 @@ const Contact = () => {
               </div>
             </div>
           </div>
-
-
-          {/* Footer line */}
-          <div className="mt-20 pt-8 border-t border-border text-xs text-muted-foreground text-center">
-            <p>© {new Date().getFullYear()} NullPunkt Solar Inc. — All rights reserved.</p>
-          </div>
         </div>
       </div>
     </section>

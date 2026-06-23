@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import SiteFooter from "@/components/SiteFooter";
 import { Link } from "react-router-dom";
 
 const milestones = [
@@ -108,6 +109,8 @@ const Work = () => {
           <Link to="/contact" className="btn-lime">Join the waitlist →</Link>
         </div>
       </section>
+      <SiteFooter />
+
     </div>
   );
 };
