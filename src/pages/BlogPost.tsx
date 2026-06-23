@@ -1,4 +1,6 @@
 import { useParams, Link } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import Navigation from "@/components/Navigation";
 import SiteFooter from "@/components/SiteFooter";
 import SEO from "@/components/SEO";
