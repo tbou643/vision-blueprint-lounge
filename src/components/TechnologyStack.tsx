@@ -75,7 +75,7 @@ const TechnologyStack = () => {
             ))}
           </div>
 
-          <p className="mt-10 text-xs text-muted-foreground/70 text-center">
+          <p className="mt-10 text-xs text-muted-foreground text-center">
             Open standards · No vendor lock-in · OpenEMS controller documented at openems.io
           </p>
         </div>

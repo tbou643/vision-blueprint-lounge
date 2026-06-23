@@ -1,7 +1,16 @@
 # NullPunkt Solar Inc. — nullpunkt.ca
 
-German Precision · Zero Emissions.
-A new Calgary company, backed by SMB Solartechnik GmbH — a German parent installing integrated PV, battery and HEMS systems since 2024.
+> German Precision · Zero Emissions. A new Calgary company, backed by SMB Solartechnik GmbH — a German parent installing integrated PV, battery and HEMS systems since 2024.
+
+## Pages
+
+- [Home](/): Integrated solar engineered to a single point — Calgary and Southern Alberta.
+- [Services](/services): Four service lines — residential, commercial & agri, developer partnerships, lifetime monitoring.
+- [Solar Calculator](/calculator): Calgary-specific PV yield, payback math and incentive stack.
+- [Launch Roadmap](/work): NullPunkt Solar's Calgary launch milestones and 2026–2031 expansion plan.
+- [About](/about): Company, parent (SMB Solartechnik GmbH) and engineering standards.
+- [Contact](/contact): Email, office address and founding-customer waitlist.
+- [Blog](/blog): Engineering notes and Alberta-specific energy market commentary.
 
 ---
 

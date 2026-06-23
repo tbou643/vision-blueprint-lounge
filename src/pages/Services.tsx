@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import SiteFooter from "@/components/SiteFooter";
+import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 
 const Services = () => {
@@ -148,6 +149,11 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Solar Services — Residential, Commercial & Developer | NullPunkt"
+        description="Four integrated solar service lines for Calgary and Alberta: residential PV+battery+HEMS, commercial and agri PV, developer partnerships, and lifetime monitoring."
+        path="/services"
+      />
       <Navigation />
 
       <section className="pt-40 pb-20 relative">
@@ -193,13 +199,13 @@ const Services = () => {
                       <p className="text-minimal text-muted-foreground">Reference pricing (2026)</p>
                       <p className="text-lime font-semibold">{s.price}</p>
                     </div>
-                    <p className="text-xs text-muted-foreground/70">{s.priceNote}</p>
+                    <p className="text-xs text-muted-foreground">{s.priceNote}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          <p className="text-xs text-muted-foreground/70 text-center max-w-3xl mx-auto mt-6">
+          <p className="text-xs text-muted-foreground text-center max-w-3xl mx-auto mt-6">
             All pricing in CAD, exclusive of GST. Final price depends on roof complexity, electrical
             upgrades, and selected hardware tier. Quoted prices are fixed — not estimates.
           </p>

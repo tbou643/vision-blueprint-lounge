@@ -188,7 +188,7 @@ const SolarCalculator = () => {
           <button onClick={run} disabled={loading} className="btn-lime w-full justify-center">
             {loading ? "Calculating…" : "Run analysis →"}
           </button>
-          <p className="text-[11px] text-muted-foreground/70">
+          <p className="text-[11px] text-muted-foreground">
             Engineering baseline computed locally · Not a binding quote.
           </p>
         </div>
@@ -244,7 +244,7 @@ const SolarCalculator = () => {
                     </div>
                   )}
                 </div>
-                <p className="text-[11px] text-muted-foreground/70 mt-3">
+                <p className="text-[11px] text-muted-foreground mt-3">
                   All-in turn-key price — hardware, install labour, permits, ENMAX/EPCOR interconnection,
                   HEMS commissioning, 5-year workmanship warranty. No hidden fees.
                 </p>
@@ -273,7 +273,7 @@ const SolarCalculator = () => {
                     <p className="text-[11px] text-muted-foreground mt-1">~8.4 ¢ consume · ~35 ¢ export</p>
                   </div>
                 </div>
-                <p className="text-[11px] text-muted-foreground/70 mt-3">
+                <p className="text-[11px] text-muted-foreground mt-3">
                   Solar Club rates verified May 2026 (UTILITYnet). Best fit depends on self-consumption ratio — we
                   recommend the higher-savings scenario by default.
                 </p>
@@ -472,7 +472,7 @@ const CalculatingState = () => {
             style={{ width: `${pct}%` }}
           />
         </div>
-        <p className="text-[11px] text-muted-foreground/70">
+        <p className="text-[11px] text-muted-foreground">
           Typically 8–15 seconds · German engineering doesn't rush.
         </p>
       </div>

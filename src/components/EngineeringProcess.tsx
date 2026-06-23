@@ -68,7 +68,7 @@ const EngineeringProcess = () => {
               >
                 <div className="flex items-start justify-between mb-6">
                   <span className="text-minimal text-lime">{s.n}</span>
-                  <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground/70 border border-border rounded-full px-3 py-1">
+                  <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground border border-border rounded-full px-3 py-1">
                     {s.deliverable}
                   </span>
                 </div>
@@ -80,7 +80,7 @@ const EngineeringProcess = () => {
             ))}
           </div>
 
-          <p className="mt-10 text-xs text-muted-foreground/70 text-center">
+          <p className="mt-10 text-xs text-muted-foreground text-center">
             Indicative timeline · 8–12 weeks from signed proposal to commissioned system, depending on utility interconnection queue.
           </p>
         </div>

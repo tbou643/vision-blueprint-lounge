@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import SiteFooter from "@/components/SiteFooter";
+import SEO from "@/components/SEO";
 import SolarCalculator from "@/components/SolarCalculator";
 import { Link } from "react-router-dom";
 
@@ -100,9 +101,25 @@ const faqs = [
   },
 ];
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 const CalculatorPage = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Solar Calculator — Calgary yield, payback & incentives | NullPunkt"
+        description="Run your Calgary solar numbers: PV yield, battery sizing, Solar Club rates, CEIP financing, payback. Engineering math, not marketing fluff."
+        path="/calculator"
+        jsonLd={faqJsonLd}
+      />
       <Navigation />
 
       {/* Hero */}

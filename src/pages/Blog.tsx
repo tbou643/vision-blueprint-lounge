@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
+import SiteFooter from "@/components/SiteFooter";
+import SEO from "@/components/SEO";
 import { blogPosts } from "@/data/blogPosts";
 
 const Blog = () => {
@@ -14,6 +16,11 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Insights — NullPunkt Solar Blog"
+        description="Engineering notes and field perspectives on integrated solar, battery storage, HEMS and Alberta-specific energy economics from the NullPunkt team."
+        path="/blog"
+      />
       <Navigation />
       
       {/* Hero Section */}
@@ -139,6 +146,7 @@ const Blog = () => {
           </div>
         </div>
       </section>
+      <SiteFooter />
     </div>
   );
 };
