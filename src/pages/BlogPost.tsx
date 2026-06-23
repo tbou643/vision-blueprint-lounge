@@ -1,5 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
+import SiteFooter from "@/components/SiteFooter";
+import SEO from "@/components/SEO";
 import { blogPosts } from "@/data/blogPosts";
 
 const BlogPost = () => {
@@ -9,6 +11,11 @@ const BlogPost = () => {
   if (!post) {
     return (
       <div className="min-h-screen bg-background">
+        <SEO
+          title="Post not found — NullPunkt Solar"
+          description="The blog post you were looking for is not available."
+          path={`/blog/${id ?? ""}`}
+        />
         <Navigation />
         <div className="pt-32 pb-32">
           <div className="container mx-auto px-6">
@@ -25,12 +32,30 @@ const BlogPost = () => {
             </div>
           </div>
         </div>
+        <SiteFooter />
       </div>
     );
   }
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    author: { "@type": "Person", name: post.author },
+    datePublished: post.date,
+    image: post.image,
+    mainEntityOfPage: `https://nullpunkt.ca/blog/${post.id}`,
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={`${post.title} — NullPunkt Solar`}
+        description={post.excerpt.slice(0, 158)}
+        path={`/blog/${post.id}`}
+        jsonLd={articleJsonLd}
+      />
       <Navigation />
       
       {/* Article Header */}
