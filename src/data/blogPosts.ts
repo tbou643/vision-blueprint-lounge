@@ -118,7 +118,7 @@ If you would like a no-pressure review of your roof and your last 12 months of c
     date: "2026-06-23",
     readTime: "9 min read",
     category: "INCENTIVES",
-    image: "/src/assets/blog-calgary-incentives.jpg"
+    image: calgaryIncentivesImg
   },
   {
     id: "sustainable-architecture-future",
@@ -182,7 +182,7 @@ The future of architecture lies in our ability to create buildings that work in 
     date: "2024-03-15",
     readTime: "8 min read",
     category: "SUSTAINABILITY",
-    image: "/src/assets/blog-sustainable-architecture.jpg"
+    image: sustainableArchImg
   },
   {
     id: "minimalism-modern-living",
@@ -268,7 +268,7 @@ The challenge for architects and designers is to create minimalist spaces that f
     date: "2024-03-10",
     readTime: "6 min read",
     category: "DESIGN",
-    image: "/src/assets/blog-minimalist-living.jpg"
+    image: minimalistLivingImg
   },
   {
     id: "urban-planning-community-spaces",
@@ -429,6 +429,6 @@ The most successful community spaces are those that grow and evolve with their u
     date: "2024-03-05",
     readTime: "10 min read",
     category: "URBAN PLANNING",
-    image: "/src/assets/blog-urban-planning.jpg"
+    image: urbanPlanningImg
   }
 ];
