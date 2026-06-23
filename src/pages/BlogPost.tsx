@@ -170,6 +170,7 @@ const BlogPost = () => {
           </div>
         </div>
       </article>
+      <SiteFooter />
     </div>
   );
 };

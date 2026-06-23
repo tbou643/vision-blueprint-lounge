@@ -146,6 +146,7 @@ const Blog = () => {
           </div>
         </div>
       </section>
+      <SiteFooter />
     </div>
   );
 };
