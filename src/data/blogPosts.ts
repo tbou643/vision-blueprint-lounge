@@ -27,31 +27,18 @@ Going solar in Calgary is no longer an experimental decision. The hardware has m
 
 > **Disclaimer:** Program terms change. Always confirm current eligibility with the City of Calgary, Natural Resources Canada and your retailer before signing a contract. The numbers below reflect publicly available program documentation at the time of writing.
 
-## 1. The Three Layers You Can Stack
+## 1. The Two Layers You Can Stack
 
-A well-designed Calgary residential project typically combines:
+A well-designed Calgary residential project in 2026 typically combines:
 
-1. **Federal financing** — the Canada Greener Homes Loan (interest-free, up to $40,000, 10-year term).
-2. **Municipal financing** — the City of Calgary's Clean Energy Improvement Program (CEIP), repaid through your property tax bill.
-3. **Provincial net billing** — Alberta's Micro-Generation Regulation, which lets your retailer credit you for the electricity you export.
+1. **Municipal financing** — the City of Calgary's Clean Energy Improvement Program (CEIP), repaid through your property tax bill.
+2. **Provincial net billing** — Alberta's Micro-Generation Regulation, which lets your retailer credit you for the electricity you export.
 
-None of these are "free money" in the way the old federal grant was, but combined they remove almost all of the upfront cost barrier and turn a solar + storage system into a cash-flow-positive asset from year one for most homes.
+The federal Canada Greener Homes *Grant* closed in early 2024, and the interest-free *Loan* program has since stopped accepting new applications as well. There is no active federal cash incentive for residential solar in 2026 — which makes the municipal and provincial layers more important than ever.
 
-## 2. Canada Greener Homes Loan
+> **Heads-up:** Some installers still advertise "Greener Homes" financing in their marketing. Ask explicitly whether your application would actually be funded, or whether the program is just being used as a sales hook.
 
-The grant portion of the Greener Homes program closed in early 2024, but the **interest-free loan** continues to be the single most useful federal tool for Calgary homeowners.
-
-- **Amount:** $5,000 to $40,000
-- **Interest:** 0%
-- **Term:** Up to 10 years
-- **Eligible work:** Solar PV, battery storage paired with solar, heat pumps, insulation, windows and several other measures.
-- **Prerequisite:** A pre-retrofit EnerGuide evaluation by a registered energy advisor.
-
-**Homeowner takeaway:** If your system costs $35,000, you can finance the entire project at 0% over 10 years. Your monthly loan payment is roughly $290. In most Calgary homes, the combined value of self-consumption plus export credits comfortably covers that payment.
-
-**Technical note:** The loan requires a NRCan-recognised EnerGuide evaluation *before* installation and a follow-up evaluation after. Schedule the pre-evaluation early — backlogs in Calgary have historically run 4-8 weeks.
-
-## 3. City of Calgary CEIP (Clean Energy Improvement Program)
+## 2. City of Calgary CEIP (Clean Energy Improvement Program)
 
 CEIP is Calgary's local financing tool. It is technically a form of PACE (Property Assessed Clean Energy) financing: the City lends the money, and you repay it as a line item on your annual property tax bill.
 
@@ -60,11 +47,11 @@ CEIP is Calgary's local financing tool. It is technically a form of PACE (Proper
 - **Rate:** Fixed for the full term, set when the program window opens — historically competitive with prime.
 - **Eligible measures:** Solar PV, battery storage, geothermal, deep envelope retrofits.
 
-CEIP is particularly attractive when you exceed the $40,000 Greener Homes ceiling — for example, a larger PV array combined with a Powerwall-class battery — or when you prefer not to take on a personal loan.
+For most Calgary homeowners, CEIP is now the primary public-financing route — it can cover the full project, including a Powerwall-class battery, with no upfront cash.
 
-**Technical note:** CEIP runs in defined intake windows. Plan your project around the published application calendar rather than the other way around. The energy assessment requirements overlap with Greener Homes, so a single advisor visit can usually satisfy both.
+**Technical note:** CEIP runs in defined intake windows. Plan your project around the published application calendar rather than the other way around. An EnerGuide-style energy assessment is part of the qualification process.
 
-## 4. Alberta Micro-Generation Regulation (Net Billing)
+## 3. Alberta Micro-Generation Regulation (Net Billing)
 
 This is the provincial framework that allows your meter to spin in both directions. Two things matter for homeowners:
 
@@ -99,13 +86,13 @@ A 10.4 kW rooftop array with a 13.5 kWh battery on a south-facing, 35°-pitch ro
 - **Annual yield:** ~12,500 kWh.
 - **Self-consumption with battery + HEMS:** 70-80%.
 - **Combined annual benefit (avoided imports + export credits):** $2,200 - $2,800 at current Alberta rates.
-- **Financing:** Greener Homes Loan covers the first $40,000 at 0%. CEIP can cover the remainder.
+- **Financing:** CEIP can cover the full project amount, repaid through the property tax bill over up to 20 years.
 - **Net cash-flow position:** Positive from year one in most scenarios; full payback in 9-12 years; 25-year linear-warranty modules continue producing well beyond that.
 
 ## 7. How to Approach Your Project
 
 1. **Start with consumption data.** Pull 12 months of hourly data from your retailer before any installer designs an array.
-2. **Book the EnerGuide evaluation early.** It is the gatekeeper for both Greener Homes and CEIP.
+2. **Check the next CEIP intake window early.** It is the gatekeeper for municipal financing and has fixed application dates.
 3. **Get an engineered proposal, not a sales quote.** A real proposal includes a yield simulation, a single-line diagram, a bill-of-materials, and a payback model. If you do not see those, you are looking at a sales sheet.
 4. **Choose your retailer with the micro-gen rate in mind.** Switching retailers is a five-minute task with multi-year financial consequences.
 5. **Design for the battery you may add later**, even if you start with PV only. Cable sizing, inverter choice and panel position all matter.
