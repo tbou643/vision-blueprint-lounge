@@ -15,10 +15,19 @@ const About = () => {
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 <span className="text-foreground font-medium">NullPunkt Solar Inc.</span> is the
-                wholly-owned Canadian subsidiary of <span className="text-foreground font-medium">SMB
-                Solartechnik GmbH</span> — a German solar company installing integrated PV,
-                battery and HEMS systems since 2024, with several hundred residential, commercial
-                and agricultural installations completed.
+                wholly-owned Canadian subsidiary of{" "}
+                <a
+                  href="https://www.smb-solartechnik.de"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground font-medium underline decoration-lime/40 underline-offset-4 hover:decoration-lime transition-colors"
+                >
+                  SMB Solartechnik GmbH
+                </a>{" "}
+                — a German solar company specialising in integrated PV, battery and HEMS systems,
+                with several hundred residential, commercial and agricultural installations
+                completed. Calgary inherits the same engineering team, supplier network and quality
+                standards through a continuous transatlantic knowledge-exchange programme.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 We bring the engineering playbook, the supplier network and the partner standards to
