@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import SiteFooter from "@/components/SiteFooter";
 import SolarCalculator from "@/components/SolarCalculator";
 import { Link } from "react-router-dom";
 
@@ -234,6 +235,8 @@ const CalculatorPage = () => {
           <Link to="/contact" className="btn-lime">Join the founding waitlist →</Link>
         </div>
       </section>
+      <SiteFooter />
+
     </div>
   );
 };

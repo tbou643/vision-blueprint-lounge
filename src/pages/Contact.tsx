@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import SiteFooter from "@/components/SiteFooter";
 import Contact from "@/components/Contact";
 
 const ContactPage = () => {
@@ -8,6 +9,8 @@ const ContactPage = () => {
       <div className="pt-24">
         <Contact />
       </div>
+      <SiteFooter />
+
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import SiteFooter from "@/components/SiteFooter";
 import { Link } from "react-router-dom";
 
 const Services = () => {
@@ -331,6 +332,8 @@ const Services = () => {
           </div>
         </div>
       </section>
+      <SiteFooter />
+
     </div>
   );
 };

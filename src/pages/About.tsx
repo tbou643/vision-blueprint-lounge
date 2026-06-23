@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import SiteFooter from "@/components/SiteFooter";
 import { Link } from "react-router-dom";
 import founderImage from "@/assets/tim-brunkel.asset.json";
 
@@ -317,6 +318,8 @@ const About = () => {
           </div>
         </div>
       </section>
+      <SiteFooter />
+
     </div>
   );
 };
