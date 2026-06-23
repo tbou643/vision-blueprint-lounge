@@ -114,7 +114,7 @@ const BlogPost = () => {
               prose-blockquote:border-l-2 prose-blockquote:border-foreground/30 prose-blockquote:bg-muted/30 prose-blockquote:py-1 prose-blockquote:px-6 prose-blockquote:not-italic prose-blockquote:text-muted-foreground
               prose-hr:border-border">
               <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {post.content}
+                {post.content.replace(/^\s*#\s+.+\n/, "")}
               </ReactMarkdown>
             </div>
             
