@@ -26,7 +26,7 @@ const ProposalDeliverables = () => {
                 Every NullPunkt site visit ends with a single, document-backed proposal. Seven sections,
                 fixed-price, comparable line-by-line against any other quote on the table.
               </p>
-              <p className="text-sm text-muted-foreground/80 leading-relaxed mb-10">
+              <p className="text-sm text-muted-foreground leading-relaxed mb-10">
                 The same proposal template our German parent has issued across hundreds of integrated
                 installations — recalibrated for Alberta tariffs, weather and incentives.
               </p>
@@ -56,7 +56,7 @@ const ProposalDeliverables = () => {
                       <div className="w-2 h-2 rounded-full bg-lime" />
                       <span className="text-minimal text-muted-foreground">Proposal · Confidential</span>
                     </div>
-                    <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground/70">
+                    <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
                       v1.0 · PDF
                     </span>
                   </div>
@@ -87,19 +87,19 @@ const ProposalDeliverables = () => {
 
                     <div className="mt-8 pt-6 border-t border-border grid grid-cols-3 gap-4">
                       <div>
-                        <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground/70 mb-1">
+                        <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground mb-1">
                           Pages
                         </p>
                         <p className="text-lg font-light">18–24</p>
                       </div>
                       <div>
-                        <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground/70 mb-1">
+                        <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground mb-1">
                           Validity
                         </p>
                         <p className="text-lg font-light">30 days</p>
                       </div>
                       <div>
-                        <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground/70 mb-1">
+                        <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground mb-1">
                           Cost
                         </p>
                         <p className="text-lg font-light text-lime">Free</p>
@@ -109,7 +109,7 @@ const ProposalDeliverables = () => {
                 </div>
               </div>
 
-              <p className="mt-6 text-xs text-muted-foreground/70 text-center">
+              <p className="mt-6 text-xs text-muted-foreground text-center">
                 Illustrative document structure · Actual proposals are tailored to your site, roof and load profile.
               </p>
             </div>

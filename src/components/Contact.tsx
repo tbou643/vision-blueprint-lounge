@@ -57,7 +57,7 @@ const Contact = () => {
 
               <div className="mt-10 pt-8 border-t border-border flex items-center justify-between gap-6">
                 <Logo variant="light" showTagline className="h-12 w-auto" />
-                <p className="text-xs text-muted-foreground/70 text-right max-w-[14rem]">
+                <p className="text-xs text-muted-foreground text-right max-w-[14rem]">
                   A new Calgary company, backed by a German parent installing integrated systems since 2024.
                 </p>
               </div>

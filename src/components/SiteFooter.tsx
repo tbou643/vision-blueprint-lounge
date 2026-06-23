@@ -17,7 +17,7 @@ const SiteFooter = () => {
                 SMB Solartechnik GmbH — a German parent installing integrated PV, battery and HEMS
                 systems since 2024.
               </p>
-              <div className="flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-muted-foreground/70">
+              <div className="flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
                 <span className="w-1.5 h-1.5 rounded-full bg-lime animate-pulse" />
                 <span>Launching Summer 2026 · Calgary, AB</span>
               </div>
@@ -91,10 +91,10 @@ const SiteFooter = () => {
 
           {/* Standards strip */}
           <div className="py-8 border-t border-border">
-            <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground/60 mb-4 text-center">
+            <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground mb-4 text-center">
               Standards we hold ourselves to
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs text-muted-foreground/80">
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs text-muted-foreground">
               {[
                 "IEC 61215 Class 3+",
                 "UL 9540",
@@ -113,7 +113,7 @@ const SiteFooter = () => {
           </div>
 
           {/* Bottom row */}
-          <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground/70">
+          <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
             <p>© {year} NullPunkt Solar Inc. — All rights reserved.</p>
             <p className="text-center md:text-right">
               Calgary subsidiary of{" "}
