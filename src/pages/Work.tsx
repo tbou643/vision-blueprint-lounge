@@ -34,6 +34,11 @@ const milestones = [
 const Work = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Launch Roadmap — NullPunkt Solar comes to Calgary Summer 2026"
+        description="NullPunkt Solar's Calgary launch roadmap: pre-launch and permitting Q2 2026, first installations Summer 2026, commercial builds late 2026, regional expansion 2027+."
+        path="/work"
+      />
       <Navigation />
 
       <section className="pt-40 pb-16 relative">

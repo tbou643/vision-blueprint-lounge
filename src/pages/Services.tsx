@@ -149,6 +149,11 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Solar Services — Residential, Commercial & Developer | NullPunkt"
+        description="Four integrated solar service lines for Calgary and Alberta: residential PV+battery+HEMS, commercial and agri PV, developer partnerships, and lifetime monitoring."
+        path="/services"
+      />
       <Navigation />
 
       <section className="pt-40 pb-20 relative">
