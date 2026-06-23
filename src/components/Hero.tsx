@@ -5,10 +5,16 @@ import Logo from "./Logo";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})` }}
+      {/* Background — LCP image, eager + high priority */}
+      <img
+        src={heroImage}
+        alt=""
+        aria-hidden="true"
+        width={1920}
+        height={1080}
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 hero-overlay" />
       <div className="absolute inset-x-0 top-0 h-[60vh] glow-radial pointer-events-none" />

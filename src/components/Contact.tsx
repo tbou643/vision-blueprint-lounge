@@ -11,11 +11,11 @@ const Contact = () => {
             {/* Left: pitch */}
             <div>
               <p className="text-minimal text-lime mb-4">Get in touch</p>
-              <h2 className="text-4xl md:text-6xl font-light text-architectural mb-8">
+              <h1 className="text-4xl md:text-6xl font-light text-architectural mb-8">
                 Ready to reach
                 <br />
                 <span className="lime-underline">Point Zero?</span>
-              </h2>
+              </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-lg">
                 Free, no-obligation consultation. We measure your roof, model your
                 consumption, and give you a fixed-price proposal you can actually compare.
