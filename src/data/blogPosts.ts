@@ -1,3 +1,8 @@
+import calgaryIncentivesImg from "@/assets/blog-calgary-incentives.jpg";
+import sustainableArchImg from "@/assets/blog-sustainable-architecture.jpg";
+import minimalistLivingImg from "@/assets/blog-minimalist-living.jpg";
+import urbanPlanningImg from "@/assets/blog-urban-planning.jpg";
+
 export interface BlogPost {
   id: string;
   title: string;
