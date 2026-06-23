@@ -92,16 +92,16 @@ const About = () => {
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Tim founded SMB Solartechnik in Germany in 2024 and scaled the parent company past{" "}
-              <span className="text-foreground font-medium">CAD $1,000,000 in annual sales</span>,
+              <span className="text-foreground font-medium">CAD 1.2M in annual sales</span>,
               personally overseeing several hundred integrated PV installations across residential,
               commercial and agricultural sites. Within Germany's hyper-competitive solar market he's
               regarded as a go-to authority on fully integrated PV + battery + HEMS design. Before
-              solar he spent 13+ years leading IT innovation and product programs — most recently as
-              Head of IT Innovation Solution Design at ZF Friedrichshafen AG.
+              solar he spent 13+ years leading IT innovation and product programs in senior roles
+              at a major German industrial group.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               He's relocating to Calgary as principal directing mind of NullPunkt Solar Inc., with
-              CAD $298,000 of committed capital and a hand on every early Alberta project. If you
+              significant committed capital and a hand on every early Alberta project. If you
               book a site visit in our first year, the engineer at your kitchen table is the
               founder.
             </p>
