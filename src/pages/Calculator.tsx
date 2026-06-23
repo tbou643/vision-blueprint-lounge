@@ -42,12 +42,6 @@ const incentives = [
     detail:
       "Federal NRCan and Alberta-administered programs (RDAR, ERA) co-fund agri-PV and cold-climate solar demonstrations. We help eligible farms and developers structure applications.",
   },
-  {
-    name: "Canada Greener Homes Loan",
-    amount: "Closed Oct 2025",
-    detail:
-      "The $40,000 interest-free federal loan closed to new applications on October 2, 2025. Existing approved loans are unaffected. We're tracking what replaces it federally and will flag any new residential program the moment it opens.",
-  },
 ];
 
 
