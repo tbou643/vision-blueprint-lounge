@@ -35,10 +35,18 @@ const About = () => {
               </h2>
               <div className="space-y-5 text-muted-foreground leading-relaxed">
                 <p>
-                  NullPunkt Solar Inc. is the wholly-owned Canadian subsidiary of
-                  <span className="text-foreground"> SMB Solartechnik GmbH</span> — an
-                  established German solar company with hundreds of completed integrated
-                  installations.
+                  NullPunkt Solar Inc. is the wholly-owned Canadian subsidiary of{" "}
+                  <a
+                    href="https://www.smb-solartechnik.de"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground underline decoration-lime/40 underline-offset-4 hover:decoration-lime transition-colors"
+                  >
+                    SMB Solartechnik GmbH
+                  </a>{" "}
+                  — an established German solar company with hundreds of completed integrated PV,
+                  battery and HEMS installations across residential, commercial and agricultural
+                  sites.
                 </p>
                 <p>
                   We didn't show up in Calgary to learn the trade. We came because the Alberta
@@ -72,11 +80,70 @@ const About = () => {
       </section>
 
       {/* Founder section */}
-      <section className="py-28">
+      {/* Group structure & parent company */}
+      <section className="py-24">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            {/* Subtle inline portrait */}
-            <div className="flex items-center gap-5 mb-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-12 gap-12 items-start mb-14">
+              <div className="lg:col-span-5">
+                <p className="text-minimal text-lime mb-4">The group</p>
+                <h2 className="text-4xl md:text-5xl font-light text-architectural mb-6">
+                  Two companies.
+                  <br />
+                  <span className="text-muted-foreground">One engineering standard.</span>
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  NullPunkt Solar and SMB Solartechnik operate as a single technical organisation
+                  across two countries. Engineering, procurement standards, monitoring
+                  infrastructure and HEMS know-how flow continuously between Calgary and southern
+                  Germany — so every Alberta install benefits from work already proven on hundreds
+                  of European rooftops.
+                </p>
+              </div>
+
+              <div className="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+                <div className="card-raised p-7">
+                  <p className="text-minimal text-lime mb-3">Parent company</p>
+                  <h3 className="text-xl font-semibold mb-2">SMB Solartechnik GmbH</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    Southern Germany. Integrated PV + battery + HEMS specialist. Several hundred
+                    installations delivered across residential, commercial and agricultural sites.
+                  </p>
+                  <a
+                    href="https://www.smb-solartechnik.de"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm text-lime hover:text-foreground transition-colors"
+                  >
+                    smb-solartechnik.de
+                    <span aria-hidden>↗</span>
+                  </a>
+                </div>
+                <div className="card-raised p-7">
+                  <p className="text-minimal text-lime mb-3">Canadian subsidiary</p>
+                  <h3 className="text-xl font-semibold mb-2">NullPunkt Solar Inc.</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Calgary, Alberta. Wholly-owned subsidiary delivering the same integrated
+                    systems for Canadian homes and businesses, with Alberta-licensed master
+                    electrician partners on every project.
+                  </p>
+                </div>
+                <div className="card-raised p-7 sm:col-span-2">
+                  <p className="text-minimal text-lime mb-3">Transatlantic knowledge exchange</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Shared engineering reviews, joint supplier relationships, common design tools
+                    and a continuous feedback loop between the two teams. Every system commissioned
+                    in Calgary is signed off against the same internal standard SMB applies to its
+                    German fleet — and every operational lesson from Alberta winters flows back
+                    into the group playbook.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Leadership */}
+            <p className="text-minimal text-lime mb-4">Leadership</p>
+            <div className="flex items-center gap-5 mb-8">
               <div
                 className="relative w-20 h-20 rounded-full overflow-hidden border border-border bg-card shrink-0"
                 style={{
@@ -94,15 +161,15 @@ const About = () => {
                 />
               </div>
               <div>
-                <p className="text-minimal text-lime">Meet the founder</p>
-                <p className="text-sm text-muted-foreground mt-1">Tim Brunkel · NullPunkt Solar Inc.</p>
+                <p className="text-sm text-foreground font-medium">Tim Brunkel</p>
+                <p className="text-sm text-muted-foreground">Founder & CEO · NullPunkt Solar Inc. / SMB Solartechnik GmbH</p>
               </div>
             </div>
 
             <h2 className="text-4xl md:text-5xl font-light text-architectural mb-8">
-              Tim Brunkel.
+              The group's principal engineer
               <br />
-              <span className="text-muted-foreground">Recognised PV authority. Calgary-bound.</span>
+              <span className="text-muted-foreground">leading the Calgary launch in person.</span>
             </h2>
 
             <div className="grid lg:grid-cols-12 gap-12 items-start">
