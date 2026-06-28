@@ -11,6 +11,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { Upload, Check, Lock, ArrowLeft, Plus, Trash2, Save, Image } from "lucide-react";
 import { Link } from "react-router-dom";
+import WaitlistAdmin from "@/components/admin/WaitlistAdmin";
 
 const ADMIN_PASSWORD = "admin123!";
 
