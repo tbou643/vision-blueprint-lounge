@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import WaitlistAdmin from "@/components/admin/WaitlistAdmin";
 import AnalyticsAdmin from "@/components/admin/AnalyticsAdmin";
 
-const ADMIN_PASSWORD = "admin123!";
+const ADMIN_PASSWORD = "#solar2026!";
 
 interface Project {
   id: string;
