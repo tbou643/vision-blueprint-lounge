@@ -273,16 +273,22 @@ const Admin = () => {
           </Link>
         </div>
 
-        <Tabs defaultValue="waitlist" className="space-y-6">
+        <Tabs defaultValue="analytics" className="space-y-6">
           <TabsList>
+            <TabsTrigger value="analytics">Analytics</TabsTrigger>
             <TabsTrigger value="waitlist">Waitlist</TabsTrigger>
             <TabsTrigger value="projects">Projekte</TabsTrigger>
             <TabsTrigger value="images">Bilder</TabsTrigger>
           </TabsList>
 
+          <TabsContent value="analytics">
+            <AnalyticsAdmin password={password} />
+          </TabsContent>
+
           <TabsContent value="waitlist">
             <WaitlistAdmin password={password} />
           </TabsContent>
+
 
 
           {/* Projects Tab */}
