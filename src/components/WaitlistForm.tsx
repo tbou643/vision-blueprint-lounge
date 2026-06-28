@@ -37,7 +37,7 @@ const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compac
       return;
     }
     setLoading(true);
-    const { error } = await supabase.from("waitlist_signups").insert({
+    const payload = {
       name: parsed.data.name,
       email: parsed.data.email,
       postal_code: parsed.data.postal_code || null,
@@ -45,14 +45,47 @@ const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compac
       monthly_bill: parsed.data.monthly_bill ? Number(parsed.data.monthly_bill) : null,
       notes: parsed.data.notes || null,
       source,
-    });
-    setLoading(false);
+    };
+    const { data: inserted, error } = await supabase
+      .from("waitlist_signups")
+      .insert(payload)
+      .select()
+      .single();
     if (error) {
+      setLoading(false);
       toast({ title: "Something went wrong", description: error.message, variant: "destructive" });
       return;
     }
+
+    // Fire-and-forget notification emails (don't block the UX if they fail)
+    const id = inserted?.id ?? crypto.randomUUID();
+    const created_at = inserted?.created_at ?? new Date().toISOString();
+    try {
+      await Promise.allSettled([
+        supabase.functions.invoke("send-transactional-email", {
+          body: {
+            templateName: "waitlist-internal",
+            recipientEmail: "hello@nullpunkt.ca",
+            idempotencyKey: `waitlist-internal-${id}`,
+            templateData: { ...payload, created_at },
+          },
+        }),
+        supabase.functions.invoke("send-transactional-email", {
+          body: {
+            templateName: "waitlist-confirmation",
+            recipientEmail: payload.email,
+            idempotencyKey: `waitlist-confirm-${id}`,
+            templateData: { name: payload.name },
+          },
+        }),
+      ]);
+    } catch (_) {
+      /* non-blocking */
+    }
+
+    setLoading(false);
     setDone(true);
-    toast({ title: "You're on the list", description: "We'll be in touch as we open Calgary slots." });
+    toast({ title: "You're on the list", description: "Check your inbox for a confirmation from NullPunkt." });
   };
 
   if (done) {

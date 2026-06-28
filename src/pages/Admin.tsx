@@ -11,6 +11,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { Upload, Check, Lock, ArrowLeft, Plus, Trash2, Save, Image } from "lucide-react";
 import { Link } from "react-router-dom";
+import WaitlistAdmin from "@/components/admin/WaitlistAdmin";
 
 const ADMIN_PASSWORD = "admin123!";
 
@@ -271,11 +272,17 @@ const Admin = () => {
           </Link>
         </div>
 
-        <Tabs defaultValue="projects" className="space-y-6">
+        <Tabs defaultValue="waitlist" className="space-y-6">
           <TabsList>
+            <TabsTrigger value="waitlist">Waitlist</TabsTrigger>
             <TabsTrigger value="projects">Projekte</TabsTrigger>
             <TabsTrigger value="images">Bilder</TabsTrigger>
           </TabsList>
+
+          <TabsContent value="waitlist">
+            <WaitlistAdmin password={password} />
+          </TabsContent>
+
 
           {/* Projects Tab */}
           <TabsContent value="projects" className="space-y-6">
