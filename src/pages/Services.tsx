@@ -333,7 +333,7 @@ const Services = () => {
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <Link to="/calculator" className="btn-lime">Run the calculator →</Link>
             <Link to="/contact" className="text-sm text-muted-foreground hover:text-lime transition-colors">
-              Join the founding waitlist →
+              Reserve your free site visit →
             </Link>
           </div>
         </div>
