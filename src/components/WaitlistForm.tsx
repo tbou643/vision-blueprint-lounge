@@ -2,6 +2,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
+import { getFirstTouch, getGeo, trackEvent } from "@/lib/analytics";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Name is required").max(100),
@@ -23,6 +24,13 @@ const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compac
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [startedTracked, setStartedTracked] = useState(false);
+
+  const trackStart = () => {
+    if (startedTracked) return;
+    setStartedTracked(true);
+    trackEvent("form_started", { label: "waitlist", form_step: "start", section: source });
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -37,6 +45,11 @@ const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compac
       return;
     }
     setLoading(true);
+    const ft = getFirstTouch();
+    const geo = getGeo();
+    const visitorId = (() => {
+      try { return localStorage.getItem("np_visitor_id"); } catch { return null; }
+    })();
     const payload = {
       name: parsed.data.name,
       email: parsed.data.email,
@@ -45,6 +58,14 @@ const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compac
       monthly_bill: parsed.data.monthly_bill ? Number(parsed.data.monthly_bill) : null,
       notes: parsed.data.notes || null,
       source,
+      utm_source: ft?.utm_source ?? null,
+      utm_medium: ft?.utm_medium ?? null,
+      utm_campaign: ft?.utm_campaign ?? null,
+      referrer_domain: ft?.referrer_domain ?? null,
+      landing_path: ft?.landing_path ?? null,
+      country: geo?.country ?? null,
+      city: geo?.city ?? null,
+      visitor_id: visitorId,
     };
     const { error } = await supabase
       .functions
@@ -61,6 +82,7 @@ const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compac
 
     setLoading(false);
     setDone(true);
+    trackEvent("waitlist_submitted", { label: source, section: source, meta: { property_type: payload.property_type } });
     toast({ title: "You're on the list", description: "Check your inbox for a confirmation from NullPunkt." });
   };
 
@@ -82,7 +104,7 @@ const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compac
     "w-full bg-background border border-border rounded-md px-4 py-3 text-sm focus:outline-none focus:border-lime transition-colors";
 
   return (
-    <form onSubmit={handleSubmit} className={compact ? "space-y-3" : "space-y-4"}>
+    <form onSubmit={handleSubmit} onFocus={trackStart} className={compact ? "space-y-3" : "space-y-4"}>
       <div className="grid sm:grid-cols-2 gap-3">
         <div>
           <input name="name" placeholder="Full name" className={input} />
@@ -121,7 +143,7 @@ const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compac
           className={input}
         />
       )}
-      <button type="submit" disabled={loading} className="btn-lime w-full justify-center">
+      <button type="submit" disabled={loading} className="btn-lime w-full justify-center" data-cta="waitlist_submit" data-cta-position={source}>
         {loading ? "Submitting…" : "Reserve my founding slot →"}
       </button>
       <p className="text-[11px] text-muted-foreground">
