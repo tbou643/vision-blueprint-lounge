@@ -112,7 +112,7 @@ const Work = () => {
             Founding customers receive priority engineering slots, locked-in fixed pricing, and a
             direct line to the team designing your system.
           </p>
-          <Link to="/contact" className="btn-lime">Join the waitlist →</Link>
+          <Link to="/contact" className="btn-lime">Reserve your free site visit →</Link>
         </div>
       </section>
       <SiteFooter />
