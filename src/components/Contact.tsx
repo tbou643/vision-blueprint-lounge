@@ -23,6 +23,12 @@ const Contact = () => {
 
               <div className="space-y-6">
                 <div>
+                  <p className="text-minimal text-muted-foreground mb-1">Phone</p>
+                  <a href="tel:+14038197834" className="text-xl hover:text-lime transition-colors">
+                    (403) 819-7834
+                  </a>
+                </div>
+                <div>
                   <p className="text-minimal text-muted-foreground mb-1">Email</p>
                   <a href="mailto:hello@nullpunkt.ca" className="text-xl hover:text-lime transition-colors">
                     hello@nullpunkt.ca

@@ -32,7 +32,14 @@ const Navigation = () => {
           ))}
         </div>
 
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-4">
+          <a
+            href="tel:+14038197834"
+            className="text-sm font-medium text-muted-foreground hover:text-lime transition-colors duration-300"
+            aria-label="Call NullPunkt Solar"
+          >
+            (403) 819-7834
+          </a>
           <Link to="/contact" className="btn-lime !py-2.5 !px-5 !text-xs" data-cta="Free Consultation" data-cta-position="nav">
             Free Consultation
           </Link>
@@ -60,6 +67,13 @@ const Navigation = () => {
                 {l.label}
               </Link>
             ))}
+            <a
+              href="tel:+14038197834"
+              onClick={() => setOpen(false)}
+              className="block text-base text-lime"
+            >
+              📞 (403) 819-7834
+            </a>
             <Link to="/contact" className="btn-lime w-full" data-cta="Free Consultation" data-cta-position="nav-mobile">
               Free Consultation
             </Link>
