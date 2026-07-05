@@ -10,11 +10,11 @@ const Services = () => {
       title: "Residential Integrated Systems",
       tag: "B2C · Calgary metro",
       description:
-        "Fully integrated solar energy systems for owner-occupied homes. Engineered as one ecosystem rather than a stack of separately installed devices — increasing self-consumption from 25–40% (PV-only) to 70–85%.",
+        "Fully integrated solar energy systems for owner-occupied homes. Engineered as one ecosystem rather than a stack of separately installed devices - increasing self-consumption from 25–40% (PV-only) to 70–85%.",
       features: [
         "8–15 kWp Tier-1 PV with Hail Class HW5 modules",
         "10–15 kWh LFP battery storage (UL 9540)",
-        "Intelligent HEMS — OpenEMS-based, no vendor lock-in",
+        "Intelligent HEMS - OpenEMS-based, no vendor lock-in",
         "Heat-pump and EV-charger readiness pre-wired",
       ],
       price: "CAD $25,000 – $44,000 turn-key",
@@ -78,7 +78,7 @@ const Services = () => {
       step: "02",
       title: "Fixed-price proposal",
       duration: "Week 2",
-      body: "Detailed yield simulation, stacked incentive breakdown (Solar Club, CEIP, Clean Tech ITC), and a single-page fixed quote — no upsells later.",
+      body: "Detailed yield simulation, stacked incentive breakdown (Solar Club, CEIP, Clean Tech ITC), and a single-page fixed quote - no upsells later.",
     },
     {
       step: "03",
@@ -107,12 +107,12 @@ const Services = () => {
   ];
 
   const certifications = [
-    { name: "Master Electrician", body: "Alberta-licensed master electrician on every project — code-compliant, inspection-ready." },
-    { name: "IEC 61215 Class 3", body: "Hail-rated modules tested to 35 mm ice balls at 27 m/s — built for Calgary's hail belt." },
-    { name: "UL 9540 batteries", body: "North-American certified energy storage — required by Alberta building code for residential install." },
-    { name: "CSA / cULus inverters", body: "Only inverters with Canadian electrical certification — non-negotiable for utility interconnection." },
-    { name: "OpenEMS HEMS", body: "Open-source energy management — no vendor lock-in, no subscription to view your own data." },
-    { name: "WCB & $5M liability", body: "Fully insured, Workers' Compensation covered — your property and our crews are protected." },
+    { name: "Master Electrician", body: "Alberta-licensed master electrician on every project - code-compliant, inspection-ready." },
+    { name: "IEC 61215 Class 3", body: "Hail-rated modules tested to 35 mm ice balls at 27 m/s - built for Calgary's hail belt." },
+    { name: "UL 9540 batteries", body: "North-American certified energy storage - required by Alberta building code for residential install." },
+    { name: "CSA / cULus inverters", body: "Only inverters with Canadian electrical certification - non-negotiable for utility interconnection." },
+    { name: "OpenEMS HEMS", body: "Open-source energy management - no vendor lock-in, no subscription to view your own data." },
+    { name: "WCB & $5M liability", body: "Fully insured, Workers' Compensation covered - your property and our crews are protected." },
   ];
 
   const financing = [
@@ -134,12 +134,12 @@ const Services = () => {
     {
       name: "Commercial leasing",
       headline: "Off-balance-sheet",
-      body: "For commercial and agricultural clients — operating leases that preserve borrowing capacity and capture the 30% federal Clean Tech ITC.",
+      body: "For commercial and agricultural clients - operating leases that preserve borrowing capacity and capture the 30% federal Clean Tech ITC.",
     },
   ];
 
   const comparison = [
-    { feature: "Engineering before quoting", us: "Always — stamped PV*SOL yield study", them: "Rarely — rule-of-thumb sizing" },
+    { feature: "Engineering before quoting", us: "Always - stamped PV*SOL yield study", them: "Rarely - rule-of-thumb sizing" },
     { feature: "Battery integrated from day one", us: "Standard on every residential build", them: "Bolted on later, often incompatible" },
     { feature: "Workmanship warranty", us: "5 years, transferable", them: "1–2 years typical" },
     { feature: "Crews", us: "Vetted Alberta master-electrician partners, NullPunkt project lead on site", them: "Anonymous subcontracted day labour" },
@@ -150,7 +150,7 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Solar Services — Residential, Commercial & Developer | NullPunkt"
+        title="Solar Services - Residential, Commercial & Developer | NullPunkt"
         description="Four integrated solar service lines for Calgary and Alberta: residential PV+battery+HEMS, commercial and agri PV, developer partnerships, and lifetime monitoring."
         path="/services"
       />
@@ -168,7 +168,7 @@ const Services = () => {
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl">
               NullPunkt Solar engineers PV, battery storage and intelligent energy management as a
-              single coordinated installation — not four products bolted together later.
+              single coordinated installation - not four products bolted together later.
             </p>
           </div>
         </div>
@@ -207,7 +207,7 @@ const Services = () => {
           </div>
           <p className="text-xs text-muted-foreground text-center max-w-3xl mx-auto mt-6">
             All pricing in CAD, exclusive of GST. Final price depends on roof complexity, electrical
-            upgrades, and selected hardware tier. Quoted prices are fixed — not estimates.
+            upgrades, and selected hardware tier. Quoted prices are fixed - not estimates.
           </p>
         </div>
       </section>
@@ -218,7 +218,7 @@ const Services = () => {
           <div className="max-w-2xl mb-14">
             <p className="text-minimal text-lime mb-4">How we work</p>
             <h2 className="text-4xl md:text-5xl font-light text-architectural mb-6">
-              From first call to permission-to-operate — typically 8–10 weeks.
+              From first call to permission-to-operate - typically 8–10 weeks.
             </h2>
             <p className="text-muted-foreground leading-relaxed">
               A predictable, transparent process. You always know what step we're on, what's blocking
@@ -269,7 +269,7 @@ const Services = () => {
               Four ways to pay. We help you pick the cheapest one.
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              We're installers, not lenders — so we'll always show you the math behind every option, including
+              We're installers, not lenders - so we'll always show you the math behind every option, including
               the one where you don't finance at all.
             </p>
           </div>
@@ -296,7 +296,7 @@ const Services = () => {
               How we compare to a typical Alberta installer.
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Honest, no-marketing comparison. If another installer matches all six rows, hire them — they're good.
+              Honest, no-marketing comparison. If another installer matches all six rows, hire them - they're good.
             </p>
           </div>
           <div className="card-raised overflow-hidden">

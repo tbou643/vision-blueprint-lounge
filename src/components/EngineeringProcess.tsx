@@ -20,7 +20,7 @@ const STEPS = [
   {
     n: "04",
     title: "Procurement & logistics",
-    body: "Tier-1 modules, NA-certified inverter, UL 9540 storage, HEMS controller — sourced through the supply network our German parent has used for years.",
+    body: "Tier-1 modules, NA-certified inverter, UL 9540 storage, HEMS controller - sourced through the supply network our German parent has used for years.",
     deliverable: "Bill of materials",
   },
   {
@@ -32,7 +32,7 @@ const STEPS = [
   {
     n: "06",
     title: "Monitoring & service",
-    body: "Cloud monitoring dashboard live from day one. Optional annual maintenance, warranty management, performance reviews — for the lifetime of the system.",
+    body: "Cloud monitoring dashboard live from day one. Optional annual maintenance, warranty management, performance reviews - for the lifetime of the system.",
     deliverable: "Lifetime dashboard",
   },
 ];

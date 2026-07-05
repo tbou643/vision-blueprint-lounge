@@ -335,7 +335,7 @@ export default function AnalyticsAdmin() {
                     {data.campaigns.map((c) => (
                       <tr key={c.campaign} className="border-b border-border/50">
                         <td className="py-2 pr-3 font-mono">{c.campaign}</td>
-                        <td className="py-2 pr-3 text-muted-foreground">{c.source ?? "—"} / {c.medium ?? "—"}</td>
+                        <td className="py-2 pr-3 text-muted-foreground">{c.source ?? "-"} / {c.medium ?? "-"}</td>
                         <td className="py-2 pr-3 text-right">{c.visitors}</td>
                         <td className="py-2 pr-3 text-right">{c.signups}</td>
                         <td className="py-2 text-right"><span className="text-lime">{c.conversionRate}%</span></td>
@@ -557,7 +557,7 @@ export default function AnalyticsAdmin() {
                           <div className="text-muted-foreground">{w.email}</div>
                         </td>
                         <td className="py-2 pr-3">
-                          {w.city ?? w.country ?? "—"}
+                          {w.city ?? w.country ?? "-"}
                           {w.postal_code && <span className="text-muted-foreground ml-1">({w.postal_code})</span>}
                         </td>
                         <td className="py-2 pr-3">
@@ -570,7 +570,7 @@ export default function AnalyticsAdmin() {
                           )}
                           <div className="text-[10px] text-muted-foreground">{w.source}</div>
                         </td>
-                        <td className="py-2 font-mono text-[11px] truncate max-w-[200px]">{w.landing_path ?? "—"}</td>
+                        <td className="py-2 font-mono text-[11px] truncate max-w-[200px]">{w.landing_path ?? "-"}</td>
                       </tr>
                     ))}
                     {!data.waitlistWithSource.length && <tr><td colSpan={5} className="py-4 text-muted-foreground">Keine Signups im Zeitraum.</td></tr>}
@@ -606,7 +606,7 @@ export default function AnalyticsAdmin() {
                     {data.recentSessions.map((s) => (
                       <tr key={s.session_id} className="border-b border-border/50">
                         <td className="py-2 pr-3 whitespace-nowrap">{fmtTime(s.started_at)}</td>
-                        <td className="py-2 pr-3">{s.city ?? s.country ?? "—"}</td>
+                        <td className="py-2 pr-3">{s.city ?? s.country ?? "-"}</td>
                         <td className="py-2 pr-3">{s.utm_source || s.referrer_domain || "Direct"}</td>
                         <td className="py-2 pr-3">{s.device_type}</td>
                         <td className="py-2 pr-3">{s.browser} / {s.os}</td>

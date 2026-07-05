@@ -2,13 +2,13 @@ const LAYERS = [
   {
     tag: "Layer 03 · Cloud",
     title: "Monitoring & service layer",
-    body: "Cloud monitoring dashboard, performance analytics, alerting, warranty management. The same telemetry stack our parent operates across its German fleet — running for the lifetime of your system.",
+    body: "Cloud monitoring dashboard, performance analytics, alerting, warranty management. The same telemetry stack our parent operates across its German fleet - running for the lifetime of your system.",
     items: ["Live production & consumption", "Battery state-of-charge", "Alert & fault management", "Performance reviews"],
   },
   {
     tag: "Layer 02 · Control",
     title: "Intelligent energy management",
-    body: "HEMS controller built on OpenEMS — open-source, vendor-neutral. Coordinates PV, battery, heat pump, EV charger and grid in real time, optimising for self-consumption or peak-tariff avoidance.",
+    body: "HEMS controller built on OpenEMS - open-source, vendor-neutral. Coordinates PV, battery, heat pump, EV charger and grid in real time, optimising for self-consumption or peak-tariff avoidance.",
     items: ["OpenEMS controller", "Self-consumption optimisation", "Peak-shaving logic", "Heat-pump & EV orchestration"],
   },
   {
@@ -36,7 +36,7 @@ const TechnologyStack = () => {
             </div>
             <div className="lg:col-span-7 lg:pt-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Integrated solar isn't a panel on a roof. It's a software-meets-hardware system —
+                Integrated solar isn't a panel on a roof. It's a software-meets-hardware system -
                 a control layer orchestrating climate-engineered hardware, connected to a monitoring
                 cloud that runs for decades. We engineer all three layers, not just the one in the middle.
               </p>

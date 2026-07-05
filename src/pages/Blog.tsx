@@ -17,7 +17,7 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Insights — NullPunkt Solar Blog"
+        title="Insights - NullPunkt Solar Blog"
         description="Engineering notes and field perspectives on integrated solar, battery storage, HEMS and Alberta-specific energy economics from the NullPunkt team."
         path="/blog"
       />

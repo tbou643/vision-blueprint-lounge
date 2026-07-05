@@ -107,7 +107,7 @@ var get_services_overview_default = defineTool3({
   handler: () => {
     const overview = {
       company: "Nullpunkt Energy (Calgary subsidiary of SMB Solartechnik GmbH)",
-      slogan: "German Precision \u2014 Zero Emissions",
+      slogan: "German Precision - Zero Emissions",
       market: "Calgary and greater Alberta, Canada",
       services: [
         {
@@ -152,7 +152,7 @@ var posts = [
   {
     id: "calgary-solar-incentives-2026",
     title: "Calgary Solar Incentives 2026: A Homeowner's Guide",
-    excerpt: "What rebates, loans and net-billing programs actually pay out for a Calgary home solar system in 2026 \u2014 plus the small print most installers skip.",
+    excerpt: "What rebates, loans and net-billing programs actually pay out for a Calgary home solar system in 2026 - plus the small print most installers skip.",
     author: "NullPunkt Engineering",
     date: "2026-06-23",
     readTime: "9 min read",

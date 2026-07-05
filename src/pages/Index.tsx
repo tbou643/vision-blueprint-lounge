@@ -38,7 +38,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="NullPunkt Solar — Integrated Solar for Calgary, Alberta"
+        title="NullPunkt Solar - Integrated Solar for Calgary, Alberta"
         description="Integrated PV, battery and HEMS systems for Calgary and Southern Alberta. A new Calgary company backed by a German parent installing integrated systems since 2024."
         path="/"
         jsonLd={localBusiness}

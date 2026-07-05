@@ -10,7 +10,7 @@ export default defineTool({
   handler: () => {
     const overview = {
       company: "Nullpunkt Energy (Calgary subsidiary of SMB Solartechnik GmbH)",
-      slogan: "German Precision — Zero Emissions",
+      slogan: "German Precision - Zero Emissions",
       market: "Calgary and greater Alberta, Canada",
       services: [
         {

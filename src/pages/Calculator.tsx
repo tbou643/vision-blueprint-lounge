@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 
 const calgaryFacts = [
   { stat: "333", unit: "sunny days / year", note: "More than Miami. Calgary is one of Canada's top solar cities." },
-  { stat: "1,292", unit: "kWh / kWp / year", note: "Specific yield — beats Berlin (~1,050) and most of Europe." },
+  { stat: "1,292", unit: "kWh / kWp / year", note: "Specific yield - beats Berlin (~1,050) and most of Europe." },
   { stat: "+8%", unit: "winter cold bonus", note: "Cold panels are efficient panels. Alberta winters help." },
-  { stat: "~450 g", unit: "CO₂ / kWh grid", note: "Alberta's grid carbon intensity (AESO, 2024 after the last coal unit converted to natural gas) — every solar kWh still meaningfully cleaner than the grid mix." },
+  { stat: "~450 g", unit: "CO₂ / kWh grid", note: "Alberta's grid carbon intensity (AESO, 2024 after the last coal unit converted to natural gas) - every solar kWh still meaningfully cleaner than the grid mix." },
 ];
 
 const incentives = [
@@ -16,7 +16,7 @@ const incentives = [
     name: "Solar Club (UTILITYnet retailer program)",
     amount: "~35 ¢/kWh export",
     detail:
-      "An Alberta-only retailer rate structure offered through UTILITYnet that pays roughly 35 ¢/kWh for exported solar and charges around 8.4 ¢/kWh for consumption (verified May 2026 — rates set monthly). It dramatically improves payback for systems that export a meaningful share of production. Not always the best fit — when self-consumption is very high (e.g. big battery + heat pump), a standard retailer can win. We model both in your proposal.",
+      "An Alberta-only retailer rate structure offered through UTILITYnet that pays roughly 35 ¢/kWh for exported solar and charges around 8.4 ¢/kWh for consumption (verified May 2026 - rates set monthly). It dramatically improves payback for systems that export a meaningful share of production. Not always the best fit - when self-consumption is very high (e.g. big battery + heat pump), a standard retailer can win. We model both in your proposal.",
   },
   {
     name: "Clean Energy Improvement Program (CEIP)",
@@ -49,7 +49,7 @@ const climateChallenges = [
   {
     title: "Hail",
     body:
-      "Calgary sits in Canada's hail capital. We spec only IEC 61215 Class 3+ panels — the same panels rated for German alpine installations — and back them with our own workmanship warranty.",
+      "Calgary sits in Canada's hail capital. We spec only IEC 61215 Class 3+ panels - the same panels rated for German alpine installations - and back them with our own workmanship warranty.",
   },
   {
     title: "Snow load & shedding",
@@ -59,19 +59,19 @@ const climateChallenges = [
   {
     title: "Chinooks & thermal cycling",
     body:
-      "−25 °C to +15 °C in 12 hours is normal. We use UV-stabilised cabling, glass-glass modules where applicable, and torque-checked mounting — every joint engineered for ~80 K thermal swings.",
+      "−25 °C to +15 °C in 12 hours is normal. We use UV-stabilised cabling, glass-glass modules where applicable, and torque-checked mounting - every joint engineered for ~80 K thermal swings.",
   },
   {
     title: "Deregulated electricity market",
     body:
-      "Alberta's energy-only market means rates swing 6–25 ¢/kWh. A correctly sized battery shifts your consumption to avoid peaks — turning volatility from a risk into a savings lever.",
+      "Alberta's energy-only market means rates swing 6–25 ¢/kWh. A correctly sized battery shifts your consumption to avoid peaks - turning volatility from a risk into a savings lever.",
   },
 ];
 
 const faqs = [
   {
     q: "Is solar actually worth it in Calgary?",
-    a: "Yes — and the numbers are better than most Canadians assume. Calgary's solar yield (1,292 kWh/kWp) is on par with Northern Spain. Combined with Alberta's high all-in residential rate (~16.5 ¢/kWh), simple paybacks of 8–11 years are realistic for a properly engineered system.",
+    a: "Yes - and the numbers are better than most Canadians assume. Calgary's solar yield (1,292 kWh/kWp) is on par with Northern Spain. Combined with Alberta's high all-in residential rate (~16.5 ¢/kWh), simple paybacks of 8–11 years are realistic for a properly engineered system.",
   },
   {
     q: "What size system do I need?",
@@ -79,7 +79,7 @@ const faqs = [
   },
   {
     q: "How do hail and snow affect my system?",
-    a: "Our modules are hail-rated to 35 mm at 27 m/s (IEC 61215 Class 3). We mount at 30°+ tilts so snow sheds rapidly. Our German parent company has not had to replace a panel due to weather on its installations to date — and we engineer the Alberta systems to the same spec.",
+    a: "Our modules are hail-rated to 35 mm at 27 m/s (IEC 61215 Class 3). We mount at 30°+ tilts so snow sheds rapidly. Our German parent company has not had to replace a panel due to weather on its installations to date - and we engineer the Alberta systems to the same spec.",
   },
   {
     q: "Can I go fully off-grid in Alberta?",
@@ -91,7 +91,7 @@ const faqs = [
   },
   {
     q: "Why German engineering for Alberta?",
-    a: "Germany installs over 1 GW of residential solar every month — they've already solved the integration problems (battery + EV + heat pump + grid) Canada is just starting to face. We bring that playbook to Calgary, with local crews and Canadian warranty coverage.",
+    a: "Germany installs over 1 GW of residential solar every month - they've already solved the integration problems (battery + EV + heat pump + grid) Canada is just starting to face. We bring that playbook to Calgary, with local crews and Canadian warranty coverage.",
   },
 ];
 
@@ -109,7 +109,7 @@ const CalculatorPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Solar Calculator — Calgary yield, payback & incentives | NullPunkt"
+        title="Solar Calculator - Calgary yield, payback & incentives | NullPunkt"
         description="Run your Calgary solar numbers: PV yield, battery sizing, Solar Club rates, CEIP financing, payback. Engineering math, not marketing fluff."
         path="/calculator"
         jsonLd={faqJsonLd}
@@ -126,7 +126,7 @@ const CalculatorPage = () => {
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed font-light">
               Calgary gets more solar than Berlin, Frankfurt, or Munich. Run the same engineering math our German parent
-              company has used on hundreds of European installations — calibrated for Alberta's grid, weather, and tariffs.
+              company has used on hundreds of European installations - calibrated for Alberta's grid, weather, and tariffs.
             </p>
           </div>
         </div>
@@ -158,7 +158,7 @@ const CalculatorPage = () => {
             </h2>
             <p className="text-muted-foreground leading-relaxed">
               Built on Calgary's real irradiance data, Alberta's all-in retail rate, and the Micro-Generation export
-              credit — grounded on the same numbers our engineers use.
+              credit - grounded on the same numbers our engineers use.
             </p>
           </div>
           <SolarCalculator />
@@ -174,7 +174,7 @@ const CalculatorPage = () => {
               Alberta & federal incentives, as of 2026.
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              We don't sell the rebate — we engineer the system. But every NullPunkt proposal includes a stacked
+              We don't sell the rebate - we engineer the system. But every NullPunkt proposal includes a stacked
               incentive breakdown so you see your real, after-rebate cost.
             </p>
           </div>
@@ -240,7 +240,7 @@ const CalculatorPage = () => {
             Ready to talk to a real engineer?
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-10 max-w-2xl mx-auto">
-            Founding slots for Summer 2026 are limited. Reserve yours — we'll prioritise your site visit when we open
+            Founding slots for Summer 2026 are limited. Reserve yours - we'll prioritise your site visit when we open
             Calgary installations.
           </p>
           <Link to="/contact" className="btn-lime">Join the founding waitlist →</Link>

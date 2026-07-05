@@ -5,7 +5,7 @@ import Logo from "./Logo";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background — LCP image, eager + high priority */}
+      {/* Background - LCP image, eager + high priority */}
       <img
         src={heroImage}
         alt=""
@@ -44,7 +44,7 @@ const Hero = () => {
         </h1>
 
         <p className="reveal-delayed-2 text-lg md:text-xl text-white/75 font-light max-w-2xl mx-auto mb-12 leading-relaxed">
-          A new Calgary company, backed by SMB Solartechnik GmbH — a German parent
+          A new Calgary company, backed by SMB Solartechnik GmbH - a German parent
           installing integrated PV, battery and HEMS systems since 2024.
         </p>
 

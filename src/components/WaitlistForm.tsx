@@ -119,7 +119,7 @@ const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compac
         <input name="postal_code" placeholder="Postal code (T2P…)" className={input} />
         <select name="property_type" defaultValue={defaultProperty ?? ""} className={input}>
           <option value="">Property type</option>
-          <option value="residential">Residential — Single family</option>
+          <option value="residential">Residential - Single family</option>
           <option value="acreage">Acreage / Rural</option>
           <option value="commercial">Commercial</option>
           <option value="agricultural">Agricultural / Agri-PV</option>
@@ -131,7 +131,7 @@ const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compac
           min="0"
           step="any"
           defaultValue={defaultBill ?? ""}
-          placeholder="Avg monthly bill ($) — optional"
+          placeholder="Avg monthly bill ($) - optional"
           className={input}
         />
       </div>

@@ -10,7 +10,7 @@ const Privacy = () => {
     <div className="min-h-screen flex flex-col bg-background text-foreground">
       <SEO
         path="/privacy"
-        title="Privacy Policy — NullPunkt Solar Inc."
+        title="Privacy Policy - NullPunkt Solar Inc."
         description="How NullPunkt Solar Inc. collects, uses and protects the personal information of visitors, waitlist members and customers in Calgary and Alberta."
       />
       <Navigation />
@@ -113,11 +113,11 @@ const Privacy = () => {
 
               <Section id="why" title="Why we collect it">
                 <ul className="space-y-2">
-                  <li>· <span className="text-foreground">To operate the site</span> — security, error handling, basic functionality.</li>
-                  <li>· <span className="text-foreground">To improve the site</span> — understand which pages help visitors and which don't.</li>
-                  <li>· <span className="text-foreground">To respond to you</span> — reply to waitlist and contact requests.</li>
-                  <li>· <span className="text-foreground">To prepare a proposal</span> — size a system for your address when you request one.</li>
-                  <li>· <span className="text-foreground">To measure marketing</span> — see which campaigns and channels actually work.</li>
+                  <li>· <span className="text-foreground">To operate the site</span> - security, error handling, basic functionality.</li>
+                  <li>· <span className="text-foreground">To improve the site</span> - understand which pages help visitors and which don't.</li>
+                  <li>· <span className="text-foreground">To respond to you</span> - reply to waitlist and contact requests.</li>
+                  <li>· <span className="text-foreground">To prepare a proposal</span> - size a system for your address when you request one.</li>
+                  <li>· <span className="text-foreground">To measure marketing</span> - see which campaigns and channels actually work.</li>
                 </ul>
                 <p className="text-xs mt-4">
                   Our legal basis is your consent (which you can withdraw at any time) and our
@@ -184,7 +184,7 @@ const Privacy = () => {
               <Section id="analytics" title="Analytics">
                 <p>
                   We run our own first-party analytics on our infrastructure. Data stays in our
-                  own database — we do not send analytics events to Google Analytics, Meta,
+                  own database - we do not send analytics events to Google Analytics, Meta,
                   TikTok, or any advertising network.
                 </p>
                 <p>
@@ -198,20 +198,20 @@ const Privacy = () => {
               <Section id="subprocessors" title="Service providers we use">
                 <ul className="space-y-2">
                   <li>
-                    · <span className="text-foreground">Lovable Cloud / Supabase</span> — hosting,
+                    · <span className="text-foreground">Lovable Cloud / Supabase</span> - hosting,
                     database and edge functions. Data is stored on managed infrastructure.
                   </li>
                   <li>
-                    · <span className="text-foreground">ipapi.co</span> — approximate geolocation
+                    · <span className="text-foreground">ipapi.co</span> - approximate geolocation
                     from IP (see Analytics above).
                   </li>
                   <li>
-                    · <span className="text-foreground">Email delivery provider</span> — sends
+                    · <span className="text-foreground">Email delivery provider</span> - sends
                     waitlist confirmations and internal notifications from{" "}
                     <span className="font-mono text-xs">hello@nullpunkt.ca</span>.
                   </li>
                   <li>
-                    · <span className="text-foreground">Lovable AI Gateway</span> — powers the
+                    · <span className="text-foreground">Lovable AI Gateway</span> - powers the
                     engineering commentary in the solar calculator; only your calculator inputs
                     are sent (no personal identifiers).
                   </li>
@@ -281,7 +281,7 @@ const Privacy = () => {
                 </p>
                 <p className="mt-3">
                   You can opt out of our analytics for your device by clearing site data or by
-                  telling us in writing — we'll add your visitor ID to our exclusion list.
+                  telling us in writing - we'll add your visitor ID to our exclusion list.
                 </p>
                 <p className="text-xs mt-3">
                   If you are unhappy with our response you may contact the{" "}

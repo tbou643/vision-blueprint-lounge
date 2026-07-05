@@ -43,7 +43,7 @@ const PrivacyNotice = () => {
           <div className="flex-1">
             <p className="text-minimal text-lime mb-1.5">Privacy-friendly analytics</p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              We use lightweight first-party analytics — no ads, no cross-site tracking, no data sold.
+              We use lightweight first-party analytics - no ads, no cross-site tracking, no data sold.
               Approximate country/city is derived from your IP. Read our{" "}
               <Link to="/privacy" className="text-lime hover:underline">
                 Privacy Policy

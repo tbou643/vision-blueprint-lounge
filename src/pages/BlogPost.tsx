@@ -14,7 +14,7 @@ const BlogPost = () => {
     return (
       <div className="min-h-screen bg-background">
         <SEO
-          title="Post not found — NullPunkt Solar"
+          title="Post not found - NullPunkt Solar"
           description="The blog post you were looking for is not available."
           path={`/blog/${id ?? ""}`}
         />
@@ -53,7 +53,7 @@ const BlogPost = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title={`${post.title} — NullPunkt Solar`}
+        title={`${post.title} - NullPunkt Solar`}
         description={post.excerpt.slice(0, 158)}
         path={`/blog/${post.id}`}
         jsonLd={articleJsonLd}

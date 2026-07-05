@@ -28,7 +28,7 @@ const ProposalDeliverables = () => {
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed mb-10">
                 The same proposal template our German parent has issued across hundreds of integrated
-                installations — recalibrated for Alberta tariffs, weather and incentives.
+                installations - recalibrated for Alberta tariffs, weather and incentives.
               </p>
               <div className="flex flex-wrap gap-3">
                 {["Free", "Fixed-price", "Document-backed", "No pressure"].map((b) => (

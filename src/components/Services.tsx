@@ -5,7 +5,7 @@ const Services = () => {
       title: "Residential Integrated Systems",
       tag: "B2C",
       description:
-        "8–15 kWp PV, 10–15 kWh battery storage, intelligent HEMS, plus heat-pump and EV-charger readiness — engineered as one coordinated system for Alberta homes.",
+        "8–15 kWp PV, 10–15 kWh battery storage, intelligent HEMS, plus heat-pump and EV-charger readiness - engineered as one coordinated system for Alberta homes.",
     },
     {
       number: "02",
@@ -19,7 +19,7 @@ const Services = () => {
       title: "Developer Partnerships",
       tag: "B2B",
       description:
-        "Turnkey pre-integrated solar built into new-construction subdivisions — a premium sales feature for builders, fully coordinated with the construction schedule.",
+        "Turnkey pre-integrated solar built into new-construction subdivisions - a premium sales feature for builders, fully coordinated with the construction schedule.",
     },
     {
       number: "04",
@@ -46,7 +46,7 @@ const Services = () => {
           <p className="text-sm text-muted-foreground max-w-2xl mt-10">
             Every installation is delivered with an Alberta-licensed master electrician partner and
             engineered to the same standards our parent company has refined across several hundred
-            German installations. We only work with fully licensed, high-qualification trades —
+            German installations. We only work with fully licensed, high-qualification trades -
             no anonymous subcontractor chains.
           </p>
 
