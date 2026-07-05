@@ -33,7 +33,7 @@ const Navigation = () => {
         </div>
 
         <div className="hidden md:block">
-          <Link to="/contact" className="btn-lime !py-2.5 !px-5 !text-xs">
+          <Link to="/contact" className="btn-lime !py-2.5 !px-5 !text-xs" data-cta="Free Consultation" data-cta-position="nav">
             Free Consultation
           </Link>
         </div>
@@ -60,7 +60,7 @@ const Navigation = () => {
                 {l.label}
               </Link>
             ))}
-            <Link to="/contact" className="btn-lime w-full">
+            <Link to="/contact" className="btn-lime w-full" data-cta="Free Consultation" data-cta-position="nav-mobile">
               Free Consultation
             </Link>
           </div>

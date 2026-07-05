@@ -50,11 +50,11 @@ const Hero = () => {
 
         {/* CTAs */}
         <div className="reveal-delayed-2 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link to="/contact" className="btn-lime">
+          <Link to="/contact" className="btn-lime" data-cta="Join founding waitlist" data-cta-position="hero-primary">
             Join the founding waitlist
             <span aria-hidden>→</span>
           </Link>
-          <Link to="/services" className="btn-ghost !text-white !border-white/30 hover:!border-lime hover:!text-lime">
+          <Link to="/services" className="btn-ghost !text-white !border-white/30 hover:!border-lime hover:!text-lime" data-cta="See our system" data-cta-position="hero-secondary">
             See our system
           </Link>
         </div>
