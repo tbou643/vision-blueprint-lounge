@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 const milestones = [
   {
     label: "Now (Q2 2026)",
-    title: "Founding waitlist open",
-    body: "Founder on the ground in Calgary, incorporation active, a limited founding cohort of Calgary homeowners receives priority engineering slots and founding-customer pricing.",
+    title: "Now: Reserving August assessments",
+    body: "Founder on the ground in Calgary, incorporation active. We're booking free site visits for our first 25 Calgary homeowners, with priority engineering slots and founding-customer pricing.",
   },
   {
     label: "Q3 2026",
-    title: "Calgary HQ stand-up (in progress)",
-    body: "Office lease finalised, local electrical partner contracts signed, supplier logistics with SMB Solartechnik mirrored to Canadian distributors, permitting playbook live.",
+    title: "Calgary HQ operational",
+    body: "Office open, local electrical partners on contract, supplier logistics with SMB Solartechnik mirrored to Canadian distributors, permitting playbook running on live projects.",
   },
   {
     label: "Summer / Fall 2026",
@@ -47,16 +47,16 @@ const Portfolio = () => {
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-lime/40 bg-lime/10 mb-8">
               <span className="w-1.5 h-1.5 rounded-full bg-lime animate-pulse" />
               <span className="text-[11px] tracking-[0.2em] uppercase text-lime font-medium">
-                Founding customer program · Summer 2026
+                First 25 Calgary installations · Summer 2026
               </span>
             </div>
             <div className="grid md:grid-cols-2 gap-10 items-start">
               <div>
                 <h3 className="text-3xl md:text-4xl font-light text-architectural mb-4">
-                  Be part of our founding cohort of integrated systems in Alberta.
+                  Reserve one of the first 25 integrated systems in Alberta.
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Founding customers receive priority engineering, fixed-price proposals locked in
+                  Our first 25 Calgary customers receive priority engineering, fixed-price proposals locked in
                   before commissioning, and a direct line to the team that designed the system.
                 </p>
               </div>
@@ -74,7 +74,7 @@ const Portfolio = () => {
                   </div>
                 ))}
                 <div className="pt-4">
-                  <Link to="/contact" className="btn-lime">Join the waitlist</Link>
+                  <Link to="/contact" className="btn-lime">Reserve your free site visit</Link>
                 </div>
               </div>
             </div>

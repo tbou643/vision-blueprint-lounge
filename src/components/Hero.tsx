@@ -25,7 +25,7 @@ const Hero = () => {
         <div className="reveal inline-flex items-center gap-3 px-4 py-2 rounded-full border border-lime/40 bg-lime/10 backdrop-blur-sm mb-10">
           <span className="w-1.5 h-1.5 rounded-full bg-lime animate-pulse" />
           <span className="text-[11px] tracking-[0.22em] uppercase text-lime font-medium">
-            Launching Summer 2026 · Calgary, Alberta
+            Reserving August site visits · Calgary, Alberta
           </span>
         </div>
 
@@ -50,8 +50,8 @@ const Hero = () => {
 
         {/* CTAs */}
         <div className="reveal-delayed-2 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link to="/contact" className="btn-lime" data-cta="Join founding waitlist" data-cta-position="hero-primary">
-            Join the founding waitlist
+          <Link to="/contact" className="btn-lime" data-cta="Reserve your free site visit" data-cta-position="hero-primary">
+            Reserve your free site visit
             <span aria-hidden>→</span>
           </Link>
           <Link to="/services" className="btn-ghost !text-white !border-white/30 hover:!border-lime hover:!text-lime" data-cta="See our system" data-cta-position="hero-secondary">

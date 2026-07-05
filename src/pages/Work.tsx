@@ -61,7 +61,7 @@ const Work = () => {
               of SMB Solartechnik GmbH, a profitable German solar company with hundreds of completed
               integrated installations. Join our founding cohort of Alberta projects.
             </p>
-            <Link to="/contact" className="btn-lime">Join the founding waitlist →</Link>
+            <Link to="/contact" className="btn-lime">Reserve your free site visit →</Link>
           </div>
         </div>
       </section>
@@ -112,7 +112,7 @@ const Work = () => {
             Founding customers receive priority engineering slots, locked-in fixed pricing, and a
             direct line to the team designing your system.
           </p>
-          <Link to="/contact" className="btn-lime">Join the waitlist →</Link>
+          <Link to="/contact" className="btn-lime">Reserve your free site visit →</Link>
         </div>
       </section>
       <SiteFooter />

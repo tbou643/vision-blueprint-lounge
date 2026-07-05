@@ -40,8 +40,8 @@ const Navigation = () => {
           >
             (403) 819-7834
           </a>
-          <Link to="/contact" className="btn-lime !py-2.5 !px-5 !text-xs" data-cta="Free Consultation" data-cta-position="nav">
-            Free Consultation
+          <Link to="/contact" className="btn-lime !py-2.5 !px-5 !text-xs" data-cta="Reserve your free site visit" data-cta-position="nav">
+            Reserve your free site visit
           </Link>
         </div>
 
@@ -74,8 +74,8 @@ const Navigation = () => {
             >
               📞 (403) 819-7834
             </a>
-            <Link to="/contact" className="btn-lime w-full" data-cta="Free Consultation" data-cta-position="nav-mobile">
-              Free Consultation
+            <Link to="/contact" className="btn-lime w-full" data-cta="Reserve your free site visit" data-cta-position="nav-mobile">
+              Reserve your free site visit
             </Link>
           </div>
         </div>
