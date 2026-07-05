@@ -14,6 +14,14 @@ type WaitlistPayload = {
   monthly_bill?: unknown
   notes?: unknown
   source?: unknown
+  utm_source?: unknown
+  utm_medium?: unknown
+  utm_campaign?: unknown
+  referrer_domain?: unknown
+  landing_path?: unknown
+  country?: unknown
+  city?: unknown
+  visitor_id?: unknown
 }
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -65,6 +73,14 @@ Deno.serve(async (req) => {
   const property_type = text(body.property_type, 50)
   const notes = text(body.notes, 500)
   const source = text(body.source, 80) ?? 'website'
+  const utm_source = text(body.utm_source, 80)
+  const utm_medium = text(body.utm_medium, 80)
+  const utm_campaign = text(body.utm_campaign, 120)
+  const referrer_domain = text(body.referrer_domain, 120)
+  const landing_path = text(body.landing_path, 300)
+  const country = text(body.country, 80)
+  const city = text(body.city, 80)
+  const visitor_id = text(body.visitor_id, 80)
   const monthly_bill =
     typeof body.monthly_bill === 'number' && Number.isFinite(body.monthly_bill)
       ? body.monthly_bill
@@ -87,7 +103,7 @@ Deno.serve(async (req) => {
   }
 
   const supabase = createClient(supabaseUrl, serviceKey)
-  const payload = {
+  const payload: Record<string, unknown> = {
     id,
     name,
     email,
@@ -96,6 +112,14 @@ Deno.serve(async (req) => {
     monthly_bill,
     notes,
     source,
+    utm_source,
+    utm_medium,
+    utm_campaign,
+    referrer_domain,
+    landing_path,
+    country,
+    city,
+    visitor_id,
     created_at,
   }
 
