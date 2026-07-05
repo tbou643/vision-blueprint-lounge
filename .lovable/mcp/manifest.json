@@ -1,0 +1,170 @@
+{
+  "version": 1,
+  "sdk_version": "0.20.0",
+  "path": "/functions/v1/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "nullpunkt-energy-mcp",
+      "version": "0.1.0",
+      "title": "Nullpunkt Energy MCP"
+    },
+    "tools": [
+      {
+        "name": "get_solar_estimate",
+        "title": "Get solar estimate",
+        "description": "Estimate a Calgary/Alberta solar PV system: recommended size, annual production, savings (standard vs Solar Club retailer), turn-key cost, payback, CO₂ avoided, and CEIP financing. Returns engineering baseline plus an AI-written recommendation.",
+        "annotations": {
+          "readOnlyHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "monthlyBill": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "description": "Monthly electricity bill in CAD."
+            },
+            "propertyType": {
+              "type": "string",
+              "enum": [
+                "residential",
+                "commercial",
+                "agricultural",
+                "multi-family"
+              ],
+              "description": "Property type."
+            },
+            "roofOrientation": {
+              "type": "string",
+              "enum": [
+                "south",
+                "south-east",
+                "south-west",
+                "east-west",
+                "north"
+              ],
+              "description": "Primary roof orientation."
+            },
+            "roofSize": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Available roof area in m² (0 if unknown)."
+            },
+            "hasEV": {
+              "default": false,
+              "description": "Electric vehicle in the household.",
+              "type": "boolean"
+            },
+            "hasBattery": {
+              "default": false,
+              "description": "Wants battery storage.",
+              "type": "boolean"
+            },
+            "postalCode": {
+              "description": "Canadian postal code (optional).",
+              "type": "string"
+            }
+          },
+          "required": [
+            "monthlyBill",
+            "propertyType",
+            "roofOrientation",
+            "roofSize"
+          ]
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_services_overview",
+        "title": "Get Nullpunkt services overview",
+        "description": "Return a structured overview of Nullpunkt Energy's core services, target market (Calgary / Alberta), pricing posture, and contact channels.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_blog_posts",
+        "title": "List blog posts",
+        "description": "List Nullpunkt Energy blog posts with id, title, excerpt, category, author, date, read time, and public URL. Useful for Calgary/Alberta solar incentive and engineering context.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "join_waitlist",
+        "title": "Join Nullpunkt waitlist",
+        "description": "Register a Calgary/Alberta homeowner or business on the Nullpunkt Energy waitlist for a solar consultation. Sends confirmation and internal notification emails.",
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": false,
+          "openWorldHint": true
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "description": "Full name of the contact."
+            },
+            "email": {
+              "type": "string",
+              "format": "email",
+              "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$",
+              "description": "Contact email address."
+            },
+            "postal_code": {
+              "description": "Canadian postal code.",
+              "type": "string",
+              "maxLength": 10
+            },
+            "property_type": {
+              "description": "e.g. residential, commercial, agricultural.",
+              "type": "string",
+              "maxLength": 50
+            },
+            "monthly_bill": {
+              "description": "Monthly electricity bill in CAD.",
+              "type": "number",
+              "minimum": 0
+            },
+            "notes": {
+              "description": "Free-form notes from the user.",
+              "type": "string",
+              "maxLength": 500
+            }
+          },
+          "required": [
+            "name",
+            "email"
+          ]
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
