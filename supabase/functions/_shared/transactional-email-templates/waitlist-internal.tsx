@@ -36,7 +36,7 @@ const Email = (p: Props) => (
           {p.notes ? (
             <>
               <Hr style={hr} />
-              <Text style={label}>Notes</Text>
+              <Text style={notesLabel}>Notes</Text>
               <Text style={notes}>{p.notes}</Text>
             </>
           ) : null}
