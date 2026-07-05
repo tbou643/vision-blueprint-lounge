@@ -79,6 +79,7 @@ const lead = { fontSize: '14px', color: '#475569', margin: '0 0 24px' }
 const card = { border: '1px solid #e2e8f0', borderRadius: '8px', padding: '20px 24px', backgroundColor: '#f8fafc' }
 const row = { fontSize: '14px', margin: '6px 0', color: '#0f172a' }
 const labelStyle = { fontSize: '12px', textTransform: 'uppercase' as const, letterSpacing: '0.08em', color: '#64748b', marginRight: '6px' }
+const notesLabel = { fontSize: '12px', textTransform: 'uppercase' as const, letterSpacing: '0.08em', color: '#64748b', margin: '12px 0 4px' }
 const valStyle = { color: '#0f172a' }
 const notes = { fontSize: '14px', color: '#0f172a', margin: '0' }
 const hr = { borderColor: '#e2e8f0', margin: '16px 0' }
