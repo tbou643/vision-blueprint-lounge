@@ -129,9 +129,9 @@ const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compac
           name="monthly_bill"
           type="number"
           min="0"
-          step="10"
+          step="any"
           defaultValue={defaultBill ?? ""}
-          placeholder="Avg monthly bill ($)"
+          placeholder="Avg monthly bill ($) — optional"
           className={input}
         />
       </div>
