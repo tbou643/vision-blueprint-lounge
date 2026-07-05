@@ -18,20 +18,14 @@ interface Signup {
   created_at: string;
 }
 
-interface Props {
-  password: string;
-}
-
-const WaitlistAdmin = ({ password }: Props) => {
+const WaitlistAdmin = () => {
   const { toast } = useToast();
   const [signups, setSignups] = useState<Signup[]>([]);
   const [loading, setLoading] = useState(false);
 
   const load = async () => {
     setLoading(true);
-    const { data, error } = await supabase.functions.invoke("admin-waitlist", {
-      headers: { "x-admin-password": password },
-    });
+    const { data, error } = await supabase.functions.invoke("admin-waitlist");
     setLoading(false);
     if (error) {
       toast({

@@ -14,8 +14,6 @@ import { Link } from "react-router-dom";
 import WaitlistAdmin from "@/components/admin/WaitlistAdmin";
 import AnalyticsAdmin from "@/components/admin/AnalyticsAdmin";
 
-const ADMIN_PASSWORD = "#solar2026!";
-
 interface Project {
   id: string;
   image_id: string;
@@ -37,12 +35,12 @@ interface ProjectImage {
 
 const Admin = () => {
   const { toast } = useToast();
-  const [isAuthenticated, setIsAuthenticated] = useState(() => {
-    try { return localStorage.getItem("np_admin_auth") === "1"; } catch { return false; }
-  });
-  const [password, setPassword] = useState(() => {
-    try { return localStorage.getItem("np_admin_pw") ?? ""; } catch { return ""; }
-  });
+  const [checkingSession, setCheckingSession] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [signingIn, setSigningIn] = useState(false);
   const [uploading, setUploading] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const fileInputRefs = useRef<Record<string, HTMLInputElement | null>>({});
@@ -53,27 +51,72 @@ const Admin = () => {
 
   const categories = ["RESIDENTIAL", "COMMERCIAL", "AGRICULTURAL", "DEVELOPER"];
 
-  const handleLogin = (e: React.FormEvent) => {
+  const checkAdmin = async (userId: string) => {
+    const { data } = await supabase
+      .from("user_roles")
+      .select("role")
+      .eq("user_id", userId)
+      .eq("role", "admin")
+      .maybeSingle();
+    return !!data;
+  };
+
+  useEffect(() => {
+    const { data: sub } = supabase.auth.onAuthStateChange((_evt, session) => {
+      if (session?.user) {
+        setIsAuthenticated(true);
+        // defer role check to avoid deadlock
+        setTimeout(async () => {
+          const ok = await checkAdmin(session.user.id);
+          setIsAdmin(ok);
+          if (!ok) {
+            toast({ title: "Kein Admin-Zugriff", variant: "destructive" });
+            await supabase.auth.signOut();
+          }
+        }, 0);
+      } else {
+        setIsAuthenticated(false);
+        setIsAdmin(false);
+      }
+    });
+
+    supabase.auth.getSession().then(async ({ data: { session } }) => {
+      if (session?.user) {
+        setIsAuthenticated(true);
+        const ok = await checkAdmin(session.user.id);
+        setIsAdmin(ok);
+      }
+      setCheckingSession(false);
+    });
+
+    return () => sub.subscription.unsubscribe();
+  }, [toast]);
+
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === ADMIN_PASSWORD) {
-      setIsAuthenticated(true);
-      try {
-        localStorage.setItem("np_admin_auth", "1");
-        localStorage.setItem("np_admin_pw", password);
-      } catch {}
-      toast({ title: "Erfolgreich angemeldet" });
-    } else {
-      toast({ title: "Falsches Passwort", variant: "destructive" });
+    setSigningIn(true);
+    const { error } = await supabase.auth.signInWithPassword({ email: email.trim(), password });
+    setSigningIn(false);
+    if (error) {
+      toast({ title: "Login fehlgeschlagen", description: error.message, variant: "destructive" });
+      return;
     }
+    toast({ title: "Erfolgreich angemeldet" });
+  };
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    setEmail("");
+    setPassword("");
   };
 
   // Load data when authenticated
   useEffect(() => {
-    if (isAuthenticated) {
+    if (isAuthenticated && isAdmin) {
       loadProjects();
       loadImages();
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated, isAdmin]);
 
   const loadProjects = async () => {
     const { data, error } = await supabase
@@ -239,7 +282,15 @@ const Admin = () => {
     fileInputRefs.current[imageId]?.click();
   };
 
-  if (!isAuthenticated) {
+  if (checkingSession) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center p-6">
+        <p className="text-muted-foreground">Lade…</p>
+      </div>
+    );
+  }
+
+  if (!isAuthenticated || !isAdmin) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-6">
         <Card className="w-full max-w-md">
@@ -250,13 +301,23 @@ const Admin = () => {
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-4">
               <Input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                autoComplete="email"
+                required
+              />
+              <Input
                 type="password"
-                placeholder="Passwort eingeben"
+                placeholder="Passwort"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                autoComplete="current-password"
+                required
               />
-              <Button type="submit" className="w-full">
-                Anmelden
+              <Button type="submit" className="w-full" disabled={signingIn}>
+                {signingIn ? "Anmelden…" : "Anmelden"}
               </Button>
             </form>
           </CardContent>
@@ -273,12 +334,17 @@ const Admin = () => {
             <h1 className="text-3xl font-light text-architectural">Admin-Bereich</h1>
             <p className="text-muted-foreground">Projekte und Bilder verwalten</p>
           </div>
-          <Link to="/">
-            <Button variant="outline">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Zurück zur Seite
+          <div className="flex gap-2">
+            <Button variant="outline" onClick={handleLogout}>
+              Abmelden
             </Button>
-          </Link>
+            <Link to="/">
+              <Button variant="outline">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Zurück zur Seite
+              </Button>
+            </Link>
+          </div>
         </div>
 
         <Tabs defaultValue="analytics" className="space-y-6">
@@ -290,12 +356,13 @@ const Admin = () => {
           </TabsList>
 
           <TabsContent value="analytics">
-            <AnalyticsAdmin password={password} />
+            <AnalyticsAdmin />
           </TabsContent>
 
           <TabsContent value="waitlist">
-            <WaitlistAdmin password={password} />
+            <WaitlistAdmin />
           </TabsContent>
+
 
 
 
