@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 const milestones = [
   {
     label: "Now (Q2 2026)",
-    title: "Founding waitlist open",
-    body: "Founder on the ground in Calgary, incorporation active, a limited founding cohort of Calgary homeowners receives priority engineering slots and founding-customer pricing.",
+    title: "Now: Reserving August assessments",
+    body: "Founder on the ground in Calgary, incorporation active. We're booking free site visits for our first 25 Calgary homeowners, with priority engineering slots and founding-customer pricing.",
   },
   {
     label: "Q3 2026",
-    title: "Calgary HQ stand-up (in progress)",
-    body: "Office lease finalised, local electrical partner contracts signed, supplier logistics with SMB Solartechnik mirrored to Canadian distributors, permitting playbook live.",
+    title: "Calgary HQ operational",
+    body: "Office open, local electrical partners on contract, supplier logistics with SMB Solartechnik mirrored to Canadian distributors, permitting playbook running on live projects.",
   },
   {
     label: "Summer / Fall 2026",
