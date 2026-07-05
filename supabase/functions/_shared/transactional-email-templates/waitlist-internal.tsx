@@ -36,7 +36,7 @@ const Email = (p: Props) => (
           {p.notes ? (
             <>
               <Hr style={hr} />
-              <Text style={label}>Notes</Text>
+              <Text style={notesLabel}>Notes</Text>
               <Text style={notes}>{p.notes}</Text>
             </>
           ) : null}
@@ -51,8 +51,8 @@ const Email = (p: Props) => (
 
 const Row = ({ label, value }: { label: string; value?: string | number | null }) => (
   <Text style={row}>
-    <span style={label as any}>{label}: </span>
-    <span style={val as any}>{value ?? '—'}</span>
+    <span style={labelStyle}>{label}: </span>
+    <span style={valStyle}>{value ?? '—'}</span>
   </Text>
 )
 
@@ -78,8 +78,9 @@ const h1 = { fontSize: '22px', fontWeight: 500, margin: '0 0 8px', color: '#0f17
 const lead = { fontSize: '14px', color: '#475569', margin: '0 0 24px' }
 const card = { border: '1px solid #e2e8f0', borderRadius: '8px', padding: '20px 24px', backgroundColor: '#f8fafc' }
 const row = { fontSize: '14px', margin: '6px 0', color: '#0f172a' }
-const label = { fontSize: '12px', textTransform: 'uppercase' as const, letterSpacing: '0.08em', color: '#64748b', margin: '12px 0 4px' }
-const val = { color: '#0f172a' }
+const labelStyle = { fontSize: '12px', textTransform: 'uppercase' as const, letterSpacing: '0.08em', color: '#64748b', marginRight: '6px' }
+const notesLabel = { fontSize: '12px', textTransform: 'uppercase' as const, letterSpacing: '0.08em', color: '#64748b', margin: '12px 0 4px' }
+const valStyle = { color: '#0f172a' }
 const notes = { fontSize: '14px', color: '#0f172a', margin: '0' }
 const hr = { borderColor: '#e2e8f0', margin: '16px 0' }
 const footer = { fontSize: '12px', color: '#64748b', marginTop: '24px' }
