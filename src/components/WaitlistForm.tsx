@@ -144,7 +144,7 @@ const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compac
         />
       )}
       <button type="submit" disabled={loading} className="btn-lime w-full justify-center" data-cta="waitlist_submit" data-cta-position={source}>
-        {loading ? "Submitting…" : "Reserve my founding slot →"}
+        {loading ? "Submitting…" : "Reserve your free site visit →"}
       </button>
       <p className="text-[11px] text-muted-foreground">
         We'll only use your details to contact you about your installation. No spam, ever.
