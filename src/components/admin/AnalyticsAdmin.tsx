@@ -145,7 +145,7 @@ function ExportBtn({ name, rows }: { name: string; rows: Record<string, unknown>
   );
 }
 
-export default function AnalyticsAdmin({ password }: { password: string }) {
+export default function AnalyticsAdmin() {
   const { toast } = useToast();
   const [data, setData] = useState<AnalyticsData | null>(null);
   const [loading, setLoading] = useState(false);
@@ -159,17 +159,13 @@ export default function AnalyticsAdmin({ password }: { password: string }) {
   const load = async (d: number) => {
     setLoading(true);
     try {
-      const url = `https://hesgpwjpxarceynzjgpc.supabase.co/functions/v1/admin-analytics`;
-      const res = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "x-admin-password": password },
-        body: JSON.stringify({ days: d }),
+      const { data: json, error } = await supabase.functions.invoke("admin-analytics", {
+        body: { days: d },
       });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const json = await res.json();
-      setData(json);
-    } catch (e) {
-      toast({ title: "Fehler beim Laden", description: String(e), variant: "destructive" });
+      if (error) throw error;
+      setData(json as AnalyticsData);
+    } catch (e: any) {
+      toast({ title: "Fehler beim Laden", description: String(e?.message ?? e), variant: "destructive" });
     } finally { setLoading(false); }
   };
 
