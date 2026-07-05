@@ -74,8 +74,8 @@ const Navigation = () => {
             >
               📞 (403) 819-7834
             </a>
-            <Link to="/contact" className="btn-lime w-full" data-cta="Free Consultation" data-cta-position="nav-mobile">
-              Free Consultation
+            <Link to="/contact" className="btn-lime w-full" data-cta="Reserve your free site visit" data-cta-position="nav-mobile">
+              Reserve your free site visit
             </Link>
           </div>
         </div>
