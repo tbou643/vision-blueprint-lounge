@@ -115,18 +115,24 @@ const SiteFooter = () => {
           {/* Bottom row */}
           <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
             <p>© {year} NullPunkt Solar Inc. — All rights reserved.</p>
-            <p className="text-center md:text-right">
-              Calgary subsidiary of{" "}
-              <a
-                href="https://smb-solartechnik.de"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-foreground transition-colors underline decoration-lime/40 underline-offset-4"
-              >
-                SMB Solartechnik GmbH
-              </a>{" "}
-              · Made with German precision.
-            </p>
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+              <Link to="/privacy" className="hover:text-foreground transition-colors">
+                Privacy Policy
+              </Link>
+              <span className="text-border hidden md:inline">·</span>
+              <p className="text-center md:text-right">
+                Calgary subsidiary of{" "}
+                <a
+                  href="https://smb-solartechnik.de"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-foreground transition-colors underline decoration-lime/40 underline-offset-4"
+                >
+                  SMB Solartechnik GmbH
+                </a>{" "}
+                · Made with German precision.
+              </p>
+            </div>
           </div>
         </div>
       </div>
