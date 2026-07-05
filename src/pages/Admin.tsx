@@ -37,8 +37,12 @@ interface ProjectImage {
 
 const Admin = () => {
   const { toast } = useToast();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [password, setPassword] = useState("");
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    try { return localStorage.getItem("np_admin_auth") === "1"; } catch { return false; }
+  });
+  const [password, setPassword] = useState(() => {
+    try { return localStorage.getItem("np_admin_pw") ?? ""; } catch { return ""; }
+  });
   const [uploading, setUploading] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const fileInputRefs = useRef<Record<string, HTMLInputElement | null>>({});
@@ -53,6 +57,10 @@ const Admin = () => {
     e.preventDefault();
     if (password === ADMIN_PASSWORD) {
       setIsAuthenticated(true);
+      try {
+        localStorage.setItem("np_admin_auth", "1");
+        localStorage.setItem("np_admin_pw", password);
+      } catch {}
       toast({ title: "Erfolgreich angemeldet" });
     } else {
       toast({ title: "Falsches Passwort", variant: "destructive" });
