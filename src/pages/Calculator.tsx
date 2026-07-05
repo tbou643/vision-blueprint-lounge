@@ -243,7 +243,7 @@ const CalculatorPage = () => {
             Founding slots for Summer 2026 are limited. Reserve yours - we'll prioritise your site visit when we open
             Calgary installations.
           </p>
-          <Link to="/contact" className="btn-lime">Join the founding waitlist →</Link>
+          <Link to="/contact" className="btn-lime">Reserve your free site visit →</Link>
         </div>
       </section>
       <SiteFooter />
