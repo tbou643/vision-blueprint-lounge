@@ -282,7 +282,15 @@ const Admin = () => {
     fileInputRefs.current[imageId]?.click();
   };
 
-  if (!isAuthenticated) {
+  if (checkingSession) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center p-6">
+        <p className="text-muted-foreground">Lade…</p>
+      </div>
+    );
+  }
+
+  if (!isAuthenticated || !isAdmin) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-6">
         <Card className="w-full max-w-md">
@@ -293,13 +301,23 @@ const Admin = () => {
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-4">
               <Input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                autoComplete="email"
+                required
+              />
+              <Input
                 type="password"
-                placeholder="Passwort eingeben"
+                placeholder="Passwort"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                autoComplete="current-password"
+                required
               />
-              <Button type="submit" className="w-full">
-                Anmelden
+              <Button type="submit" className="w-full" disabled={signingIn}>
+                {signingIn ? "Anmelden…" : "Anmelden"}
               </Button>
             </form>
           </CardContent>
@@ -316,12 +334,17 @@ const Admin = () => {
             <h1 className="text-3xl font-light text-architectural">Admin-Bereich</h1>
             <p className="text-muted-foreground">Projekte und Bilder verwalten</p>
           </div>
-          <Link to="/">
-            <Button variant="outline">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Zurück zur Seite
+          <div className="flex gap-2">
+            <Button variant="outline" onClick={handleLogout}>
+              Abmelden
             </Button>
-          </Link>
+            <Link to="/">
+              <Button variant="outline">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Zurück zur Seite
+              </Button>
+            </Link>
+          </div>
         </div>
 
         <Tabs defaultValue="analytics" className="space-y-6">
@@ -333,12 +356,13 @@ const Admin = () => {
           </TabsList>
 
           <TabsContent value="analytics">
-            <AnalyticsAdmin password={password} />
+            <AnalyticsAdmin />
           </TabsContent>
 
           <TabsContent value="waitlist">
-            <WaitlistAdmin password={password} />
+            <WaitlistAdmin />
           </TabsContent>
+
 
 
 
