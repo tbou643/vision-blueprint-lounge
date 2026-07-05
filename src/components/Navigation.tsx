@@ -67,6 +67,13 @@ const Navigation = () => {
                 {l.label}
               </Link>
             ))}
+            <a
+              href="tel:+14038197834"
+              onClick={() => setOpen(false)}
+              className="block text-base text-lime"
+            >
+              📞 (403) 819-7834
+            </a>
             <Link to="/contact" className="btn-lime w-full" data-cta="Free Consultation" data-cta-position="nav-mobile">
               Free Consultation
             </Link>
