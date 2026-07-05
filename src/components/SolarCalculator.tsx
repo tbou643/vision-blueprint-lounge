@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
+import { trackEvent } from "@/lib/analytics";
 import WaitlistForm from "./WaitlistForm";
 
 interface Baseline {
@@ -47,6 +48,7 @@ const SolarCalculator = () => {
   const run = async () => {
     setLoading(true);
     setAnalysis(null);
+    trackEvent("calculator_run", { label: propertyType, meta: { monthlyBill, roofSize, hasBattery, useSolarClub, useCEIP } });
     try {
       const { data, error } = await supabase.functions.invoke("solar-analysis", {
         body: { monthlyBill, propertyType, roofOrientation, roofSize, hasEV, hasBattery, postalCode, useSolarClub, useCEIP },

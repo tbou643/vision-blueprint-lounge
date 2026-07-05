@@ -41,7 +41,7 @@ const Contact = () => {
               </div>
 
               <div className="mt-10">
-                <Link to="/calculator" className="btn-ghost">Try the solar calculator →</Link>
+                <Link to="/calculator" className="btn-ghost" data-cta="Try the solar calculator" data-cta-position="contact-page">Try the solar calculator →</Link>
               </div>
             </div>
 

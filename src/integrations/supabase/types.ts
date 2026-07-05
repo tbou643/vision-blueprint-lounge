@@ -22,16 +22,27 @@ export type Database = {
           created_at: string
           device_type: string | null
           duration_ms: number | null
+          event_label: string | null
+          event_name: string | null
+          event_position: string | null
           event_type: string
+          excluded: boolean
+          form_step: string | null
           id: string
           is_bounce: boolean | null
           language: string | null
+          meta: Json | null
           os: string | null
+          outbound_url: string | null
           path: string
+          postal: string | null
           referrer: string | null
           referrer_domain: string | null
+          region: string | null
           screen_h: number | null
           screen_w: number | null
+          scroll_depth: number | null
+          section: string | null
           session_id: string
           user_agent: string | null
           utm_campaign: string | null
@@ -48,16 +59,27 @@ export type Database = {
           created_at?: string
           device_type?: string | null
           duration_ms?: number | null
+          event_label?: string | null
+          event_name?: string | null
+          event_position?: string | null
           event_type: string
+          excluded?: boolean
+          form_step?: string | null
           id?: string
           is_bounce?: boolean | null
           language?: string | null
+          meta?: Json | null
           os?: string | null
+          outbound_url?: string | null
           path: string
+          postal?: string | null
           referrer?: string | null
           referrer_domain?: string | null
+          region?: string | null
           screen_h?: number | null
           screen_w?: number | null
+          scroll_depth?: number | null
+          section?: string | null
           session_id: string
           user_agent?: string | null
           utm_campaign?: string | null
@@ -74,16 +96,27 @@ export type Database = {
           created_at?: string
           device_type?: string | null
           duration_ms?: number | null
+          event_label?: string | null
+          event_name?: string | null
+          event_position?: string | null
           event_type?: string
+          excluded?: boolean
+          form_step?: string | null
           id?: string
           is_bounce?: boolean | null
           language?: string | null
+          meta?: Json | null
           os?: string | null
+          outbound_url?: string | null
           path?: string
+          postal?: string | null
           referrer?: string | null
           referrer_domain?: string | null
+          region?: string | null
           screen_h?: number | null
           screen_w?: number | null
+          scroll_depth?: number | null
+          section?: string | null
           session_id?: string
           user_agent?: string | null
           utm_campaign?: string | null
@@ -253,37 +286,61 @@ export type Database = {
       }
       waitlist_signups: {
         Row: {
+          city: string | null
+          country: string | null
           created_at: string
           email: string
           id: string
+          landing_path: string | null
           monthly_bill: number | null
           name: string
           notes: string | null
           postal_code: string | null
           property_type: string | null
+          referrer_domain: string | null
           source: string | null
+          utm_campaign: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          visitor_id: string | null
         }
         Insert: {
+          city?: string | null
+          country?: string | null
           created_at?: string
           email: string
           id?: string
+          landing_path?: string | null
           monthly_bill?: number | null
           name: string
           notes?: string | null
           postal_code?: string | null
           property_type?: string | null
+          referrer_domain?: string | null
           source?: string | null
+          utm_campaign?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          visitor_id?: string | null
         }
         Update: {
+          city?: string | null
+          country?: string | null
           created_at?: string
           email?: string
           id?: string
+          landing_path?: string | null
           monthly_bill?: number | null
           name?: string
           notes?: string | null
           postal_code?: string | null
           property_type?: string | null
+          referrer_domain?: string | null
           source?: string | null
+          utm_campaign?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          visitor_id?: string | null
         }
         Relationships: []
       }
