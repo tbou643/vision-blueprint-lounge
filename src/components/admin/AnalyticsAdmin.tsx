@@ -12,6 +12,7 @@ import {
   Download, Radio, Mail, Phone, Target, ArrowRight,
 } from "lucide-react";
 import { setExcludeMe, isExcluded } from "@/lib/analytics";
+import { supabase } from "@/integrations/supabase/client";
 
 type Delta = number;
 interface AnalyticsData {
