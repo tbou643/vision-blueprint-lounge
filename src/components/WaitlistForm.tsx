@@ -37,10 +37,7 @@ const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compac
       return;
     }
     setLoading(true);
-    const id = crypto.randomUUID();
-    const created_at = new Date().toISOString();
     const payload = {
-      id,
       name: parsed.data.name,
       email: parsed.data.email,
       postal_code: parsed.data.postal_code || null,
@@ -50,36 +47,16 @@ const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compac
       source,
     };
     const { error } = await supabase
-      .from("waitlist_signups")
-      .insert(payload);
+      .functions
+      .invoke("join-waitlist", { body: payload });
     if (error) {
       setLoading(false);
-      toast({ title: "Something went wrong", description: error.message, variant: "destructive" });
+      toast({
+        title: "Something went wrong",
+        description: "We couldn't save your request. Please email hello@nullpunkt.ca or try again.",
+        variant: "destructive",
+      });
       return;
-    }
-
-    // Fire-and-forget notification emails (don't block the UX if they fail)
-    try {
-      await Promise.allSettled([
-        supabase.functions.invoke("send-transactional-email", {
-          body: {
-            templateName: "waitlist-internal",
-            recipientEmail: "hello@nullpunkt.ca",
-            idempotencyKey: `waitlist-internal-${id}`,
-            templateData: { ...payload, created_at },
-          },
-        }),
-        supabase.functions.invoke("send-transactional-email", {
-          body: {
-            templateName: "waitlist-confirmation",
-            recipientEmail: payload.email,
-            idempotencyKey: `waitlist-confirm-${id}`,
-            templateData: { name: payload.name },
-          },
-        }),
-      ]);
-    } catch (_) {
-      /* non-blocking */
     }
 
     setLoading(false);
