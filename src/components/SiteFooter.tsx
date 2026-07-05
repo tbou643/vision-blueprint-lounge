@@ -14,7 +14,7 @@ const SiteFooter = () => {
               <Logo variant="light" showTagline className="h-14 w-auto mb-6" />
               <p className="text-sm text-muted-foreground leading-relaxed max-w-sm mb-6">
                 Integrated solar, engineered to a single point. A new Calgary company, backed by
-                SMB Solartechnik GmbH — a German parent installing integrated PV, battery and HEMS
+                SMB Solartechnik GmbH - a German parent installing integrated PV, battery and HEMS
                 systems since 2024.
               </p>
               <div className="flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
@@ -87,7 +87,7 @@ const SiteFooter = () => {
                   >
                     #2005 – 10th Avenue SW
                     <br />
-                    Calgary, Alberta — Canada
+                    Calgary, Alberta - Canada
                   </a>
                 </li>
               </ul>
@@ -119,7 +119,7 @@ const SiteFooter = () => {
 
           {/* Bottom row */}
           <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-            <p>© {year} NullPunkt Solar Inc. — All rights reserved.</p>
+            <p>© {year} NullPunkt Solar Inc. - All rights reserved.</p>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
               <Link to="/privacy" className="hover:text-foreground transition-colors">
                 Privacy Policy

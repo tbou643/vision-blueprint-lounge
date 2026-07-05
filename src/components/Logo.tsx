@@ -23,7 +23,7 @@ const Logo = ({ className = "", variant = "light", showTagline = true }: LogoPro
       className={className}
       aria-label="NullPunkt Solar Inc."
     >
-      {/* Arc with dot — orbit motif */}
+      {/* Arc with dot - orbit motif */}
       <path
         d="M 90 70 Q 260 -30 430 70"
         stroke={lime}

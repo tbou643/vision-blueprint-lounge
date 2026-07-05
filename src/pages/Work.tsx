@@ -12,7 +12,7 @@ const milestones = [
   {
     label: "Summer 2026",
     title: "First Calgary installations",
-    body: "Founding-customer residential systems commissioned across Calgary metro — fully monitored from day one.",
+    body: "Founding-customer residential systems commissioned across Calgary metro - fully monitored from day one.",
   },
   {
     label: "Late 2026",
@@ -35,7 +35,7 @@ const Work = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Launch Roadmap — NullPunkt Solar comes to Calgary Summer 2026"
+        title="Launch Roadmap - NullPunkt Solar comes to Calgary Summer 2026"
         description="NullPunkt Solar's Calgary launch roadmap: pre-launch and permitting Q2 2026, first installations Summer 2026, commercial builds late 2026, regional expansion 2027+."
         path="/work"
       />
@@ -57,7 +57,7 @@ const Work = () => {
               <span className="text-muted-foreground">Summer 2026.</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mb-10">
-              We're new to Alberta — not new to the work. NullPunkt Solar is the Canadian subsidiary
+              We're new to Alberta - not new to the work. NullPunkt Solar is the Canadian subsidiary
               of SMB Solartechnik GmbH, a profitable German solar company with hundreds of completed
               integrated installations. Join our founding cohort of Alberta projects.
             </p>

@@ -16,7 +16,7 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-xl border-b border-border/60">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center" aria-label="NullPunkt Solar Inc. — Home">
+        <Link to="/" className="flex items-center" aria-label="NullPunkt Solar Inc. - Home">
           <Logo variant="light" className="h-10 w-auto" />
         </Link>
 

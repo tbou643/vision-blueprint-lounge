@@ -8,7 +8,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="About NullPunkt Solar — German engineering, Calgary subsidiary"
+        title="About NullPunkt Solar - German engineering, Calgary subsidiary"
         description="NullPunkt Solar Inc. is the Canadian subsidiary of SMB Solartechnik GmbH. Meet the team behind Calgary's German-engineered integrated solar systems."
         path="/about"
       />
@@ -24,7 +24,7 @@ const About = () => {
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
               <span className="text-foreground font-medium">"NullPunkt"</span> is the point of
-              origin on a technical drawing — coordinate zero, where every measurement starts.
+              origin on a technical drawing - coordinate zero, where every measurement starts.
               That's where we want your home's energy balance to sit: production matching
               consumption, exactly.
             </p>
@@ -51,13 +51,13 @@ const About = () => {
                   >
                     SMB Solartechnik GmbH
                   </a>{" "}
-                  — an established German solar company with hundreds of completed integrated PV,
+                  - an established German solar company with hundreds of completed integrated PV,
                   battery and HEMS installations across residential, commercial and agricultural
                   sites.
                 </p>
                 <p>
                   We didn't show up in Calgary to learn the trade. We came because the Alberta
-                  grid, the housing stock and the sun hours finally make the numbers work — and
+                  grid, the housing stock and the sun hours finally make the numbers work - and
                   because we wanted to build here from day one with the engineering playbook
                   already written.
                 </p>
@@ -72,7 +72,7 @@ const About = () => {
               <div className="space-y-5 text-muted-foreground leading-relaxed">
                 <p>
                   Most installers sell what their supplier pushes. We design around your bills,
-                  your roof and your appetite for grid independence — then pick the modules, the
+                  your roof and your appetite for grid independence - then pick the modules, the
                   inverter, the battery and the energy-management controller.
                 </p>
                 <p>
@@ -103,7 +103,7 @@ const About = () => {
                   NullPunkt Solar and SMB Solartechnik operate as a single technical organisation
                   across two countries. Engineering, procurement standards, monitoring
                   infrastructure and HEMS know-how flow continuously between Calgary and southern
-                  Germany — so every Alberta install benefits from work already proven on hundreds
+                  Germany - so every Alberta install benefits from work already proven on hundreds
                   of European rooftops.
                 </p>
               </div>
@@ -141,7 +141,7 @@ const About = () => {
                     Shared engineering reviews, joint supplier relationships, common design tools
                     and a continuous feedback loop between the two teams. Every system commissioned
                     in Calgary is signed off against the same internal standard SMB applies to its
-                    German fleet — and every operational lesson from Alberta winters flows back
+                    German fleet - and every operational lesson from Alberta winters flows back
                     into the group playbook.
                   </p>
                 </div>
@@ -162,7 +162,7 @@ const About = () => {
               >
                 <img
                   src={founderImage.url}
-                  alt="Tim Brunkel — Founder & CEO of NullPunkt Solar Inc."
+                  alt="Tim Brunkel - Founder & CEO of NullPunkt Solar Inc."
                   className="w-full h-full object-cover opacity-80 saturate-75"
                   loading="lazy"
                 />
@@ -182,13 +182,13 @@ const About = () => {
             <div className="grid lg:grid-cols-12 gap-12 items-start">
               <div className="lg:col-span-8 space-y-5 text-muted-foreground leading-relaxed">
                 <p>
-                  Hi — I'm Tim. I founded <span className="text-foreground">SMB Solartechnik GmbH</span>{" "}
+                  Hi - I'm Tim. I founded <span className="text-foreground">SMB Solartechnik GmbH</span>{" "}
                   in 2024 and grew it past{" "}
                   <span className="text-foreground font-medium">CAD 1.2M in annual sales</span>{" "}
                   in Germany's hyper-competitive solar market, personally overseeing several hundred
                   integrated photovoltaic installations across residential, commercial and
                   agricultural projects. Within the German integrated-PV scene I'm regarded as one of
-                  the go-to authorities on combined PV + battery + HEMS design — it's exactly that
+                  the go-to authorities on combined PV + battery + HEMS design - it's exactly that
                   playbook I'm bringing to Calgary.
                 </p>
                 <p>
@@ -203,7 +203,7 @@ const About = () => {
                   I'm relocating from southern Germany to Calgary as principal directing mind and
                   sole Director of NullPunkt Solar Inc., with significant committed capital
                   (bank-verified) backing the Canadian launch. I lived and worked in Canada once
-                  before — 18 months of Work & Travel back in 2008–09 — and I've wanted to come
+                  before - 18 months of Work & Travel back in 2008–09 - and I've wanted to come
                   back ever since. Now I get to build something here that actually matters for
                   Alberta's energy future.
                 </p>
@@ -271,7 +271,7 @@ const About = () => {
                   Our planned default electrical partner for Calgary installations is a
                   German-Canadian, Alberta-licensed master electrician with long-standing local
                   experience and an Interprovincial trade endorsement. Working with vetted partner
-                  crews — rather than anonymous day labour — means every NullPunkt residential and
+                  crews - rather than anonymous day labour - means every NullPunkt residential and
                   commercial install runs to Canadian Electrical Code with German engineering
                   discipline on both sides of the project. Partner details are confirmed in the
                   proposal for each site.

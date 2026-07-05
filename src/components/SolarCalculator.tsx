@@ -167,7 +167,7 @@ const SolarCalculator = () => {
               <span>
                 <span className="text-foreground">Solar Club retailer rate</span>
                 <span className="block text-xs text-muted-foreground">
-                  UTILITYnet program — ~35 ¢/kWh export, ~8.4 ¢/kWh consumption
+                  UTILITYnet program - ~35 ¢/kWh export, ~8.4 ¢/kWh consumption
                 </span>
               </span>
             </label>
@@ -204,7 +204,7 @@ const SolarCalculator = () => {
             <h4 className="text-xl font-light mb-2">Your results will appear here</h4>
             <p className="text-muted-foreground text-sm max-w-md mx-auto">
               We model Calgary's real irradiance (1,292 kWh/kWp), both standard and Solar Club retailer scenarios,
-              and optional CEIP financing — then layer expert engineering commentary on top.
+              and optional CEIP financing - then layer expert engineering commentary on top.
             </p>
           </div>
         )}
@@ -247,7 +247,7 @@ const SolarCalculator = () => {
                   )}
                 </div>
                 <p className="text-[11px] text-muted-foreground mt-3">
-                  All-in turn-key price — hardware, install labour, permits, ENMAX/EPCOR interconnection,
+                  All-in turn-key price - hardware, install labour, permits, ENMAX/EPCOR interconnection,
                   HEMS commissioning, 5-year workmanship warranty. No hidden fees.
                 </p>
               </div>
@@ -276,7 +276,7 @@ const SolarCalculator = () => {
                   </div>
                 </div>
                 <p className="text-[11px] text-muted-foreground mt-3">
-                  Solar Club rates verified May 2026 (UTILITYnet). Best fit depends on self-consumption ratio — we
+                  Solar Club rates verified May 2026 (UTILITYnet). Best fit depends on self-consumption ratio - we
                   recommend the higher-savings scenario by default.
                 </p>
               </div>
@@ -418,7 +418,7 @@ const CalculatingState = () => {
   return (
     <div className="card-raised p-10">
       <div className="flex flex-col items-center text-center">
-        {/* Hourglass — minimal, brand colours */}
+        {/* Hourglass - minimal, brand colours */}
         <div className="relative mb-7">
           <svg
             width="44"
@@ -436,14 +436,14 @@ const CalculatingState = () => {
             <line x1="6" y1="58" x2="38" y2="58" strokeLinecap="round" />
             <path d="M9 2 C 9 16, 22 24, 22 30 C 22 36, 9 44, 9 58" strokeLinecap="round" />
             <path d="M35 2 C 35 16, 22 24, 22 30 C 22 36, 35 44, 35 58" strokeLinecap="round" />
-            {/* Sand — top draining */}
+            {/* Sand - top draining */}
             <path
               d="M12 5 L32 5 C 32 14, 24 20, 22 24 C 20 20, 12 14, 12 5 Z"
               fill="currentColor"
               opacity="0.55"
               style={{ animation: "npSandTop 2.8s cubic-bezier(0.65, 0, 0.35, 1) infinite" }}
             />
-            {/* Sand — bottom filling */}
+            {/* Sand - bottom filling */}
             <path
               d="M22 36 C 24 40, 32 46, 32 55 L12 55 C 12 46, 20 40, 22 36 Z"
               fill="currentColor"
@@ -462,7 +462,7 @@ const CalculatingState = () => {
         </div>
 
         <p className="text-minimal text-lime mb-2">Crunching the numbers</p>
-        <h4 className="text-2xl font-light mb-2">Almost there — your roof is next.</h4>
+        <h4 className="text-2xl font-light mb-2">Almost there - your roof is next.</h4>
         <p className="text-sm text-muted-foreground mb-6 max-w-md min-h-[2.5rem]">
           {calcSteps[step]}
         </p>

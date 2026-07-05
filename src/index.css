@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* NullPunkt Solar Inc. — Brand System
+/* NullPunkt Solar Inc. - Brand System
    Deep Slate base + Neon Lime accent. Dark-first. */
 
 @layer base {
@@ -19,7 +19,7 @@
     --popover: 222 30% 12%;
     --popover-foreground: 210 25% 96%;
 
-    /* Neon Lime — primary accent */
+    /* Neon Lime - primary accent */
     --primary: 66 100% 50%;               /* #d4e400-ish */
     --primary-foreground: 222 40% 8%;
 
@@ -70,7 +70,7 @@
     --sidebar-ring: 66 100% 50%;
   }
 
-  /* No light mode — brand is dark-first */
+  /* No light mode - brand is dark-first */
   .dark { color-scheme: dark; }
 }
 

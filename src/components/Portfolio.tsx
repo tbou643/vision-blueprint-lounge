@@ -14,7 +14,7 @@ const milestones = [
   {
     label: "Summer / Fall 2026",
     title: "First Alberta installations",
-    body: "Residential integrated systems planned to go live across Calgary metro — fully monitored from day one.",
+    body: "Residential integrated systems planned to go live across Calgary metro - fully monitored from day one.",
   },
   {
     label: "2027 →",
@@ -38,7 +38,7 @@ const Portfolio = () => {
               </h2>
             </div>
             <p className="text-muted-foreground max-w-md leading-relaxed">
-              We're a new operation in Alberta — but not a new company. Our German parent has been
+              We're a new operation in Alberta - but not a new company. Our German parent has been
               installing integrated systems for years. Get on the list while founding slots are open.
             </p>
           </div>
@@ -64,9 +64,9 @@ const Portfolio = () => {
                 {[
                   "Full yield simulation against long-term Calgary irradiance data (NRCan)",
                   "10 kWp PV + 10 kWh storage + HEMS reference systems from CAD $26,000",
-                  "Solar Club retailer modelling — up to ~35 ¢/kWh export credit (UTILITYnet program)",
+                  "Solar Club retailer modelling - up to ~35 ¢/kWh export credit (UTILITYnet program)",
                   "CEIP option: 0% PACE financing repaid through property tax",
-                  "Fixed-price proposal — not a back-of-envelope quote",
+                  "Fixed-price proposal - not a back-of-envelope quote",
                 ].map((line) => (
                   <div key={line} className="flex gap-3 text-muted-foreground">
                     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-lime flex-shrink-0" />

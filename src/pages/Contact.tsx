@@ -24,7 +24,7 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Contact NullPunkt Solar — Calgary founding waitlist"
+        title="Contact NullPunkt Solar - Calgary founding waitlist"
         description="Get a free, no-obligation solar consultation for your Calgary or Southern Alberta property. Join the Summer 2026 founding customer waitlist."
         path="/contact"
         jsonLd={localBusiness}

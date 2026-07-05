@@ -41,7 +41,7 @@ const Contact = () => {
                     <br />
                     #2005 – 10th Avenue SW
                     <br />
-                    Calgary, Alberta — Canada
+                    Calgary, Alberta - Canada
                   </address>
                 </div>
               </div>

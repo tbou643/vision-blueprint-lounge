@@ -24,14 +24,14 @@ const About = () => {
                 >
                   SMB Solartechnik GmbH
                 </a>{" "}
-                — a German solar company specialising in integrated PV, battery and HEMS systems,
+                - a German solar company specialising in integrated PV, battery and HEMS systems,
                 with several hundred residential, commercial and agricultural installations
                 completed. Calgary inherits the same engineering team, supplier network and quality
                 standards through a continuous transatlantic knowledge-exchange programme.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 We bring the engineering playbook, the supplier network and the partner standards to
-                Alberta — and we only work with fully licensed, high-qualification trades on the
+                Alberta - and we only work with fully licensed, high-qualification trades on the
                 ground. Every installation is delivered together with an
                 <span className="text-foreground"> Alberta-licensed master electrician partner</span>,
                 so the first system we commission in Calgary is held to the same standard our parent
@@ -45,7 +45,7 @@ const About = () => {
                 {[
                   {
                     title: "Zero guesswork",
-                    body: "Every proposal includes the full yield simulation, the bill of materials and the payback math — before you sign.",
+                    body: "Every proposal includes the full yield simulation, the bill of materials and the payback math - before you sign.",
                   },
                   {
                     title: "Zero handoffs",
@@ -53,7 +53,7 @@ const About = () => {
                   },
                   {
                     title: "Zero surprises",
-                    body: "Fixed-price quotes, climate-engineered hardware and warranties measured in decades — backed by a parent company built to last.",
+                    body: "Fixed-price quotes, climate-engineered hardware and warranties measured in decades - backed by a parent company built to last.",
                   },
                 ].map((row) => (
                   <div key={row.title} className="flex gap-6 p-6 rounded-xl border border-border bg-background/40">
@@ -88,7 +88,7 @@ const About = () => {
               <p className="text-minimal text-lime">Meet the founder</p>
             </div>
             <h3 className="text-3xl md:text-4xl font-light text-architectural mb-6">
-              Tim Brunkel — recognised PV authority in Germany, now building in Calgary.
+              Tim Brunkel - recognised PV authority in Germany, now building in Calgary.
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Tim founded SMB Solartechnik in Germany in 2024 and scaled the parent company past{" "}
