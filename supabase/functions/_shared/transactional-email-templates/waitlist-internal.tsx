@@ -51,8 +51,8 @@ const Email = (p: Props) => (
 
 const Row = ({ label, value }: { label: string; value?: string | number | null }) => (
   <Text style={row}>
-    <span style={label as any}>{label}: </span>
-    <span style={val as any}>{value ?? '—'}</span>
+    <span style={labelStyle}>{label}: </span>
+    <span style={valStyle}>{value ?? '—'}</span>
   </Text>
 )
 
