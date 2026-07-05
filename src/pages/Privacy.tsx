@@ -9,6 +9,7 @@ const Privacy = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
       <SEO
+        path="/privacy"
         title="Privacy Policy — NullPunkt Solar Inc."
         description="How NullPunkt Solar Inc. collects, uses and protects the personal information of visitors, waitlist members and customers in Calgary and Alberta."
       />
