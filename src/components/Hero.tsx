@@ -25,7 +25,7 @@ const Hero = () => {
         <div className="reveal inline-flex items-center gap-3 px-4 py-2 rounded-full border border-lime/40 bg-lime/10 backdrop-blur-sm mb-10">
           <span className="w-1.5 h-1.5 rounded-full bg-lime animate-pulse" />
           <span className="text-[11px] tracking-[0.22em] uppercase text-lime font-medium">
-            Launching Summer 2026 · Calgary, Alberta
+            Reserving August site visits · Calgary, Alberta
           </span>
         </div>
 
