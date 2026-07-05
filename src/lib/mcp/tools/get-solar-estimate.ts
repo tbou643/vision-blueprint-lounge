@@ -1,6 +1,8 @@
 import { defineTool } from "@lovable.dev/mcp-js";
 import { z } from "zod";
 
+declare const process: { env: Record<string, string | undefined> };
+
 export default defineTool({
   name: "get_solar_estimate",
   title: "Get solar estimate",
