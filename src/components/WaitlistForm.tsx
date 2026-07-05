@@ -37,7 +37,10 @@ const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compac
       return;
     }
     setLoading(true);
+    const id = crypto.randomUUID();
+    const created_at = new Date().toISOString();
     const payload = {
+      id,
       name: parsed.data.name,
       email: parsed.data.email,
       postal_code: parsed.data.postal_code || null,
@@ -46,11 +49,9 @@ const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compac
       notes: parsed.data.notes || null,
       source,
     };
-    const { data: inserted, error } = await supabase
+    const { error } = await supabase
       .from("waitlist_signups")
-      .insert(payload)
-      .select()
-      .single();
+      .insert(payload);
     if (error) {
       setLoading(false);
       toast({ title: "Something went wrong", description: error.message, variant: "destructive" });
@@ -58,8 +59,6 @@ const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compac
     }
 
     // Fire-and-forget notification emails (don't block the UX if they fail)
-    const id = inserted?.id ?? crypto.randomUUID();
-    const created_at = inserted?.created_at ?? new Date().toISOString();
     try {
       await Promise.allSettled([
         supabase.functions.invoke("send-transactional-email", {
