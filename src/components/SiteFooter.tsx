@@ -69,6 +69,11 @@ const SiteFooter = () => {
               <p className="text-minimal text-lime mb-5">Reach us</p>
               <ul className="space-y-3 text-sm">
                 <li>
+                  <a href="tel:+14038197834" className="text-muted-foreground hover:text-foreground transition-colors">
+                    (403) 819-7834
+                  </a>
+                </li>
+                <li>
                   <a href="mailto:hello@nullpunkt.ca" className="text-muted-foreground hover:text-foreground transition-colors">
                     hello@nullpunkt.ca
                   </a>
