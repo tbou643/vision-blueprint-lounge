@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
-import { RefreshCw, Mail, Download } from "lucide-react";
+import { RefreshCw, Mail, Download, Trash2 } from "lucide-react";
 
 interface Signup {
   id: string;
