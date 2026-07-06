@@ -83,6 +83,35 @@ Deno.serve(async (req) => {
     }
 
     const body = await req.json().catch(() => ({}));
+
+    // --- Manage excluded visitor IDs ---
+    if (body.action === "list_excluded") {
+      const { data: ex } = await supabase
+        .from("analytics_excluded_visitors")
+        .select("*")
+        .order("created_at", { ascending: false });
+      return new Response(JSON.stringify({ excluded: ex ?? [] }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    if (body.action === "exclude_visitor" && body.visitor_id) {
+      await supabase
+        .from("analytics_excluded_visitors")
+        .upsert({ visitor_id: String(body.visitor_id), note: body.note ?? "admin" });
+      return new Response(JSON.stringify({ ok: true }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    if (body.action === "unexclude_visitor" && body.visitor_id) {
+      await supabase
+        .from("analytics_excluded_visitors")
+        .delete()
+        .eq("visitor_id", String(body.visitor_id));
+      return new Response(JSON.stringify({ ok: true }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     const days = Math.min(Math.max(parseInt(body.days ?? "30", 10), 1), 365);
     const now = Date.now();
     const sinceMs = now - days * 86400000;
@@ -101,8 +130,13 @@ Deno.serve(async (req) => {
       .limit(100000);
     if (error) throw error;
 
+    const { data: excludedRows } = await supabase
+      .from("analytics_excluded_visitors")
+      .select("visitor_id");
+    const excludedVisitorSet = new Set((excludedRows ?? []).map((r: Row) => r.visitor_id));
+
     const filtered = (eventsAll ?? []).filter(
-      (r: Row) => !r.excluded && !shouldExcludePath(r.path),
+      (r: Row) => !r.excluded && !excludedVisitorSet.has(r.visitor_id) && !shouldExcludePath(r.path),
     );
     const current = filtered.filter((r: Row) => r.created_at >= since);
     const previous = filtered.filter((r: Row) => r.created_at < since);

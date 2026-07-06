@@ -128,6 +128,24 @@ export type Database = {
         }
         Relationships: []
       }
+      analytics_excluded_visitors: {
+        Row: {
+          created_at: string
+          note: string | null
+          visitor_id: string
+        }
+        Insert: {
+          created_at?: string
+          note?: string | null
+          visitor_id: string
+        }
+        Update: {
+          created_at?: string
+          note?: string | null
+          visitor_id?: string
+        }
+        Relationships: []
+      }
       email_send_log: {
         Row: {
           created_at: string

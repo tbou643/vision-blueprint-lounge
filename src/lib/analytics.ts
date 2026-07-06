@@ -56,7 +56,7 @@ export function isExcluded(): boolean {
 }
 
 // ---------------- Identity ----------------
-function getVisitorId(): string {
+export function getVisitorId(): string {
   let id = safeGet(localStorage, VISITOR_KEY);
   if (!id) {
     id = uuid();
