@@ -217,7 +217,20 @@ export default function AnalyticsAdmin() {
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
             <Switch
               checked={excludeMe}
-              onCheckedChange={(v) => { setExcludeMe(v); setExcludeMeState(v); toast({ title: v ? "Eigene Besuche ausgeschlossen" : "Tracking wieder aktiv" }); }}
+              onCheckedChange={async (v) => {
+                setExcludeMe(v);
+                setExcludeMeState(v);
+                try {
+                  const vid = getVisitorId();
+                  await supabase.functions.invoke("admin-analytics", {
+                    body: { action: v ? "exclude_visitor" : "unexclude_visitor", visitor_id: vid },
+                  });
+                  toast({ title: v ? "Eigene Besuche ausgeschlossen (auch rückwirkend)" : "Tracking wieder aktiv" });
+                  load(days);
+                } catch (e: any) {
+                  toast({ title: "Fehler", description: String(e?.message ?? e), variant: "destructive" });
+                }
+              }}
               id="exclude"
             />
             <label htmlFor="exclude">Mich ausschließen</label>
