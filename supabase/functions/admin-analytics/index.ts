@@ -130,8 +130,13 @@ Deno.serve(async (req) => {
       .limit(100000);
     if (error) throw error;
 
+    const { data: excludedRows } = await supabase
+      .from("analytics_excluded_visitors")
+      .select("visitor_id");
+    const excludedVisitorSet = new Set((excludedRows ?? []).map((r: Row) => r.visitor_id));
+
     const filtered = (eventsAll ?? []).filter(
-      (r: Row) => !r.excluded && !shouldExcludePath(r.path),
+      (r: Row) => !r.excluded && !excludedVisitorSet.has(r.visitor_id) && !shouldExcludePath(r.path),
     );
     const current = filtered.filter((r: Row) => r.created_at >= since);
     const previous = filtered.filter((r: Row) => r.created_at < since);
