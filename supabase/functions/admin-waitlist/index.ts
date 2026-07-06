@@ -45,6 +45,26 @@ Deno.serve(async (req) => {
     })
   }
 
+  // Delete a signup
+  if (req.method === 'POST') {
+    const body = await req.json().catch(() => ({}))
+    if (body?.action === 'delete' && body?.id) {
+      const { error: delErr } = await admin
+        .from('waitlist_signups')
+        .delete()
+        .eq('id', String(body.id))
+      if (delErr) {
+        return new Response(JSON.stringify({ error: delErr.message }), {
+          status: 500,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        })
+      }
+      return new Response(JSON.stringify({ ok: true }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      })
+    }
+  }
+
   const { data, error } = await admin
     .from('waitlist_signups')
     .select('*')
