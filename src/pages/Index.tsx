@@ -6,6 +6,7 @@ import EngineeringProcess from "@/components/EngineeringProcess";
 import About from "@/components/About";
 import Portfolio from "@/components/Portfolio";
 import ProposalDeliverables from "@/components/ProposalDeliverables";
+import ComingSummerTeaser from "@/components/ComingSummerTeaser";
 import Contact from "@/components/Contact";
 import SiteFooter from "@/components/SiteFooter";
 import SEO from "@/components/SEO";
