@@ -137,6 +137,25 @@ const WaitlistAdmin = () => {
                       </p>
                     )}
                   </div>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="text-muted-foreground hover:text-destructive"
+                    onClick={async () => {
+                      if (!confirm(`Eintrag von ${s.name} (${s.email}) wirklich löschen?`)) return;
+                      const { error } = await supabase.functions.invoke("admin-waitlist", {
+                        body: { action: "delete", id: s.id },
+                      });
+                      if (error) {
+                        toast({ title: "Löschen fehlgeschlagen", description: error.message, variant: "destructive" });
+                        return;
+                      }
+                      setSignups((prev) => prev.filter((x) => x.id !== s.id));
+                      toast({ title: "Eintrag gelöscht" });
+                    }}
+                  >
+                    <Trash2 className="w-4 h-4" />
+                  </Button>
                 </div>
               </CardContent>
             </Card>
