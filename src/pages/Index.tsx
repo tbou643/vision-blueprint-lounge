@@ -51,6 +51,7 @@ const Index = () => {
       <EngineeringProcess />
       <About />
       <Portfolio />
+      <ComingSummerTeaser />
       <ProposalDeliverables />
       <Contact />
       <SiteFooter />
