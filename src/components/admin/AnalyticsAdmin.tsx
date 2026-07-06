@@ -11,7 +11,7 @@ import {
   Users, Eye, Clock, MousePointerClick, RefreshCw, TrendingUp, TrendingDown,
   Download, Radio, Mail, Phone, Target, ArrowRight,
 } from "lucide-react";
-import { setExcludeMe, isExcluded } from "@/lib/analytics";
+import { setExcludeMe, isExcluded, getVisitorId } from "@/lib/analytics";
 import { supabase } from "@/integrations/supabase/client";
 
 type Delta = number;
