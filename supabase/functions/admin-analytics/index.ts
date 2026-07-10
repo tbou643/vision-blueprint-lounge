@@ -325,6 +325,22 @@ Deno.serve(async (req) => {
       25,
     ).map((x) => ({ url: x.name, count: x.count }));
 
+    // ---- Guide downloads ----
+    const guideDownloadEvents = current.filter((r) => r.event_name === "guide_download");
+    const guideByPosition = tallyBy(guideDownloadEvents, "event_position").map((x) => ({
+      position: x.name,
+      count: x.count,
+    }));
+    const guideUniqueVisitors = new Set(guideDownloadEvents.map((r) => r.visitor_id)).size;
+    const guideDownloadsTimeseries = (() => {
+      const m = new Map<string, number>();
+      guideDownloadEvents.forEach((r) => {
+        const d = String(r.created_at).slice(0, 10);
+        m.set(d, (m.get(d) ?? 0) + 1);
+      });
+      return [...m.entries()].map(([date, count]) => ({ date, count })).sort((a, b) => a.date.localeCompare(b.date));
+    })();
+
     // ---- Landing pages ----
     // First pageview per session = landing page
     const firstBySession = new Map<string, Row>();
