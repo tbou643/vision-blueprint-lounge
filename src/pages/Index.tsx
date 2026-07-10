@@ -7,9 +7,11 @@ import About from "@/components/About";
 import Portfolio from "@/components/Portfolio";
 import ProposalDeliverables from "@/components/ProposalDeliverables";
 import ComingSummerTeaser from "@/components/ComingSummerTeaser";
+import CalgarySolarGuide from "@/components/CalgarySolarGuide";
 import Contact from "@/components/Contact";
 import SiteFooter from "@/components/SiteFooter";
 import SEO from "@/components/SEO";
+import guidePdf from "@/assets/calgary-solar-guide-2026.pdf.asset.json";
 
 const localBusiness = {
   "@context": "https://schema.org",
