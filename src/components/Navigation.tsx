@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Download } from "lucide-react";
 import Logo from "./Logo";
+import { trackEvent } from "@/lib/analytics";
 import guidePdf from "@/assets/calgary-solar-guide-2026.pdf.asset.json";
 
 const links = [
@@ -42,6 +43,7 @@ const Navigation = () => {
             className="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-lime border border-lime/40 hover:border-lime hover:bg-lime/10 rounded-full px-3.5 py-2 transition-colors"
             data-cta="Free Calgary solar guide"
             data-cta-position="nav"
+            onClick={() => trackEvent("guide_cta_click", { label: "Calgary solar guide 2026", position: "nav" })}
           >
             <Download className="h-3.5 w-3.5" />
             Free 2026 Calgary guide
@@ -84,7 +86,10 @@ const Navigation = () => {
               href={guidePdf.url}
               target="_blank"
               rel="noopener"
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                trackEvent("guide_download", { label: "Calgary solar guide 2026", position: "nav-mobile" });
+                setOpen(false);
+              }}
               className="flex items-center gap-2 text-base text-lime"
               data-cta="Free Calgary solar guide"
               data-cta-position="nav-mobile"

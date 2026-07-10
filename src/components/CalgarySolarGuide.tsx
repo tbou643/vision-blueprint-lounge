@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { trackEvent } from "@/lib/analytics";
 import guidePdf from "@/assets/calgary-solar-guide-2026.pdf.asset.json";
 import guideCover from "@/assets/calgary-solar-guide-cover.jpg.asset.json";
 import guidePage5 from "@/assets/calgary-solar-guide-page5.jpg.asset.json";
@@ -81,6 +82,7 @@ const CalgarySolarGuide = () => {
                 className="btn-lime"
                 data-cta="Download Calgary solar guide"
                 data-cta-position="homepage-guide"
+                onClick={() => trackEvent("guide_download", { label: "Calgary solar guide 2026", position: "homepage-guide" })}
                 download
               >
                 Download the free guide (PDF)

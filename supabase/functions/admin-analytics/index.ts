@@ -179,6 +179,8 @@ Deno.serve(async (req) => {
       const emailClicks = rows.filter((r) => r.event_name === "email_click").length;
       const phoneClicks = rows.filter((r) => r.event_name === "phone_click").length;
       const contactRequests = emailClicks + phoneClicks;
+      const guideDownloads = rows.filter((r) => r.event_name === "guide_download").length;
+      const guideCtaClicks = rows.filter((r) => r.event_name === "guide_cta_click").length;
       const conversionRate = visitors.size ? ((waitlistCount + contactRequests) / visitors.size) * 100 : 0;
 
       return {
@@ -189,6 +191,8 @@ Deno.serve(async (req) => {
         bounceRate: Math.round(bounceRate * 10) / 10,
         waitlistSignups: waitlistCount,
         contactRequests,
+        guideDownloads,
+        guideCtaClicks,
         conversionRate: Math.round(conversionRate * 10) / 10,
         seenPath,
         sessionDur,
@@ -321,6 +325,22 @@ Deno.serve(async (req) => {
       25,
     ).map((x) => ({ url: x.name, count: x.count }));
 
+    // ---- Guide downloads ----
+    const guideDownloadEvents = current.filter((r) => r.event_name === "guide_download");
+    const guideByPosition = tallyBy(guideDownloadEvents, "event_position").map((x) => ({
+      position: x.name,
+      count: x.count,
+    }));
+    const guideUniqueVisitors = new Set(guideDownloadEvents.map((r) => r.visitor_id)).size;
+    const guideDownloadsTimeseries = (() => {
+      const m = new Map<string, number>();
+      guideDownloadEvents.forEach((r) => {
+        const d = String(r.created_at).slice(0, 10);
+        m.set(d, (m.get(d) ?? 0) + 1);
+      });
+      return [...m.entries()].map(([date, count]) => ({ date, count })).sort((a, b) => a.date.localeCompare(b.date));
+    })();
+
     // ---- Landing pages ----
     // First pageview per session = landing page
     const firstBySession = new Map<string, Row>();
@@ -412,6 +432,9 @@ Deno.serve(async (req) => {
       bounceRate: cur.bounceRate,
       waitlistSignups: cur.waitlistSignups,
       contactRequests: cur.contactRequests,
+      guideDownloads: cur.guideDownloads,
+      guideCtaClicks: cur.guideCtaClicks,
+      guideUniqueVisitors,
       conversionRate: cur.conversionRate,
     };
     const deltas = {
@@ -422,6 +445,8 @@ Deno.serve(async (req) => {
       bounceRate: pct(cur.bounceRate, prev.bounceRate),
       waitlistSignups: pct(cur.waitlistSignups, prev.waitlistSignups),
       contactRequests: pct(cur.contactRequests, prev.contactRequests),
+      guideDownloads: pct(cur.guideDownloads, prev.guideDownloads),
+      guideCtaClicks: pct(cur.guideCtaClicks, prev.guideCtaClicks),
       conversionRate: pct(cur.conversionRate, prev.conversionRate),
     };
 
@@ -443,6 +468,13 @@ Deno.serve(async (req) => {
         geo: { countries, cities, calgaryAreas },
         scrollDepth,
         outboundClicks,
+        guide: {
+          downloads: cur.guideDownloads,
+          ctaClicks: cur.guideCtaClicks,
+          uniqueVisitors: guideUniqueVisitors,
+          byPosition: guideByPosition,
+          timeseries: guideDownloadsTimeseries,
+        },
         landingPages,
         waitlistWithSource,
         recentSessions,

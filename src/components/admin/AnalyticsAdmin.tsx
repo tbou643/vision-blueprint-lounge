@@ -21,6 +21,7 @@ interface AnalyticsData {
     pageviews: number; visitors: number; sessions: number;
     avgSessionSec: number; bounceRate: number;
     waitlistSignups: number; contactRequests: number; conversionRate: number;
+    guideDownloads: number; guideCtaClicks: number; guideUniqueVisitors: number;
   };
   deltas: Record<string, Delta>;
   liveNow: number;
@@ -40,6 +41,13 @@ interface AnalyticsData {
   };
   scrollDepth: { depth: number; count: number }[];
   outboundClicks: { url: string; count: number }[];
+  guide: {
+    downloads: number;
+    ctaClicks: number;
+    uniqueVisitors: number;
+    byPosition: { position: string; count: number }[];
+    timeseries: { date: string; count: number }[];
+  };
   landingPages: { path: string; visitors: number; bounceRate: number; conversions: number }[];
   waitlistWithSource: Array<{
     id: string; name: string; email: string; created_at: string; source: string | null;
@@ -260,6 +268,62 @@ export default function AnalyticsAdmin() {
             <Kpi icon={<Mail className="w-4 h-4 text-lime" />} label="Contact Requests (Mail/Tel)" value={data.totals.contactRequests} delta={data.deltas.contactRequests} />
             <Kpi icon={<TrendingUp className="w-4 h-4 text-lime" />} label="Conversion Rate" value={`${data.totals.conversionRate}%`} delta={data.deltas.conversionRate} />
           </div>
+
+          {/* Guide downloads */}
+          <Card>
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-base">Calgary Solar Guide Downloads</CardTitle>
+                <ExportBtn name="guide-downloads-by-position" rows={data.guide?.byPosition ?? []} />
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                <Kpi icon={<Download className="w-4 h-4 text-lime" />} label="PDF Downloads" value={data.guide?.downloads ?? 0} delta={data.deltas.guideDownloads} />
+                <Kpi icon={<Users className="w-4 h-4 text-lime" />} label="Unique Downloader" value={data.guide?.uniqueVisitors ?? 0} />
+                <Kpi icon={<MousePointerClick className="w-4 h-4 text-lime" />} label="Nav-Button Klicks (zum Guide)" value={data.guide?.ctaClicks ?? 0} delta={data.deltas.guideCtaClicks} />
+              </div>
+              {(data.guide?.byPosition?.length ?? 0) > 0 && (
+                <div>
+                  <p className="text-xs text-muted-foreground mb-2">Downloads nach Platzierung</p>
+                  <div className="space-y-1.5">
+                    {data.guide.byPosition.map((p) => {
+                      const max = data.guide.byPosition[0]?.count || 1;
+                      const pct = Math.round((p.count / max) * 100);
+                      return (
+                        <div key={p.position} className="space-y-1">
+                          <div className="flex justify-between text-xs">
+                            <span className="font-mono text-muted-foreground">{p.position}</span>
+                            <strong>{p.count}</strong>
+                          </div>
+                          <div className="h-2 bg-background rounded border border-border overflow-hidden">
+                            <div className="h-full bg-lime/60" style={{ width: `${Math.max(2, pct)}%` }} />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+              {(data.guide?.timeseries?.length ?? 0) > 0 && (
+                <div className="h-40">
+                  <ResponsiveContainer>
+                    <BarChart data={data.guide.timeseries}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                      <XAxis dataKey="date" stroke="hsl(var(--muted-foreground))" fontSize={11} />
+                      <YAxis stroke="hsl(var(--muted-foreground))" fontSize={11} allowDecimals={false} />
+                      <Tooltip contentStyle={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))" }} />
+                      <Bar dataKey="count" name="Downloads" fill="#a3e635" />
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+              )}
+              {!data.guide?.downloads && (
+                <p className="text-xs text-muted-foreground">Noch keine Guide-Downloads im Zeitraum.</p>
+              )}
+            </CardContent>
+          </Card>
+
 
           {/* Traffic KPIs */}
           <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
