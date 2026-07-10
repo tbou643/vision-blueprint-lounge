@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Download } from "lucide-react";
 import Logo from "./Logo";
+import { trackEvent } from "@/lib/analytics";
 import guidePdf from "@/assets/calgary-solar-guide-2026.pdf.asset.json";
 
 const links = [
