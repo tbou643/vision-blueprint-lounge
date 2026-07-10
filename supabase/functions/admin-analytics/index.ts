@@ -432,6 +432,9 @@ Deno.serve(async (req) => {
       bounceRate: cur.bounceRate,
       waitlistSignups: cur.waitlistSignups,
       contactRequests: cur.contactRequests,
+      guideDownloads: cur.guideDownloads,
+      guideCtaClicks: cur.guideCtaClicks,
+      guideUniqueVisitors,
       conversionRate: cur.conversionRate,
     };
     const deltas = {
@@ -442,6 +445,8 @@ Deno.serve(async (req) => {
       bounceRate: pct(cur.bounceRate, prev.bounceRate),
       waitlistSignups: pct(cur.waitlistSignups, prev.waitlistSignups),
       contactRequests: pct(cur.contactRequests, prev.contactRequests),
+      guideDownloads: pct(cur.guideDownloads, prev.guideDownloads),
+      guideCtaClicks: pct(cur.guideCtaClicks, prev.guideCtaClicks),
       conversionRate: pct(cur.conversionRate, prev.conversionRate),
     };
 
@@ -463,6 +468,13 @@ Deno.serve(async (req) => {
         geo: { countries, cities, calgaryAreas },
         scrollDepth,
         outboundClicks,
+        guide: {
+          downloads: cur.guideDownloads,
+          ctaClicks: cur.guideCtaClicks,
+          uniqueVisitors: guideUniqueVisitors,
+          byPosition: guideByPosition,
+          timeseries: guideDownloadsTimeseries,
+        },
         landingPages,
         waitlistWithSource,
         recentSessions,
