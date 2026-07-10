@@ -86,7 +86,10 @@ const Navigation = () => {
               href={guidePdf.url}
               target="_blank"
               rel="noopener"
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                trackEvent("guide_download", { label: "Calgary solar guide 2026", position: "nav-mobile" });
+                setOpen(false);
+              }}
               className="flex items-center gap-2 text-base text-lime"
               data-cta="Free Calgary solar guide"
               data-cta-position="nav-mobile"
