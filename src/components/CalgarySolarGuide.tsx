@@ -82,6 +82,7 @@ const CalgarySolarGuide = () => {
                 className="btn-lime"
                 data-cta="Download Calgary solar guide"
                 data-cta-position="homepage-guide"
+                onClick={() => trackEvent("guide_download", { label: "Calgary solar guide 2026", position: "homepage-guide" })}
                 download
               >
                 Download the free guide (PDF)
