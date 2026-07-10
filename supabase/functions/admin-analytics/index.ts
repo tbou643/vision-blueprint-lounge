@@ -179,6 +179,8 @@ Deno.serve(async (req) => {
       const emailClicks = rows.filter((r) => r.event_name === "email_click").length;
       const phoneClicks = rows.filter((r) => r.event_name === "phone_click").length;
       const contactRequests = emailClicks + phoneClicks;
+      const guideDownloads = rows.filter((r) => r.event_name === "guide_download").length;
+      const guideCtaClicks = rows.filter((r) => r.event_name === "guide_cta_click").length;
       const conversionRate = visitors.size ? ((waitlistCount + contactRequests) / visitors.size) * 100 : 0;
 
       return {
@@ -189,6 +191,8 @@ Deno.serve(async (req) => {
         bounceRate: Math.round(bounceRate * 10) / 10,
         waitlistSignups: waitlistCount,
         contactRequests,
+        guideDownloads,
+        guideCtaClicks,
         conversionRate: Math.round(conversionRate * 10) / 10,
         seenPath,
         sessionDur,
