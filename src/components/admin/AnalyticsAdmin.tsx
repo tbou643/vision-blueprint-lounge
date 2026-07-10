@@ -269,6 +269,62 @@ export default function AnalyticsAdmin() {
             <Kpi icon={<TrendingUp className="w-4 h-4 text-lime" />} label="Conversion Rate" value={`${data.totals.conversionRate}%`} delta={data.deltas.conversionRate} />
           </div>
 
+          {/* Guide downloads */}
+          <Card>
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-base">Calgary Solar Guide Downloads</CardTitle>
+                <ExportBtn name="guide-downloads-by-position" rows={data.guide?.byPosition ?? []} />
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                <Kpi icon={<Download className="w-4 h-4 text-lime" />} label="PDF Downloads" value={data.guide?.downloads ?? 0} delta={data.deltas.guideDownloads} />
+                <Kpi icon={<Users className="w-4 h-4 text-lime" />} label="Unique Downloader" value={data.guide?.uniqueVisitors ?? 0} />
+                <Kpi icon={<MousePointerClick className="w-4 h-4 text-lime" />} label="Nav-Button Klicks (zum Guide)" value={data.guide?.ctaClicks ?? 0} delta={data.deltas.guideCtaClicks} />
+              </div>
+              {(data.guide?.byPosition?.length ?? 0) > 0 && (
+                <div>
+                  <p className="text-xs text-muted-foreground mb-2">Downloads nach Platzierung</p>
+                  <div className="space-y-1.5">
+                    {data.guide.byPosition.map((p) => {
+                      const max = data.guide.byPosition[0]?.count || 1;
+                      const pct = Math.round((p.count / max) * 100);
+                      return (
+                        <div key={p.position} className="space-y-1">
+                          <div className="flex justify-between text-xs">
+                            <span className="font-mono text-muted-foreground">{p.position}</span>
+                            <strong>{p.count}</strong>
+                          </div>
+                          <div className="h-2 bg-background rounded border border-border overflow-hidden">
+                            <div className="h-full bg-lime/60" style={{ width: `${Math.max(2, pct)}%` }} />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+              {(data.guide?.timeseries?.length ?? 0) > 0 && (
+                <div className="h-40">
+                  <ResponsiveContainer>
+                    <BarChart data={data.guide.timeseries}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                      <XAxis dataKey="date" stroke="hsl(var(--muted-foreground))" fontSize={11} />
+                      <YAxis stroke="hsl(var(--muted-foreground))" fontSize={11} allowDecimals={false} />
+                      <Tooltip contentStyle={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))" }} />
+                      <Bar dataKey="count" name="Downloads" fill="#a3e635" />
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+              )}
+              {!data.guide?.downloads && (
+                <p className="text-xs text-muted-foreground">Noch keine Guide-Downloads im Zeitraum.</p>
+              )}
+            </CardContent>
+          </Card>
+
+
           {/* Traffic KPIs */}
           <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
             <Kpi icon={<Users className="w-4 h-4" />} label="Besucher" value={data.totals.visitors} delta={data.deltas.visitors} />
