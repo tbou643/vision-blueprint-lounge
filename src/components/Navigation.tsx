@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { Download } from "lucide-react";
 import Logo from "./Logo";
+import guidePdf from "@/assets/calgary-solar-guide-2026.pdf.asset.json";
 
 const links = [
   { href: "/services", label: "Services" },
@@ -12,15 +14,17 @@ const links = [
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+  const guideHref = pathname === "/" ? "#guide" : "/#guide";
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-xl border-b border-border/60">
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center" aria-label="NullPunkt Solar Inc. - Home">
+      <div className="container mx-auto px-6 py-4 flex items-center justify-between gap-6">
+        <Link to="/" className="flex items-center shrink-0" aria-label="NullPunkt Solar Inc. - Home">
           <Logo variant="light" className="h-10 w-auto" />
         </Link>
 
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden lg:flex items-center gap-10">
           {links.map((l) => (
             <Link
               key={l.href}
@@ -32,10 +36,19 @@ const Navigation = () => {
           ))}
         </div>
 
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-3 shrink-0">
+          <a
+            href={guideHref}
+            className="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-lime border border-lime/40 hover:border-lime hover:bg-lime/10 rounded-full px-3.5 py-2 transition-colors"
+            data-cta="Free Calgary solar guide"
+            data-cta-position="nav"
+          >
+            <Download className="h-3.5 w-3.5" />
+            Free 2026 Calgary guide
+          </a>
           <a
             href="tel:+14038197834"
-            className="text-sm font-medium text-muted-foreground hover:text-lime transition-colors duration-300"
+            className="hidden xl:inline text-sm font-medium text-muted-foreground hover:text-lime transition-colors duration-300"
             aria-label="Call NullPunkt Solar"
           >
             (403) 819-7834
@@ -67,6 +80,18 @@ const Navigation = () => {
                 {l.label}
               </Link>
             ))}
+            <a
+              href={guidePdf.url}
+              target="_blank"
+              rel="noopener"
+              onClick={() => setOpen(false)}
+              className="flex items-center gap-2 text-base text-lime"
+              data-cta="Free Calgary solar guide"
+              data-cta-position="nav-mobile"
+            >
+              <Download className="h-4 w-4" />
+              Free 2026 Calgary solar guide (PDF)
+            </a>
             <a
               href="tel:+14038197834"
               onClick={() => setOpen(false)}
