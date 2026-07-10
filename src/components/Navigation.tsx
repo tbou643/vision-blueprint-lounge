@@ -43,6 +43,7 @@ const Navigation = () => {
             className="inline-flex items-center gap-2 text-xs font-semibold tracking-wide uppercase text-lime border border-lime/40 hover:border-lime hover:bg-lime/10 rounded-full px-3.5 py-2 transition-colors"
             data-cta="Free Calgary solar guide"
             data-cta-position="nav"
+            onClick={() => trackEvent("guide_cta_click", { label: "Calgary solar guide 2026", position: "nav" })}
           >
             <Download className="h-3.5 w-3.5" />
             Free 2026 Calgary guide
