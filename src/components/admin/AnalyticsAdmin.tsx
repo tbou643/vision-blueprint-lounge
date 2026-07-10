@@ -21,6 +21,7 @@ interface AnalyticsData {
     pageviews: number; visitors: number; sessions: number;
     avgSessionSec: number; bounceRate: number;
     waitlistSignups: number; contactRequests: number; conversionRate: number;
+    guideDownloads: number; guideCtaClicks: number; guideUniqueVisitors: number;
   };
   deltas: Record<string, Delta>;
   liveNow: number;
@@ -40,6 +41,13 @@ interface AnalyticsData {
   };
   scrollDepth: { depth: number; count: number }[];
   outboundClicks: { url: string; count: number }[];
+  guide: {
+    downloads: number;
+    ctaClicks: number;
+    uniqueVisitors: number;
+    byPosition: { position: string; count: number }[];
+    timeseries: { date: string; count: number }[];
+  };
   landingPages: { path: string; visitors: number; bounceRate: number; conversions: number }[];
   waitlistWithSource: Array<{
     id: string; name: string; email: string; created_at: string; source: string | null;
