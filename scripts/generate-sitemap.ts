@@ -9,6 +9,13 @@ interface SitemapEntry {
   priority?: string;
 }
 
+const blogSlugs = [
+  "calgary-solar-incentives-2026",
+  "sustainable-architecture-future",
+  "minimalism-modern-living",
+  "urban-planning-community-spaces",
+];
+
 const entries: SitemapEntry[] = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
   { path: "/services", changefreq: "monthly", priority: "0.9" },
@@ -17,6 +24,11 @@ const entries: SitemapEntry[] = [
   { path: "/about", changefreq: "monthly", priority: "0.8" },
   { path: "/contact", changefreq: "monthly", priority: "0.8" },
   { path: "/blog", changefreq: "weekly", priority: "0.7" },
+  ...blogSlugs.map((slug) => ({
+    path: `/blog/${slug}`,
+    changefreq: "monthly" as const,
+    priority: "0.7",
+  })),
 ];
 
 const xml = [
