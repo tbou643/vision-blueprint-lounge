@@ -193,7 +193,9 @@ Deno.serve(async (req) => {
       const contactRequests = emailClicks + phoneClicks;
       const guideDownloads = rows.filter((r) => r.event_name === "guide_download").length;
       const guideCtaClicks = rows.filter((r) => r.event_name === "guide_cta_click").length;
-      const conversionRate = visitors.size ? ((waitlistCount + contactRequests) / visitors.size) * 100 : 0;
+      // Conversion = real leads (form submissions). Link clicks are intent only.
+      const conversionRate = visitors.size ? (waitlistCount / visitors.size) * 100 : 0;
+      const contactIntentRate = visitors.size ? (contactRequests / visitors.size) * 100 : 0;
 
       return {
         pageviews: pv.length,
@@ -203,13 +205,17 @@ Deno.serve(async (req) => {
         bounceRate: Math.round(bounceRate * 10) / 10,
         waitlistSignups: waitlistCount,
         contactRequests,
+        emailClicks,
+        phoneClicks,
         guideDownloads,
         guideCtaClicks,
         conversionRate: Math.round(conversionRate * 10) / 10,
+        contactIntentRate: Math.round(contactIntentRate * 10) / 10,
         seenPath,
         sessionDur,
       };
     }
+
 
     const cur = aggregate(current, wCurrent.length);
     const prev = aggregate(previous, wPrevious.length);
