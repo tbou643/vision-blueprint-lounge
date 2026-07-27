@@ -260,6 +260,7 @@ export async function trackPageview(path: string) {
     is_bounce: true,
   });
 
+  heartbeatCount = 0;
   scheduleHeartbeat();
 }
 
