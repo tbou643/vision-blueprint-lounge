@@ -293,13 +293,20 @@ export async function trackEvent(
   });
 }
 
+const HEARTBEAT_MS = 30000;
+const MAX_HEARTBEATS_PER_PAGEVIEW = 40; // ~20 min per page view
+let heartbeatCount = 0;
+
 function scheduleHeartbeat() {
   if (heartbeatTimer) window.clearTimeout(heartbeatTimer);
   heartbeatTimer = window.setTimeout(() => {
+    if (heartbeatCount >= MAX_HEARTBEATS_PER_PAGEVIEW) return;
+    heartbeatCount += 1;
     flushDuration(true);
     scheduleHeartbeat();
-  }, 15000);
+  }, HEARTBEAT_MS);
 }
+
 
 export async function flushDuration(isHeartbeat: boolean) {
   if (!currentPath) return;
