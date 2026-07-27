@@ -15,11 +15,18 @@ import guidePdf from "@/assets/calgary-solar-guide-2026.pdf.asset.json";
 
 const localBusiness = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "SolarEnergyContractor"],
+  "@id": "https://nullpunkt.ca/#organization",
   name: "NullPunkt Solar Inc.",
   url: "https://nullpunkt.ca",
   email: "hello@nullpunkt.ca",
+  telephone: "+1-403-819-7834",
+  priceRange: "$$",
+  slogan: "German Precision - Zero Emissions",
   image: "https://nullpunkt.ca/logo-black.png",
+  logo: "https://nullpunkt.ca/logo-black.png",
+  knowsLanguage: ["en", "de"],
+  sameAs: ["https://smb-solartechnik.de"],
   description:
     "Integrated PV, battery and HEMS systems for Calgary and Southern Alberta. Canadian subsidiary of SMB Solartechnik GmbH.",
   parentOrganization: {
@@ -29,12 +36,55 @@ const localBusiness = {
   },
   address: {
     "@type": "PostalAddress",
-    streetAddress: "#2005 – 10th Avenue SW",
+    streetAddress: "#2005 - 10th Avenue SW",
     addressLocality: "Calgary",
     addressRegion: "AB",
     addressCountry: "CA",
   },
-  areaServed: ["Calgary", "Southern Alberta"],
+  geo: { "@type": "GeoCoordinates", latitude: 51.0396, longitude: -114.1006 },
+  areaServed: [
+    { "@type": "City", name: "Calgary" },
+    { "@type": "AdministrativeArea", name: "Southern Alberta" },
+    { "@type": "State", name: "Alberta" },
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Solar services in Calgary",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Residential integrated solar systems (PV, battery, HEMS)",
+          areaServed: "Calgary, Alberta",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Commercial and agricultural solar",
+          areaServed: "Southern Alberta",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Developer partnerships and new-build solar",
+          areaServed: "Calgary, Alberta",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Service, maintenance and system monitoring",
+          areaServed: "Calgary, Alberta",
+        },
+      },
+    ],
+  },
 };
 
 const guideSchema = {
