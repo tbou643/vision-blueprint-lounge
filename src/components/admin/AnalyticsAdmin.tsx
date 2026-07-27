@@ -21,6 +21,8 @@ interface AnalyticsData {
     pageviews: number; visitors: number; sessions: number;
     avgSessionSec: number; bounceRate: number;
     waitlistSignups: number; contactRequests: number; conversionRate: number;
+    emailClicks: number; phoneClicks: number; contactIntentRate: number;
+
     guideDownloads: number; guideCtaClicks: number; guideUniqueVisitors: number;
   };
   deltas: Record<string, Delta>;
