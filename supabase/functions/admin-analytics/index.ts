@@ -450,10 +450,13 @@ Deno.serve(async (req) => {
       bounceRate: cur.bounceRate,
       waitlistSignups: cur.waitlistSignups,
       contactRequests: cur.contactRequests,
+      emailClicks: cur.emailClicks,
+      phoneClicks: cur.phoneClicks,
       guideDownloads: cur.guideDownloads,
       guideCtaClicks: cur.guideCtaClicks,
       guideUniqueVisitors,
       conversionRate: cur.conversionRate,
+      contactIntentRate: cur.contactIntentRate,
     };
     const deltas = {
       pageviews: pct(cur.pageviews, prev.pageviews),
@@ -463,9 +466,13 @@ Deno.serve(async (req) => {
       bounceRate: pct(cur.bounceRate, prev.bounceRate),
       waitlistSignups: pct(cur.waitlistSignups, prev.waitlistSignups),
       contactRequests: pct(cur.contactRequests, prev.contactRequests),
+      emailClicks: pct(cur.emailClicks, prev.emailClicks),
+      phoneClicks: pct(cur.phoneClicks, prev.phoneClicks),
       guideDownloads: pct(cur.guideDownloads, prev.guideDownloads),
       guideCtaClicks: pct(cur.guideCtaClicks, prev.guideCtaClicks),
       conversionRate: pct(cur.conversionRate, prev.conversionRate),
+      contactIntentRate: pct(cur.contactIntentRate, prev.contactIntentRate),
+
     };
 
     return new Response(
