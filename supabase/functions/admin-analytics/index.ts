@@ -121,14 +121,26 @@ Deno.serve(async (req) => {
 
 
 
-    // Load events (current + previous period)
-    const { data: eventsAll, error } = await supabase
-      .from("analytics_events")
-      .select("*")
-      .gte("created_at", prevSince)
-      .order("created_at", { ascending: false })
-      .limit(100000);
-    if (error) throw error;
+    // Load events (current + previous period) - paginated, because the Data API
+    // caps each request at 1000 rows and long ranges have far more events.
+    const EVENT_COLUMNS =
+      "created_at,visitor_id,session_id,event_type,event_name,event_label,event_position,section,path,referrer,referrer_domain,utm_source,utm_medium,utm_campaign,device_type,browser,os,country,city,region,postal,duration_ms,is_bounce,scroll_depth,outbound_url,excluded";
+    const PAGE = 1000;
+    const MAX_ROWS = 200000;
+    const eventsAll: Row[] = [];
+    for (let offset = 0; offset < MAX_ROWS; offset += PAGE) {
+      const { data: page, error } = await supabase
+        .from("analytics_events")
+        .select(EVENT_COLUMNS)
+        .gte("created_at", prevSince)
+        .order("created_at", { ascending: false })
+        .range(offset, offset + PAGE - 1);
+      if (error) throw error;
+      if (!page || page.length === 0) break;
+      eventsAll.push(...(page as Row[]));
+      if (page.length < PAGE) break;
+    }
+
 
     const { data: excludedRows } = await supabase
       .from("analytics_excluded_visitors")
@@ -181,7 +193,9 @@ Deno.serve(async (req) => {
       const contactRequests = emailClicks + phoneClicks;
       const guideDownloads = rows.filter((r) => r.event_name === "guide_download").length;
       const guideCtaClicks = rows.filter((r) => r.event_name === "guide_cta_click").length;
-      const conversionRate = visitors.size ? ((waitlistCount + contactRequests) / visitors.size) * 100 : 0;
+      // Conversion = real leads (form submissions). Link clicks are intent only.
+      const conversionRate = visitors.size ? (waitlistCount / visitors.size) * 100 : 0;
+      const contactIntentRate = visitors.size ? (contactRequests / visitors.size) * 100 : 0;
 
       return {
         pageviews: pv.length,
@@ -191,13 +205,17 @@ Deno.serve(async (req) => {
         bounceRate: Math.round(bounceRate * 10) / 10,
         waitlistSignups: waitlistCount,
         contactRequests,
+        emailClicks,
+        phoneClicks,
         guideDownloads,
         guideCtaClicks,
         conversionRate: Math.round(conversionRate * 10) / 10,
+        contactIntentRate: Math.round(contactIntentRate * 10) / 10,
         seenPath,
         sessionDur,
       };
     }
+
 
     const cur = aggregate(current, wCurrent.length);
     const prev = aggregate(previous, wPrevious.length);
@@ -432,10 +450,13 @@ Deno.serve(async (req) => {
       bounceRate: cur.bounceRate,
       waitlistSignups: cur.waitlistSignups,
       contactRequests: cur.contactRequests,
+      emailClicks: cur.emailClicks,
+      phoneClicks: cur.phoneClicks,
       guideDownloads: cur.guideDownloads,
       guideCtaClicks: cur.guideCtaClicks,
       guideUniqueVisitors,
       conversionRate: cur.conversionRate,
+      contactIntentRate: cur.contactIntentRate,
     };
     const deltas = {
       pageviews: pct(cur.pageviews, prev.pageviews),
@@ -445,9 +466,13 @@ Deno.serve(async (req) => {
       bounceRate: pct(cur.bounceRate, prev.bounceRate),
       waitlistSignups: pct(cur.waitlistSignups, prev.waitlistSignups),
       contactRequests: pct(cur.contactRequests, prev.contactRequests),
+      emailClicks: pct(cur.emailClicks, prev.emailClicks),
+      phoneClicks: pct(cur.phoneClicks, prev.phoneClicks),
       guideDownloads: pct(cur.guideDownloads, prev.guideDownloads),
       guideCtaClicks: pct(cur.guideCtaClicks, prev.guideCtaClicks),
       conversionRate: pct(cur.conversionRate, prev.conversionRate),
+      contactIntentRate: pct(cur.contactIntentRate, prev.contactIntentRate),
+
     };
 
     return new Response(

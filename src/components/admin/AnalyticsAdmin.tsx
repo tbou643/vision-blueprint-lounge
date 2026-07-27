@@ -21,6 +21,8 @@ interface AnalyticsData {
     pageviews: number; visitors: number; sessions: number;
     avgSessionSec: number; bounceRate: number;
     waitlistSignups: number; contactRequests: number; conversionRate: number;
+    emailClicks: number; phoneClicks: number; contactIntentRate: number;
+
     guideDownloads: number; guideCtaClicks: number; guideUniqueVisitors: number;
   };
   deltas: Record<string, Delta>;
@@ -265,9 +267,16 @@ export default function AnalyticsAdmin() {
           {/* Conversion KPIs */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             <Kpi icon={<Target className="w-4 h-4 text-lime" />} label="Waitlist Signups" value={data.totals.waitlistSignups} delta={data.deltas.waitlistSignups} />
-            <Kpi icon={<Mail className="w-4 h-4 text-lime" />} label="Contact Requests (Mail/Tel)" value={data.totals.contactRequests} delta={data.deltas.contactRequests} />
-            <Kpi icon={<TrendingUp className="w-4 h-4 text-lime" />} label="Conversion Rate" value={`${data.totals.conversionRate}%`} delta={data.deltas.conversionRate} />
+            <Kpi icon={<TrendingUp className="w-4 h-4 text-lime" />} label="Conversion Rate (Formulare)" value={`${data.totals.conversionRate}%`} delta={data.deltas.conversionRate} />
+            <Kpi icon={<Mail className="w-4 h-4 text-lime" />} label="Kontakt-Klicks (Tel/Mail)" value={data.totals.contactRequests} delta={data.deltas.contactRequests} />
+            <Kpi icon={<Mail className="w-4 h-4 text-lime" />} label="davon Telefon-Klicks" value={data.totals.phoneClicks} delta={data.deltas.phoneClicks} />
+            <Kpi icon={<Mail className="w-4 h-4 text-lime" />} label="davon Mail-Klicks" value={data.totals.emailClicks} delta={data.deltas.emailClicks} />
+            <Kpi icon={<TrendingUp className="w-4 h-4 text-lime" />} label="Kontakt-Intent" value={`${data.totals.contactIntentRate}%`} delta={data.deltas.contactIntentRate} />
           </div>
+          <p className="text-xs text-muted-foreground -mt-1">
+            Kontakt-Klicks zaehlen Taps auf Telefon- und Mail-Links. Das ist kein Nachweis fuer ein tatsaechliches Gespraech oder eine erhaltene Mail. Als Conversion zaehlen nur abgeschickte Formulare.
+          </p>
+
 
           {/* Guide downloads */}
           <Card>
