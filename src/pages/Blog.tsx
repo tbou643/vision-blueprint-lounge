@@ -8,7 +8,7 @@ import { blogPosts } from "@/data/blogPosts";
 const Blog = () => {
   const [activeCategory, setActiveCategory] = useState("ALL");
   
-  const categories = ["ALL", "INCENTIVES", "SUSTAINABILITY", "DESIGN", "URBAN PLANNING"];
+  const categories = ["ALL", ...Array.from(new Set(blogPosts.map((p) => p.category)))];
   
   const filteredPosts = activeCategory === "ALL" 
     ? blogPosts 
