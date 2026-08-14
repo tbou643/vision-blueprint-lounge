@@ -17,7 +17,7 @@ const milestones = [
   {
     label: "Late 2026",
     title: "First commercial & agri builds",
-    body: "20–200 kWp commercial and agricultural installations come online across southern Alberta.",
+    body: "15-200 kWp commercial and agricultural installations come online across southern Alberta.",
   },
   {
     label: "2027",

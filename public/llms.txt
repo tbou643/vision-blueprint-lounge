@@ -59,7 +59,7 @@ Note: Every installation is delivered with an Alberta-licensed master electricia
 PV sized to the home's actual consumption (up to 15 kWp), 5-15 kWh battery storage, intelligent HEMS, plus heat-pump and EV-charger readiness - engineered as one coordinated system for Alberta homes.
 
 02 · Commercial & Agricultural (B2B)
-20-200 kWp PV with optional storage and energy management for businesses, farms and small commercial properties. Demand-charge optimisation and Agri-PV included.
+15-200 kWp PV with optional storage and energy management for businesses, farms and small commercial properties. Demand-charge optimisation and Agri-PV included.
 
 03 · Developer Partnerships (B2B)
 Turnkey pre-integrated solar built into new-construction subdivisions - a premium sales feature for builders, fully coordinated with the construction schedule.
@@ -85,7 +85,7 @@ Reference pricing: CAD $14,000 - $48,000 depending on system size
 
 ### 02 · Commercial & Agricultural - B2B · Businesses & farms
 Larger-scale solar with optional storage and energy management for commercial buildings, farms and small-industrial sites. Demand-charge optimisation, peak shaving and Agri-PV configurations.
-- 20-200 kWp PV with NA-certified inverters
+- 15-200 kWp PV with NA-certified inverters
 - Optional battery storage for peak shaving
 - Demand-charge and time-of-use optimisation
 - Agri-PV configurations for farms
@@ -226,7 +226,7 @@ CTA: Join the founding waitlist →
 Launch roadmap:
 - Q2 2026 - Pre-launch & permitting. Alberta incorporation, micro-generation paperwork, supplier logistics from SMB Solartechnik transferred to Calgary.
 - Summer 2026 - First Calgary installations. Founding-customer residential systems commissioned across Calgary metro - fully monitored from day one.
-- Late 2026 - First commercial & agri builds. 20-200 kWp commercial and agricultural installations come online across southern Alberta.
+- Late 2026 - First commercial & agri builds. 15-200 kWp commercial and agricultural installations come online across southern Alberta.
 - 2027 - Regional expansion. Red Deer, Lethbridge corridor; developer subdivision rollouts begin.
 - 2028 - 2031 - Western Canada. Selective expansion targeted into British Columbia and Saskatchewan, building toward a meaningful installed base of integrated systems by year five.
 

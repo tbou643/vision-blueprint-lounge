@@ -12,7 +12,7 @@ const Services = () => {
       title: "Commercial & Agricultural",
       tag: "B2B",
       description:
-        "20-200 kWp PV with optional storage and energy management for businesses, farms and small commercial properties. Demand-charge optimisation and Agri-PV included.",
+        "15-200 kWp PV with optional storage and energy management for businesses, farms and small commercial properties. Demand-charge optimisation and Agri-PV included.",
     },
     {
       number: "03",
