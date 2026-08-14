@@ -27,7 +27,7 @@ const Services = () => {
       description:
         "Larger-scale solar with optional storage and energy management for commercial buildings, farms and small-industrial sites. Demand-charge optimisation, peak shaving and Agri-PV configurations.",
       features: [
-        "20-200 kWp PV with NA-certified inverters",
+        "15-200 kWp PV with NA-certified inverters",
         "Optional battery storage for peak shaving",
         "Demand-charge and time-of-use optimisation",
         "Agri-PV configurations for farms",
