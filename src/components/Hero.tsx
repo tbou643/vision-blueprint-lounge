@@ -1,8 +1,23 @@
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-header.png";
+import heroVideo from "@/assets/hero-loop.mp4.asset.json";
 import Logo from "./Logo";
 
 const Hero = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoReady, setVideoReady] = useState(false);
+
+  useEffect(() => {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const smallScreen = window.matchMedia("(max-width: 767px)").matches;
+    if (reduced || smallScreen) return;
+    const v = videoRef.current;
+    if (!v) return;
+    v.src = heroVideo.url;
+    v.play().catch(() => {});
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background - LCP image, eager + high priority */}
@@ -15,6 +30,19 @@ const Hero = () => {
         fetchPriority="high"
         decoding="async"
         className="absolute inset-0 w-full h-full object-cover"
+      />
+      {/* Ambient brand film, muted + looping, layered subtly over the still */}
+      <video
+        ref={videoRef}
+        aria-hidden="true"
+        muted
+        loop
+        playsInline
+        preload="none"
+        onCanPlay={() => setVideoReady(true)}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ${
+          videoReady ? "opacity-40" : "opacity-0"
+        }`}
       />
       <div className="absolute inset-0 hero-overlay" />
       <div className="absolute inset-x-0 top-0 h-[60vh] glow-radial pointer-events-none" />
