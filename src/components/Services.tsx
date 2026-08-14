@@ -5,14 +5,14 @@ const Services = () => {
       title: "Residential Integrated Systems",
       tag: "B2C",
       description:
-        "8–15 kWp PV, 10–15 kWh battery storage, intelligent HEMS, plus heat-pump and EV-charger readiness - engineered as one coordinated system for Alberta homes.",
+        "PV sized to your home's actual consumption (up to 15 kWp), 5-15 kWh battery storage, intelligent HEMS, plus heat-pump and EV-charger readiness - engineered as one coordinated system for Alberta homes.",
     },
     {
       number: "02",
       title: "Commercial & Agricultural",
       tag: "B2B",
       description:
-        "20–200 kWp PV with optional storage and energy management for businesses, farms and small commercial properties. Demand-charge optimisation and Agri-PV included.",
+        "20-200 kWp PV with optional storage and energy management for businesses, farms and small commercial properties. Demand-charge optimisation and Agri-PV included.",
     },
     {
       number: "03",

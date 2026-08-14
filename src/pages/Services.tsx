@@ -10,14 +10,14 @@ const Services = () => {
       title: "Residential Integrated Systems",
       tag: "B2C · Calgary metro",
       description:
-        "Fully integrated solar energy systems for owner-occupied homes. Engineered as one ecosystem rather than a stack of separately installed devices - increasing self-consumption from 25–40% (PV-only) to 70–85%.",
+        "Fully integrated solar energy systems for owner-occupied homes. Engineered as one ecosystem rather than a stack of separately installed devices - increasing self-consumption from 25-40% (PV-only) to 70-85%.",
       features: [
-        "8–15 kWp Tier-1 PV with Hail Class HW5 modules",
-        "10–15 kWh LFP battery storage (UL 9540)",
+        "Tier-1 PV sized to your annual consumption, up to 15 kWp, with Hail Class HW5 modules",
+        "5-15 kWh LFP battery storage (UL 9540)",
         "Intelligent HEMS - OpenEMS-based, no vendor lock-in",
         "Heat-pump and EV-charger readiness pre-wired",
       ],
-      price: "CAD $25,000 – $44,000 turn-key",
+      price: "Typically CAD $14,000 - $44,000 turn-key, depending on system size",
       priceNote: "All-in: hardware, install, permits, ENMAX/EPCOR interconnection, HEMS commissioning",
     },
     {
@@ -27,13 +27,13 @@ const Services = () => {
       description:
         "Larger-scale solar with optional storage and energy management for commercial buildings, farms and small-industrial sites. Demand-charge optimisation, peak shaving and Agri-PV configurations.",
       features: [
-        "20–200 kWp PV with NA-certified inverters",
+        "20-200 kWp PV with NA-certified inverters",
         "Optional battery storage for peak shaving",
         "Demand-charge and time-of-use optimisation",
         "Agri-PV configurations for farms",
       ],
       price: "From CAD $1,800 / kWp",
-      priceNote: "Typical projects $40,000 – $320,000 · 30% federal Clean Tech ITC eligible",
+      priceNote: "Typical projects $40,000 - $320,000 · 30% federal Clean Tech ITC eligible",
     },
     {
       number: "03",
@@ -42,7 +42,7 @@ const Services = () => {
       description:
         "Volume turnkey installations for new-construction subdivisions, integrated directly into the homebuilding process. Premium integrated solar becomes a marketable feature for the builder.",
       features: [
-        "8–10 kWp pre-integrated unit per home",
+        "Pre-integrated unit per home, sized to each floor plan's load",
         "Volume pricing coordinated with build schedule",
         "Marketing collateral for builder sales teams",
         "Single point of contact for the entire subdivision",
