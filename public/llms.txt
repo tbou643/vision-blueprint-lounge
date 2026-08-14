@@ -56,7 +56,7 @@ Headline: Four service lines. One integrated system.
 Note: Every installation is delivered with an Alberta-licensed master electrician partner and engineered to the same standards our parent company has applied across several hundred German installations. We only work with fully licensed, high-qualification trades - no anonymous subcontractor chains.
 
 01 · Residential Integrated Systems (B2C)
-8-15 kWp PV, 10-15 kWh battery storage, intelligent HEMS, plus heat-pump and EV-charger readiness - engineered as one coordinated system for Alberta homes.
+PV sized to the home's actual consumption (up to 15 kWp), 5-15 kWh battery storage, intelligent HEMS, plus heat-pump and EV-charger readiness - engineered as one coordinated system for Alberta homes.
 
 02 · Commercial & Agricultural (B2B)
 20-200 kWp PV with optional storage and energy management for businesses, farms and small commercial properties. Demand-charge optimisation and Agri-PV included.
@@ -77,11 +77,11 @@ Intro: NullPunkt Solar engineers PV, battery storage and intelligent energy mana
 
 ### 01 · Residential Integrated Systems - B2C · Calgary metro
 Fully integrated solar energy systems for owner-occupied homes. Engineered as one ecosystem rather than a stack of separately installed devices - increasing self-consumption from 25-40% (PV-only) to 70-85%.
-- 8-15 kWp Tier-1 PV with Hail Class HW5 modules
-- 10-15 kWh LFP battery storage (UL 9540)
+- Tier-1 PV sized to annual consumption, up to 15 kWp, Hail Class HW5 modules
+- 5-15 kWh LFP battery storage (UL 9540)
 - Intelligent HEMS - OpenEMS-based, no vendor lock-in
 - Heat-pump and EV-charger readiness pre-wired
-Reference pricing: CAD $26,000 - $48,000
+Reference pricing: CAD $14,000 - $48,000 depending on system size
 
 ### 02 · Commercial & Agricultural - B2B · Businesses & farms
 Larger-scale solar with optional storage and energy management for commercial buildings, farms and small-industrial sites. Demand-charge optimisation, peak shaving and Agri-PV configurations.
@@ -93,7 +93,7 @@ Reference pricing: CAD $65,000 - $220,000+
 
 ### 03 · Developer Partnerships - B2B · New construction
 Volume turnkey installations for new-construction subdivisions, integrated directly into the homebuilding process. Premium integrated solar becomes a marketable feature for the builder.
-- 8-10 kWp pre-integrated unit per home
+- Pre-integrated unit per home, sized to each floor plan's load
 - Volume pricing coordinated with build schedule
 - Marketing collateral for builder sales teams
 - Single point of contact for the entire subdivision
