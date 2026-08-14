@@ -9,18 +9,31 @@ const Hero = () => {
   const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) return;
     const v = videoRef.current;
     if (!v) return;
-    v.src = heroVideo.url;
-    const tryPlay = () => v.play().catch(() => {});
+
+    // Safari can defer background video startup after page restoration or when
+    // the source is assigned after mount. Keep the element explicitly muted
+    // and retry when the page becomes active.
+    v.muted = true;
+    v.defaultMuted = true;
+    const tryPlay = () => {
+      if (document.visibilityState === "visible") {
+        void v.play().catch(() => undefined);
+      }
+    };
+
+    v.load();
     tryPlay();
-    // iOS/Android sometimes block the first play() until the element is ready
-    v.addEventListener("loadeddata", tryPlay, { once: true });
+    v.addEventListener("canplay", tryPlay);
+    window.addEventListener("pageshow", tryPlay);
+    document.addEventListener("visibilitychange", tryPlay);
     document.addEventListener("touchstart", tryPlay, { once: true, passive: true });
+
     return () => {
-      v.removeEventListener("loadeddata", tryPlay);
+      v.removeEventListener("canplay", tryPlay);
+      window.removeEventListener("pageshow", tryPlay);
+      document.removeEventListener("visibilitychange", tryPlay);
       document.removeEventListener("touchstart", tryPlay);
     };
   }, []);
@@ -41,11 +54,14 @@ const Hero = () => {
       {/* Ambient brand film, muted + looping, layered subtly over the still */}
       <video
         ref={videoRef}
+        src={heroVideo.url}
         aria-hidden="true"
+        autoPlay
         muted
         loop
         playsInline
-        preload="none"
+        preload="metadata"
+        poster={heroImage}
         onCanPlay={() => setVideoReady(true)}
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ${
           videoReady ? "opacity-85" : "opacity-0"
