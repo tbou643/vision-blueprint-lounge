@@ -61,7 +61,7 @@ const Hero = () => {
         <Logo
           variant="light"
           showTagline={false}
-          className="reveal w-full max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto mb-10"
+          className="reveal w-full max-w-[240px] md:max-w-xs lg:max-w-sm mx-auto mb-8"
         />
 
         {/* Headline */}
