@@ -10,12 +10,19 @@ const Hero = () => {
 
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const smallScreen = window.matchMedia("(max-width: 767px)").matches;
-    if (reduced || smallScreen) return;
+    if (reduced) return;
     const v = videoRef.current;
     if (!v) return;
     v.src = heroVideo.url;
-    v.play().catch(() => {});
+    const tryPlay = () => v.play().catch(() => {});
+    tryPlay();
+    // iOS/Android sometimes block the first play() until the element is ready
+    v.addEventListener("loadeddata", tryPlay, { once: true });
+    document.addEventListener("touchstart", tryPlay, { once: true, passive: true });
+    return () => {
+      v.removeEventListener("loadeddata", tryPlay);
+      document.removeEventListener("touchstart", tryPlay);
+    };
   }, []);
 
   return (
@@ -48,7 +55,7 @@ const Hero = () => {
       <div className="absolute inset-x-0 top-0 h-[60vh] glow-radial pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 text-center max-w-5xl mx-auto px-6 pt-24">
+      <div className="relative z-20 text-center max-w-5xl mx-auto px-6 pt-24 pb-16 lg:pb-32">
         {/* Eyebrow */}
         <div className="reveal inline-flex items-center gap-3 px-4 py-2 rounded-full border border-lime/40 bg-lime/10 backdrop-blur-sm mb-10">
           <span className="w-1.5 h-1.5 rounded-full bg-lime animate-pulse" />
@@ -88,10 +95,10 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 reveal-delayed-2">
+      {/* Scroll indicator - desktop only, never overlapping the CTAs */}
+      <div className="pointer-events-none hidden lg:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex-col items-center gap-3 reveal-delayed-2">
         <span className="text-[10px] tracking-[0.3em] uppercase text-white/50">Scroll</span>
-        <div className="w-px h-12 bg-gradient-to-b from-white/50 to-transparent" />
+        <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent" />
       </div>
     </section>
   );
