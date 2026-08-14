@@ -10,12 +10,19 @@ const Hero = () => {
 
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const smallScreen = window.matchMedia("(max-width: 767px)").matches;
-    if (reduced || smallScreen) return;
+    if (reduced) return;
     const v = videoRef.current;
     if (!v) return;
     v.src = heroVideo.url;
-    v.play().catch(() => {});
+    const tryPlay = () => v.play().catch(() => {});
+    tryPlay();
+    // iOS/Android sometimes block the first play() until the element is ready
+    v.addEventListener("loadeddata", tryPlay, { once: true });
+    document.addEventListener("touchstart", tryPlay, { once: true, passive: true });
+    return () => {
+      v.removeEventListener("loadeddata", tryPlay);
+      document.removeEventListener("touchstart", tryPlay);
+    };
   }, []);
 
   return (
@@ -88,10 +95,10 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 reveal-delayed-2">
+      {/* Scroll indicator - desktop only, never overlapping the CTAs */}
+      <div className="pointer-events-none hidden lg:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex-col items-center gap-3 reveal-delayed-2">
         <span className="text-[10px] tracking-[0.3em] uppercase text-white/50">Scroll</span>
-        <div className="w-px h-12 bg-gradient-to-b from-white/50 to-transparent" />
+        <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent" />
       </div>
     </section>
   );
