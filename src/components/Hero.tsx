@@ -60,8 +60,9 @@ const Hero = () => {
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="auto"
         poster={heroImage}
+        onLoadedData={() => setVideoReady(true)}
         onCanPlay={() => setVideoReady(true)}
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ${
           videoReady ? "opacity-85" : "opacity-0"
