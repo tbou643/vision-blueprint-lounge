@@ -55,7 +55,7 @@ const Hero = () => {
       <div className="absolute inset-x-0 top-0 h-[60vh] glow-radial pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 text-center max-w-5xl mx-auto px-6 pt-24">
+      <div className="relative z-20 text-center max-w-5xl mx-auto px-6 pt-24 pb-16 lg:pb-32">
         {/* Eyebrow */}
         <div className="reveal inline-flex items-center gap-3 px-4 py-2 rounded-full border border-lime/40 bg-lime/10 backdrop-blur-sm mb-10">
           <span className="w-1.5 h-1.5 rounded-full bg-lime animate-pulse" />
