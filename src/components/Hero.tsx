@@ -41,7 +41,7 @@ const Hero = () => {
         preload="none"
         onCanPlay={() => setVideoReady(true)}
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ${
-          videoReady ? "opacity-40" : "opacity-0"
+          videoReady ? "opacity-85" : "opacity-0"
         }`}
       />
       <div className="absolute inset-0 hero-overlay" />
