@@ -2,6 +2,8 @@ import Navigation from "@/components/Navigation";
 import SiteFooter from "@/components/SiteFooter";
 import SEO from "@/components/SEO";
 import SolarCalculator from "@/components/SolarCalculator";
+import PriceTrust from "@/components/PriceTrust";
+
 import { Link } from "react-router-dom";
 
 const calgaryFacts = [
@@ -164,6 +166,9 @@ const CalculatorPage = () => {
           <SolarCalculator />
         </div>
       </section>
+
+      <PriceTrust />
+
 
       {/* Incentives */}
       <section className="py-24 border-t border-border bg-card">

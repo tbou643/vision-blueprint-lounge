@@ -1,5 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
+import PromoPricing from "@/components/PromoPricing";
+
 import Services from "@/components/Services";
 import TechnologyStack from "@/components/TechnologyStack";
 import EngineeringProcess from "@/components/EngineeringProcess";
@@ -122,7 +124,9 @@ const Index = () => {
       />
       <Navigation />
       <Hero />
+      <PromoPricing />
       <Services />
+
       <TechnologyStack />
       <EngineeringProcess />
       <CalgarySolarGuide />
