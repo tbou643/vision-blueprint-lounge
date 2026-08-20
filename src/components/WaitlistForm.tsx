@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
@@ -21,6 +22,8 @@ interface Props {
 }
 
 const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compact }: Props) => {
+  const location = useLocation();
+  const calculatorContext = (location.state as { calculator?: string } | null)?.calculator ?? "";
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -139,6 +142,7 @@ const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compac
         <textarea
           name="notes"
           rows={3}
+          defaultValue={calculatorContext}
           placeholder="Anything specific? (battery, EV, off-grid goals…)"
           className={input}
         />
