@@ -21,7 +21,9 @@ const Navigation = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-xl border-b border-border/60">
+      <PromoBanner />
       <div className="container mx-auto px-6 py-4 flex items-center justify-between gap-6">
+
         <Link to="/" className="flex items-center shrink-0" aria-label="NullPunkt Solar Inc. - Home">
           <Logo variant="light" className="h-7 md:h-8 w-auto" />
         </Link>
