@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const milestones = [
   {
-    label: "Now (Q2 2026)",
-    title: "Now: Reserving August assessments",
+    label: "Now (Q3 2026)",
+    title: "Now: Reserving September / October assessments",
     body: "Founder on the ground in Calgary, incorporation active. We're booking free site visits for our first 25 Calgary homeowners, with priority engineering slots and founding-customer pricing.",
   },
   {
