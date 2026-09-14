@@ -53,10 +53,10 @@ const Contact = () => {
 
             {/* Right: waitlist form */}
             <div className="card-raised p-10">
-              <p className="text-minimal text-lime mb-3">First 25 Calgary installations · August 2026</p>
+              <p className="text-minimal text-lime mb-3">First 25 Calgary installations · September / October 2026</p>
               <h3 className="text-2xl font-light mb-3">Reserve your free site visit.</h3>
               <p className="text-sm text-muted-foreground mb-8">
-                We're scheduling our first 25 Calgary assessments for August. Tell us about your home and we'll confirm your slot personally.
+                We're scheduling our first 25 Calgary assessments for September and October. Tell us about your home and we'll confirm your slot personally.
               </p>
               <WaitlistForm source="contact-page" />
 
