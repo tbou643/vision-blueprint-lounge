@@ -1,6 +1,9 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import PromoPricing from "@/components/PromoPricing";
+import QuickEstimate from "@/components/QuickEstimate";
+import PriceTrust from "@/components/PriceTrust";
+import HomeFaq, { homeFaqs } from "@/components/HomeFaq";
 
 import Services from "@/components/Services";
 import TechnologyStack from "@/components/TechnologyStack";
