@@ -33,7 +33,8 @@ const PriceTrust = () => (
       </div>
       <p className="text-sm text-muted-foreground leading-relaxed mt-8 max-w-3xl">
         Typical market prices in Calgary range from $2.50 to well over $4.00 per watt. We keep overhead low and pass it
-        on - that's the whole trick.
+        on - that's the whole trick. To be fully transparent: we are in our launch preparation phase, so right now we
+        plan systems, reserve prices and book site visits - no commitment on your side.
       </p>
     </div>
   </section>
