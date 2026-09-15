@@ -1,7 +1,7 @@
 export const homeFaqs = [
   {
     q: "How much does a solar system cost in Calgary in 2026?",
-    a: "We install residential rooftop systems at $1.99 per watt before GST for every contract signed by September 30, 2026, and $2.20 per watt after that. A typical 7.5 kW system therefore lands around $14,925 before GST. Quotes in the Calgary market commonly range from $2.50 to over $4.00 per watt, so always divide any quote by the system watts before comparing.",
+    a: "Our launch price for residential rooftop systems is $1.99 per watt before GST, reservable until September 30, 2026, and $2.20 per watt after that. A typical 7.5 kW system therefore lands around $14,925 before GST. Quotes in the Calgary market commonly range from $2.50 to over $4.00 per watt, so always divide any quote by the system watts before comparing.",
   },
   {
     q: "Does solar actually work in Calgary's climate?",

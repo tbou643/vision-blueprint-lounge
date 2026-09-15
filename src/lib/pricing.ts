@@ -19,7 +19,7 @@ export const formatCad = (value: number, decimals = 0) =>
   `$${value.toLocaleString("en-CA", { minimumFractionDigits: decimals, maximumFractionDigits: decimals })}`;
 
 export const PROMO_TERMS =
-  "Offer valid for residential rooftop systems in the Calgary area with contract signed on or before September 30, 2026. Installation scheduled on a first-come, first-served basis. Price before GST, based on standard asphalt shingle roof and single array layout. Final quote after free site assessment.";
+  "Launch pricing for residential rooftop systems in the Calgary area. Reserve your price free of charge and without obligation on or before September 30, 2026. We are in our launch preparation phase, so installation slots are planned in the order reservations come in. Price before GST, based on standard asphalt shingle roof and single array layout. Final proposal after your free site assessment.";
 
 export interface SolarEstimate {
   modules: number;

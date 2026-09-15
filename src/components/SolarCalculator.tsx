@@ -158,7 +158,7 @@ const SolarCalculator = () => {
             to="/contact"
             state={{ calculator: contactContext }}
             className="btn-lime justify-center"
-            data-cta="Lock in promo price"
+            data-cta="Reserve launch price"
             data-cta-position="calculator"
             onClick={() =>
               trackEvent("calculator_cta_click", {
@@ -167,7 +167,7 @@ const SolarCalculator = () => {
               })
             }
           >
-            {promo ? `Lock in $${PROMO_PRICE_PER_WATT.toFixed(2)}/W - book your free assessment` : "Book your free assessment"}
+            {promo ? `Reserve $${PROMO_PRICE_PER_WATT.toFixed(2)}/W - book your free assessment` : "Book your free assessment"}
           </Link>
           <a href="#how-we-compare" className="btn-ghost justify-center">
             How we compare
