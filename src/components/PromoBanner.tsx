@@ -15,8 +15,8 @@ const PromoBanner = () => {
       >
         <span className="h-1.5 w-1.5 rounded-full bg-lime shrink-0 shadow-lime" aria-hidden="true" />
         <span className="text-[11px] sm:text-xs tracking-wide text-muted-foreground group-hover:text-foreground transition-colors">
-          <span className="text-foreground font-medium">Fall Launch Offer</span> - $
-          {PROMO_PRICE_PER_WATT.toFixed(2)}/W for every contract signed by September 30
+          <span className="text-foreground font-medium">Fall Launch Pricing</span> - reserve $
+          {PROMO_PRICE_PER_WATT.toFixed(2)}/W by September 30, free and without obligation
           <span className="hidden sm:inline text-lime"> · {days} days left</span>
         </span>
       </Link>

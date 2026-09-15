@@ -30,7 +30,7 @@ const PromoPricing = () => {
             </div>
             <p className="text-muted-foreground leading-relaxed max-w-lg">
               {promo
-                ? "Every residential rooftop contract signed by September 30, 2026 is installed at $1.99 per watt, before GST."
+                ? "Reserve your launch price of $1.99 per watt before GST by September 30, 2026. Reservations are free and non-binding while we complete our Calgary launch preparation."
                 : "Straightforward residential rooftop pricing per watt, before GST."}
             </p>
           </div>

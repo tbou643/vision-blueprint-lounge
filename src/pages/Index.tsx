@@ -131,7 +131,7 @@ const Index = () => {
     <div className="min-h-screen">
       <SEO
         title="Solar Panels Calgary - $1.99/W Installed | NullPunkt Solar"
-        description="Calgary solar installation at $1.99 per watt before GST for contracts signed by September 30, 2026. Free site assessment, transparent pricing, CEIP financing and a free 2026 Calgary rebate guide."
+        description="Calgary solar at $1.99 per watt before GST - reserve your launch price free and without obligation until September 30, 2026. Free site assessment, transparent pricing and a free 2026 Calgary rebate guide."
         path="/"
         jsonLd={[localBusiness, guideSchema, faqSchema]}
       />
