@@ -18,6 +18,7 @@ import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import AnalyticsTracker from "./components/AnalyticsTracker";
 import PrivacyNotice from "./components/PrivacyNotice";
+import StickyMobileCta from "./components/StickyMobileCta";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +46,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <StickyMobileCta />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

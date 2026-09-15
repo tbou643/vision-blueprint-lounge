@@ -95,9 +95,10 @@ const Hero = () => {
           engineered to a <span className="lime-underline">single point</span>.
         </h1>
 
-        <p className="reveal-delayed-2 text-lg md:text-xl text-white/75 font-light max-w-2xl mx-auto mb-12 leading-relaxed">
-          A new Calgary company, backed by SMB Solartechnik GmbH - a German parent
-          installing integrated PV, battery and HEMS systems since 2024.
+        <p className="reveal-delayed-2 text-lg md:text-xl text-white/75 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+          Calgary rooftop solar at <span className="text-lime">$1.99 per watt</span> for every contract
+          signed by September 30. Backed by SMB Solartechnik GmbH, a German parent installing
+          integrated PV, battery and HEMS systems since 2024.
         </p>
 
         {/* CTAs */}
@@ -106,10 +107,18 @@ const Hero = () => {
             Reserve your free site visit
             <span aria-hidden>→</span>
           </Link>
-          <Link to="/services" className="btn-ghost !text-white !border-white/30 hover:!border-lime hover:!text-lime" data-cta="See our system" data-cta-position="hero-secondary">
-            See our system
-          </Link>
+          <a href="#estimate" className="btn-ghost !text-white !border-white/30 hover:!border-lime hover:!text-lime" data-cta="See your price" data-cta-position="hero-secondary">
+            See your price in 10 seconds
+          </a>
         </div>
+
+        {/* Trust row */}
+        <ul className="reveal-delayed-2 mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[11px] tracking-[0.18em] uppercase text-white/60">
+          <li>Free site assessment</li>
+          <li>Fixed-price proposal</li>
+          <li>Alberta-licensed master electrician partners</li>
+          <li>Tier-1 modules, 25-year product warranty</li>
+        </ul>
       </div>
 
       {/* Scroll indicator - desktop only, never overlapping the CTAs */}
