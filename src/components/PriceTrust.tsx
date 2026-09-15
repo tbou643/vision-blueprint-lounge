@@ -12,7 +12,7 @@ const cards = [
   {
     title: "German precision",
     body:
-      "Built on 10+ years of solar engineering experience from our German parent company SMB Solartechnik.",
+      "Engineered to the standards of our German parent company SMB Solartechnik GmbH, which has been installing integrated PV, battery and HEMS systems since 2024.",
   },
 ];
 

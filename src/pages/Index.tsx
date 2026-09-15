@@ -1,6 +1,9 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import PromoPricing from "@/components/PromoPricing";
+import QuickEstimate from "@/components/QuickEstimate";
+import PriceTrust from "@/components/PriceTrust";
+import HomeFaq, { homeFaqs } from "@/components/HomeFaq";
 
 import Services from "@/components/Services";
 import TechnologyStack from "@/components/TechnologyStack";
@@ -113,18 +116,30 @@ const guideSchema = {
   isAccessibleForFree: true,
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: homeFaqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="NullPunkt Solar - Calgary Solar Rebates, CEIP Financing & Integrated PV Systems"
-        description="Calgary solar company with a free 2026 guide to rebates, CEIP financing and Alberta's 35 ¢/kWh Solar Club export rate. Integrated PV, battery and HEMS systems for Calgary and Southern Alberta."
+        title="Solar Panels Calgary - $1.99/W Installed | NullPunkt Solar"
+        description="Calgary solar installation at $1.99 per watt before GST for contracts signed by September 30, 2026. Free site assessment, transparent pricing, CEIP financing and a free 2026 Calgary rebate guide."
         path="/"
-        jsonLd={[localBusiness, guideSchema]}
+        jsonLd={[localBusiness, guideSchema, faqSchema]}
       />
       <Navigation />
       <Hero />
+      <QuickEstimate />
       <PromoPricing />
+      <PriceTrust />
       <Services />
 
       <TechnologyStack />
@@ -133,10 +148,11 @@ const Index = () => {
       <About />
       <Portfolio />
       <ComingSummerTeaser />
+      <HomeFaq />
       <ProposalDeliverables />
       <Contact />
       <SiteFooter />
-
+      <div className="lg:hidden h-20" aria-hidden="true" />
     </div>
   );
 };
