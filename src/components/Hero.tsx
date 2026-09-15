@@ -77,7 +77,7 @@ const Hero = () => {
         <div className="reveal inline-flex items-center gap-3 px-4 py-2 rounded-full border border-lime/40 bg-lime/10 backdrop-blur-sm mb-10">
           <span className="w-1.5 h-1.5 rounded-full bg-lime animate-pulse" />
           <span className="text-[11px] tracking-[0.22em] uppercase text-lime font-medium">
-            Reserving September / October site visits · Calgary, Alberta
+            Launch preparation phase · Reserving Calgary site visits
           </span>
         </div>
 
@@ -96,9 +96,10 @@ const Hero = () => {
         </h1>
 
         <p className="reveal-delayed-2 text-lg md:text-xl text-white/75 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
-          Calgary rooftop solar at <span className="text-lime">$1.99 per watt</span> for every contract
-          signed by September 30. Backed by SMB Solartechnik GmbH, a German parent installing
-          integrated PV, battery and HEMS systems since 2024.
+          We are preparing our Calgary launch. Reserve rooftop solar at{" "}
+          <span className="text-lime">$1.99 per watt</span> now - free, non-binding, and held until we
+          start installing. Backed by SMB Solartechnik GmbH, a German parent installing integrated PV,
+          battery and HEMS systems since 2024.
         </p>
 
         {/* CTAs */}
