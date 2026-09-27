@@ -96,9 +96,9 @@ const Hero = () => {
         </h1>
 
         <p className="reveal-delayed-2 text-lg md:text-xl text-white/75 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
-          We are preparing our Calgary launch. Reserve rooftop solar at{" "}
-          <span className="text-lime">$1.99 per watt</span> now - free, non-binding, and held until we
-          start installing. Backed by SMB Solartechnik GmbH, a German parent installing integrated PV,
+          We are preparing our Calgary launch. Transparent rooftop solar from{" "}
+          <span className="text-lime">$1.99 to $2.50 per watt</span> - reserve your free, non-binding
+          site visit now. Backed by SMB Solartechnik GmbH, a German parent installing integrated PV,
           battery and HEMS systems since 2024.
         </p>
 

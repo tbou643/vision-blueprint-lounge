@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import PromoPricing from "@/components/PromoPricing";
 import QuickEstimate from "@/components/QuickEstimate";
 import PriceTrust from "@/components/PriceTrust";
 import HomeFaq, { homeFaqs } from "@/components/HomeFaq";
@@ -130,15 +129,14 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Solar Panels Calgary - $1.99/W Installed | NullPunkt Solar"
-        description="Calgary solar at $1.99 per watt before GST - reserve your launch price free and without obligation until September 30, 2026. Free site assessment, transparent pricing and a free 2026 Calgary rebate guide."
+        title="Solar Panels Calgary - Integrated PV & Battery | NullPunkt Solar"
+        description="Calgary solar installer with German engineering. Transparent pricing from $1.99 to $2.50 per watt before GST, free site assessment, fixed-price proposal and a free 2026 Calgary rebate guide."
         path="/"
         jsonLd={[localBusiness, guideSchema, faqSchema]}
       />
       <Navigation />
       <Hero />
       <QuickEstimate />
-      <PromoPricing />
       <PriceTrust />
       <Services />
 

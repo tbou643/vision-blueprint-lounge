@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { trackEvent } from "@/lib/analytics";
 import {
+  PRICE_RANGE_LABEL,
   REGULAR_PRICE_PER_WATT,
   estimateFromBill,
   formatCad,
@@ -14,9 +15,7 @@ const QuickEstimate = () => {
   const promo = isPromoActive();
   const est = useMemo(() => estimateFromBill(monthlyBill), [monthlyBill]);
 
-  const context = `Home estimate: ${est.modules} modules / ${est.kwp.toFixed(1)} kW - ${formatCad(
-    est.priceBeforeGst,
-  )} + GST at $${est.pricePerWatt.toFixed(2)}/W`;
+  const context = `Home estimate: ${est.modules} modules / ${est.kwp.toFixed(1)} kW - ${formatCad(est.priceLow)}-${formatCad(est.priceHigh)} + GST (${PRICE_RANGE_LABEL})`;
 
   return (
     <section id="estimate" className="relative py-20 md:py-24 bg-background border-b border-border">
@@ -25,7 +24,7 @@ const QuickEstimate = () => {
           {/* Input */}
           <div>
             <p className="text-minimal text-lime mb-4">
-              {promo ? `Fall launch offer · ${daysUntilPromoEnd()} days left` : "10 second estimate"}
+              10 second estimate
             </p>
             <h2 className="text-3xl md:text-4xl font-light text-architectural mb-4">
               What would solar cost
@@ -63,8 +62,8 @@ const QuickEstimate = () => {
             </p>
 
             <div className="flex items-baseline gap-3">
-              <p className="text-5xl md:text-6xl font-light text-architectural text-lime lime-underline">
-                ${est.pricePerWatt.toFixed(2)}/W
+              <p className="text-4xl md:text-5xl font-light text-architectural text-lime lime-underline">
+                {PRICE_RANGE_LABEL}
               </p>
               {promo && (
                 <span className="text-lg text-muted-foreground line-through">
@@ -73,7 +72,7 @@ const QuickEstimate = () => {
               )}
             </div>
             <p className="text-lg text-muted-foreground mt-3">
-              {formatCad(est.priceBeforeGst)} + GST · about {formatCad(est.monthlySavings)}/month saved
+              {formatCad(est.priceLow)}-{formatCad(est.priceHigh)} + GST · about {formatCad(est.monthlySavings)}/month saved
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -94,8 +93,8 @@ const QuickEstimate = () => {
               </Link>
             </div>
             <p className="text-[11px] text-muted-foreground mt-5 leading-relaxed">
-              Estimate based on Calgary yield of 1,150 kWh per kWp and a blended rate of $0.22/kWh. Final
-              quote after your free site assessment.
+              Estimate based on Calgary yield of 1,150 kWh per kWp and a blended rate of $0.22/kWh. Indicative
+              price range; fixed quote after your free site assessment.
             </p>
           </div>
         </div>
