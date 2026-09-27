@@ -7,7 +7,13 @@ export const BLENDED_RATE_PER_KWH = 0.22; // CAD, all-in incl. delivery
 export const MODULE_WATT = 500;
 export const GST = 0.05;
 
-export const isPromoActive = (now: Date = new Date()) => now.getTime() <= PROMO_DEADLINE.getTime();
+// Public price range per watt (CAD, before GST). Final price after site assessment.
+export const PRICE_MIN_PER_WATT = 1.99;
+export const PRICE_MAX_PER_WATT = 2.5;
+export const PRICE_RANGE_LABEL = `$${PRICE_MIN_PER_WATT.toFixed(2)}-$${PRICE_MAX_PER_WATT.toFixed(2)}/W`;
+
+// Launch promo is retired - kept for compatibility, always inactive.
+export const isPromoActive = (_now: Date = new Date()) => false;
 
 export const activePricePerWatt = (now: Date = new Date()) =>
   isPromoActive(now) ? PROMO_PRICE_PER_WATT : REGULAR_PRICE_PER_WATT;
@@ -35,13 +41,17 @@ export interface SolarEstimate {
   monthlySavings: number;
   annualSavings: number;
   paybackYears: number;
+  priceLow: number;
+  priceHigh: number;
 }
 
 export const estimateFromKwp = (kwp: number, annualConsumption: number, now: Date = new Date()): SolarEstimate => {
   const modules = Math.max(1, Math.round((kwp * 1000) / MODULE_WATT));
   const watts = modules * MODULE_WATT;
   const annualProduction = (watts / 1000) * YIELD_KWH_PER_KWP;
-  const pricePerWatt = activePricePerWatt(now);
+  const pricePerWatt = PRICE_MAX_PER_WATT;
+  const priceLow = watts * PRICE_MIN_PER_WATT;
+  const priceHigh = watts * PRICE_MAX_PER_WATT;
   const priceBeforeGst = watts * pricePerWatt;
   const gstAmount = priceBeforeGst * GST;
   const priceWithGst = priceBeforeGst + gstAmount;
@@ -61,7 +71,9 @@ export const estimateFromKwp = (kwp: number, annualConsumption: number, now: Dat
     priceWithGst,
     monthlySavings: annualSavings / 12,
     annualSavings,
-    paybackYears: annualSavings > 0 ? priceWithGst / annualSavings : 0,
+    paybackYears: annualSavings > 0 ? ((priceLow + priceHigh) / 2) * (1 + GST) / annualSavings : 0,
+    priceLow,
+    priceHigh,
   };
 };
 

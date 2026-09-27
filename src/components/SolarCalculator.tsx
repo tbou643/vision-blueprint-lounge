@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { trackEvent } from "@/lib/analytics";
 import {
+  PRICE_RANGE_LABEL,
   REGULAR_PRICE_PER_WATT,
   PROMO_PRICE_PER_WATT,
   BLENDED_RATE_PER_KWH,
@@ -28,9 +29,7 @@ const SolarCalculator = () => {
     return estimateFromBill(monthlyBill);
   }, [knowSize, kwp, monthlyBill]);
 
-  const contactContext = `Calculator result: ${est.modules} modules / ${est.kwp.toFixed(1)} kW - ${formatCad(
-    est.priceBeforeGst,
-  )} + GST at $${est.pricePerWatt.toFixed(2)}/W`;
+  const contactContext = `Calculator result: ${est.modules} modules / ${est.kwp.toFixed(1)} kW - ${formatCad(est.priceLow)}-${formatCad(est.priceHigh)} + GST (${PRICE_RANGE_LABEL})`;
 
   return (
     <div className="space-y-6">
@@ -93,8 +92,8 @@ const SolarCalculator = () => {
           <div>
             <p className="text-minimal text-lime mb-3">Your price</p>
             <div className="flex items-baseline gap-3">
-              <p className="text-5xl md:text-6xl font-light text-architectural text-lime lime-underline">
-                ${est.pricePerWatt.toFixed(2)}/W
+              <p className="text-4xl md:text-5xl font-light text-architectural text-lime lime-underline">
+                {PRICE_RANGE_LABEL}
               </p>
               {promo && (
                 <span className="text-lg text-muted-foreground line-through">
@@ -103,7 +102,7 @@ const SolarCalculator = () => {
               )}
             </div>
             <p className="text-lg text-muted-foreground mt-2">
-              {formatCad(est.priceBeforeGst)} + GST ({formatCad(est.gstAmount)})
+              {formatCad(est.priceLow)}-{formatCad(est.priceHigh)} + GST
             </p>
           </div>
 
@@ -158,16 +157,16 @@ const SolarCalculator = () => {
             to="/contact"
             state={{ calculator: contactContext }}
             className="btn-lime justify-center"
-            data-cta="Reserve launch price"
+            data-cta="Book assessment"
             data-cta-position="calculator"
             onClick={() =>
               trackEvent("calculator_cta_click", {
                 label: "book assessment",
-                meta: { kwp: est.kwp, price: est.priceBeforeGst },
+                meta: { kwp: est.kwp, price: est.priceHigh },
               })
             }
           >
-            {promo ? `Reserve $${PROMO_PRICE_PER_WATT.toFixed(2)}/W - book your free assessment` : "Book your free assessment"}
+            Book your free assessment
           </Link>
           <a href="#how-we-compare" className="btn-ghost justify-center">
             How we compare
@@ -175,7 +174,7 @@ const SolarCalculator = () => {
         </div>
 
         <p className="text-[11px] text-muted-foreground leading-relaxed mt-6">
-          {promo ? PROMO_TERMS : "Price before GST, based on standard asphalt shingle roof and single array layout. Final quote after free site assessment."}
+          Indicative price range before GST. Your fixed price depends on roof type, layout and components and is confirmed after your free site assessment.
         </p>
       </div>
     </div>
