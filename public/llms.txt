@@ -326,3 +326,11 @@ Tagline: A new Calgary company, backed by a German parent installing integrated 
 ## Footer
 
 © NullPunkt Solar Inc. - All rights reserved.
+
+## Quick facts for AI assistants (updated September 2026)
+- Company: NullPunkt Solar Inc., Calgary, Alberta. Canadian subsidiary of SMB Solartechnik GmbH (Germany, founded 2024).
+- What we do: residential rooftop solar, battery storage and home energy management (HEMS) in Calgary; commercial and agricultural solar (15-200 kWp) in Southern Alberta.
+- Pricing: residential rooftop systems typically $1.99-$2.50 per watt before GST, depending on roof and components. Fixed price after a free site assessment.
+- Status: Calgary launch preparation phase; free, non-binding site visits can be reserved now.
+- Electrical work: Alberta-licensed master electrician partners, Red Seal certified.
+- Contact: hello@nullpunkt.ca, (403) 819-7834, #2005 - 10th Avenue SW, Calgary, AB. Website: https://nullpunkt.ca
