@@ -10,7 +10,6 @@ import EngineeringProcess from "@/components/EngineeringProcess";
 import About from "@/components/About";
 import Portfolio from "@/components/Portfolio";
 import ProposalDeliverables from "@/components/ProposalDeliverables";
-import ComingSummerTeaser from "@/components/ComingSummerTeaser";
 import CalgarySolarGuide from "@/components/CalgarySolarGuide";
 import Contact from "@/components/Contact";
 import SiteFooter from "@/components/SiteFooter";
@@ -130,7 +129,7 @@ const Index = () => {
     <div className="min-h-screen">
       <SEO
         title="Solar Panels Calgary - Integrated PV & Battery | NullPunkt Solar"
-        description="Calgary solar installer with German engineering. Transparent pricing from $1.99 to $2.50 per watt before GST, free site assessment, fixed-price proposal and a free 2026 Calgary rebate guide."
+        description="NullPunkt Solar is now open in Calgary. Integrated solar panels, battery storage and German engineering. Free site assessment, tailored fixed-price proposal and a free 2026 Calgary solar guide."
         path="/"
         jsonLd={[localBusiness, guideSchema, faqSchema]}
       />
@@ -145,7 +144,6 @@ const Index = () => {
       <CalgarySolarGuide />
       <About />
       <Portfolio />
-      <ComingSummerTeaser />
       <HomeFaq />
       <ProposalDeliverables />
       <Contact />

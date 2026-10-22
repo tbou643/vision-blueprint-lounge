@@ -2,19 +2,19 @@ import { Link } from "react-router-dom";
 
 const milestones = [
   {
-    label: "Now (Q3 2026)",
-    title: "Now: Reserving September / October assessments",
-    body: "Founder on the ground in Calgary, incorporation active. We're booking free site visits for our first 25 Calgary homeowners, with priority engineering slots and founding-customer pricing.",
+    label: "Now · October 2026",
+    title: "Officially launched in Calgary",
+    body: "NullPunkt Solar is open for solar project enquiries. Book a free site assessment and receive a proposal tailored to your property and annual electricity consumption.",
   },
   {
-    label: "Q3 2026",
-    title: "Calgary HQ operational",
-    body: "Office open, local electrical partners on contract, supplier logistics with SMB Solartechnik mirrored to Canadian distributors, permitting playbook running on live projects.",
+    label: "Your first step",
+    title: "Site assessment & engineering",
+    body: "We assess your roof, review your consumption and model solar production. Your proposal sets out the equipment, scope and price before you decide.",
   },
   {
-    label: "Summer / Fall 2026",
-    title: "First Alberta installations",
-    body: "Residential integrated systems planned to go live across Calgary metro - fully monitored from day one.",
+    label: "Your project",
+    title: "Permitting to commissioning",
+    body: "Installation timing is confirmed for each project, subject to permitting, utility approvals and equipment availability. Electrical work is delivered with Alberta-licensed partners.",
   },
   {
     label: "2027 →",
@@ -30,16 +30,16 @@ const Portfolio = () => {
         <div className="max-w-7xl mx-auto">
           <div className="mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
             <div>
-              <p className="text-minimal text-lime mb-4">Launch roadmap</p>
+              <p className="text-minimal text-lime mb-4">Officially launched</p>
               <h2 className="text-4xl md:text-6xl font-light text-architectural">
                 NullPunkt Solar,
                 <br />
-                <span className="text-muted-foreground">coming to Calgary.</span>
+                <span className="text-muted-foreground">now open in Calgary.</span>
               </h2>
             </div>
             <p className="text-muted-foreground max-w-md leading-relaxed">
-              We're a new operation in Alberta - but not a new company. Our German parent has been
-              installing integrated systems for years. Get on the list while founding slots are open.
+              We're a new operation in Alberta, backed by SMB Solartechnik GmbH in Germany,
+              installing integrated systems since 2024. Let's put that engineering to work on your roof.
             </p>
           </div>
 
@@ -47,17 +47,17 @@ const Portfolio = () => {
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-lime/40 bg-lime/10 mb-8">
               <span className="w-1.5 h-1.5 rounded-full bg-lime animate-pulse" />
               <span className="text-[11px] tracking-[0.2em] uppercase text-lime font-medium">
-                First 25 Calgary installations · Summer 2026
+                Calgary solar projects · Now booking site assessments
               </span>
             </div>
             <div className="grid md:grid-cols-2 gap-10 items-start">
               <div>
                 <h3 className="text-3xl md:text-4xl font-light text-architectural mb-4">
-                  Reserve one of the first 25 integrated systems in Alberta.
+                  Your Calgary roof. One integrated solar system.
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Our first 25 Calgary customers receive priority engineering, fixed-price proposals locked in
-                  before commissioning, and a direct line to the team that designed the system.
+                  Start with a free assessment, a fixed-price proposal before you commit,
+                  and a direct line to the team designing your system.
                 </p>
               </div>
               <div className="space-y-4">
