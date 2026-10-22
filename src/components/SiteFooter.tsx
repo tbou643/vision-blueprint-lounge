@@ -19,7 +19,7 @@ const SiteFooter = () => {
               </p>
               <div className="flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
                 <span className="w-1.5 h-1.5 rounded-full bg-lime animate-pulse" />
-                <span>Launching Summer 2026 · Calgary, AB</span>
+                <span>Now open · Calgary, AB</span>
               </div>
             </div>
 
@@ -85,7 +85,7 @@ const SiteFooter = () => {
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-foreground transition-colors leading-relaxed block"
                   >
-                    #2005 – 10th Avenue SW
+                    #2005 - 10th Avenue SW
                     <br />
                     Calgary, Alberta - Canada
                   </a>

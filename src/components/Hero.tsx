@@ -77,7 +77,7 @@ const Hero = () => {
         <div className="reveal inline-flex items-center gap-3 px-4 py-2 rounded-full border border-lime/40 bg-lime/10 backdrop-blur-sm mb-10">
           <span className="w-1.5 h-1.5 rounded-full bg-lime animate-pulse" />
           <span className="text-[11px] tracking-[0.22em] uppercase text-lime font-medium">
-            Launch preparation phase · Reserving Calgary site visits
+            Officially launched · Calgary, Alberta
           </span>
         </div>
 
@@ -96,9 +96,9 @@ const Hero = () => {
         </h1>
 
         <p className="reveal-delayed-2 text-lg md:text-xl text-white/75 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
-          We are preparing our Calgary launch. Transparent rooftop solar from{" "}
+          We're now open in Calgary. Transparent rooftop solar from{" "}
           <span className="text-lime">$1.99 to $2.50 per watt</span> - reserve your free, non-binding
-          site visit now. Backed by SMB Solartechnik GmbH, a German parent installing integrated PV,
+          site visit and let's plan your system. Backed by SMB Solartechnik GmbH, a German parent installing integrated PV,
           battery and HEMS systems since 2024.
         </p>
 
