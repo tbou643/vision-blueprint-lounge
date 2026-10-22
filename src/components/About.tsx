@@ -100,7 +100,7 @@ const About = () => {
               at a major German industrial group.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              He's relocating to Calgary as principal directing mind of NullPunkt Solar Inc., with
+              He leads NullPunkt Solar Inc. in Calgary as principal directing mind, with
               significant committed capital and a hand on every early Alberta project. If you
               book a site visit in our first year, the engineer at your kitchen table is the
               founder.
@@ -112,7 +112,7 @@ const About = () => {
             {[
               ["Parent company", "SMB Solartechnik"],
               ["Integrated installs", "Hundreds, DE"],
-              ["Calgary launch", "Summer 2026"],
+              ["Calgary status", "Now open"],
               ["Calgary sunshine", "2,396 hrs/yr"],
             ].map(([k, v]) => (
               <div key={k} className="bg-card p-8">

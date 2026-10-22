@@ -39,7 +39,7 @@ const Contact = () => {
                   <address className="text-xl not-italic leading-relaxed">
                     NullPunkt Solar Inc.
                     <br />
-                    #2005 – 10th Avenue SW
+                    #2005 - 10th Avenue SW
                     <br />
                     Calgary, Alberta - Canada
                   </address>
@@ -53,10 +53,10 @@ const Contact = () => {
 
             {/* Right: waitlist form */}
             <div className="card-raised p-10">
-              <p className="text-minimal text-lime mb-3">First 25 Calgary installations · September / October 2026</p>
+              <p className="text-minimal text-lime mb-3">Now open in Calgary · Free site assessments</p>
               <h3 className="text-2xl font-light mb-3">Reserve your free site visit.</h3>
               <p className="text-sm text-muted-foreground mb-8">
-                We're scheduling our first 25 Calgary assessments for September and October. Tell us about your home and we'll confirm your slot personally.
+                We're now booking free Calgary site assessments. Tell us about your property and we'll contact you personally to arrange a visit.
               </p>
               <WaitlistForm source="contact-page" />
 

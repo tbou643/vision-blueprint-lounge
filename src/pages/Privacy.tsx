@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import SiteFooter from "@/components/SiteFooter";
 import SEO from "@/components/SEO";
 
-const LAST_UPDATED = "5 July 2026";
+const LAST_UPDATED = "22 October 2026";
 
 const Privacy = () => {
   return (
@@ -64,12 +64,12 @@ const Privacy = () => {
               <Section id="who-we-are" title="Who we are">
                 <p>
                   <span className="text-foreground">NullPunkt Solar Inc.</span> is a Calgary,
-                  Alberta company preparing to launch integrated solar, battery and Home Energy
-                  Management installations in Summer 2026. We are the data controller for the
+                  Alberta company offering integrated solar, battery and Home Energy
+                  Management systems. We are the data controller for the
                   personal information described on this page.
                 </p>
                 <p>
-                  Registered office: #2005 – 10th Avenue SW, Calgary, Alberta, Canada.<br />
+                  Registered office: #2005 - 10th Avenue SW, Calgary, Alberta, Canada.<br />
                   Contact: <a href="mailto:hello@nullpunkt.ca" className="text-lime hover:underline">hello@nullpunkt.ca</a>.
                 </p>
                 <p className="text-xs">
@@ -348,7 +348,7 @@ const Privacy = () => {
                   <br />
                   NullPunkt Solar Inc.
                   <br />
-                  #2005 – 10th Avenue SW, Calgary, Alberta, Canada
+                  #2005 - 10th Avenue SW, Calgary, Alberta, Canada
                 </p>
                 <p className="mt-8">
                   <Link to="/" className="btn-ghost">← Back to home</Link>

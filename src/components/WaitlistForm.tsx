@@ -86,7 +86,7 @@ const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compac
     setLoading(false);
     setDone(true);
     trackEvent("waitlist_submitted", { label: source, section: source, meta: { property_type: payload.property_type } });
-    toast({ title: "You're on the list", description: "Check your inbox for a confirmation from NullPunkt." });
+    toast({ title: "Your request is received", description: "Check your inbox for a confirmation from NullPunkt." });
   };
 
   if (done) {
@@ -95,9 +95,9 @@ const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compac
         <div className="w-12 h-12 mx-auto rounded-full bg-lime/15 border border-lime/40 flex items-center justify-center mb-4">
           <span className="text-lime text-xl">✓</span>
         </div>
-        <h3 className="text-2xl font-light mb-2">You're on the founding list</h3>
+        <h3 className="text-2xl font-light mb-2">Thanks - let's plan your solar system</h3>
         <p className="text-muted-foreground">
-          We're prioritising Calgary signups for Summer 2026. Expect a personal email from our engineering team.
+          We've received your site assessment request. Our team will contact you personally to discuss your property and arrange the next step.
         </p>
       </div>
     );

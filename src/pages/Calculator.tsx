@@ -66,18 +66,18 @@ const climateChallenges = [
   {
     title: "Deregulated electricity market",
     body:
-      "Alberta's energy-only market means rates swing 6–25 ¢/kWh. A correctly sized battery shifts your consumption to avoid peaks - turning volatility from a risk into a savings lever.",
+      "Alberta's energy-only market means rates swing 6-25 ¢/kWh. A correctly sized battery shifts your consumption to avoid peaks - turning volatility from a risk into a savings lever.",
   },
 ];
 
 const faqs = [
   {
     q: "Is solar actually worth it in Calgary?",
-    a: "Yes - and the numbers are better than most Canadians assume. Calgary's solar yield (1,292 kWh/kWp) is on par with Northern Spain. Combined with Alberta's high all-in residential rate (~16.5 ¢/kWh), simple paybacks of 8–11 years are realistic for a properly engineered system.",
+    a: "Yes - and the numbers are better than most Canadians assume. Calgary's solar yield (1,292 kWh/kWp) is on par with Northern Spain. Combined with Alberta's high all-in residential rate (~16.5 ¢/kWh), simple paybacks of 8-11 years are realistic for a properly engineered system.",
   },
   {
     q: "What size system do I need?",
-    a: "For an average Calgary single-family home (~8,500 kWh/year), 7–10 kWp covers most consumption. Add a battery if you want to ride through peak pricing or outages. Our calculator above gives you a properly-sized starting point in under a minute.",
+    a: "For an average Calgary single-family home (~8,500 kWh/year), 7-10 kWp covers most consumption. Add a battery if you want to ride through peak pricing or outages. Our calculator above gives you a properly-sized starting point in under a minute.",
   },
   {
     q: "How do hail and snow affect my system?",
@@ -89,7 +89,7 @@ const faqs = [
   },
   {
     q: "How long does installation take?",
-    a: "For a typical residential system: 1 day on the roof, 1 day for electrical + HEMS commissioning. Permitting and ENMAX/EPCOR interconnection adds 4–8 weeks depending on the utility's queue.",
+    a: "For a typical residential system: 1 day on the roof, 1 day for electrical + HEMS commissioning. Permitting and ENMAX/EPCOR interconnection adds 4-8 weeks depending on the utility's queue.",
   },
   {
     q: "Why German engineering for Alberta?",
@@ -245,8 +245,8 @@ const CalculatorPage = () => {
             Ready to talk to a real engineer?
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-10 max-w-2xl mx-auto">
-            Founding slots for Summer 2026 are limited. Reserve yours - we'll prioritise your site visit when we open
-            Calgary installations.
+            We're now open in Calgary. Book a free site assessment to turn your estimate into a tailored
+            system design and a fixed-price proposal.
           </p>
           <Link to="/contact" className="btn-lime">Reserve your free site visit →</Link>
         </div>

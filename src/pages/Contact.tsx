@@ -12,7 +12,7 @@ const localBusiness = {
   image: "https://nullpunkt.ca/logo-black.png",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "#2005 – 10th Avenue SW",
+    streetAddress: "#2005 - 10th Avenue SW",
     addressLocality: "Calgary",
     addressRegion: "AB",
     addressCountry: "CA",
@@ -24,8 +24,8 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Contact NullPunkt Solar - Calgary founding waitlist"
-        description="Get a free, no-obligation solar consultation for your Calgary or Southern Alberta property. Join the Summer 2026 founding customer waitlist."
+        title="Contact NullPunkt Solar - Free Calgary Site Assessment"
+        description="NullPunkt Solar is now open in Calgary. Book a free, no-obligation solar site assessment for your Calgary or Southern Alberta property."
         path="/contact"
         jsonLd={localBusiness}
       />
