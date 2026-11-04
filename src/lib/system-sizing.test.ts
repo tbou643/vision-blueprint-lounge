@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import assert from "node:assert/strict";
 import test from "node:test";
 import { systemFromBill, systemFromKwp } from "./system-sizing";
@@ -12,7 +13,7 @@ test("the $200 bill example retains 500 W module sizing and 1150 annual yield", 
 test("public sizing does not expose the retired installation price or return promises", () => {
   const system = systemFromBill(200);
   const prohibited = ["priceLow", "priceHigh", "pricePerWatt", "priceBeforeGst", "priceWithGst", "monthlySavings", "annualSavings", "paybackYears"];
-  for (const key of prohibited) assert.equal(Object.hasOwn(system, key), false, key);
+  for (const key of prohibited) assert.equal(Object.prototype.hasOwnProperty.call(system, key), false, key);
 });
 
 test("direct system sizing does not introduce an 8 kWp service floor", () => {
