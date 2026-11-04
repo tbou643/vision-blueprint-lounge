@@ -9,13 +9,13 @@
     "server": {
       "name": "nullpunkt-energy-mcp",
       "version": "0.1.0",
-      "title": "Nullpunkt Energy MCP"
+      "title": "NullPunkt Solar MCP"
     },
     "tools": [
       {
         "name": "get_solar_estimate",
         "title": "Get solar estimate",
-        "description": "Estimate a Calgary/Alberta solar PV system: recommended size, annual production, savings (standard vs Solar Club retailer), turn-key cost, payback, CO₂ avoided, and CEIP financing. Returns engineering baseline plus an AI-written recommendation.",
+        "description": "Return an illustrative Calgary solar system size and annual production. Pricing and financial returns require an individual quote and assessment; this tool does not quote installation prices or financing approval.",
         "annotations": {
           "readOnlyHint": true,
           "openWorldHint": false
@@ -82,7 +82,7 @@
       {
         "name": "get_services_overview",
         "title": "Get Nullpunkt services overview",
-        "description": "Return a structured overview of Nullpunkt Energy's core services, target market (Calgary / Alberta), pricing posture, and contact channels.",
+        "description": "Return a structured overview of NullPunkt Solar Inc.'s core services, target market (Calgary / Alberta), pricing posture, and contact channels.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
