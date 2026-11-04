@@ -101,26 +101,26 @@ import { defineTool as defineTool3 } from "npm:@lovable.dev/mcp-js@0.20.0";
 var get_services_overview_default = defineTool3({
   name: "get_services_overview",
   title: "Get Nullpunkt services overview",
-  description: "Return a structured overview of Nullpunkt Energy's core services, target market (Calgary / Alberta), pricing posture, and contact channels.",
+  description: "Return a structured overview of NullPunkt Solar Inc.'s core services, target market (Calgary / Alberta), pricing posture, and contact channels.",
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {
     const overview = {
-      company: "Nullpunkt Energy (Calgary subsidiary of SMB Solartechnik GmbH)",
+      company: "NullPunkt Solar Inc. (Calgary subsidiary of SMB Solartechnik GmbH)",
       slogan: "German Precision - Zero Emissions",
       market: "Calgary and greater Alberta, Canada",
       services: [
         {
           name: "Turn-key residential solar PV",
-          description: "Engineering, permits, install, commissioning and HEMS for single-family and multi-family homes. Typical 4\u201320 kWp systems, Class 3+ hail-rated panels, 30\xB0+ tilt for winter snow shedding."
+          description: "Engineering, permits, install, commissioning and HEMS for single-family and multi-family homes. Sized to actual annual consumption and the roof assessment, with optional battery storage."
         },
         {
           name: "Commercial & agricultural solar",
-          description: "150 kW\u20135 MW systems settled hourly under Alberta's Micro-Generation Regulation. Eligible for the 30% Clean Technology ITC."
+          description: "15-200 kWp systems with optional storage. Tax-credit eligibility requires individual assessment."
         },
         {
           name: "Battery storage (LFP)",
-          description: "5\u201320 kWh installed alongside PV or as retrofit; ~CAD $800/kWh turn-key."
+          description: "Optional storage selected and quoted for the specific site."
         },
         {
           name: "Solar analysis & site design",
@@ -128,10 +128,9 @@ var get_services_overview_default = defineTool3({
         }
       ],
       pricing: {
-        pvTurnkeyPerKwp: "CAD ~$2,100/kWp (all-in)",
-        batteryPerKwh: "CAD ~$800/kWh installed",
-        note: "Low end of Alberta market via direct EU supplier through SMB Solartechnik."
+        note: "Individual CAD quote after a free roof and consumption assessment. No universal public price, savings or payback promise. GST and scope identified in the proposal."
       },
+      ceip: "Calgary residential intake closed until winter 2026/2027 as checked November 4, 2026. Estimated interest 6.00%-6.10%, not 0%. Confirm current City terms and contractor eligibility.",
       programs: ["Alberta Micro-Generation Regulation", "Solar Club (UTILITYnet)", "CEIP (PACE financing)", "Clean Technology ITC (30%, commercial)"],
       contact: {
         email: "hello@nullpunkt.ca",

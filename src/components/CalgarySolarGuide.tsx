@@ -7,9 +7,9 @@ import guidePage7 from "@/assets/calgary-solar-guide-page7.jpg.asset.json";
 
 const highlights = [
   "Which federal rebates ended (Greener Homes Grant & Loan) and why old blog posts still list them",
-  "Calgary's CEIP financing: $0 down, up to $50,000, repaid via property tax",
-  "Alberta's 35 ¢/kWh Solar Club export rate, explained without the sales pitch",
-  "Real 2026 installed cost ranges ($2.40 - 3.20 per watt) for 5 - 12 kW systems",
+  "How property-assessed CEIP financing works; current intake must be checked separately",
+  "How retailer import and export plans work; historical rates are not current offers",
+  "Historical cost examples, not NullPunkt prices or binding quotes",
   "Seven questions to ask any installer before you sign",
 ];
 
@@ -56,15 +56,15 @@ const CalgarySolarGuide = () => {
             <p className="text-minimal text-lime mb-4">The 2026 Calgary solar guide</p>
             <h2 className="text-4xl md:text-5xl font-light text-architectural mb-6">
               Solar rebates in Calgary, 2026:{" "}
-              <span className="lime-underline">what's actually available.</span>
+              <span className="lime-underline">a dated homeowner reference.</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8 font-light">
               A plain-language, sales-pitch-free homeowner's guide to solar incentives in Calgary and
               Alberta - the Canada Greener Homes Grant, the City of Calgary's CEIP financing,
-              Alberta's Micro-generation Regulation, and the 35 ¢/kWh Solar Club export rate. Every
-              number is dated and sourced.
+              Alberta's Micro-generation Regulation and retailer plans. Published July 2026; rates, prices and application windows may now differ.
             </p>
 
+            <p className="text-sm text-foreground border-l-2 border-lime pl-4 mb-6">For current eligibility, <a href="https://www.calgary.ca/environment/programs/clean-energy-improvement-program.html" target="_blank" rel="noopener noreferrer" className="text-lime underline">check the City CEIP page</a> and <Link to="/blog/calgary-solar-incentives-2026" className="text-lime underline">our updated solar-program summary</Link> before relying on the PDF.</p>
             <ul className="space-y-3 mb-10">
               {highlights.map((h) => (
                 <li key={h} className="flex gap-3 text-sm text-muted-foreground leading-relaxed">
@@ -95,8 +95,7 @@ const CalgarySolarGuide = () => {
               </Link>
             </div>
             <p className="text-xs text-muted-foreground/70 mt-6">
-              Facts verified July 10, 2026 against calgary.ca, alberta.ca, NRCan, ENMAX and CMHC. No
-              email required.
+              Historical July 2026 PDF. As checked November 4, Calgary CEIP intake is closed until winter 2026/2027 and is not interest-free. PDF prices and retailer rates are not current offers. No email required.
             </p>
           </div>
         </div>
