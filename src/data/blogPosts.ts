@@ -20,87 +20,58 @@ export const blogPosts: BlogPost[] = [
     content: `
 # Calgary Solar Incentives 2026: A Homeowner's Guide
 
-Going solar in Calgary is no longer an experimental decision. The hardware has matured, electricity prices have stabilised at a new, higher baseline, and three layers of public programs now stack on top of each other to shorten the payback window. This guide walks through what is actually available in 2026, who qualifies, and the engineering details that decide whether you receive the full benefit or leave money on the table.
+Solar financing, tax credits and electricity export credits are not the same thing. For a Calgary homeowner, the first step is a roof and annual-consumption review, followed by an individual quote. Do not assume a grant, loan approval or fixed payback period.
 
-> **Disclaimer:** Program terms change. Always confirm current eligibility with the City of Calgary, Natural Resources Canada and your retailer before signing a contract. The numbers below reflect publicly available program documentation at the time of writing.
+> **Updated November 4, 2026:** Program intake and retailer terms can change. Check the official sources before applying or budgeting.
 
-## 1. The Two Layers You Can Stack
+## 1. Calgary CEIP: current intake is closed
 
-A well-designed Calgary residential project in 2026 typically combines:
+The City's Clean Energy Improvement Program offers property-assessed financing for eligible improvements when applications are open and funding is available. It is a loan repaid through the property tax bill, not a rebate.
 
-1. **Municipal financing** - the City of Calgary's Clean Energy Improvement Program (CEIP), repaid through your property tax bill.
-2. **Provincial net billing** - Alberta's Micro-Generation Regulation, which lets your retailer credit you for the electricity you export.
+As checked November 4, 2026, residential intake is closed until winter 2026/2027. The City lists estimated interest rates of **6.00%-6.10%, not 0%**. Final terms, eligibility, assessments and qualified-contractor requirements must be confirmed directly with the City. Do not assume your application will be approved or that an existing project will qualify retroactively.
 
-The federal Canada Greener Homes *Grant* closed in early 2024, and the interest-free *Loan* program has since stopped accepting new applications as well. There is no active federal cash incentive for residential solar in 2026 - which makes the municipal and provincial layers more important than ever.
+[Check the City of Calgary CEIP page](https://www.calgary.ca/environment/programs/clean-energy-improvement-program.html).
 
-> **Heads-up:** Some installers still advertise "Greener Homes" financing in their marketing. Ask explicitly whether your application would actually be funded, or whether the program is just being used as a sales hook.
+## 2. Greener Homes: not funding for a new application
 
-## 2. City of Calgary CEIP (Clean Energy Improvement Program)
+The Canada Greener Homes Grant and Loan are closed to new applicants. An existing approved application follows its own terms. Do not count these retired programs toward a new solar installation.
 
-CEIP is Calgary's local financing tool. It is technically a form of PACE (Property Assessed Clean Energy) financing: the City lends the money, and you repay it as a line item on your annual property tax bill.
+[Check the federal Canada Greener Homes Loan page](https://www.canada.ca/en/environment-climate-change/services/energy-efficiency/home-energy-efficiency/canada-greener-homes-initiative/canada-greener-homes-loan.html).
 
-- **Tied to the property, not the person.** If you sell the home, the remaining balance can transfer to the new owner (subject to lender consent).
-- **Repayment term:** Up to 20 years for solar and major envelope upgrades.
-- **Rate:** Fixed for the full term, set when the program window opens - historically competitive with prime.
-- **Eligible measures:** Solar PV, battery storage, geothermal, deep envelope retrofits.
+## 3. Alberta micro-generation: energy export credits
 
-For most Calgary homeowners, CEIP is now the primary public-financing route - it can cover the full project, including a Powerwall-class battery, with no upfront cash.
+Eligible micro-generation systems are designed to generate electricity for the customer's own use. Your retailer credits eligible surplus exports under the applicable rules and rate plan.
 
-**Technical note:** CEIP runs in defined intake windows. Plan your project around the published application calendar rather than the other way around. An EnerGuide-style energy assessment is part of the qualification process.
+**Technical note:** Export credits are not the full delivered electricity bill rate. Fixed fees remain, and imported electricity can still attract distribution, transmission and other charges. Annual production alone does not establish your savings.
 
-## 3. Alberta Micro-Generation Regulation (Net Billing)
+[Read Alberta's micro-generation information](https://www.alberta.ca/micro-generation).
 
-This is the provincial framework that allows your meter to spin in both directions. Two things matter for homeowners:
+## 4. Solar Club: compare imports as well as exports
 
-- **Eligible system size:** Up to 5 MW, far beyond any residential need. Practically, your system is sized to your annual consumption.
-- **Credit value:** You are credited at your retailer's energy rate (not the full delivered cost). The exact number depends on which retailer you are with - Enmax, Direct Energy and the various competitive retailers all publish slightly different micro-gen rates.
+Participating retailers offer solar-specific rate plans. A higher energy rate may apply to both exports and imports during a selected period. Compare current rates, fees, switching conditions and your expected seasonal balance. A high export rate is not a guaranteed financial benefit.
 
-**Homeowner takeaway:** Pick your retailer deliberately. The difference between the best and worst micro-gen rate in Alberta can shift your payback by 12-18 months on a typical 10 kW system.
+[Check current Solar Club information](https://solarclub.ca/).
 
-**Technical note:** Credits are applied energy-for-energy in cents, but you still pay distribution and transmission charges on imported kWh. A battery improves the economics by raising your self-consumption ratio - typically from ~30% (PV only) to 65-80% (PV + battery + smart control) on a south-facing Calgary roof.
+## 5. What decides your solar cost and payback?
 
-## 5. The Hidden Variables That Decide Your Payback
+- **Annual electricity use:** Start with 12 months of actual kWh, not just the dollar bill.
+- **Roof condition:** Consider the remaining roof life before installing an array, and discuss any future removal and reinstallation costs.
+- **Shading and orientation:** The roof layout determines production; a generic Calgary average is not a site-specific forecast.
+- **Electrical scope:** Equipment, service upgrades, permits and installation details affect cost.
+- **Optional storage:** Assess battery cost, usable capacity, operating strategy and backup circuits separately.
+- **Retailer terms:** Model self-consumption, exported energy, imported electricity and the charges that remain.
 
-Two homes on the same street, with the same array size, can have payback periods two years apart. The differences usually come down to:
+We do not advertise a universal installation price, guaranteed savings or a standard payback period. Your individual CAD quote identifies the scope and GST. Any financial model must use that quoted cost and clearly stated assumptions.
 
-### Roof orientation and pitch
-Calgary's optimal tilt for annual yield sits around 45°. South-facing is best, but east/west splits perform surprisingly well in summer - and matter more if you have a battery, because you flatten the production curve.
+## 6. Your next step
 
-### Inverter and string design
-A poorly zoned string inverter on a partially shaded roof can lose 15-20% of annual yield. Microinverters or DC optimisers cost more upfront but recover the difference within a few years on most Calgary roofs, which tend to have at least one chimney, vent stack or tree edge causing partial shading.
+Request a free consultation to review your roof and electricity use. A site assessment can follow if appropriate; there is no obligation to buy or book a visit.
 
-### Snow management
-Calgary winters are sunny but snowy. Module tilt, frame height and the dark-glass thermal effect all influence how quickly snow sheds. A 40°+ tilt sheds passively within hours of sunrise on a clear day; a 15° tilt on a low-slope roof may sit under snow for days.
-
-### Battery dispatch logic
-A battery is only as good as the software running it. A well-tuned Home Energy Management System (HEMS) prioritises self-consumption when export credits are low and exports aggressively during peak retail hours when they are high. This is where the parent-company OpenEMS stack we bring from Germany pays off - it is rules-based, transparent and tunable, not a black box.
-
-## 6. A Realistic Calgary Example
-
-A 10.4 kW rooftop array with a 13.5 kWh battery on a south-facing, 35°-pitch roof in Calgary, designed with proper string layout and HEMS control:
-
-- **System cost:** roughly $38,000 - $45,000 installed, depending on roof complexity and battery brand.
-- **Annual yield:** ~12,500 kWh.
-- **Self-consumption with battery + HEMS:** 70-80%.
-- **Combined annual benefit (avoided imports + export credits):** $2,200 - $2,800 at current Alberta rates.
-- **Financing:** CEIP can cover the full project amount, repaid through the property tax bill over up to 20 years.
-- **Net cash-flow position:** Positive from year one in most scenarios; full payback in 9-12 years; 25-year linear-warranty modules continue producing well beyond that.
-
-## 7. How to Approach Your Project
-
-1. **Start with consumption data.** Pull 12 months of hourly data from your retailer before any installer designs an array.
-2. **Check the next CEIP intake window early.** It is the gatekeeper for municipal financing and has fixed application dates.
-3. **Get an engineered proposal, not a sales quote.** A real proposal includes a yield simulation, a single-line diagram, a bill-of-materials, and a payback model. If you do not see those, you are looking at a sales sheet.
-4. **Choose your retailer with the micro-gen rate in mind.** Switching retailers is a five-minute task with multi-year financial consequences.
-5. **Design for the battery you may add later**, even if you start with PV only. Cable sizing, inverter choice and panel position all matter.
-
----
-
-If you would like a no-pressure review of your roof and your last 12 months of consumption against the current programs, that is exactly the conversation we are set up to have. We will tell you when the numbers do not work - and walk away - just as readily as when they do.
+[Request your free Calgary solar consultation](/contact) or [explore an illustrative system size](/calculator).
     `,
     author: "NullPunkt Engineering",
-    date: "2026-06-23",
-    readTime: "9 min read",
+    date: "2026-11-04",
+    readTime: "5 min read",
     category: "INCENTIVES",
     image: calgaryIncentivesImg
   }

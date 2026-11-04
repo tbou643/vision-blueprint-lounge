@@ -4,97 +4,38 @@ import SEO from "@/components/SEO";
 import SolarCalculator from "@/components/SolarCalculator";
 import PriceTrust from "@/components/PriceTrust";
 
+import { CEIP_STATUS, CEIP_SOURCE } from "@/lib/solar-facts";
 import { Link } from "react-router-dom";
 
 const calgaryFacts = [
-  { stat: "333", unit: "sunny days / year", note: "More than Miami. Calgary is one of Canada's top solar cities." },
-  { stat: "1,292", unit: "kWh / kWp / year", note: "Specific yield - beats Berlin (~1,050) and most of Europe." },
-  { stat: "+8%", unit: "winter cold bonus", note: "Cold panels are efficient panels. Alberta winters help." },
-  { stat: "~450 g", unit: "CO₂ / kWh grid", note: "Alberta's grid carbon intensity (AESO, 2024 after the last coal unit converted to natural gas) - every solar kWh still meaningfully cleaner than the grid mix." },
+  { stat: "1,150", unit: "kWh / kWp / year", note: "Illustrative annual production assumption. Actual yield depends on roof orientation, shading and snow." },
+  { stat: "12", unit: "months of electricity use", note: "Actual annual consumption in kWh is the starting point for your design, not roof area alone." },
+  { stat: "Optional", unit: "battery storage", note: "Storage is assessed separately for your consumption pattern and backup goals." },
+  { stat: "Individual", unit: "project quote", note: "Roof, equipment, electrical upgrades and installation scope determine your price." },
 ];
 
 const incentives = [
-  {
-    name: "Solar Club (UTILITYnet retailer program)",
-    amount: "~35 ¢/kWh export",
-    detail:
-      "An Alberta-only retailer rate structure offered through UTILITYnet that pays roughly 35 ¢/kWh for exported solar and charges around 8.4 ¢/kWh for consumption (verified May 2026 - rates set monthly). It dramatically improves payback for systems that export a meaningful share of production. Not always the best fit - when self-consumption is very high (e.g. big battery + heat pump), a standard retailer can win. We model both in your proposal.",
-  },
-  {
-    name: "Clean Energy Improvement Program (CEIP)",
-    amount: "0% PACE financing",
-    detail:
-      "$0-upfront property-assessed clean energy financing for residential and commercial owners in 26+ participating Alberta municipalities (Calgary, Edmonton, Lethbridge, Banff and more). Repaid through the property tax bill over up to 20 years; obligation transfers with the property if sold (Alberta Municipalities).",
-  },
-  {
-    name: "Clean Technology Investment Tax Credit",
-    amount: "30% refundable",
-    detail:
-      "Federal refundable tax credit on the capital cost of new solar PV and battery storage for commercial, agricultural, and developer-scale projects in Canada. Available through Dec 31, 2034 (CRA / NRCan).",
-  },
-  {
-    name: "Alberta Micro-Generation Regulation",
-    amount: "Net billing",
-    detail:
-      "Small micro-generators under 150 kW are credited monthly at their retail energy rate for surplus exported to the grid. Systems from 150 kW to 5 MW are settled hourly. Administered by the Alberta Utilities Commission.",
-  },
-  {
-    name: "Agrivoltaics & cold-climate research funding",
-    amount: "Project-based",
-    detail:
-      "Federal NRCan and Alberta-administered programs (RDAR, ERA) co-fund agri-PV and cold-climate solar demonstrations. We help eligible farms and developers structure applications.",
-  },
+  { name: "Solar Club retailer plans", amount: "Variable retailer rates", detail: "Participating retailers offer solar-specific import and export plans. Compare current high and low energy rates, fees, timing and your expected exports. A high export rate is not a guaranteed saving and may also apply to imported electricity." },
+  { name: "Calgary Clean Energy Improvement Program (CEIP)", amount: "Intake currently closed", detail: CEIP_STATUS, source: CEIP_SOURCE },
+  { name: "Clean Technology Investment Tax Credit", amount: "Eligibility-dependent", detail: "A federal credit may apply to qualifying business entities and eligible clean-technology equipment. It is not a general homeowner solar rebate. Confirm eligibility, labour requirements and current terms with a qualified tax adviser." },
+  { name: "Alberta Micro-Generation Regulation", amount: "Energy export credits", detail: "Eligible systems generate electricity for the customer's own use and receive retailer energy credits for surplus exports. Credits are not the full delivered bill rate; fixed charges and charges on imported electricity can remain payable." },
+  { name: "Canada Greener Homes Grant and Loan", amount: "Closed to new applicants", detail: "Do not include these retired programs in the funding plan for a new application. An existing approved application is governed by its own terms." },
 ];
 
-
 const climateChallenges = [
-  {
-    title: "Hail",
-    body:
-      "Calgary sits in Canada's hail capital. We spec only IEC 61215 Class 3+ panels - the same panels rated for German alpine installations - and back them with our own workmanship warranty.",
-  },
-  {
-    title: "Snow load & shedding",
-    body:
-      "Alberta Building Code ground snow loads near Calgary reach 1.0 kPa. We design at 30°+ tilts with frameless or low-edge frames so snow sheds within hours of sunrise rather than sitting for weeks.",
-  },
-  {
-    title: "Chinooks & thermal cycling",
-    body:
-      "−25 °C to +15 °C in 12 hours is normal. We use UV-stabilised cabling, glass-glass modules where applicable, and torque-checked mounting - every joint engineered for ~80 K thermal swings.",
-  },
-  {
-    title: "Deregulated electricity market",
-    body:
-      "Alberta's energy-only market means rates swing 6-25 ¢/kWh. A correctly sized battery shifts your consumption to avoid peaks - turning volatility from a risk into a savings lever.",
-  },
+  { title: "Roof condition and hail", body: "Review the remaining roof life before installing solar. Discuss the selected module's documented hail testing, warranty exclusions and your home insurance rather than assuming any panel is hail-proof." },
+  { title: "Snow and roof loads", body: "Snow can reduce winter production. Mounting, roof pitch and structural requirements are assessed for the specific property; annual production modelling includes seasonal variation." },
+  { title: "Shading and orientation", body: "Trees, neighbouring buildings and roof faces affect output. Equipment and array layout are selected after the roof review, not from a universal yield promise." },
+  { title: "Electricity rates", body: "Compare your current energy rate, import charges, export credit and fixed fees. Battery storage and a retailer change may help in some cases, but must be evaluated against their cost." },
 ];
 
 const faqs = [
-  {
-    q: "Is solar actually worth it in Calgary?",
-    a: "Yes - and the numbers are better than most Canadians assume. Calgary's solar yield (1,292 kWh/kWp) is on par with Northern Spain. Combined with Alberta's high all-in residential rate (~16.5 ¢/kWh), simple paybacks of 8-11 years are realistic for a properly engineered system.",
-  },
-  {
-    q: "What size system do I need?",
-    a: "For an average Calgary single-family home (~8,500 kWh/year), 7-10 kWp covers most consumption. Add a battery if you want to ride through peak pricing or outages. Our calculator above gives you a properly-sized starting point in under a minute.",
-  },
-  {
-    q: "How do hail and snow affect my system?",
-    a: "Our modules are hail-rated to 35 mm at 27 m/s (IEC 61215 Class 3). We mount at 30°+ tilts so snow sheds rapidly. Our German parent company has not had to replace a panel due to weather on its installations to date - and we engineer the Alberta systems to the same spec.",
-  },
-  {
-    q: "Can I go fully off-grid in Alberta?",
-    a: "Possible for acreages and farms, but rarely cost-optimal. The Micro-Generation Regulation makes a grid-tied + battery system more economical for nearly every site. We'll model both scenarios honestly during your site visit.",
-  },
-  {
-    q: "How long does installation take?",
-    a: "For a typical residential system: 1 day on the roof, 1 day for electrical + HEMS commissioning. Permitting and ENMAX/EPCOR interconnection adds 4-8 weeks depending on the utility's queue.",
-  },
-  {
-    q: "Why German engineering for Alberta?",
-    a: "Germany installs over 1 GW of residential solar every month - they've already solved the integration problems (battery + EV + heat pump + grid) Canada is just starting to face. We bring that playbook to Calgary, with local crews and Canadian warranty coverage.",
-  },
+  { q: "Is solar worth it for my Calgary home?", a: "It depends on the quoted installation cost, roof suitability, annual electricity use and retailer terms. We model those factors in an individual proposal rather than promising a universal payback period." },
+  { q: "What size system do I need?", a: "Start with 12 months of electricity use in kWh. Our sizing tool uses a bill-based approximation only. A final recommendation accounts for your roof, shading, electrical requirements and utility approval." },
+  { q: "Do I need a battery?", a: "No. Battery storage is optional and should be justified by your consumption pattern, economics and backup needs. Backup capability depends on the specific equipment and circuits included." },
+  { q: "Can I apply for Calgary CEIP now?", a: CEIP_STATUS },
+  { q: "How long does installation take?", a: "Timing is confirmed in your proposal, subject to engineering, permits, utility approvals and equipment availability. We do not promise a universal installation date." },
+  { q: "What does German engineering mean here?", a: "NullPunkt Solar is the wholly-owned Canadian subsidiary of SMB Solartechnik GmbH, installing integrated systems in Germany since 2024. We bring that design and commissioning experience to Calgary with Alberta-licensed electrical partners." },
 ];
 
 const faqJsonLd = {
@@ -111,8 +52,8 @@ const CalculatorPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Solar Calculator - Calgary yield, payback & incentives | NullPunkt"
-        description="Run your Calgary solar numbers: PV yield, battery sizing, Solar Club rates, CEIP financing, payback. Engineering math, not marketing fluff."
+        title="Solar System Size Calculator Calgary | NullPunkt Solar"
+        description="Estimate your Calgary solar system size and production. Review roof suitability, optional storage and current financing information; request an individual quote."
         path="/calculator"
         jsonLd={faqJsonLd}
       />
@@ -124,11 +65,10 @@ const CalculatorPage = () => {
           <div className="max-w-3xl">
             <p className="text-minimal text-lime mb-6">Calgary · Alberta · Canada</p>
             <h1 className="text-5xl md:text-7xl font-light text-architectural mb-8">
-              How much sun is your <span className="lime-underline">roof wasting?</span>
+              Solar system sizing <span className="lime-underline">for Calgary.</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed font-light">
-              Calgary gets more solar than Berlin, Frankfurt, or Munich. Run the same engineering math our German parent
-              company has used on hundreds of European installations - calibrated for Alberta's grid, weather, and tariffs.
+              Estimate a starting system size, then let us review your actual annual consumption and roof. Your installation cost and financial case are calculated in an individual proposal.
             </p>
           </div>
         </div>
@@ -156,11 +96,10 @@ const CalculatorPage = () => {
           <div className="max-w-2xl mb-12">
             <p className="text-minimal text-lime mb-4">The calculator</p>
             <h2 className="text-4xl md:text-5xl font-light text-architectural mb-6">
-              Engineering math, not marketing fluff.
+              A starting point, not a final design.
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Built on Calgary's real irradiance data, Alberta's all-in retail rate, and the Micro-Generation export
-              credit - grounded on the same numbers our engineers use.
+              This bill-based approximation is not a savings model. We confirm size using 12 months of electricity use in kWh and a property assessment.
             </p>
           </div>
           <SolarCalculator />
@@ -174,13 +113,12 @@ const CalculatorPage = () => {
       <section className="py-24 border-t border-border bg-card">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="max-w-2xl mb-12">
-            <p className="text-minimal text-lime mb-4">Money on the table</p>
+            <p className="text-minimal text-lime mb-4">Programs and retailer options</p>
             <h2 className="text-4xl md:text-5xl font-light text-architectural mb-6">
-              Alberta & federal incentives, as of 2026.
+              Check eligibility before budgeting.
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              We don't sell the rebate - we engineer the system. But every NullPunkt proposal includes a stacked
-              incentive breakdown so you see your real, after-rebate cost.
+              Financing, tax credits and export credits are different things. None is assumed approved in your quote. Information checked November 4, 2026; terms may change.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -189,6 +127,7 @@ const CalculatorPage = () => {
                 <p className="text-minimal text-lime mb-3">{inc.amount}</p>
                 <h3 className="text-xl font-light mb-3">{inc.name}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{inc.detail}</p>
+                {inc.source && <a href={inc.source} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-sm text-lime underline">Check the City of Calgary CEIP page</a>}
               </div>
             ))}
           </div>
@@ -201,7 +140,7 @@ const CalculatorPage = () => {
           <div className="max-w-2xl mb-12">
             <p className="text-minimal text-lime mb-4">Built for Alberta weather</p>
             <h2 className="text-4xl md:text-5xl font-light text-architectural mb-6">
-              Calgary breaks ordinary solar systems. Ours are over-engineered for it.
+              Roof suitability comes before panel selection.
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">

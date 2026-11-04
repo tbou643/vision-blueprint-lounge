@@ -1,5 +1,7 @@
-# Launch update
+# Calgary enquiry and search improvements
 
-- [x] Update homepage and shared contact/footer copy to officially launched.
-- [x] Align linked pages and AI-search launch information; remove obsolete summer teaser from homepage.
-- [x] Verify launch messaging and contact navigation in the preview.
+- [x] Replace public price promises with individual quotes; retain sizing and enquiry context.
+- [x] Correct CEIP and AI-search facts, sitemap entries and organization imagery.
+- [x] Improve Calgary homeowner messaging and existing services content.
+- [x] Verify desktop/mobile enquiry flow, sizing tests and search metadata; real test enquiry saved and removed.
+- [ ] External acquisition: Google Business Profile confirmation and advertising budget require Tim's input.

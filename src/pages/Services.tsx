@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import SiteFooter from "@/components/SiteFooter";
 import SEO from "@/components/SEO";
+import { CEIP_STATUS, CEIP_SOURCE } from "@/lib/solar-facts";
 import { Link } from "react-router-dom";
 
 const Services = () => {
@@ -10,14 +11,14 @@ const Services = () => {
       title: "Residential Integrated Systems",
       tag: "B2C · Calgary metro",
       description:
-        "Fully integrated solar energy systems for owner-occupied homes. Engineered as one ecosystem rather than a stack of separately installed devices - increasing self-consumption from 25-40% (PV-only) to 70-85%.",
+        "Rooftop solar for Calgary homeowners, designed around actual annual electricity use, roof condition and shading. Battery storage and energy management are optional and assessed against your goals and budget.",
       features: [
         "Tier-1 PV sized to your annual consumption, up to 15 kWp, with Hail Class HW5 modules",
-        "5-15 kWh LFP battery storage (UL 9540)",
+        "Optional battery storage, selected for the site and required certifications",
         "Intelligent HEMS - OpenEMS-based, no vendor lock-in",
-        "Heat-pump and EV-charger readiness pre-wired",
+        "Optional EV and energy-management integration; no heat-pump installation",
       ],
-      price: "Typically CAD $14,000 - $44,000 turn-key, depending on system size",
+      price: "Individual project quote",
       priceNote: "All-in: hardware, install, permits, ENMAX/EPCOR interconnection, HEMS commissioning",
     },
     {
@@ -32,8 +33,8 @@ const Services = () => {
         "Demand-charge and time-of-use optimisation",
         "Agri-PV configurations for farms",
       ],
-      price: "From CAD $1,800 / kWp",
-      priceNote: "Typical projects $40,000 - $320,000 · 30% federal Clean Tech ITC eligible",
+      price: "Individual commercial quote",
+      priceNote: "Scope and pricing confirmed after site review; tax-credit eligibility requires individual assessment",
     },
     {
       number: "03",
@@ -47,7 +48,7 @@ const Services = () => {
         "Marketing collateral for builder sales teams",
         "Single point of contact for the entire subdivision",
       ],
-      price: "From CAD $16,500 per unit",
+      price: "Project-specific volume quote",
       priceNote: "Volume pricing from 10+ units · battery optional add-on",
     },
     {
@@ -62,7 +63,7 @@ const Services = () => {
         "25-year module performance warranty management",
         "5-year NullPunkt Solar workmanship guarantee",
       ],
-      price: "Included + CAD $180–$360 / yr optional",
+      price: "Maintenance scope quoted separately",
       priceNote: "Monitoring free for life · Annual inspection + cleaning packages optional",
     },
   ];
@@ -71,31 +72,31 @@ const Services = () => {
     {
       step: "01",
       title: "Free site assessment",
-      duration: "Week 1",
+      duration: "First step",
       body: "Site visit in Calgary metro, roof + electrical inspection, irradiance & shading study with PV*SOL, honest go / no-go recommendation.",
     },
     {
       step: "02",
       title: "Fixed-price proposal",
-      duration: "Week 2",
-      body: "Detailed yield simulation, stacked incentive breakdown (Solar Club, CEIP, Clean Tech ITC), and a single-page fixed quote - no upsells later.",
+      duration: "After site review",
+      body: "Yield modelling, itemised equipment and installation scope, applicable program eligibility and a project-specific quote. Financing and tax credits are not assumed approved.",
     },
     {
       step: "03",
       title: "Engineering & permits",
-      duration: "Week 3–8",
+      duration: "Approval-dependent",
       body: "Stamped electrical drawings, City of Calgary permit, ENMAX/EPCOR micro-generation application. We handle every form.",
     },
     {
       step: "04",
       title: "Installation",
-      duration: "1–2 days on site",
-      body: "Day 1: roof and racking. Day 2: electrical, battery, HEMS commissioning. Work is delivered by our vetted Alberta master-electrician partners with a NullPunkt project lead on site every day.",
+      duration: "Scope-dependent",
+      body: "Roof mounting, electrical work and optional storage are coordinated to the approved scope. The installation schedule is confirmed individually with Alberta-licensed partners.",
     },
     {
       step: "05",
       title: "Commissioning & handover",
-      duration: "Week 9–10",
+      duration: "After approvals",
       body: "Utility inspection, permission-to-operate, customer walkthrough on the HEMS dashboard, monitoring activated for life.",
     },
     {
@@ -116,41 +117,25 @@ const Services = () => {
   ];
 
   const financing = [
-    {
-      name: "Cash purchase",
-      headline: "Best lifetime ROI",
-      body: "Pay turn-key on milestones (30% deposit, 60% delivery, 10% PTO). Fastest payback, full ownership of every kWh.",
-    },
-    {
-      name: "CEIP 0% PACE financing",
-      headline: "$0 upfront",
-      body: "Property-assessed clean-energy loan repaid through your property-tax bill over up to 20 years. Available in Calgary, Edmonton, Lethbridge, Banff and 20+ other Alberta municipalities. Obligation transfers if you sell.",
-    },
-    {
-      name: "Bank green loan",
-      headline: "Prime + 1–3%",
-      body: "We partner with Alberta credit unions offering dedicated solar loan products. Pre-approval typically within 5 business days.",
-    },
-    {
-      name: "Commercial leasing",
-      headline: "Off-balance-sheet",
-      body: "For commercial and agricultural clients - operating leases that preserve borrowing capacity and capture the 30% federal Clean Tech ITC.",
-    },
+    { name: "Cash purchase", headline: "Individual terms", body: "Payment milestones and the full CAD cost, including GST, are set out in your project proposal. Compare lifetime costs without assuming financing is cheaper." },
+    { name: "Calgary CEIP", headline: "Intake closed", body: CEIP_STATUS, source: CEIP_SOURCE },
+    { name: "Private financing", headline: "Lender approval", body: "If you arrange a bank or credit-union loan, compare interest, fees and repayment terms directly with the lender. We do not promise approval, a specific rate or an existing lending partnership." },
+    { name: "Business tax credits", headline: "Eligibility-dependent", body: "Qualifying businesses may be eligible for clean-technology tax credits. Confirm equipment, entity and labour requirements with your tax adviser before including any credit in the project budget." },
   ];
 
   const comparison = [
-    { feature: "Engineering before quoting", us: "Always - stamped PV*SOL yield study", them: "Rarely - rule-of-thumb sizing" },
-    { feature: "Battery integrated from day one", us: "Standard on every residential build", them: "Bolted on later, often incompatible" },
-    { feature: "Workmanship warranty", us: "5 years, transferable", them: "1–2 years typical" },
-    { feature: "Crews", us: "Vetted Alberta master-electrician partners, NullPunkt project lead on site", them: "Anonymous subcontracted day labour" },
-    { feature: "HEMS / monitoring", us: "Open-source, free for life", them: "Proprietary, often paid subscription" },
-    { feature: "After-sales response", us: "Same-day diagnosis · ≤72h on-site", them: "Multi-week ticket queues" },
+    { feature: "System sizing", us: "Annual consumption and site assessment", them: "Which annual kWh and roof assumptions are used?" },
+    { feature: "Battery storage", us: "Optional, assessed separately", them: "Does the battery cost justify the expected benefit?" },
+    { feature: "Warranty coverage", us: "Documented in the proposal", them: "Who handles warranty claims and exclusions?" },
+    { feature: "Electrical work", us: "Alberta-licensed electrical partners", them: "Who is responsible for the permitted electrical scope?" },
+    { feature: "Quote scope", us: "Equipment, installation and GST identified", them: "Are electrical upgrades and permits included?" },
+    { feature: "Project timing", us: "Confirmed individually", them: "Which permits and utility approvals are still needed?" },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Solar Services - Residential, Commercial & Developer | NullPunkt"
+        title="Solar Installation Calgary - Residential & Commercial | NullPunkt"
         description="Four integrated solar service lines for Calgary and Alberta: residential PV+battery+HEMS, commercial and agri PV, developer partnerships, and lifetime monitoring."
         path="/services"
       />
@@ -196,7 +181,7 @@ const Services = () => {
                   </ul>
                   <div className="pt-4 border-t border-border space-y-1">
                     <div className="flex items-center justify-between gap-4 flex-wrap">
-                      <p className="text-minimal text-muted-foreground">Reference pricing (2026)</p>
+                      <p className="text-minimal text-muted-foreground">Your proposal</p>
                       <p className="text-lime font-semibold">{s.price}</p>
                     </div>
                     <p className="text-xs text-muted-foreground">{s.priceNote}</p>
@@ -206,8 +191,7 @@ const Services = () => {
             ))}
           </div>
           <p className="text-xs text-muted-foreground text-center max-w-3xl mx-auto mt-6">
-            All pricing in CAD, exclusive of GST. Final price depends on roof complexity, electrical
-            upgrades, and selected hardware tier. Quoted prices are fixed - not estimates.
+            We do not publish a universal installation price. Your individual CAD quote identifies GST, equipment, roof work, permits and electrical upgrades. Optional storage is priced separately.
           </p>
         </div>
       </section>
@@ -218,7 +202,7 @@ const Services = () => {
           <div className="max-w-2xl mb-14">
             <p className="text-minimal text-lime mb-4">How we work</p>
             <h2 className="text-4xl md:text-5xl font-light text-architectural mb-6">
-              From first call to permission-to-operate - typically 8–10 weeks.
+              From roof review to permission-to-operate.
             </h2>
             <p className="text-muted-foreground leading-relaxed">
               A predictable, transparent process. You always know what step we're on, what's blocking
@@ -266,7 +250,7 @@ const Services = () => {
           <div className="max-w-2xl mb-14">
             <p className="text-minimal text-lime mb-4">Financing options</p>
             <h2 className="text-4xl md:text-5xl font-light text-architectural mb-6">
-              Four ways to pay. We help you pick the cheapest one.
+              Financing is not a rebate.
             </h2>
             <p className="text-muted-foreground leading-relaxed">
               We're installers, not lenders - so we'll always show you the math behind every option, including
@@ -281,6 +265,7 @@ const Services = () => {
                   <p className="text-minimal text-lime whitespace-nowrap">{f.headline}</p>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">{f.body}</p>
+                {f.source && <a href={f.source} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-sm text-lime underline">Check current CEIP terms</a>}
               </div>
             ))}
           </div>
@@ -293,17 +278,17 @@ const Services = () => {
           <div className="max-w-2xl mb-14">
             <p className="text-minimal text-lime mb-4">Why NullPunkt</p>
             <h2 className="text-4xl md:text-5xl font-light text-architectural mb-6">
-              How we compare to a typical Alberta installer.
+              What to check in any solar quote.
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Honest, no-marketing comparison. If another installer matches all six rows, hire them - they're good.
+              Use the same questions for every proposal. Compare scope, not just a headline price.
             </p>
           </div>
           <div className="card-raised overflow-hidden">
             <div className="grid grid-cols-12 gap-4 px-6 py-4 border-b border-border bg-background/40">
               <p className="col-span-5 text-minimal text-muted-foreground">What matters</p>
               <p className="col-span-4 text-minimal text-lime">NullPunkt Solar</p>
-              <p className="col-span-3 text-minimal text-muted-foreground">Typical installer</p>
+              <p className="col-span-3 text-minimal text-muted-foreground">Ask any installer</p>
             </div>
             {comparison.map((row, i) => (
               <div

@@ -1,13 +1,13 @@
 import { defineTool } from "@lovable.dev/mcp-js";
 import { z } from "zod";
-
-declare const process: { env: Record<string, string | undefined> };
+import { systemFromBill } from "../../system-sizing";
+import { QUOTE_NOTE, CEIP_STATUS } from "../../solar-facts";
 
 export default defineTool({
   name: "get_solar_estimate",
   title: "Get solar estimate",
   description:
-    "Estimate a Calgary/Alberta solar PV system: recommended size, annual production, savings (standard vs Solar Club retailer), turn-key cost, payback, CO₂ avoided, and CEIP financing. Returns engineering baseline plus an AI-written recommendation.",
+    "Return an illustrative Calgary solar system size and annual production. Pricing and financial returns require an individual quote and assessment; this tool does not quote installation prices or financing approval.",
   inputSchema: {
     monthlyBill: z.number().positive().describe("Monthly electricity bill in CAD."),
     propertyType: z
@@ -23,27 +23,12 @@ export default defineTool({
   },
   annotations: { readOnlyHint: true, openWorldHint: false },
   handler: async (input) => {
-    const url = process.env.SUPABASE_URL;
-    const anon = process.env.SUPABASE_ANON_KEY ?? process.env.SUPABASE_PUBLISHABLE_KEY;
-    if (!url || !anon) {
-      return { content: [{ type: "text", text: "Server not configured." }], isError: true };
-    }
-    const res = await fetch(`${url}/functions/v1/solar-analysis`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${anon}`,
-        apikey: anon,
-      },
-      body: JSON.stringify(input),
-    });
-    const data = await res.json();
-    if (!res.ok) {
-      return {
-        content: [{ type: "text", text: `Solar analysis failed: ${JSON.stringify(data)}` }],
-        isError: true,
-      };
-    }
+    const data = {
+      ...systemFromBill(input.monthlyBill),
+      quote: QUOTE_NOTE,
+      ceip: CEIP_STATUS,
+      assumptions: "500 W modules, 1,150 kWh/kWp/year and $0.22/kWh for approximate consumption. Final size uses actual annual kWh, roof condition, shading and utility requirements. No savings or payback guarantee.",
+    };
     return {
       content: [{ type: "text", text: JSON.stringify(data, null, 2) }],
       structuredContent: data,

@@ -2,16 +2,13 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { trackEvent } from "@/lib/analytics";
 import {
-  PRICE_RANGE_LABEL,
-  REGULAR_PRICE_PER_WATT,
-  PROMO_PRICE_PER_WATT,
   BLENDED_RATE_PER_KWH,
-  estimateFromBill,
-  estimateFromKwp,
   formatCad,
-  isPromoActive,
-  PROMO_TERMS,
 } from "@/lib/pricing";
+
+import { systemFromBill, systemFromKwp } from "@/lib/system-sizing";
+import { QUOTE_NOTE } from "@/lib/solar-facts";
+import { Button } from "@/components/ui/button";
 
 const SolarCalculator = () => {
   const [monthlyBill, setMonthlyBill] = useState(200);
@@ -19,17 +16,17 @@ const SolarCalculator = () => {
   const [kwp, setKwp] = useState(8);
   const [showDetails, setShowDetails] = useState(false);
 
-  const promo = isPromoActive();
+
 
   const est = useMemo(() => {
     if (knowSize) {
       const annualConsumption = (monthlyBill * 12) / BLENDED_RATE_PER_KWH;
-      return estimateFromKwp(kwp, annualConsumption);
+      return systemFromKwp(kwp, annualConsumption);
     }
-    return estimateFromBill(monthlyBill);
+    return systemFromBill(monthlyBill);
   }, [knowSize, kwp, monthlyBill]);
 
-  const contactContext = `Calculator result: ${est.modules} modules / ${est.kwp.toFixed(1)} kW - ${formatCad(est.priceLow)}-${formatCad(est.priceHigh)} + GST (${PRICE_RANGE_LABEL})`;
+  const contactContext = `Sizing estimate: ${est.modules} modules / ${est.kwp.toFixed(1)} kW; monthly bill ${formatCad(monthlyBill)}. Please review my actual annual consumption and provide an individual quote.`;
 
   return (
     <div className="space-y-6">
@@ -54,13 +51,13 @@ const SolarCalculator = () => {
           </div>
 
           <div className="mt-5">
-            <button
+            <Button variant="ghost"
               type="button"
               onClick={() => setKnowSize(!knowSize)}
-              className="text-xs tracking-wide text-muted-foreground hover:text-lime transition-colors"
+              className="h-auto px-0 whitespace-normal text-xs tracking-wide text-muted-foreground hover:text-lime transition-colors"
             >
               {knowSize ? "− Use my power bill instead" : "+ I know my system size"}
-            </button>
+            </Button>
             {knowSize && (
               <div className="mt-4 flex items-center gap-5">
                 <input
@@ -90,20 +87,9 @@ const SolarCalculator = () => {
           </div>
 
           <div>
-            <p className="text-minimal text-lime mb-3">Your price</p>
-            <div className="flex items-baseline gap-3">
-              <p className="text-4xl md:text-5xl font-light text-architectural text-lime lime-underline">
-                {PRICE_RANGE_LABEL}
-              </p>
-              {promo && (
-                <span className="text-lg text-muted-foreground line-through">
-                  ${REGULAR_PRICE_PER_WATT.toFixed(2)}/W
-                </span>
-              )}
-            </div>
-            <p className="text-lg text-muted-foreground mt-2">
-              {formatCad(est.priceLow)}-{formatCad(est.priceHigh)} + GST
-            </p>
+            <p className="text-minimal text-lime mb-3">Your project price</p>
+            <p className="text-3xl font-light text-lime">Quoted individually</p>
+            <p className="text-sm text-muted-foreground mt-3">Based on your roof, equipment and electrical requirements. No generic price promise.</p>
           </div>
 
           <div>
@@ -120,26 +106,26 @@ const SolarCalculator = () => {
 
         {/* Details */}
         <div className="mt-8 pt-6 border-t border-border">
-          <button
+          <Button variant="ghost"
             type="button"
             onClick={() => {
               setShowDetails(!showDetails);
               if (!showDetails) trackEvent("calculator_details_open", { label: "see details" });
             }}
-            className="text-sm text-muted-foreground hover:text-lime transition-colors"
+            className="h-auto px-0 text-sm text-muted-foreground hover:text-lime transition-colors"
             aria-expanded={showDetails}
           >
             {showDetails ? "Hide details" : "See details"}
-          </button>
+          </Button>
           {showDetails && (
             <div className="grid sm:grid-cols-3 gap-6 mt-6 text-sm">
               <div>
-                <p className="text-minimal text-muted-foreground mb-2">Estimated monthly savings</p>
-                <p className="text-2xl font-light">{formatCad(est.monthlySavings)}</p>
+                <p className="text-minimal text-muted-foreground mb-2">Sizing assumptions</p>
+                <p className="text-muted-foreground">1,150 kWh/kWp/year and $0.22/kWh to approximate consumption from your bill. Fixed charges remain payable. Final sizing uses your actual annual kWh and roof assessment.</p>
               </div>
               <div>
-                <p className="text-minimal text-muted-foreground mb-2">Simple payback</p>
-                <p className="text-2xl font-light">{est.paybackYears.toFixed(1)} years</p>
+                <p className="text-minimal text-muted-foreground mb-2">Savings and payback</p>
+                <p className="text-muted-foreground">Calculated in your individual proposal using the quoted cost, self-consumption, current retailer rates and ongoing charges. No guaranteed savings.</p>
               </div>
               <div>
                 <p className="text-minimal text-muted-foreground mb-2">Grid credit</p>
@@ -162,11 +148,11 @@ const SolarCalculator = () => {
             onClick={() =>
               trackEvent("calculator_cta_click", {
                 label: "book assessment",
-                meta: { kwp: est.kwp, price: est.priceHigh },
+                meta: { kwp: est.kwp },
               })
             }
           >
-            Book your free assessment
+            Request your individual quote
           </Link>
           <a href="#how-we-compare" className="btn-ghost justify-center">
             How we compare
@@ -174,7 +160,7 @@ const SolarCalculator = () => {
         </div>
 
         <p className="text-[11px] text-muted-foreground leading-relaxed mt-6">
-          Indicative price range before GST. Your fixed price depends on roof type, layout and components and is confirmed after your free site assessment.
+          {QUOTE_NOTE}
         </p>
       </div>
     </div>

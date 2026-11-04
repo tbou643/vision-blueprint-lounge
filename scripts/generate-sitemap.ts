@@ -1,4 +1,4 @@
-import { writeFileSync } from "fs";
+import { readFileSync, writeFileSync } from "fs";
 import { resolve } from "path";
 
 const BASE_URL = "https://nullpunkt.ca";
@@ -9,12 +9,9 @@ interface SitemapEntry {
   priority?: string;
 }
 
-const blogSlugs = [
-  "calgary-solar-incentives-2026",
-  "sustainable-architecture-future",
-  "minimalism-modern-living",
-  "urban-planning-community-spaces",
-];
+// Read the actual article IDs without importing frontend-only image assets into Node.
+const blogSource = readFileSync(resolve("src/data/blogPosts.ts"), "utf8");
+const blogSlugs = [...blogSource.matchAll(/^\s+id:\s*"([a-z0-9-]+)"/gm)].map((match) => match[1]);
 
 const entries: SitemapEntry[] = [
   { path: "/", changefreq: "weekly", priority: "1.0" },

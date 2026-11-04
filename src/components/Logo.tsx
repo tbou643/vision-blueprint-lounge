@@ -1,4 +1,5 @@
 import logoLight from "@/assets/nullpunkt-logo-light.png.asset.json";
+import fallbackLogo from "@/assets/logo-white.png";
 
 interface LogoProps {
   className?: string;
@@ -15,6 +16,12 @@ interface LogoProps {
 const Logo = ({ className = "", variant = "light" }: LogoProps) => (
   <img
     src={logoLight.url}
+    onError={(event) => {
+      const image = event.currentTarget;
+      if (image.dataset.fallback) return;
+      image.dataset.fallback = "true";
+      image.src = fallbackLogo;
+    }}
     alt="NullPunkt Solar Inc."
     width={2000}
     height={1007}

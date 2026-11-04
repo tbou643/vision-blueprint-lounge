@@ -17,6 +17,7 @@ const BlogPost = () => {
           title="Post not found - NullPunkt Solar"
           description="The blog post you were looking for is not available."
           path={`/blog/${id ?? ""}`}
+          noindex
         />
         <Navigation />
         <div className="pt-32 pb-32">
@@ -124,7 +125,7 @@ const BlogPost = () => {
                 <div className="w-16 h-16 bg-muted rounded-full"></div>
                 <div>
                   <h3 className="text-lg font-medium text-foreground">{post.author}</h3>
-                  <p className="text-muted-foreground">Architect & Writer</p>
+                  <p className="text-muted-foreground">Solar engineering notes from NullPunkt Solar</p>
                 </div>
               </div>
             </div>

@@ -63,9 +63,9 @@ const Portfolio = () => {
               <div className="space-y-4">
                 {[
                   "Full yield simulation against long-term Calgary irradiance data (NRCan)",
-                  "10 kWp PV + 10 kWh storage + HEMS reference systems from CAD $26,000",
-                  "Solar Club retailer modelling - up to ~35 ¢/kWh export credit (UTILITYnet program)",
-                  "CEIP option: 0% PACE financing repaid through property tax",
+                  "Individual equipment and installation quote, with optional battery storage",
+                  "Retailer comparison using current Solar Club terms, not a guaranteed export rate",
+                  "Calgary CEIP intake currently closed until winter 2026/2027; financing is not interest-free",
                   "Fixed-price proposal - not a back-of-envelope quote",
                 ].map((line) => (
                   <div key={line} className="flex gap-3 text-muted-foreground">

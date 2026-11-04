@@ -4,6 +4,7 @@ import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { getFirstTouch, getGeo, trackEvent } from "@/lib/analytics";
+import { Button } from "@/components/ui/button";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Name is required").max(100),
@@ -97,7 +98,7 @@ const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compac
         </div>
         <h3 className="text-2xl font-light mb-2">Thanks - let's plan your solar system</h3>
         <p className="text-muted-foreground">
-          We've received your site assessment request. Our team will contact you personally to discuss your property and arrange the next step.
+          We've received your solar enquiry. Our team will contact you personally to discuss your property and arrange the next step.
         </p>
       </div>
     );
@@ -147,9 +148,9 @@ const WaitlistForm = ({ source = "website", defaultBill, defaultProperty, compac
           className={input}
         />
       )}
-      <button type="submit" disabled={loading} className="btn-lime w-full justify-center" data-cta="waitlist_submit" data-cta-position={source}>
-        {loading ? "Submitting…" : "Reserve your free site visit →"}
-      </button>
+      <Button type="submit" disabled={loading} className="btn-lime h-auto whitespace-normal w-full justify-center" data-cta="waitlist_submit" data-cta-position={source}>
+        {loading ? "Submitting…" : "Request your free consultation →"}
+      </Button>
       <p className="text-[11px] text-muted-foreground">
         We'll only use your details to contact you about your installation. No spam, ever.
       </p>

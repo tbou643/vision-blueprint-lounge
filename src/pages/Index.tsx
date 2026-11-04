@@ -18,7 +18,7 @@ import guidePdf from "@/assets/calgary-solar-guide-2026.pdf.asset.json";
 
 const localBusiness = {
   "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "SolarEnergyContractor"],
+  "@type": "LocalBusiness",
   "@id": "https://nullpunkt.ca/#organization",
   name: "NullPunkt Solar Inc.",
   url: "https://nullpunkt.ca",
@@ -26,8 +26,8 @@ const localBusiness = {
   telephone: "+1-403-819-7834",
   priceRange: "$$",
   slogan: "German Precision - Zero Emissions",
-  image: "https://nullpunkt.ca/logo-black.png",
-  logo: "https://nullpunkt.ca/logo-black.png",
+  image: "https://nullpunkt.ca/email/nullpunkt-signature-logo.png",
+  logo: "https://nullpunkt.ca/email/nullpunkt-signature-logo.png",
   knowsLanguage: ["en", "de"],
   sameAs: ["https://smb-solartechnik.de"],
   description:
@@ -95,7 +95,7 @@ const guideSchema = {
   "@type": "DigitalDocument",
   name: "Solar in Calgary: what's actually available in 2026 - A homeowner's guide",
   description:
-    "Free 12-page guide to solar rebates, incentives and financing available to Calgary and Alberta homeowners in 2026: Canada Greener Homes Grant status, City of Calgary CEIP financing, Alberta Micro-generation Regulation, Solar Club 35 cent per kWh export rate, and 2026 installed cost ranges.",
+    "July 2026 homeowner guide to Calgary solar programs. Historical figures are not current offers; confirm current CEIP intake and retailer rates before applying.",
   inLanguage: "en-CA",
   datePublished: "2026-07-10",
   author: { "@type": "Organization", name: "NullPunkt Solar Inc." },
@@ -110,7 +110,7 @@ const guideSchema = {
   ],
   url: "https://nullpunkt.ca/#guide",
   encodingFormat: "application/pdf",
-  contentUrl: `https://nullpunkt.ca${guidePdf.url}`,
+  contentUrl: new URL(guidePdf.url, "https://nullpunkt.ca").href,
   isAccessibleForFree: true,
 };
 
@@ -128,8 +128,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Solar Panels Calgary - Integrated PV & Battery | NullPunkt Solar"
-        description="NullPunkt Solar is now open in Calgary. Integrated solar panels, battery storage and German engineering. Free site assessment, tailored fixed-price proposal and a free 2026 Calgary solar guide."
+        title="Solar Panel Installation Calgary - Free Consultation | NullPunkt Solar"
+        description="Calgary rooftop solar with optional battery storage and German engineering. Request a free roof and electricity-use assessment and an individual project quote."
         path="/"
         jsonLd={[localBusiness, guideSchema, faqSchema]}
       />

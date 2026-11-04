@@ -11,11 +11,11 @@ const Contact = () => {
             {/* Left: pitch */}
             <div>
               <p className="text-minimal text-lime mb-4">Get in touch</p>
-              <h1 className="text-4xl md:text-6xl font-light text-architectural mb-8">
-                Ready to reach
+              <h2 className="text-4xl md:text-6xl font-light text-architectural mb-8">
+                Is solar right for
                 <br />
-                <span className="lime-underline">Point Zero?</span>
-              </h1>
+                <span className="lime-underline">your Calgary home?</span>
+              </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-lg">
                 Free, no-obligation consultation. We measure your roof, model your
                 consumption, and give you a fixed-price proposal you can actually compare.
@@ -54,9 +54,9 @@ const Contact = () => {
             {/* Right: waitlist form */}
             <div className="card-raised p-10">
               <p className="text-minimal text-lime mb-3">Now open in Calgary · Free site assessments</p>
-              <h3 className="text-2xl font-light mb-3">Reserve your free site visit.</h3>
+              <h3 className="text-2xl font-light mb-3">Request your free solar consultation.</h3>
               <p className="text-sm text-muted-foreground mb-8">
-                We're now booking free Calgary site assessments. Tell us about your property and we'll contact you personally to arrange a visit.
+                Tell us about your property or a quote you are comparing. We'll contact you personally to discuss your options and arrange a site assessment if appropriate. No obligation to book a visit or buy a system.
               </p>
               <WaitlistForm source="contact-page" />
 

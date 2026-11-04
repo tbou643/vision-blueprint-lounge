@@ -5,7 +5,7 @@ const Services = () => {
       title: "Residential Integrated Systems",
       tag: "B2C",
       description:
-        "PV sized to your home's actual consumption (up to 15 kWp), 5-15 kWh battery storage, intelligent HEMS, plus heat-pump and EV-charger readiness - engineered as one coordinated system for Alberta homes.",
+        "Rooftop solar sized to your home's annual electricity use, with optional battery storage and intelligent energy management. Roof suitability, electrical requirements and equipment are assessed before quoting. We do not install heat pumps.",
     },
     {
       number: "02",
@@ -45,8 +45,8 @@ const Services = () => {
 
           <p className="text-sm text-muted-foreground max-w-2xl mt-10">
             Every installation is delivered with an Alberta-licensed master electrician partner and
-            engineered to the same standards our parent company has refined across several hundred
-            German installations. We only work with fully licensed, high-qualification trades -
+            engineered using the experience of our German parent installing integrated systems since 2024.
+            We only work with fully licensed, high-qualification trades -
             no anonymous subcontractor chains.
           </p>
 

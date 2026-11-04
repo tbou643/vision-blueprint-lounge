@@ -1,38 +1,33 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { trackEvent } from "@/lib/analytics";
-import {
-  PRICE_RANGE_LABEL,
-  REGULAR_PRICE_PER_WATT,
-  estimateFromBill,
-  formatCad,
-  isPromoActive,
-  daysUntilPromoEnd,
-} from "@/lib/pricing";
+import { systemFromBill } from "@/lib/system-sizing";
+import { formatCad } from "@/lib/pricing";
+import { QUOTE_NOTE } from "@/lib/solar-facts";
+import { Button } from "@/components/ui/button";
 
 const QuickEstimate = () => {
   const [monthlyBill, setMonthlyBill] = useState(200);
-  const promo = isPromoActive();
-  const est = useMemo(() => estimateFromBill(monthlyBill), [monthlyBill]);
+  const est = useMemo(() => systemFromBill(monthlyBill), [monthlyBill]);
 
-  const context = `Home estimate: ${est.modules} modules / ${est.kwp.toFixed(1)} kW - ${formatCad(est.priceLow)}-${formatCad(est.priceHigh)} + GST (${PRICE_RANGE_LABEL})`;
+  const context = `Home sizing estimate: ${est.modules} modules / ${est.kwp.toFixed(1)} kW; monthly bill ${formatCad(monthlyBill)}. Please review my actual annual kWh and provide an individual quote.`;
 
   return (
     <section id="estimate" className="relative py-20 md:py-24 bg-background border-b border-border">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="card-raised p-6 md:p-10 grid lg:grid-cols-[1.1fr_1fr] gap-10 items-center reveal">
+        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 items-center reveal">
           {/* Input */}
           <div>
             <p className="text-minimal text-lime mb-4">
-              10 second estimate
+              Your Calgary roof
             </p>
             <h2 className="text-3xl md:text-4xl font-light text-architectural mb-4">
-              What would solar cost
+              What size solar system
               <br />
-              <span className="lime-underline">on your Calgary roof?</span>
+              <span className="lime-underline">could suit your home?</span>
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed mb-8 max-w-md">
-              Move the slider to your average monthly power bill. No email, no sales call, no waiting.
+              A starting point for your roof assessment, not a quote or guaranteed recommendation.
             </p>
 
             <label className="text-minimal text-muted-foreground mb-3 block" htmlFor="home-bill">
@@ -61,22 +56,13 @@ const QuickEstimate = () => {
               {est.modules} modules · {est.kwp.toFixed(1)} kW
             </p>
 
-            <div className="flex items-baseline gap-3">
-              <p className="text-4xl md:text-5xl font-light text-architectural text-lime lime-underline">
-                {PRICE_RANGE_LABEL}
-              </p>
-              {promo && (
-                <span className="text-lg text-muted-foreground line-through">
-                  ${REGULAR_PRICE_PER_WATT.toFixed(2)}/W
-                </span>
-              )}
-            </div>
-            <p className="text-lg text-muted-foreground mt-3">
-              {formatCad(est.priceLow)}-{formatCad(est.priceHigh)} + GST · about {formatCad(est.monthlySavings)}/month saved
+            <p className="text-4xl font-light text-lime">
+              {Math.round(est.annualProduction).toLocaleString("en-CA")} <span className="text-lg">kWh/year</span>
             </p>
+            <p className="text-sm text-muted-foreground mt-3">Illustrative production. Your price is quoted individually.</p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <Link
+              <Button asChild className="btn-lime h-auto whitespace-normal"><Link
                 to="/contact"
                 state={{ calculator: context }}
                 className="btn-lime justify-center"
@@ -86,15 +72,15 @@ const QuickEstimate = () => {
                   trackEvent("home_estimate_cta", { label: "book assessment", meta: { kwp: est.kwp } })
                 }
               >
-                Book your free site assessment
-              </Link>
+                Request your individual quote
+              </Link></Button>
               <Link to="/calculator" className="btn-ghost justify-center" data-cta="Full calculator" data-cta-position="home-estimate">
                 Full calculator
               </Link>
             </div>
             <p className="text-[11px] text-muted-foreground mt-5 leading-relaxed">
-              Estimate based on Calgary yield of 1,150 kWh per kWp and a blended rate of $0.22/kWh. Indicative
-              price range; fixed quote after your free site assessment.
+              Sizing assumes 1,150 kWh/kWp/year and $0.22/kWh to approximate consumption from your bill.
+              Fixed charges are not fully avoidable; actual sizing uses 12 months of kWh, roof condition and shading. {QUOTE_NOTE}
             </p>
           </div>
         </div>
