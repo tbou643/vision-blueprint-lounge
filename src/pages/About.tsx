@@ -3,6 +3,7 @@ import SiteFooter from "@/components/SiteFooter";
 import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import founderImage from "@/assets/tim-brunkel.asset.json";
+import headquartersImage from "@/assets/NullPunkt_Headquarter.png.asset.json";
 
 const About = () => {
   return (
@@ -62,6 +63,20 @@ const About = () => {
                   already written.
                 </p>
               </div>
+              <figure className="mt-8">
+                <img
+                  src={headquartersImage.url}
+                  alt="NullPunkt Solar headquarters exterior in Calgary"
+                  width={1475}
+                  height={768}
+                  className="w-full aspect-[1475/768] object-cover rounded-lg opacity-80 saturate-75"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption className="mt-3 text-sm text-muted-foreground">
+                  Our Calgary headquarters
+                </figcaption>
+              </figure>
             </div>
 
             <div>
