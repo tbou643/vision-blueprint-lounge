@@ -65,7 +65,7 @@ const About = () => {
               </div>
               <figure className="mt-8">
                 <img
-                  src={headquartersImage.url}
+                  src={new URL(headquartersImage.url, "https://nullpunkt.ca").href}
                   alt="NullPunkt Solar headquarters exterior in Calgary"
                   width={1475}
                   height={768}
