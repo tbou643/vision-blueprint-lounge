@@ -8,10 +8,68 @@ import { defineMcp } from "npm:@lovable.dev/mcp-js@0.20.0";
 // src/lib/mcp/tools/get-solar-estimate.ts
 import { defineTool } from "npm:@lovable.dev/mcp-js@0.20.0";
 import { z } from "npm:zod@^4.4.3";
+
+// src/lib/pricing.ts
+var YIELD_KWH_PER_KWP = 1150;
+var BLENDED_RATE_PER_KWH = 0.22;
+var MODULE_WATT = 500;
+var GST = 0.05;
+var PRICE_MIN_PER_WATT = 1.99;
+var PRICE_MAX_PER_WATT = 2.5;
+var PRICE_RANGE_LABEL = `$${PRICE_MIN_PER_WATT.toFixed(2)}-$${PRICE_MAX_PER_WATT.toFixed(2)}/W`;
+var estimateFromKwp = (kwp, annualConsumption, now = /* @__PURE__ */ new Date()) => {
+  const modules = Math.max(1, Math.round(kwp * 1e3 / MODULE_WATT));
+  const watts = modules * MODULE_WATT;
+  const annualProduction = watts / 1e3 * YIELD_KWH_PER_KWP;
+  const pricePerWatt = PRICE_MAX_PER_WATT;
+  const priceLow = watts * PRICE_MIN_PER_WATT;
+  const priceHigh = watts * PRICE_MAX_PER_WATT;
+  const priceBeforeGst = watts * pricePerWatt;
+  const gstAmount = priceBeforeGst * GST;
+  const priceWithGst = priceBeforeGst + gstAmount;
+  const offsetKwh = Math.min(annualProduction, annualConsumption);
+  const exportedKwh = Math.max(0, annualProduction - annualConsumption);
+  const annualSavings = offsetKwh * BLENDED_RATE_PER_KWH + exportedKwh * BLENDED_RATE_PER_KWH * 0.5;
+  return {
+    modules,
+    watts,
+    kwp: watts / 1e3,
+    annualConsumption,
+    annualProduction,
+    coverage: annualConsumption > 0 ? annualProduction / annualConsumption * 100 : 0,
+    pricePerWatt,
+    priceBeforeGst,
+    gstAmount,
+    priceWithGst,
+    monthlySavings: annualSavings / 12,
+    annualSavings,
+    paybackYears: annualSavings > 0 ? (priceLow + priceHigh) / 2 * (1 + GST) / annualSavings : 0,
+    priceLow,
+    priceHigh
+  };
+};
+var estimateFromBill = (monthlyBill, now = /* @__PURE__ */ new Date()) => {
+  const annualConsumption = monthlyBill * 12 / BLENDED_RATE_PER_KWH;
+  const rawKwp = annualConsumption / YIELD_KWH_PER_KWP;
+  const clampedKwp = Math.min(15, Math.max(4, rawKwp));
+  return estimateFromKwp(clampedKwp, annualConsumption, now);
+};
+
+// src/lib/system-sizing.ts
+var systemFromBill = (monthlyBill) => {
+  const { modules, kwp, annualConsumption, annualProduction, coverage } = estimateFromBill(monthlyBill);
+  return { modules, kwp, annualConsumption, annualProduction, coverage };
+};
+
+// src/lib/solar-facts.ts
+var CEIP_STATUS = "As checked November 4, 2026, Calgary's residential CEIP intake is closed until winter 2026/2027. The City lists estimated interest rates of 6.00%-6.10%, not 0%. Eligibility, funding, contractor qualification and final terms must be confirmed with the City before proceeding.";
+var QUOTE_NOTE = "Individual quote after a free roof and electricity-use assessment. Equipment, roof layout, electrical upgrades, permits and optional battery storage determine the final CAD price and GST.";
+
+// src/lib/mcp/tools/get-solar-estimate.ts
 var get_solar_estimate_default = defineTool({
   name: "get_solar_estimate",
   title: "Get solar estimate",
-  description: "Estimate a Calgary/Alberta solar PV system: recommended size, annual production, savings (standard vs Solar Club retailer), turn-key cost, payback, CO\u2082 avoided, and CEIP financing. Returns engineering baseline plus an AI-written recommendation.",
+  description: "Return an illustrative Calgary solar system size and annual production. Pricing and financial returns require an individual quote and assessment; this tool does not quote installation prices or financing approval.",
   inputSchema: {
     monthlyBill: z.number().positive().describe("Monthly electricity bill in CAD."),
     propertyType: z.enum(["residential", "commercial", "agricultural", "multi-family"]).describe("Property type."),
@@ -23,27 +81,12 @@ var get_solar_estimate_default = defineTool({
   },
   annotations: { readOnlyHint: true, openWorldHint: false },
   handler: async (input) => {
-    const url = process.env.SUPABASE_URL;
-    const anon = process.env.SUPABASE_ANON_KEY ?? process.env.SUPABASE_PUBLISHABLE_KEY;
-    if (!url || !anon) {
-      return { content: [{ type: "text", text: "Server not configured." }], isError: true };
-    }
-    const res = await fetch(`${url}/functions/v1/solar-analysis`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${anon}`,
-        apikey: anon
-      },
-      body: JSON.stringify(input)
-    });
-    const data = await res.json();
-    if (!res.ok) {
-      return {
-        content: [{ type: "text", text: `Solar analysis failed: ${JSON.stringify(data)}` }],
-        isError: true
-      };
-    }
+    const data = {
+      ...systemFromBill(input.monthlyBill),
+      quote: QUOTE_NOTE,
+      ceip: CEIP_STATUS,
+      assumptions: "500 W modules, 1,150 kWh/kWp/year and $0.22/kWh for approximate consumption. Final size uses actual annual kWh, roof condition, shading and utility requirements. No savings or payback guarantee."
+    };
     return {
       content: [{ type: "text", text: JSON.stringify(data, null, 2) }],
       structuredContent: data
