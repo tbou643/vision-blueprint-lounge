@@ -90,26 +90,26 @@ const Hero = () => {
 
         {/* Headline */}
         <h1 className="reveal-delayed text-4xl md:text-6xl lg:text-7xl font-light text-architectural text-white mb-8">
-          Integrated solar,
+          Solar panel installation
           <br />
-          engineered to a <span className="lime-underline">single point</span>.
+          <span className="lime-underline">in Calgary.</span>
         </h1>
 
         <p className="reveal-delayed-2 text-lg md:text-xl text-white/75 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
-          We're now open in Calgary. Transparent rooftop solar from{" "}
-          <span className="text-lime">$1.99 to $2.50 per watt</span> - reserve your free, non-binding
-          site visit and let's plan your system. Backed by SMB Solartechnik GmbH, a German parent installing integrated PV,
-          battery and HEMS systems since 2024.
+          Rooftop solar designed around your home, your roof and your electricity use.
+          Start with a free, no-obligation consultation and receive an individual proposal.
+          German engineering from SMB Solartechnik GmbH, installing integrated systems since 2024,
+          with Alberta-licensed electrical partners.
         </p>
 
         {/* CTAs */}
         <div className="reveal-delayed-2 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link to="/contact" className="btn-lime" data-cta="Reserve your free site visit" data-cta-position="hero-primary">
-            Reserve your free site visit
+            Request your free solar consultation
             <span aria-hidden>→</span>
           </Link>
           <a href="#estimate" className="btn-ghost !text-white !border-white/30 hover:!border-lime hover:!text-lime" data-cta="See your price" data-cta-position="hero-secondary">
-            See your price in 10 seconds
+            Explore your system size
           </a>
         </div>
 

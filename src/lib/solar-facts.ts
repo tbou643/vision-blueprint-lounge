@@ -1,0 +1,4 @@
+// Shared public program information. Recheck municipal intake before advising an applicant.
+export const CEIP_SOURCE = "https://www.calgary.ca/environment/programs/clean-energy-improvement-program.html";
+export const CEIP_STATUS = "As checked November 4, 2026, Calgary's residential CEIP intake is closed until winter 2026/2027. The City lists estimated interest rates of 6.00%-6.10%, not 0%. Eligibility, funding, contractor qualification and final terms must be confirmed with the City before proceeding.";
+export const QUOTE_NOTE = "Individual quote after a free roof and electricity-use assessment. Equipment, roof layout, electrical upgrades, permits and optional battery storage determine the final CAD price and GST.";

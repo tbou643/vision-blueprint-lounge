@@ -6,10 +6,11 @@ type Props = {
   title: string;
   description: string;
   path: string;
+  noindex?: boolean;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 };
 
-const SEO = ({ title, description, path, jsonLd }: Props) => {
+const SEO = ({ title, description, path, jsonLd, noindex = false }: Props) => {
   const url = `${SITE}${path}`;
   const schemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 
@@ -17,6 +18,7 @@ const SEO = ({ title, description, path, jsonLd }: Props) => {
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
+      <meta name="robots" content={noindex ? "noindex, follow" : "index, follow"} />
       <link rel="canonical" href={url} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />

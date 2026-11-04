@@ -1,7 +1,7 @@
 export const homeFaqs = [
   {
     q: "How much does a solar system cost in Calgary in 2026?",
-    a: "Our residential rooftop systems are typically priced between $1.99 and $2.50 per watt before GST, depending on roof type, layout and components. A typical 7.5 kW system therefore lands roughly between $15,000 and $18,750 before GST. Your fixed price is confirmed after the free site assessment. Quotes in the Calgary market commonly range from $2.50 to over $4.00 per watt, so always divide any quote by the system watts before comparing.",
+    a: "We provide individual CAD quotes, not a universal price per watt. Your cost depends on system size, roof condition and layout, electrical upgrades, equipment and optional battery storage. Start with a free roof and consumption assessment. Your proposal separates the equipment, installation scope and GST so you can compare like for like.",
   },
   {
     q: "Does solar actually work in Calgary's climate?",
@@ -13,11 +13,11 @@ export const homeFaqs = [
   },
   {
     q: "What incentives and financing are available to Calgary homeowners?",
-    a: "The City of Calgary's Clean Energy Improvement Program (CEIP) lets eligible homeowners finance the installation through their property tax bill. Surplus production is credited under the Alberta Micro-Generation Regulation, and retailers such as the Solar Club offer higher export rates in summer. Our free 2026 guide walks through what is currently open and what has closed.",
+    a: "As checked November 4, 2026, Calgary's residential CEIP intake is closed until winter 2026/2027, with estimated interest rates of 6.00%-6.10%, not 0%. Confirm current eligibility and funding with the City. Alberta micro-generation provides energy credits for eligible exports, and Solar Club retailer plans have variable rates and conditions. The Canada Greener Homes Grant and Loan are closed to new applicants. Financing is not a rebate or guaranteed approval.",
   },
   {
     q: "Who does the electrical work?",
-    a: "Every installation is delivered with an Alberta-licensed master electrician partner and Red Seal certified electrical work. We only work with fully licensed trades, no anonymous subcontractor chains.",
+    a: "Electrical work is delivered with Alberta-licensed master electrician partners. The electrical scope and responsible partner are confirmed in your project proposal. We work with qualified, licensed trades and apply our German engineering standards to the system design.",
   },
   {
     q: "What happens at the free site assessment?",
@@ -30,9 +30,9 @@ const HomeFaq = () => (
     <div className="container mx-auto px-6 max-w-7xl">
       <p className="text-minimal text-lime mb-4">Calgary solar questions</p>
       <h2 className="text-4xl md:text-5xl font-light text-architectural mb-12 max-w-2xl">
-        The answers people actually
+        Before you choose solar
         <br />
-        <span className="text-muted-foreground">search for.</span>
+        <span className="text-muted-foreground">for your Calgary home.</span>
       </h2>
       <div className="grid md:grid-cols-2 gap-px bg-border rounded-2xl overflow-hidden">
         {homeFaqs.map((f) => (

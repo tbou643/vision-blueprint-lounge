@@ -1,13 +1,13 @@
 const cards = [
   {
-    title: "Transparent $/W pricing",
+    title: "A quote for your actual roof",
     body:
-      "Most Alberta installers hide their price per watt. We put it first. Compare any quote: divide the price by the system watts.",
+      "System size, equipment, installation scope and GST are explained in your proposal. Compare like for like, including any electrical upgrades and optional storage.",
   },
   {
     title: "Serious quality",
     body:
-      "Tier-1 modules (25-year product warranty), APsystems microinverters, Red Seal certified electrical work.",
+      "Equipment selected for your roof and Canadian requirements, with Alberta-licensed electrical partners. Your proposal identifies the components and applicable manufacturer warranties.",
   },
   {
     title: "German precision",
@@ -19,9 +19,9 @@ const cards = [
 const PriceTrust = () => (
   <section id="how-we-compare" className="py-24 border-t border-border">
     <div className="container mx-auto px-6 max-w-7xl">
-      <p className="text-minimal text-lime mb-4">Why our price is real</p>
+      <p className="text-minimal text-lime mb-4">Why NullPunkt Solar</p>
       <h2 className="text-4xl md:text-5xl font-light text-architectural mb-12 max-w-2xl">
-        No hidden math. Just the price per watt.
+        Clear scope. Local accountability. German precision.
       </h2>
       <div className="grid md:grid-cols-3 gap-6">
         {cards.map((c) => (
@@ -32,9 +32,9 @@ const PriceTrust = () => (
         ))}
       </div>
       <p className="text-sm text-muted-foreground leading-relaxed mt-8 max-w-3xl">
-        Typical market prices in Calgary range from $2.50 to well over $4.00 per watt. We keep overhead low and pass it
-        on - that's the whole trick. We're now open in Calgary. Start with a free site assessment and receive a
-        fixed-price proposal tailored to your roof and consumption - no obligation.
+        We are a newly launched Calgary company, not an installer claiming a completed Canadian portfolio.
+        Start with a free consultation. We review your roof and consumption before recommending a system
+        and confirming the price, scope and installation schedule individually.
       </p>
     </div>
   </section>
