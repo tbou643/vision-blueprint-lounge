@@ -246,9 +246,9 @@ var list_blog_posts_default = defineTool4({
 // src/lib/mcp/index.ts
 var mcp_default = defineMcp({
   name: "nullpunkt-energy-mcp",
-  title: "Nullpunkt Energy MCP",
+  title: "NullPunkt Solar MCP",
   version: "0.1.0",
-  instructions: "Tools for Nullpunkt Energy (Calgary solar). Use get_solar_estimate for engineering-led PV/battery sizing and payback for Calgary/Alberta properties. Use get_services_overview for company/services/pricing context. Use list_blog_posts to surface Calgary incentive and engineering articles. Use join_waitlist to register a lead for a free consultation.",
+  instructions: "Tools for NullPunkt Solar Inc. in Calgary. Use get_solar_estimate for illustrative sizing and production, not installation prices or financial guarantees. Use get_services_overview for current company, service and individual-quote information. Use list_blog_posts for solar articles. Use join_waitlist to request a free consultation.",
   tools: [get_solar_estimate_default, get_services_overview_default, list_blog_posts_default, join_waitlist_default]
 });
 

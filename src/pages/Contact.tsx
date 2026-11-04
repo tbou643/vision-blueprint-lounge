@@ -9,7 +9,8 @@ const localBusiness = {
   name: "NullPunkt Solar Inc.",
   url: "https://nullpunkt.ca/contact",
   email: "hello@nullpunkt.ca",
-  image: "https://nullpunkt.ca/logo-black.png",
+  telephone: "+1-403-819-7834",
+  image: "https://nullpunkt.ca/email/nullpunkt-signature-logo.png",
   address: {
     "@type": "PostalAddress",
     streetAddress: "#2005 - 10th Avenue SW",
@@ -24,8 +25,8 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Contact NullPunkt Solar - Free Calgary Site Assessment"
-        description="NullPunkt Solar is now open in Calgary. Book a free, no-obligation solar site assessment for your Calgary or Southern Alberta property."
+        title="Free Solar Consultation Calgary - Contact NullPunkt Solar"
+        description="Request a free Calgary solar consultation, roof review and individual quote. Tell us about your home or a quote you are comparing; no obligation to buy."
         path="/contact"
         jsonLd={localBusiness}
       />
